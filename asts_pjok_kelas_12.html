@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportPedia Infografis - Basket, Voli, Softball</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        basket: { light: '#fff7ed', DEFAULT: '#f97316', dark: '#c2410c' },
+                        voli: { light: '#eff6ff', DEFAULT: '#3b82f6', dark: '#1d4ed8' },
+                        softball: { light: '#ecfdf5', DEFAULT: '#10b981', dark: '#047857' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Styles for Infographic feel */
+        body { font-family: 'Poppins', sans-serif; overflow-x: hidden; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .infographic-card {
+            transition: all 0.3s ease;
+        }
+        .infographic-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-gray-800 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-card shadow-sm top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i class="fas fa-trophy text-yellow-500 text-2xl mr-2"></i>
+                    <span class="font-bold text-xl tracking-tight text-gray-900">SportPedia</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#basket" class="text-gray-600 hover:text-basket font-semibold transition-colors">Bola Basket</a>
+                    <a href="#voli" class="text-gray-600 hover:text-voli font-semibold transition-colors">Bola Voli</a>
+                    <a href="#softball" class="text-gray-600 hover:text-softball font-semibold transition-colors">Softball</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-28 pb-16 bg-gradient-to-br from-gray-900 to-gray-800 text-white text-center">
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fade-in-up">Materi Olahraga Interaktif</h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-8 font-light">Eksplorasi strategi, taktik, dan aturan dari Bola Basket, Bola Voli, hingga Softball dalam infografis modern yang mudah dipahami.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#basket" class="px-6 py-3 bg-basket text-white font-bold rounded-full hover:bg-orange-600 transition shadow-lg shadow-orange-500/30">Mulai Basket <i class="fas fa-arrow-down ml-2"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- BOLA BASKET SECTION (ORANGE THEME) -->
+    <section id="basket" class="py-20 bg-basket-light relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center justify-center p-4 bg-orange-100 rounded-full mb-4 text-basket">
+                    <i class="fas fa-basketball-ball text-4xl"></i>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 mb-4">Bola Basket</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">Berlari, melompat, dan cetak angka! Kuasai strategi lapangan kayu.</p>
+            </div>
+
+            <!-- Penyerangan -->
+            <h3 class="text-2xl font-bold text-basket-dark mb-6 border-b-2 border-basket-dark pb-2 inline-block">⚔️ Strategi Penyerangan</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="infographic-card bg-white rounded-2xl p-6 shadow-md border-t-4 border-basket">
+                    <div class="text-basket text-3xl mb-4"><i class="fas fa-bolt"></i></div>
+                    <h4 class="font-bold text-xl mb-2">Fast Break</h4>
+                    <p class="text-sm text-gray-600">Serangan kilat sebelum pertahanan lawan terbentuk. Andalkan lari cepat & operan akurat.</p>
+                </div>
+                <div class="infographic-card bg-white rounded-2xl p-6 shadow-md border-t-4 border-basket">
+                    <div class="text-basket text-3xl mb-4"><i class="fas fa-running"></i></div>
+                    <h4 class="font-bold text-xl mb-2">Tanpa Bola</h4>
+                    <p class="text-sm text-gray-600">Bergerak mencari ruang kosong, mengecoh penjaga, bersiap menerima umpan.</p>
+                </div>
+                <div class="infographic-card bg-white rounded-2xl p-6 shadow-md border-t-4 border-basket">
+                    <div class="text-basket text-3xl mb-4"><i class="fas fa-project-diagram"></i></div>
+                    <h4 class="font-bold text-xl mb-2">Set Offense</h4>
+                    <ul class="text-sm text-gray-600 list-disc pl-4 space-y-1 mt-2">
+                        <li><b>Diamond 1-3-1:</b> Eksploitasi <i>high/low post</i>.</li>
+                        <li><b>2-2-1:</b> Stabil untuk <i>screening</i>.</li>
+                        <li><b>2-1-2:</b> Klasik & seimbang, Center di tengah.</li>
+                    </ul>
+                </div>
+                <div class="infographic-card bg-white rounded-2xl p-6 shadow-md border-t-4 border-basket">
+                    <div class="text-basket text-3xl mb-4"><i class="fas fa-cut"></i></div>
+                    <h4 class="font-bold text-xl mb-2">Membuka Ruang</h4>
+                    <ul class="text-sm text-gray-600 list-disc pl-4 space-y-1 mt-2">
+                        <li><b>Front Cut:</b> Potong di depan.</li>
+                        <li><b>Backdoor Cut:</b> Potong ke belakang ke ring.</li>
+                        <li><b>Give & Go:</b> Oper lalu lari ke ring.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Pertahanan -->
+            <h3 class="text-2xl font-bold text-basket-dark mb-6 border-b-2 border-basket-dark pb-2 inline-block">🛡️ Strategi Pertahanan</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="infographic-card bg-white rounded-2xl p-6 shadow-md border-l-4 border-basket flex items-start">
+                    <i class="fas fa-user-shield text-basket text-3xl mr-4 mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1">Man-to-Man</h4>
+                        <p class="text-sm text-gray-600">Satu lawan satu. <b>Tetap</b> (menjaga khusus tanpa tukar) atau <b>Dengan Penolong</b> (bantu teman kecolongan).</p>
+                    </div>
+                </div>
+                <div class="infographic-card bg-white rounded-2xl p-6 shadow-md border-l-4 border-basket flex items-start">
+                    <i class="fas fa-compress-arrows-alt text-basket text-3xl mr-4 mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1">Pressing Defense</h4>
+                        <p class="text-sm text-gray-600">Pertahanan agresif menekan lawan sejak bola baru masuk (full-court / half-court).</p>
+                    </div>
+                </div>
+                <div class="infographic-card bg-white rounded-2xl p-6 shadow-md border-l-4 border-basket flex items-start">
+                    <i class="fas fa-backward text-basket text-3xl mr-4 mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1">Retreating Defense</h4>
+                        <p class="text-sm text-gray-600">Begitu bola hilang, seluruh pemain lari mundur ke area sendiri bersiap bertahan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kamus & Aturan -->
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+                <div class="bg-basket text-white py-4 px-6">
+                    <h3 class="text-xl font-bold"><i class="fas fa-book mr-2"></i> Kamus & Aturan Penting</h3>
+                </div>
+                <div class="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="p-3 bg-orange-50 rounded-lg">
+                        <span class="block text-xs text-basket-dark font-bold uppercase">Induk Organisasi</span>
+                        <span class="font-semibold text-gray-800">PERBASI (ID) | FIBA (Dunia)</span>
+                    </div>
+                    <div class="p-3 bg-orange-50 rounded-lg">
+                        <span class="block text-xs text-basket-dark font-bold uppercase">Pemain</span>
+                        <span class="font-semibold text-gray-800">5 Orang di lapangan</span>
+                    </div>
+                    <div class="p-3 bg-orange-50 rounded-lg">
+                        <span class="block text-xs text-basket-dark font-bold uppercase">Babak (Quarter)</span>
+                        <span class="font-semibold text-gray-800">4 Quarter @ 10 Menit (FIBA)</span>
+                    </div>
+                    <div class="p-3 bg-orange-50 rounded-lg">
+                        <span class="block text-xs text-basket-dark font-bold uppercase">Teknik Lemparan</span>
+                        <span class="font-semibold text-gray-800">Chest, Bounce, Overhead, Baseball</span>
+                    </div>
+                    <div class="p-3 bg-orange-50 rounded-lg">
+                        <span class="block text-xs text-basket-dark font-bold uppercase">Pivot & Travelling</span>
+                        <span class="text-sm text-gray-700"><b>Pivot:</b> Putar 1 kaki poros.<br><b>Trav:</b> Jalan bawa bola > 2 langkah.</span>
+                    </div>
+                    <div class="p-3 bg-orange-50 rounded-lg">
+                        <span class="block text-xs text-basket-dark font-bold uppercase">Rebound & Waktu</span>
+                        <span class="text-sm text-gray-700">Max <b>8 dtk</b> bawa bola ke depan (Def Rebound). Reset <b>14 dtk</b> (Off Rebound).</span>
+                    </div>
+                    <div class="p-3 bg-orange-50 rounded-lg col-span-1 md:col-span-2 lg:col-span-3">
+                        <span class="block text-xs text-basket-dark font-bold uppercase">3 Seconds Violation</span>
+                        <span class="text-sm text-gray-700">Penyerang diam di area <i>paint</i> lawan lebih dari 3 detik.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOLA VOLI SECTION (BLUE THEME) -->
+    <section id="voli" class="py-20 bg-voli-light relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center justify-center p-4 bg-blue-100 rounded-full mb-4 text-voli">
+                    <i class="fas fa-volleyball-ball text-4xl"></i>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 mb-4">Bola Voli</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">Spike keras, blok kokoh, dan pertahanan udara yang solid!</p>
+            </div>
+
+            <!-- Posisi Pemain -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+                <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="col-span-1 md:col-span-2"><h3 class="text-2xl font-bold text-voli-dark border-b-2 border-voli-dark pb-2 inline-block">🏐 Posisi & Peran</h3></div>
+                    <div class="infographic-card bg-white p-4 rounded-xl shadow border-l-4 border-voli">
+                        <h4 class="font-bold text-voli">Set Upper (Tosser)</h4>
+                        <p class="text-xs text-gray-600 mt-1">Sutradara lapangan, mengatur serangan & umpan ke spiker.</p>
+                    </div>
+                    <div class="infographic-card bg-white p-4 rounded-xl shadow border-l-4 border-voli">
+                        <h4 class="font-bold text-voli">Spiker (Smasher)</h4>
+                        <p class="text-xs text-gray-600 mt-1">Ujung tombak penyerangan, memukul bola keras ke lawan.</p>
+                    </div>
+                    <div class="infographic-card bg-white p-4 rounded-xl shadow border-l-4 border-voli">
+                        <h4 class="font-bold text-voli">Quicker & Outside</h4>
+                        <p class="text-xs text-gray-600 mt-1"><b>Quicker:</b> Eksekutor umpan cepat di tengah. <b>Outside:</b> Penyerang sisi luar.</p>
+                    </div>
+                    <div class="infographic-card bg-white p-4 rounded-xl shadow border-l-4 border-voli">
+                        <h4 class="font-bold text-voli text-red-500">Libero & Defender</h4>
+                        <p class="text-xs text-gray-600 mt-1">Spesialis tahan smash! Libero dilarang servis/smash di atas net.</p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 flex flex-col justify-center">
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-700 rounded-3xl p-8 text-white shadow-lg relative overflow-hidden h-full">
+                        <i class="fas fa-info-circle absolute -bottom-10 -right-10 text-9xl text-blue-400 opacity-20"></i>
+                        <h3 class="text-2xl font-bold mb-6 relative z-10">Fakta Pertandingan</h3>
+                        
+                        <div class="space-y-4 relative z-10">
+                            <div class="flex items-center">
+                                <i class="fas fa-users text-blue-200 w-8 text-center text-xl"></i>
+                                <div class="ml-3"><p class="text-sm text-blue-100">Jumlah Pemain</p><p class="font-bold">6 Orang di Lapangan</p></div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-globe text-blue-200 w-8 text-center text-xl"></i>
+                                <div class="ml-3"><p class="text-sm text-blue-100">Organisasi</p><p class="font-bold">PBVSI (ID) | FIVB (Dunia)</p></div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-balance-scale text-blue-200 w-8 text-center text-xl"></i>
+                                <div class="ml-3"><p class="text-sm text-blue-100">Deuce Concept</p><p class="font-bold text-sm">Skor seri 24-24. Harus cari selisih 2 poin untuk menang (26-24 dst).</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Taktik Blok & Aturan Smash -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Blok -->
+                <div class="bg-white rounded-2xl shadow-md p-6 border-t-4 border-voli">
+                    <h3 class="text-xl font-bold text-voli-dark mb-4"><i class="fas fa-shield-alt mr-2"></i> Taktik Blok (Pertahanan Spike)</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="bg-blue-100 text-voli font-bold rounded-full w-8 h-8 flex items-center justify-center shrink-0 mt-1">1</div>
+                            <div class="ml-4"><b>Blok 1 Pemain:</b> Tahan serangan kejutan atau umpan cepat (quick).</div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-blue-100 text-voli font-bold rounded-full w-8 h-8 flex items-center justify-center shrink-0 mt-1">2</div>
+                            <div class="ml-4"><b>Blok 2 Pemain:</b> Paling umum untuk tahan serangan sisi pinggir (outside).</div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-blue-100 text-voli font-bold rounded-full w-8 h-8 flex items-center justify-center shrink-0 mt-1">3</div>
+                            <div class="ml-4"><b>Blok 3 Pemain:</b> Pertahanan maksimal lawan spiker mematikan/terbaca.</div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Smash Rules -->
+                <div class="bg-white rounded-2xl shadow-md p-6 border-t-4 border-voli flex flex-col justify-center text-center">
+                    <i class="fas fa-hand-paper text-5xl text-blue-200 mb-4"></i>
+                    <h3 class="text-xl font-bold text-voli-dark mb-2">Siapa Boleh Smash & Blok?</h3>
+                    <p class="text-gray-700 bg-blue-50 p-4 rounded-lg">
+                        Hanya <b>3 pemain baris depan</b> (posisi 2,3,4) yang boleh blok dan smash dari Area Depan.<br><br>
+                        Pemain belakang boleh smash, <b>TAPI</b> wajib melompat dari <i>belakang garis serang</i> (garis 3 meter).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOFTBALL SECTION (GREEN THEME) -->
+    <section id="softball" class="py-20 bg-softball-light relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center justify-center p-4 bg-emerald-100 rounded-full mb-4 text-softball">
+                    <i class="fas fa-baseball-ball text-4xl"></i>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 mb-4">Softball</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">Taktik brilian di atas lapangan berlian (Diamond)!</p>
+            </div>
+
+            <!-- Taktik Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                <!-- Penyerangan -->
+                <div>
+                    <h3 class="text-2xl font-bold text-softball-dark mb-6 border-b-2 border-softball-dark pb-2 inline-block"><i class="fas fa-fire-alt mr-2"></i>Taktik Penyerangan</h3>
+                    <div class="space-y-4">
+                        <div class="infographic-card bg-white p-5 rounded-2xl shadow flex items-center border-l-4 border-softball">
+                            <div class="text-softball text-3xl w-12 text-center shrink-0"><i class="fas fa-gavel"></i></div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-lg">Bunt (Pukulan Tanpa Ayunan)</h4>
+                                <p class="text-sm text-gray-600">Sentuh bola perlahan ke infield. Mengorbankan diri agar pelari di base bisa maju.</p>
+                            </div>
+                        </div>
+                        <div class="infographic-card bg-white p-5 rounded-2xl shadow flex items-center border-l-4 border-softball">
+                            <div class="text-softball text-3xl w-12 text-center shrink-0"><i class="fas fa-mask"></i></div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-lg">Stealing (Mencuri Base)</h4>
+                                <p class="text-sm text-gray-600">Pelari lari diam-diam ke base selanjutnya tepat saat pelempar (pitcher) lepas bola.</p>
+                            </div>
+                        </div>
+                        <div class="infographic-card bg-white p-5 rounded-2xl shadow flex items-center border-l-4 border-softball">
+                            <div class="text-softball text-3xl w-12 text-center shrink-0"><i class="fas fa-dove"></i></div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-lg">Sacrifice Fly (Melayang)</h4>
+                                <p class="text-sm text-gray-600">Pukul bola sangat tinggi ke outfield agar pelari di base tiga sempat lari ke <i>home plate</i>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pertahanan -->
+                <div>
+                    <h3 class="text-2xl font-bold text-softball-dark mb-6 border-b-2 border-softball-dark pb-2 inline-block"><i class="fas fa-glove mr-2"></i>Strategi Pertahanan</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="infographic-card bg-emerald-700 text-white p-4 rounded-xl shadow-lg relative overflow-hidden">
+                            <i class="fas fa-search absolute -bottom-4 -right-4 text-5xl text-emerald-600 opacity-50"></i>
+                            <h4 class="font-bold text-lg mb-2 relative z-10">Sistem Pendek (Close)</h4>
+                            <p class="text-xs text-emerald-100 relative z-10">Infield maju! Antisipasi bunt atau saat base penuh.</p>
+                        </div>
+                        <div class="infographic-card bg-emerald-600 text-white p-4 rounded-xl shadow-lg relative overflow-hidden">
+                            <i class="fas fa-arrows-alt-h absolute -bottom-4 -right-4 text-5xl text-emerald-500 opacity-50"></i>
+                            <h4 class="font-bold text-lg mb-2 relative z-10">Sistem Medium</h4>
+                            <p class="text-xs text-emerald-100 relative z-10">Posisi standar paling aman untuk pukulan normal.</p>
+                        </div>
+                        <div class="infographic-card bg-emerald-800 text-white p-4 rounded-xl shadow-lg relative overflow-hidden">
+                            <i class="fas fa-binoculars absolute -bottom-4 -right-4 text-5xl text-emerald-700 opacity-50"></i>
+                            <h4 class="font-bold text-lg mb-2 relative z-10">Sistem Jauh (Deep)</h4>
+                            <p class="text-xs text-emerald-100 relative z-10">Mundur ke belakang. Hadapi power hitter keras.</p>
+                        </div>
+                    </div>
+
+                    <!-- Eksekusi Gerak -->
+                    <h4 class="font-bold text-gray-800 mt-6 mb-3">Keterampilan Gerak Eksekusi:</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-softball-dark shadow border border-emerald-100"><b>Force Out:</b> Injak base tujuan pelari.</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-softball-dark shadow border border-emerald-100"><b>Run Down:</b> Jebak pelari antar 2 base.</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-softball-dark shadow border border-emerald-100"><b>Bunt Defense:</b> Serbu bola bunt seketika.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Konsep Waktu (Inning) -->
+            <div class="bg-white rounded-3xl p-8 shadow-xl text-center border-t-8 border-softball">
+                <i class="fas fa-stopwatch text-5xl text-softball mb-4"></i>
+                <h3 class="text-2xl font-extrabold text-gray-900 mb-4">Konsep Waktu: INNING</h3>
+                <div class="max-w-3xl mx-auto text-gray-700 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <div class="text-4xl font-black text-softball mb-2">7</div>
+                        <p class="text-sm">Standar permainan terdiri dari <b>7 Inning</b> (babak). Tanpa batasan menit/jam pasti.</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-black text-softball mb-2"><i class="fas fa-sync-alt"></i></div>
+                        <p class="text-sm">Satu inning = 1x giliran memukul (ofensif) & 1x giliran bertahan untuk tiap tim.</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-black text-softball mb-2">3 Outs</div>
+                        <p class="text-sm">Giliran menyerang berakhir & ganti posisi jika lawan mematikan <b>3 pemukul/pelari</b>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="mb-2"><i class="fas fa-trophy text-yellow-500 mr-2"></i> <b>SportPedia</b> Infografis Edukasi Olahraga</p>
+            <p class="text-sm">Dirancang dengan Tailwind CSS untuk pembelajaran yang interaktif dan modern.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
