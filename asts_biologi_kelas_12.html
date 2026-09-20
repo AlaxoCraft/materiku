@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi ASTS Biologi Kelas 12 - SMAN 2 Yogyakarta</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .stem-transition {
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .chrom-anim {
+            transition: all 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-teal-500 selection:text-white">
+
+    <!-- Header & Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-gradient-to-r from-emerald-800 via-teal-800 to-indigo-900 text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-3.5 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-3">
+            <div class="flex items-center space-x-3">
+                <span class="text-3xl p-1.5 bg-white/10 rounded-xl">🧬</span>
+                <div>
+                    <h1 class="text-lg sm:text-xl font-bold tracking-tight leading-tight">Infografis Interaktif ASTS Biologi Kelas XII</h1>
+                    <p class="text-xs text-emerald-200">Berdasarkan Kisi-Kisi Resmi Gasal • SMAN 2 Yogyakarta</p>
+                </div>
+            </div>
+            <nav class="flex flex-wrap gap-1.5 text-xs font-medium">
+                <a href="#pertumbuhan" class="px-3 py-1.5 rounded-lg bg-emerald-700/60 hover:bg-emerald-600 transition">1. Pertumbuhan</a>
+                <a href="#pembelahan" class="px-3 py-1.5 rounded-lg bg-cyan-700/60 hover:bg-cyan-600 transition">2. Pembelahan Sel</a>
+                <a href="#metabolisme" class="px-3 py-1.5 rounded-lg bg-teal-700/60 hover:bg-teal-600 transition">3. Enzim & Fotosintesis</a>
+                <a href="#genetik" class="px-3 py-1.5 rounded-lg bg-indigo-700/60 hover:bg-indigo-600 transition">4. Materi Genetik</a>
+                <a href="#kuis" class="px-3 py-1.5 rounded-lg bg-amber-500 text-slate-900 font-bold hover:bg-amber-400 transition">Latihan Soal</a>
+                <a href="beranda_pembelajaran.html" class="px-3 py-1.5 rounded-lg bg-amber-500 text-slate-900 font-bold hover:bg-amber-400 transition">Kembali</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 space-y-10">
+
+        <!-- Topic Overview Cards -->
+        <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center space-x-3 hover:border-emerald-500 transition">
+                <div class="p-3 bg-emerald-100 text-emerald-700 rounded-xl text-2xl">🌱</div>
+                <div>
+                    <div class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Topik 1</div>
+                    <div class="text-sm font-bold text-slate-800">Pertumbuhan</div>
+                    <div class="text-xs text-emerald-600 font-semibold mt-0.5">Auksin & Etiolasi</div>
+                </div>
+            </div>
+            <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center space-x-3 hover:border-cyan-500 transition">
+                <div class="p-3 bg-cyan-100 text-cyan-700 rounded-xl text-2xl">🔬</div>
+                <div>
+                    <div class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Topik 2</div>
+                    <div class="text-sm font-bold text-slate-800">Pembelahan Sel</div>
+                    <div class="text-xs text-cyan-600 font-semibold mt-0.5">Tahapan Mitosis (PMAT)</div>
+                </div>
+            </div>
+            <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center space-x-3 hover:border-teal-500 transition">
+                <div class="p-3 bg-teal-100 text-teal-700 rounded-xl text-2xl">🧪</div>
+                <div>
+                    <div class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Topik 3</div>
+                    <div class="text-sm font-bold text-slate-800">Enzim & Metabolisme</div>
+                    <div class="text-xs text-teal-600 font-semibold mt-0.5">Katalase, Sachs, Ingenhousz</div>
+                </div>
+            </div>
+            <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center space-x-3 hover:border-indigo-500 transition">
+                <div class="p-3 bg-indigo-100 text-indigo-700 rounded-xl text-2xl">🧬</div>
+                <div>
+                    <div class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Topik 4</div>
+                    <div class="text-sm font-bold text-slate-800">Materi Genetik</div>
+                    <div class="text-xs text-indigo-600 font-semibold mt-0.5">DNA, RNA & Sintesis Protein</div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- MATERI 1: PERTUMBUHAN DAN PERKEMBANGAN -->
+        <section id="pertumbuhan" class="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-200 pb-4">
+                <div class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full mb-2">MODUL 1 (KISI-KISI TOPIK 1)</div>
+                <h2 class="text-2xl font-bold text-slate-900">Pertumbuhan dan Perkembangan Tumbuhan</h2>
+                <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                    <strong>Pertumbuhan</strong> adalah proses pertambahan ukuran (volume, massa, tinggi) pada makhluk hidup yang bersifat <strong>kuantitatif</strong> (dapat diukur dengan angka) dan <strong>ireversibel</strong> (tidak dapat kembali ke ukuran semula) akibat pembelahan sel (hiperplasia) dan pembesaran sel (hipertrofi). Sebaliknya, <strong>perkembangan</strong> bersifat <strong>kualitatif</strong> (proses menuju kedewasaan dan diferensiasi sel).
+                </p>
+            </div>
+
+            <!-- Content Grid 1: Chart & Simulator -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                
+                <!-- Chart Etiolasi -->
+                <div class="space-y-3">
+                    <h3 class="text-base font-semibold text-slate-800 flex items-center gap-2">
+                        <span>📊</span> Analisis Percobaan: Tempat Terang vs Tempat Gelap (Etiolasi)
+                    </h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Cahaya matahari merusak/menghambat kerja hormon <strong>Auksin</strong>. Pada tempat gelap, auksin bekerja maksimal tanpa terurai, memicu pembentangan dinding sel yang sangat cepat namun menghasilkan tanaman yang kurus, pucat (karena kekurangan klorofil), dan lemah. Fenomena ini disebut <strong>Etiolasi</strong>.
+                    </p>
+                    <div class="chart-container bg-slate-50 p-3 rounded-xl border border-slate-100">
+                        <canvas id="chartEtiolasi"></canvas>
+                    </div>
+                </div>
+
+                <!-- Phototropism Simulator -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-4">
+                    <h3 class="text-base font-semibold text-slate-800 flex items-center gap-2">
+                        <span>💡</span> Simulator Mekanisme Fototropisme Batang
+                    </h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Auksin bersifat <i>fotofobik</i> (menjauhi cahaya). Klik tombol arah datangnya sinar matahari untuk melihat bagaimana perpindahan auksin ke sisi gelap memicu pembengkokan batang.
+                    </p>
+
+                    <!-- Control Buttons -->
+                    <div class="flex justify-center gap-2">
+                        <button onclick="setLight('left')" id="btn-left" class="px-3 py-1.5 text-xs font-medium bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition">☀️ Sinar Kiri</button>
+                        <button onclick="setLight('top')" id="btn-top" class="px-3 py-1.5 text-xs font-medium bg-slate-200 text-slate-700 rounded-lg hover:bg-slate-300 transition">☀️ Sinar Tegak</button>
+                        <button onclick="setLight('right')" id="btn-right" class="px-3 py-1.5 text-xs font-medium bg-slate-200 text-slate-700 rounded-lg hover:bg-slate-300 transition">☀️ Sinar Kanan</button>
+                    </div>
+
+                    <!-- Interactive Canvas Box -->
+                    <div class="relative h-44 bg-white rounded-xl border border-slate-200 flex items-end justify-center pb-3 overflow-hidden">
+                        <div id="sun-icon" class="absolute top-3 left-6 text-2xl transition-all duration-500">☀️</div>
+
+                        <div class="relative flex flex-col items-center">
+                            <div id="plant-stem" class="w-4 h-28 bg-emerald-500 rounded-t-full origin-bottom stem-transition relative flex flex-col justify-between">
+                                <div id="auxin-dots" class="absolute inset-0 flex flex-col justify-around px-0.5 opacity-80">
+                                    <div class="flex justify-start"><span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span></div>
+                                    <div class="flex justify-start"><span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span></div>
+                                    <div class="flex justify-start"><span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span></div>
+                                </div>
+                            </div>
+                            <div class="w-16 h-7 bg-amber-800 rounded-b-lg border-t-2 border-amber-900"></div>
+                        </div>
+                    </div>
+
+                    <div id="tropism-explain" class="p-3 bg-emerald-50 text-emerald-900 text-xs rounded-lg border border-emerald-200 leading-relaxed">
+                        <strong>Analisis Fisiologis:</strong> Sinar datang dari sisi kiri. Auksin rusak di sisi terang (kiri) dan terakumulasi di sisi gelap (kanan). Sel sisi gelap memanjang lebih cepat, mendorong batang membengkok ke arah KIRI (ke arah cahaya).
+                    </div>
+                </div>
+            </div>
+
+            <!-- Complete Hormone Summary -->
+            <div class="space-y-3">
+                <h3 class="text-base font-semibold text-slate-800">📌 Tabel Fungsi Hormon Tumbuhan Major (Sesuai Kisi-Kisi)</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+                    <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-xl space-y-1">
+                        <div class="font-bold text-emerald-900 text-sm">1. Auksin (IAA)</div>
+                        <p class="text-slate-600">Merangsang pemanjangan sel, dominansi apikal (menghambat tunas samping), fototropisme, dan memicu pembentukan buah tanpa biji (partenokarpi).</p>
+                    </div>
+                    <div class="p-3 bg-teal-50 border border-teal-200 rounded-xl space-y-1">
+                        <div class="font-bold text-teal-900 text-sm">2. Giberelin (GA)</div>
+                        <p class="text-slate-600">Memetahkan dormansi biji (merangsang sintesis enzim α-amilase saat perkecambahan), memicu pertumbuhan raksasa dan pemanjangan batang.</p>
+                    </div>
+                    <div class="p-3 bg-cyan-50 border border-cyan-200 rounded-xl space-y-1">
+                        <div class="font-bold text-cyan-900 text-sm">3. Sitokinin</div>
+                        <p class="text-slate-600">Merangsang pembelahan sel (sitokinesis), merangsang pertumbuhan tunas lateral (melawan dominansi apikal), dan menunda penuaan daun (senesensi).</p>
+                    </div>
+                    <div class="p-3 bg-indigo-50 border border-indigo-200 rounded-xl space-y-1">
+                        <div class="font-bold text-indigo-900 text-sm">4. Gas Etilen</div>
+                        <p class="text-slate-600">Mempercepat pematangan buah klimakterik, merangsang pengguguran daun dan bunga (absisi). Bekerja sinergis dengan auksin pada pematangan.</p>
+                    </div>
+                    <div class="p-3 bg-rose-50 border border-rose-200 rounded-xl space-y-1">
+                        <div class="font-bold text-rose-900 text-sm">5. Asam Absisat (ABA)</div>
+                        <p class="text-slate-600">Hormon stres: menghambat pertumbuhan, mempertahankan dormansi biji saat kondisi buruk, dan menutup stomata saat kekurangan air.</p>
+                    </div>
+                    <div class="p-3 bg-amber-50 border border-amber-200 rounded-xl space-y-1">
+                        <div class="font-bold text-amber-900 text-sm">6. Kalin (Organogenesis)</div>
+                        <p class="text-slate-600">Memicu pembentukan organ: <i>Rizokalin</i> (akar), <i>Kaulokalin</i> (batang), <i>Filokalin</i> (daun), dan <i>Antokalin/Florigen</i> (bunga).</p>
+                    </div>
+                    <div class="p-3 bg-purple-50 border border-purple-200 rounded-xl space-y-1 sm:col-span-2">
+                        <div class="font-bold text-purple-900 text-sm">7. Asam Traulin (Hormon Luka)</div>
+                        <p class="text-slate-600">Merangsang pembelahan sel pada bagian jaringan tumbuhan yang mengalami luka (proses regenerasi/restitusi sel).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experimental Data Analysis Table -->
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2 text-xs">
+                <h4 class="font-bold text-slate-800 text-sm">📋 Panduan Analisis Data Tabel Percobaan (Soal Isian/Uraian ASTS)</h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-slate-700">
+                    <div class="bg-white p-3 rounded-lg border border-slate-200">
+                        <strong class="text-emerald-700">Variabel Bebas (Independen):</strong> Perlakuan yang sengaja diubah-ubah dalam percobaan (Contoh: Dosis pupuk, pH tanah, atau intensitas cahaya).
+                    </div>
+                    <div class="bg-white p-3 rounded-lg border border-slate-200">
+                        <strong class="text-teal-700">Variabel Terikat (Dependen):</strong> Hasil respons kuantitatif yang diukur atau diamati (Contoh: Pertambahan tinggi batang dalam cm, jumlah daun).
+                    </div>
+                    <div class="bg-white p-3 rounded-lg border border-slate-200">
+                        <strong class="text-indigo-700">Variabel Kontrol:</strong> Faktor luar yang disamakan untuk seluruh kelompok perlakuan (Contoh: Jenis tanah, volume penyiraman air, jenis pot).
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- MATERI 2: PEMBELAHAN SEL (MITOSIS) -->
+        <section id="pembelahan" class="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-200 pb-4">
+                <div class="inline-block px-3 py-1 bg-cyan-100 text-cyan-800 text-xs font-bold rounded-full mb-2">MODUL 2 (KISI-KISI TOPIK 2)</div>
+                <h2 class="text-2xl font-bold text-slate-900">Pembelahan Sel Mitosis & Aktivitas Kromosom</h2>
+                <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                    <strong>Mitosis</strong> adalah pembelahan sel somatik (sel tubuh) yang menghasilkan dua sel anakan yang identik secara genetik dengan sel induk ($2n \rightarrow 2n$). Berfungsi untuk pertumbuhan, perbaikan jaringan rusak, dan reproduksi aseksual. Urutan tahapan utama: <strong>PMAT (Profase, Metafase, Anafase, Telofase)</strong>.
+                </p>
+            </div>
+
+            <!-- Mitosis Interactive Stage Viewer (Chromosome Activity Visuals) -->
+            <div class="bg-slate-900 text-white p-6 rounded-2xl border border-slate-800 space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-slate-800 pb-4">
+                    <div>
+                        <h3 class="text-base font-bold text-cyan-300 flex items-center gap-2">
+                            <span>🔬</span> Visualisasi Interaktif Aktivitas Kromosom Setiap Fase
+                        </h3>
+                        <p class="text-xs text-slate-400">Klik tombol fase untuk melihat perubahan struktur sel, benang spindel, dan posisi kromosom!</p>
+                    </div>
+                    
+                    <!-- Phase Selection Navigation -->
+                    <div class="flex flex-wrap gap-1 text-xs">
+                        <button onclick="showMitosisStage('interfase')" id="tab-interfase" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium transition">Interfase</button>
+                        <button onclick="showMitosisStage('profase')" id="tab-profase" class="px-3 py-1.5 rounded-lg bg-cyan-600 text-white font-bold hover:bg-cyan-500 transition">Profase</button>
+                        <button onclick="showMitosisStage('metafase')" id="tab-metafase" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium transition">Metafase</button>
+                        <button onclick="showMitosisStage('anafase')" id="tab-anafase" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium transition">Anafase</button>
+                        <button onclick="showMitosisStage('telofase')" id="tab-telofase" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium transition">Telofase</button>
+                    </div>
+                </div>
+
+                <!-- Stage Graphic Display Box -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    
+                    <!-- Cell Diagram Area (Pure HTML/Tailwind CSS rendering - NO SVG) -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 flex flex-col items-center justify-center min-h-[260px] relative">
+                        <div id="mitosis-visual-box" class="w-56 h-56 relative flex items-center justify-center transition-all duration-500">
+                            <!-- Rendered dynamically by JavaScript -->
+                        </div>
+                        <div id="mitosis-visual-caption" class="text-[11px] text-cyan-400 font-mono mt-3 text-center">
+                            Fase Profase: Kromatin memadat menjadi kromosom ganda.
+                        </div>
+                    </div>
+
+                    <!-- Explanatory Details Box -->
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-2">
+                            <span id="stage-badge" class="px-2.5 py-1 bg-cyan-500 text-slate-950 font-extrabold text-xs rounded-md">FASE 1: PROFASE</span>
+                            <span id="stage-subtext" class="text-xs text-slate-400 font-medium">Kondensasi Kromatin</span>
+                        </div>
+
+                        <h4 id="stage-title" class="text-lg font-bold text-white">Profase (Tahap Awal Pembelahan)</h4>
+
+                        <ul id="stage-points" class="space-y-2 text-xs text-slate-300 list-disc list-inside leading-relaxed">
+                            <li>Benang-benang <strong>kromatin memadat dan menebal</strong> menjadi kromosom ganda (terdiri dari 2 kromatid saudara).</li>
+                            <li><strong>Membran inti (nukleus) dan nukleolus mulai melebur/menghilang</strong>.</li>
+                            <li>Sentrosom membelah menjadi dua sentriol yang bergerak menuju ke kutub sel yang berlawanan.</li>
+                            <li>Benang-benang spindel (mikrotubulus) mulai terbentang di antara kedua kutub sentriol.</li>
+                        </ul>
+
+                        <div id="stage-note" class="p-3 bg-cyan-950/60 border border-cyan-800/80 rounded-lg text-xs text-cyan-200">
+                            💡 <strong>Kata Kunci ASTS:</strong> Kromatin menebal $\rightarrow$ Kromosom ganda terbentuk $\rightarrow$ Membran inti lebur.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cell Cycle Overview & Plant vs Animal Cytokinesis -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <!-- Doughnut Chart: Cell Cycle Distribution -->
+                <div class="space-y-2">
+                    <h3 class="text-base font-semibold text-slate-800 flex items-center gap-2">
+                        <span>⏱️</span> Proporsi Waktu Siklus Sel: Interfase vs Fase Mitosis (M)
+                    </h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Hampir 90% siklus sel dihabiskan pada tahap <strong>Interfase</strong> ($G_1, S, G_2$) untuk pertumbuhan sel dan replikasi DNA. Pembelahan mitosis ($M$) berlangsung sangat cepat.
+                    </p>
+                    <div class="chart-container bg-slate-50 p-3 rounded-xl border border-slate-100">
+                        <canvas id="chartMitosis"></canvas>
+                    </div>
+                </div>
+
+                <!-- Cytokinesis Difference Card -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <h3 class="text-base font-semibold text-slate-800">⚡ Perbedaan Sitokinesis Sel Hewan vs Sel Tumbuhan</h3>
+                    <div class="space-y-2 text-xs">
+                        <div class="p-3 bg-white rounded-lg border border-slate-200 space-y-1">
+                            <strong class="text-cyan-700">1. Sel Hewan (Lekukan Pembelahan / Cleavage Furrow):</strong>
+                            <p class="text-slate-600">Tidak memiliki dinding sel. Membran sel melekuk ke dalam di daerah ekuator dibantu oleh cincin mikrofilamen aktin/miosin hingga sel terbagi dua.</p>
+                        </div>
+                        <div class="p-3 bg-white rounded-lg border border-slate-200 space-y-1">
+                            <strong class="text-emerald-700">2. Sel Tumbuhan (Pembentukan Dinding Sel / Cell Plate):</strong>
+                            <p class="text-slate-600">Memiliki dinding sel kaku. Vesikel dari badan Golgi berkumpul di tengah sel membentuk vesikel pelat (cell plate), yang berkembang menjadi dinding sel baru.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- MATERI 3: ENZIM DAN METABOLISME -->
+        <section id="metabolisme" class="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-200 pb-4">
+                <div class="inline-block px-3 py-1 bg-teal-100 text-teal-800 text-xs font-bold rounded-full mb-2">MODUL 3 (KISI-KISI TOPIK 3)</div>
+                <h2 class="text-2xl font-bold text-slate-900">Enzim Katalase & Percobaan Fotosintesis</h2>
+                <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                    <strong>Enzim</strong> adalah biokatalisator berbahan protein yang mempercepat reaksi kimia tanpa ikut bereaksi. Enzim <strong>Katalase</strong> memecah sisa metabolisme beracun $H_2O_2 \rightarrow H_2O + O_2$. Pengujian fotosintesis diuji melalui percobaan <strong>Sachs</strong> (amilum) dan <strong>Ingenhousz</strong> (gas $O_2$).
+                </p>
+            </div>
+
+            <!-- Charts Grid: Catalase & Ingenhousz -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Catalase Chart -->
+                <div class="space-y-3">
+                    <h3 class="text-base font-semibold text-slate-800 flex items-center gap-2">
+                        <span>🧪</span> Uji Enzim Katalase (Ekstrak Hati + H2O2)
+                    </h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Suhu tinggi ($80^\circ C$) dan pH ekstrem (asam/basa) merusak struktur protein enzim secara permanen (<strong>denaturasi</strong>), sehingga katalase gagal menguraikan $H_2O_2$ (bara api padam & tidak ada gelembung).
+                    </p>
+                    <div class="chart-container bg-slate-50 p-3 rounded-xl border border-slate-100">
+                        <canvas id="chartCatalase"></canvas>
+                    </div>
+                </div>
+
+                <!-- Ingenhousz Chart -->
+                <div class="space-y-3">
+                    <h3 class="text-base font-semibold text-slate-800 flex items-center gap-2">
+                        <span>🌿</span> Uji Ingenhousz (Produksi O2 Tanaman Hydrilla)
+                    </h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Penambahan serbuk $NaHCO_3$ menambah kadar $CO_2$ terlarut dalam air, secara signifikan melipatgandakan kecepatan fotosintesis (ditandai melimpahnya gelembung gas $O_2$).
+                    </p>
+                    <div class="chart-container bg-slate-50 p-3 rounded-xl border border-slate-100">
+                        <canvas id="chartIngenhousz"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sachs Experiment Workflow -->
+            <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-4">
+                <h3 class="text-base font-semibold text-slate-800 flex items-center gap-2">
+                    <span>🍂</span> Alur & Analisis Langkah Percobaan Uji Sachs (Uji Amilum Fotosintesis)
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="w-8 h-8 mx-auto bg-amber-500 text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                        <div class="font-bold text-slate-800 text-sm">Direbus Air Mendidih</div>
+                        <p class="text-xs text-slate-600">Bertujuan untuk <strong>mematikan sel-sel jaringan daun</strong> agar proses fisiologi/metabolisme terhenti seketika.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="w-8 h-8 mx-auto bg-teal-600 text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                        <div class="font-bold text-slate-800 text-sm">Direbus Alkohol Panas</div>
+                        <p class="text-xs text-slate-600">Langkah krusial untuk <strong>melarutkan klorofil</strong> (pigmen hijau) agar daun menjadi pucat dan tidak mengganggu pengamatan warna.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="w-8 h-8 mx-auto bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                        <div class="font-bold text-slate-800 text-sm">Ditetesi Lugol / Iodium</div>
+                        <p class="text-xs text-slate-600">Bagian daun yang terkena cahaya berubah menjadi <strong>biru kehitaman</strong> (positif amilum), sedangkan bagian tertutup tetap pucat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- MATERI 4: MATERI GENETIK DAN SINTESIS PROTEIN -->
+        <section id="genetik" class="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-200 pb-4">
+                <div class="inline-block px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-bold rounded-full mb-2">MODUL 4 (KISI-KISI TOPIK 4)</div>
+                <h2 class="text-2xl font-bold text-slate-900">Materi Genetik & Simulasi Sintesis Protein</h2>
+                <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                    Sintesis protein terdiri dari dua tahap utama: <strong>Transkripsi</strong> (pencetakan mRNA oleh DNA <i>Sense/Template</i> di dalam nukleus) dan <strong>Translasi</strong> (penerjemahan kodon mRNA oleh tRNA menjadi urutan asam amino di ribosom).
+                </p>
+            </div>
+
+            <!-- Comparison Matrix DNA vs RNA -->
+            <div class="space-y-2">
+                <h3 class="text-base font-semibold text-slate-800">📊 Tabel Perbandingan Karakteristik Struktur DNA vs RNA</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse bg-slate-50 rounded-xl overflow-hidden border border-slate-200 text-xs sm:text-sm">
+                        <thead>
+                            <tr class="bg-indigo-900 text-white">
+                                <th class="p-3">Fitur Pembanding</th>
+                                <th class="p-3">DNA (Deoxyribonucleic Acid)</th>
+                                <th class="p-3">RNA (Ribonucleic Acid)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-slate-700">
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-800">Bentuk Rantai</td>
+                                <td class="p-3">Ganda Berpilin (Double Helix), Sangat Panjang</td>
+                                <td class="p-3">Tunggal (Single Strand), Pendek</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-800">Gula Pentosa</td>
+                                <td class="p-3">Deoksiribosa (kehilangan 1 atom oksigen)</td>
+                                <td class="p-3">Ribosa</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-800">Basa Pirimidin</td>
+                                <td class="p-3 font-bold text-emerald-700">Timin (T) & Sitosin (C)</td>
+                                <td class="p-3 font-bold text-rose-700">Urasil (U) & Sitosin (C)</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-800">Lokasi Utama</td>
+                                <td class="p-3">Nukleus, Mitokondria, Kloroplas</td>
+                                <td class="p-3">Sitoplasma, Ribosom, Nukleus</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-800">Kadar Sifat</td>
+                                <td class="p-3">Tetap (Tidak dipengaruhi aktivitas sintesis)</td>
+                                <td class="p-3">Berubah-ubah (Sesuai kebutuhan sintesis protein)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Interactive Protein Synthesis Tool -->
+            <div class="bg-indigo-950 text-white p-6 rounded-2xl space-y-5 border border-indigo-900">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                    <div>
+                        <h3 class="text-base font-bold text-indigo-200 flex items-center gap-2">
+                            <span>⚙️</span> Simulator Otomatis Transkripsi & Translasi Sintesis Protein
+                        </h3>
+                        <p class="text-xs text-indigo-300">Ketik triplet basa DNA Sense (3' $\rightarrow$ 5') untuk melihat hasil mRNA, tRNA, dan jenis Asam Aminonya!</p>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button onclick="setSampleDNA('TAC CGC TCG ACT')" class="px-2.5 py-1 bg-indigo-800 hover:bg-indigo-700 rounded border border-indigo-600 transition">Contoh 1</button>
+                        <button onclick="setSampleDNA('TAC AAA CTG ATT')" class="px-2.5 py-1 bg-indigo-800 hover:bg-indigo-700 rounded border border-indigo-600 transition">Contoh 2</button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <input id="dna-input" type="text" value="TAC CGC TCG ACT" class="flex-1 px-4 py-2.5 rounded-lg bg-indigo-900 text-white border border-indigo-700 focus:outline-none focus:border-amber-400 font-mono tracking-wider text-sm uppercase" placeholder="Contoh: TAC CGC TCG ACT">
+                    <button onclick="runSynthesis()" class="px-6 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-lg transition text-sm">Proses Sintesis 🚀</button>
+                </div>
+
+                <!-- Outputs -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-mono">
+                    <div class="bg-indigo-900/70 p-4 rounded-xl border border-indigo-800 space-y-1">
+                        <div class="text-indigo-400 font-sans text-xs font-bold">1. TRANSKRIPSI (di Nukleus)</div>
+                        <div class="text-slate-300">DNA Sense: <span id="out-dna" class="text-amber-300 font-bold">TAC CGC TCG ACT</span></div>
+                        <div class="text-slate-300">mRNA (Kodon): <span id="out-mrna" class="text-emerald-400 font-bold">AUG GCG AGC UGA</span></div>
+                    </div>
+
+                    <div class="bg-indigo-900/70 p-4 rounded-xl border border-indigo-800 space-y-1">
+                        <div class="text-indigo-400 font-sans text-xs font-bold">2. TRANSLASI (di Ribosom)</div>
+                        <div class="text-slate-300">tRNA (Antikodon): <span id="out-trna" class="text-cyan-300 font-bold">UAC CGC UCG ACU</span></div>
+                        <div class="text-slate-300">Sifat: <span class="text-slate-400">Komplementer mRNA</span></div>
+                    </div>
+
+                    <div class="bg-indigo-900/70 p-4 rounded-xl border border-indigo-800 space-y-1">
+                        <div class="text-indigo-400 font-sans text-xs font-bold">3. RANTAI POLIPEPTIDA</div>
+                        <div id="out-amino" class="text-amber-400 font-bold text-sm leading-relaxed mt-1">
+                            Metionin - Alanin - Serin - STOP
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- MATERI 5: LATIHAN SOAL INTERAKTIF (KISI-KISI COMPLETE) -->
+        <section id="kuis" class="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-200 pb-4 flex justify-between items-center flex-wrap gap-2">
+                <div>
+                    <div class="inline-block px-3 py-1 bg-amber-100 text-amber-900 text-xs font-bold rounded-full mb-2">EVALUASI DIRI</div>
+                    <h2 class="text-2xl font-bold text-slate-900">Simulasi Latihan Soal ASTS Biologi</h2>
+                </div>
+                <div class="text-right">
+                    <span class="text-xs text-slate-500">Skor Anda:</span>
+                    <div id="quiz-score" class="text-2xl font-extrabold text-emerald-600">0 / 4</div>
+                </div>
+            </div>
+
+            <div class="space-y-5" id="quiz-container">
+                <!-- Q1: Pertumbuhan -->
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3">
+                    <div class="font-semibold text-slate-800 text-sm">1. [Pertumbuhan] Tanaman di tempat gelap mengalami etiolasi dengan ciri tinggi batang bertambah sangat cepat namun pucat. Hal ini terjadi karena...</div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                        <button onclick="checkAnswer(1, 'A', false, this)" class="q1-btn text-left p-3 bg-white border border-slate-200 rounded-lg hover:bg-slate-100 transition">A. Hormon auksin rusak terpapar cahaya matahari</button>
+                        <button onclick="checkAnswer(1, 'B', true, this)" class="q1-btn text-left p-3 bg-white border border-slate-200 rounded-lg hover:bg-slate-100 transition">B. Auksin terakumulasi di tempat gelap memicu pemanjangan sel cepat</button>
+                        <button onclick="checkAnswer(1, 'C', false, this)" class="q1-btn text-left p-3 bg-white border border-slate-200 rounded-lg hover:bg-slate-100 transition">C. Gas etilen menghambat pertumbuhan klorofil sel</button>
+                        <button onclick="checkAnswer(1, 'D', false, this)" class="q1-btn text-left p-3 bg-white border border-slate-200 rounded-lg hover:bg-slate-100 transition">D. Asam absisat mengaktifkan pembelahan sel akar</button>
+                    </div>
+                    <div id="q1-feedback" class="hidden p-2.5 text-xs rounded-md"></div>
+                </div>
+
+                <!-- Q2: Mitosis -->
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3">
+                    <div class="font-semibold text-slate-800 text-sm">2. [Pembelahan Sel] Ciri utama aktivitas kromosom pada saat sel berada pada fase Metafase pembelahan mitosis adalah...</div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                        <button onclick="checkAnswer(2, 'A', false, this)" class="q2-btn text-left p-3 bg-white border border-slate-200 rounded-lg hover:bg-slate-100 transition">A. Kromatid saudara berpisah menuju kutub berlawanan</button>
+                        <button onclick="checkAnswer(2, 'B', true, this)" class="q2-btn text-left p-3 bg-white border border-slate-200 rounded-lg hover:bg-slate-100 transition">B. Kromosom berjejer sejajar pada bidang ekuator (tengah sel)</button>
+                        <button onclick="checkAnswer(2, 'C', false, this)" class="q2-btn text-left p-3 bg-white border border-slate-200 rounded-lg hover:bg-slate-100 transition">C. Kromatin baru mulai mengondensasi menjadi kromosom</button>
+                        <button onclick="checkAnswer(2, 'D', false, this)" class="q2-btn text-left p-3 bg-white border border-slate-200 rounded-lg hover:bg-slate-100 transition">D. Membran inti terbentuk kembali membungkus kromatid</button>
+                    </div>
+                    <div id="q2-feedback" class="hidden p-2.5 text-xs rounded-md"></div>
+                </div>
+
+                <!-- Q3: Enzim Katalase -->
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3">
+                    <div class="font-semibold text-slate-800 text-sm">3. [Metabolisme] Mengapa ekstrak hati ayam yang dipanaskan hingga 80°C tidak menghasilkan gelembung gas saat ditetesi H2O2?</div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                        <button onclick="checkAnswer(3, 'A', false, this)" class="q3-btn text-left p-3 bg-white border border-slate-200 rounded-lg hover:bg-slate-100 transition">A. Larutan H2O2 telah menguap akibat suhu panas</button>
+                        <button onclick="checkAnswer(3, 'B', true, this)" class="q3-btn text-left p-3 bg-white border border-slate-200 rounded-lg hover:bg-slate-100 transition">B. Enzim katalase mengalami denaturasi (kerusakan struktur protein)</button>
+                        <button onclick="checkAnswer(3, 'C', false, this)" class="q3-btn text-left p-3 bg-white border border-slate-200 rounded-lg hover:bg-slate-100 transition">C. Enzim katalase bekerja optimal hanya pada kondisi asam</button>
+                        <button onclick="checkAnswer(3, 'D', false, this)" class="q3-btn text-left p-3 bg-white border border-slate-200 rounded-lg hover:bg-slate-100 transition">D. Gas O2 terlarut sempurna dalam substrat H2O2</button>
+                    </div>
+                    <div id="q3-feedback" class="hidden p-2.5 text-xs rounded-md"></div>
+                </div>
+
+                <!-- Q4: Materi Genetik -->
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3">
+                    <div class="font-semibold text-slate-800 text-sm">4. [Materi Genetik] Jika rantai DNA Sense (Template) memiliki urutan basa TAC - CGC - TTA, maka urutan basa mRNA (Kodon) hasil transkripsi adalah...</div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                        <button onclick="checkAnswer(4, 'A', false, this)" class="q4-btn text-left p-3 bg-white border border-slate-200 rounded-lg hover:bg-slate-100 transition">A. ATG - CGC - AAT</button>
+                        <button onclick="checkAnswer(4, 'B', false, this)" class="q4-btn text-left p-3 bg-white border border-slate-200 rounded-lg hover:bg-slate-100 transition">B. UAC - CGC - UUA</button>
+                        <button onclick="checkAnswer(4, 'C', true, this)" class="q4-btn text-left p-3 bg-white border border-slate-200 rounded-lg hover:bg-slate-100 transition">C. AUG - GCG - AAU</button>
+                        <button onclick="checkAnswer(4, 'D', false, this)" class="q4-btn text-left p-3 bg-white border border-slate-200 rounded-lg hover:bg-slate-100 transition">D. AUG - GCG - UUA</button>
+                    </div>
+                    <div id="q4-feedback" class="hidden p-2.5 text-xs rounded-md"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-2">
+            <p class="text-slate-300 font-semibold">Infografis Interaktif ASTS Biologi Kelas XII - SMAN 2 Yogyakarta</p>
+            <p>Dikembangkan secara komprehensif berdasarkan Indikator Kisi-Kisi ASTS Gasal T.A. 2026/2027.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Engines & Visualizers -->
+    <script>
+        /* Shared Standard Chart Tooltip Callback */
+        const standardTooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        /* 1. Chart Etiolasi (Line Chart) */
+        const ctxEtiolasi = document.getElementById('chartEtiolasi').getContext('2d');
+        new Chart(ctxEtiolasi, {
+            type: 'line',
+            data: {
+                labels: ['Hari 1', 'Hari 2', 'Hari 3', 'Hari 4', 'Hari 5', 'Hari 6', 'Hari 7'],
+                datasets: [
+                    {
+                        label: 'Tempat Gelap (Etiolasi)',
+                        data: [2.0, 4.8, 8.5, 12.3, 16.0, 19.8, 23.5],
+                        borderColor: '#f59e0b',
+                        backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                        fill: true,
+                        tension: 0.3,
+                        borderWidth: 3
+                    },
+                    {
+                        label: 'Tempat Terang (Normal)',
+                        data: [1.2, 2.5, 4.1, 5.8, 7.6, 9.3, 11.0],
+                        borderColor: '#10b981',
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        fill: true,
+                        tension: 0.3,
+                        borderWidth: 3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top', labels: { boxWidth: 12, font: { size: 11 } } },
+                    tooltip: standardTooltipConfig
+                },
+                scales: {
+                    y: { title: { display: true, text: 'Tinggi Batang (cm)', font: { size: 10 } } }
+                }
+            }
+        });
+
+        /* 2. Chart Mitosis (Doughnut Chart) */
+        const ctxMitosis = document.getElementById('chartMitosis').getContext('2d');
+        new Chart(ctxMitosis, {
+            type: 'doughnut',
+            data: {
+                labels: [
+                    ['Interfase (G1, S, G2)', 'Persiapan & Replikasi'],
+                    ['Profase (Kromatin', 'ke Kromosom)'],
+                    ['Metafase (Ekuator', 'Sel)'],
+                    ['Anafase (Pemisahan', 'Kromatid)'],
+                    ['Telofase &', 'Sitokinesis']
+                ],
+                datasets: [{
+                    data: [88, 5, 2, 2, 3],
+                    backgroundColor: ['#0f766e', '#0891b2', '#0284c7', '#4f46e5', '#d97706']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'right', labels: { boxWidth: 12, font: { size: 10 } } },
+                    tooltip: standardTooltipConfig
+                }
+            }
+        });
+
+        /* 3. Chart Catalase (Bar Chart) */
+        const ctxCatalase = document.getElementById('chartCatalase').getContext('2d');
+        new Chart(ctxCatalase, {
+            type: 'bar',
+            data: {
+                labels: [
+                    ['Netral (37°C)', 'Kondisi Normal'],
+                    ['Dipanaskan', '(Suhu 80°C)'],
+                    ['Didinginkan', '(Suhu 0°C)'],
+                    ['Asam (pH 2)', 'Ekstrem'],
+                    ['Basa (pH 12)', 'Ekstrem']
+                ],
+                datasets: [
+                    {
+                        label: 'Gelembung Gas O2',
+                        data: [100, 0, 25, 0, 30],
+                        backgroundColor: '#0d9488'
+                    },
+                    {
+                        label: 'Intensitas Nyala Api',
+                        data: [100, 0, 20, 0, 15],
+                        backgroundColor: '#f59e0b'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top', labels: { boxWidth: 12, font: { size: 10 } } },
+                    tooltip: standardTooltipConfig
+                },
+                scales: {
+                    y: { title: { display: true, text: 'Aktivitas Enzim (%)', font: { size: 10 } }, max: 110 }
+                }
+            }
+        });
+
+        /* 4. Chart Ingenhousz (Bar Chart) */
+        const ctxIngenhousz = document.getElementById('chartIngenhousz').getContext('2d');
+        new Chart(ctxIngenhousz, {
+            type: 'bar',
+            data: {
+                labels: [
+                    ['Tempat Gelap', '(Tanpa Cahaya)'],
+                    ['Cahaya Redup', '(Ruangan)'],
+                    ['Cahaya Terang', '(Matahari)'],
+                    ['Cahaya Terang', '+ NaHCO3 (CO2)']
+                ],
+                datasets: [{
+                    label: 'Gelembung O2 / Menit',
+                    data: [2, 15, 48, 95],
+                    backgroundColor: ['#64748b', '#38bdf8', '#10b981', '#059669']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: standardTooltipConfig
+                },
+                scales: {
+                    y: { title: { display: true, text: 'Jumlah Gelembung O2', font: { size: 10 } } }
+                }
+            }
+        });
+
+        /* Phototropism Simulator Engine */
+        function setLight(direction) {
+            const stem = document.getElementById('plant-stem');
+            const sun = document.getElementById('sun-icon');
+            const explain = document.getElementById('tropism-explain');
+            const btnLeft = document.getElementById('btn-left');
+            const btnTop = document.getElementById('btn-top');
+            const btnRight = document.getElementById('btn-right');
+
+            btnLeft.className = "px-3 py-1.5 text-xs font-medium rounded-lg transition bg-slate-200 text-slate-700 hover:bg-slate-300";
+            btnTop.className = "px-3 py-1.5 text-xs font-medium rounded-lg transition bg-slate-200 text-slate-700 hover:bg-slate-300";
+            btnRight.className = "px-3 py-1.5 text-xs font-medium rounded-lg transition bg-slate-200 text-slate-700 hover:bg-slate-300";
+
+            if (direction === 'left') {
+                btnLeft.className = "px-3 py-1.5 text-xs font-medium rounded-lg transition bg-emerald-600 text-white";
+                stem.style.transform = "rotate(-22deg)";
+                sun.style.left = "10%";
+                sun.style.right = "auto";
+                explain.innerHTML = "<strong>Analisis Fisiologis:</strong> Sinar datang dari sisi kiri. Auksin rusak di sisi terang (kiri) dan terakumulasi di sisi gelap (kanan). Sel sisi kanan memanjang lebih cepat, mendorong batang membengkok ke arah <strong>KIRI</strong>.";
+            } else if (direction === 'top') {
+                btnTop.className = "px-3 py-1.5 text-xs font-medium rounded-lg transition bg-emerald-600 text-white";
+                stem.style.transform = "rotate(0deg)";
+                sun.style.left = "48%";
+                explain.innerHTML = "<strong>Analisis Fisiologis:</strong> Sinar datang lurus dari atas. Distribusi auksin simetris merata di seluruh sisi. Tanaman tumbuh lurus tegak ke atas secara seimbang.";
+            } else if (direction === 'right') {
+                btnRight.className = "px-3 py-1.5 text-xs font-medium rounded-lg transition bg-emerald-600 text-white";
+                stem.style.transform = "rotate(22deg)";
+                sun.style.left = "80%";
+                explain.innerHTML = "<strong>Analisis Fisiologis:</strong> Sinar datang dari sisi kanan. Auksin terakumulasi di sisi gelap (kiri). Sel sisi kiri memanjang cepat, mendorong batang membengkok ke arah <strong>KANAN</strong>.";
+            }
+        }
+
+        /* Dynamic Chromosome & Mitosis Visualizer Engine (NO SVG) */
+        const mitosisStageData = {
+            'interfase': {
+                badge: 'FASE SIKLUS: INTERFASE',
+                subtext: 'Replikasi DNA & Persiapan',
+                title: 'Interfase (Fase Istirahat Aktif)',
+                caption: 'Interfase: Membran inti utuh, DNA berbentuk benang kromatin halus.',
+                points: [
+                    'Sel melakukan metabolisme aktif, pertumbuhan ukuran sel, dan sintesis protein.',
+                    'Terbagi 3 sub-fase: <strong>G1</strong> (pertumbuhan awal), <strong>S</strong> (replikasi/sintesis DNA), dan <strong>G2</strong> (persiapan akhir energi ATP).',
+                    'Materi genetik masih berbentuk benang-benang halus yang terurai yang disebut <strong>Kromatin</strong>.',
+                    'Membran inti (nukleus) dan nukleolus masih utuh terlihat jelas.'
+                ],
+                note: '💡 <strong>Kata Kunci ASTS:</strong> Replikasi DNA $\rightarrow$ Kromatin halus $\rightarrow$ Membran inti utuh.',
+                htmlVisual: `
+                    <div class="w-48 h-48 rounded-full border-2 border-slate-700 relative flex items-center justify-center bg-slate-900/40">
+                        <div class="w-32 h-32 rounded-full border-2 border-dashed border-cyan-400/80 flex items-center justify-center relative bg-cyan-950/30">
+                            <!-- Chromatin Strands -->
+                            <div class="w-20 h-20 border border-slate-400/50 rounded-full flex flex-wrap gap-1 p-2 items-center justify-center rotate-12">
+                                <span class="w-8 h-0.5 bg-slate-300 rounded transform rotate-45"></span>
+                                <span class="w-10 h-0.5 bg-slate-400 rounded transform -rotate-12"></span>
+                                <span class="w-6 h-0.5 bg-slate-300 rounded transform rotate-75"></span>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-6 w-3 h-3 bg-amber-400 rounded-full border border-amber-200"></div>
+                    </div>`
+            },
+            'profase': {
+                badge: 'FASE 1: PROFASE',
+                subtext: 'Kondensasi Kromatin',
+                title: 'Profase (Kromatin Memadat Jadi Kromosom)',
+                caption: 'Profase: Kromatin menebal menjadi kromosom ganda, membran inti mulai melebur.',
+                points: [
+                    'Benang kromatin memadat dan memendek menjadi <strong>Kromosom ganda</strong>.',
+                    'Setiap kromosom terdiri dari dua kromatid saudara yang terikat pada sentromer.',
+                    'Membran inti (nukleus) dan nukleolus mulai melebur/menghilang.',
+                    'Sentrosom membelah menjadi dua sentriol yang bergerak menuju kutub berlawanan memancarkan benang spindel.'
+                ],
+                note: '💡 <strong>Kata Kunci ASTS:</strong> Kondensasi kromatin $\rightarrow$ Nukleus lebur $\rightarrow$ Spindel terbentuk.',
+                htmlVisual: `
+                    <div class="w-48 h-48 rounded-full border-2 border-slate-700 relative flex items-center justify-center bg-slate-900/40">
+                        <div class="w-32 h-32 rounded-full border border-dashed border-cyan-500/30 flex items-center justify-center relative">
+                            <!-- X Chromosomes -->
+                            <div class="absolute flex gap-3 items-center justify-center">
+                                <div class="relative w-4 h-8 flex items-center justify-center">
+                                    <div class="w-1.5 h-8 bg-pink-500 rounded-full transform rotate-45 absolute"></div>
+                                    <div class="w-1.5 h-8 bg-pink-500 rounded-full transform -rotate-45 absolute"></div>
+                                </div>
+                                <div class="relative w-4 h-8 flex items-center justify-center">
+                                    <div class="w-1.5 h-8 bg-cyan-400 rounded-full transform rotate-45 absolute"></div>
+                                    <div class="w-1.5 h-8 bg-cyan-400 rounded-full transform -rotate-45 absolute"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-2 left-6 w-3 h-3 bg-amber-400 rounded-full"></div>
+                        <div class="absolute bottom-2 right-6 w-3 h-3 bg-amber-400 rounded-full"></div>
+                    </div>`
+            },
+            'metafase': {
+                badge: 'FASE 2: METAFASE',
+                subtext: 'Bidang Ekuator Sel',
+                title: 'Metafase (Kromosom Berjajar di Tengah)',
+                caption: 'Metafase: Kromosom sejajar di bidang ekuator. Paling jelas untuk analisis Karyotype.',
+                points: [
+                    'Membran inti telah lebur sepenuhnya.',
+                    'Kromosom berjajar sangat rapi pada <strong>bidang ekuator (metafase plate / tengah sel)</strong>.',
+                    'Benang spindel terikat kuat pada kinetokor di sentromer setiap kromosom.',
+                    'Tahap ini adalah saat terbaik untuk mengamati jumlah dan bentuk kromosom (Analisis Karyotype).'
+                ],
+                note: '💡 <strong>Kata Kunci ASTS:</strong> Bidang ekuator $\rightarrow$ Tengah sel $\rightarrow$ Uji Karyotype.',
+                htmlVisual: `
+                    <div class="w-48 h-48 rounded-full border-2 border-slate-700 relative flex items-center justify-center bg-slate-900/40">
+                        <!-- Spindle lines -->
+                        <div class="absolute inset-0 flex items-center justify-between px-2 opacity-30">
+                            <div class="w-full h-0.5 bg-cyan-300"></div>
+                        </div>
+                        <!-- Vertical Metaphase Plate Chromosomes -->
+                        <div class="flex flex-col gap-2 items-center justify-center z-10">
+                            <div class="relative w-6 h-4 flex items-center justify-center">
+                                <div class="w-6 h-1.5 bg-pink-500 rounded-full transform rotate-45 absolute"></div>
+                                <div class="w-6 h-1.5 bg-pink-500 rounded-full transform -rotate-45 absolute"></div>
+                            </div>
+                            <div class="relative w-6 h-4 flex items-center justify-center">
+                                <div class="w-6 h-1.5 bg-cyan-400 rounded-full transform rotate-45 absolute"></div>
+                                <div class="w-6 h-1.5 bg-cyan-400 rounded-full transform -rotate-45 absolute"></div>
+                            </div>
+                            <div class="relative w-6 h-4 flex items-center justify-center">
+                                <div class="w-6 h-1.5 bg-amber-400 rounded-full transform rotate-45 absolute"></div>
+                                <div class="w-6 h-1.5 bg-amber-400 rounded-full transform -rotate-45 absolute"></div>
+                            </div>
+                        </div>
+                        <div class="absolute left-2 w-3 h-3 bg-amber-400 rounded-full"></div>
+                        <div class="absolute right-2 w-3 h-3 bg-amber-400 rounded-full"></div>
+                    </div>`
+            },
+            'anafase': {
+                badge: 'FASE 3: ANAFASE',
+                subtext: 'Pemisahan Kromatid',
+                title: 'Anafase (Kromatid Bergerak ke Kutub)',
+                caption: 'Anafase: Sentromer membelah, kromatid saudara ditarik ke kutub berlawanan.',
+                points: [
+                    'Sentromer membelah sehingga kromatid saudara terpisah satu sama lain.',
+                    'Benang spindel memendek, menarik kromatid bergerak menuju ke <strong>kutub sel yang berlawanan</strong>.',
+                    'Setiap kromatid tunggal kini bertindak sebagai kromosom anakan.',
+                    'Ciri visual khas: kromatid membentuk huruf "V" mengarah ke kutub masing-masing.'
+                ],
+                note: '💡 <strong>Kata Kunci ASTS:</strong> Pemisahan kromatid $\rightarrow$ Bergerak ke kutub berlawanan.',
+                htmlVisual: `
+                    <div class="w-48 h-48 rounded-full border-2 border-slate-700 relative flex items-center justify-center bg-slate-900/40 px-4">
+                        <!-- Chromatids Moving Left -->
+                        <div class="flex flex-col gap-3 items-center absolute left-8">
+                            <span class="text-pink-500 font-extrabold text-sm">&lt;</span>
+                            <span class="text-cyan-400 font-extrabold text-sm">&lt;</span>
+                            <span class="text-amber-400 font-extrabold text-sm">&lt;</span>
+                        </div>
+                        <!-- Chromatids Moving Right -->
+                        <div class="flex flex-col gap-3 items-center absolute right-8">
+                            <span class="text-pink-500 font-extrabold text-sm">&gt;</span>
+                            <span class="text-cyan-400 font-extrabold text-sm">&gt;</span>
+                            <span class="text-amber-400 font-extrabold text-sm">&gt;</span>
+                        </div>
+                        <div class="absolute left-2 w-3 h-3 bg-amber-400 rounded-full"></div>
+                        <div class="absolute right-2 w-3 h-3 bg-amber-400 rounded-full"></div>
+                    </div>`
+            },
+            'telofase': {
+                badge: 'FASE 4: TELOFASE & SITOKINESIS',
+                subtext: 'Pembentukan Dua Sel Anakan',
+                title: 'Telofase & Sitokinesis (Pembagian Sitoplasma)',
+                caption: 'Telofase: Membran inti terbentuk kembali, diikuti pembelahan sitoplasma.',
+                points: [
+                    'Kromatid telah sampai di masing-masing kutub sel dan mulai terurai kembali menjadi benang kromatin.',
+                    '<strong>Membran inti dan nukleolus terbentuk kembali</strong> mengelilingi kromosom di kedua kutub.',
+                    'Benang spindel terurai dan lenyap.',
+                    'Diikuti <strong>Sitokinesis</strong> (pembelahan sitoplasma) membentuk dua sel anakan identik ($2n$).'
+                ],
+                note: '💡 <strong>Kata Kunci ASTS:</strong> Membran inti terbentuk $\rightarrow$ Sitokinesis $\rightarrow$ 2 Sel anakan.',
+                htmlVisual: `
+                    <div class="w-52 h-40 border-2 border-slate-700 relative flex items-center justify-between px-3 bg-slate-900/40 rounded-[40px]">
+                        <!-- Left Cell Nucleus Reforming -->
+                        <div class="w-20 h-20 rounded-full border-2 border-dashed border-cyan-400 flex items-center justify-center bg-cyan-950/40">
+                            <span class="w-8 h-0.5 bg-pink-400 rounded transform rotate-45"></span>
+                        </div>
+                        <!-- Cleavage Furrow Pinch -->
+                        <div class="w-0.5 h-full bg-slate-800 flex flex-col justify-between items-center">
+                            <div class="w-3 h-3 bg-slate-950 border border-slate-700 rounded-full -mt-1"></div>
+                            <div class="w-3 h-3 bg-slate-950 border border-slate-700 rounded-full -mb-1"></div>
+                        </div>
+                        <!-- Right Cell Nucleus Reforming -->
+                        <div class="w-20 h-20 rounded-full border-2 border-dashed border-cyan-400 flex items-center justify-center bg-cyan-950/40">
+                            <span class="w-8 h-0.5 bg-cyan-400 rounded transform -rotate-45"></span>
+                        </div>
+                    </div>`
+            }
+        };
+
+        function showMitosisStage(stageKey) {
+            const data = mitosisStageData[stageKey];
+            if (!data) return;
+
+            // Update Tab active UI
+            ['interfase', 'profase', 'metafase', 'anafase', 'telofase'].forEach(k => {
+                const btn = document.getElementById(`tab-${k}`);
+                if (k === stageKey) {
+                    btn.className = "px-3 py-1.5 rounded-lg bg-cyan-600 text-white font-bold hover:bg-cyan-500 transition shadow";
+                } else {
+                    btn.className = "px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium transition";
+                }
+            });
+
+            // Update Content Text
+            document.getElementById('stage-badge').innerText = data.badge;
+            document.getElementById('stage-subtext').innerText = data.subtext;
+            document.getElementById('stage-title').innerText = data.title;
+            document.getElementById('mitosis-visual-caption').innerText = data.caption;
+            document.getElementById('stage-note').innerHTML = data.note;
+
+            // Update Bullets
+            const pointsList = document.getElementById('stage-points');
+            pointsList.innerHTML = data.points.map(pt => `<li>${pt}</li>`).join('');
+
+            // Update Visual
+            document.getElementById('mitosis-visual-box').innerHTML = data.htmlVisual;
+        }
+
+        // Initialize Mitosis visual on profase
+        showMitosisStage('profase');
+
+
+        /* Interactive Protein Synthesis Converter Engine */
+        const aminoMap = {
+            'AUG': 'Metionin (START)', 'GCG': 'Alanin', 'AGC': 'Serin', 'UGA': 'STOP',
+            'UAA': 'STOP', 'UAG': 'STOP', 'UUU': 'Fenilalanin', 'UUC': 'Fenilalanin',
+            'UUA': 'Leusin', 'UUG': 'Leusin', 'AAU': 'Asparagin', 'AAC': 'Asparagin',
+            'CGC': 'Arginin', 'ACU': 'Treonin', 'GAC': 'Asam Aspartat', 'CTG': 'Leusin'
+        };
+
+        function setSampleDNA(sampleStr) {
+            document.getElementById('dna-input').value = sampleStr;
+            runSynthesis();
+        }
+
+        function runSynthesis() {
+            const dnaInput = document.getElementById('dna-input').value.trim().toUpperCase().split(/\s+/);
+            let mrnaArray = [];
+            let trnaArray = [];
+            let aminoArray = [];
+
+            dnaInput.forEach(triplet => {
+                let mrnaTriplet = '';
+                let trnaTriplet = '';
+
+                for (let i = 0; i < triplet.length; i++) {
+                    let base = triplet[i];
+                    // DNA Sense -> mRNA
+                    if (base === 'A') mrnaTriplet += 'U';
+                    else if (base === 'T') mrnaTriplet += 'A';
+                    else if (base === 'G') mrnaTriplet += 'C';
+                    else if (base === 'C') mrnaTriplet += 'G';
+                    else mrnaTriplet += '?';
+
+                    // mRNA -> tRNA
+                    let mBase = mrnaTriplet[i];
+                    if (mBase === 'A') trnaTriplet += 'U';
+                    else if (mBase === 'U') trnaTriplet += 'A';
+                    else if (mBase === 'G') trnaTriplet += 'C';
+                    else if (mBase === 'C') trnaTriplet += 'G';
+                    else trnaTriplet += '?';
+                }
+
+                mrnaArray.push(mrnaTriplet);
+                trnaArray.push(trnaTriplet);
+                let aa = aminoMap[mrnaTriplet] || 'Asam Amino X';
+                aminoArray.push(aa);
+            });
+
+            document.getElementById('out-dna').innerText = dnaInput.join(' - ');
+            document.getElementById('out-mrna').innerText = mrnaArray.join(' - ');
+            document.getElementById('out-trna').innerText = trnaArray.join(' - ');
+            document.getElementById('out-amino').innerText = aminoArray.join(' — ');
+        }
+
+        /* Interactive Quiz Engine */
+        let score = 0;
+        let answered = { 1: false, 2: false, 3: false, 4: false };
+
+        function checkAnswer(qNum, choice, isCorrect, btnElement) {
+            if (answered[qNum]) return;
+            answered[qNum] = true;
+
+            const feedbackEl = document.getElementById(`q${qNum}-feedback`);
+            feedbackEl.classList.remove('hidden');
+
+            const allBtns = document.querySelectorAll(`.q${qNum}-btn`);
+            allBtns.forEach(b => b.disabled = true);
+
+            if (isCorrect) {
+                btnElement.classList.remove('bg-white', 'border-slate-200');
+                btnElement.classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-900', 'font-bold');
+                feedbackEl.className = "p-2.5 text-xs rounded-md bg-emerald-100 text-emerald-800 font-medium";
+                feedbackEl.innerHTML = "✅ <strong>Jawaban Benar!</strong> Analisis Anda sesuai dengan konsep kisi-kisi.";
+                score++;
+            } else {
+                btnElement.classList.remove('bg-white', 'border-slate-200');
+                btnElement.classList.add('bg-rose-100', 'border-rose-500', 'text-rose-900');
+                feedbackEl.className = "p-2.5 text-xs rounded-md bg-rose-100 text-rose-800 font-medium";
+                feedbackEl.innerHTML = "❌ <strong>Kurang Tepat.</strong> Tinjau modul infografis pada bagian topik terkait di atas.";
+            }
+
+            document.getElementById('quiz-score').innerText = `${score} / 4`;
+        }
+    </script>
+</body>
+</html>

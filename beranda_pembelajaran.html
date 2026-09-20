@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Belajar | Beranda</title>
+    
+    <!-- Mengimpor Font Inter dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Mengimpor Ikon FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Mengimpor Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Konfigurasi Tema Tailwind (Warna Biru-Hijau) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            300: '#5eead4',
+                            400: '#2dd4bf',
+                            500: '#14b8a6', // Teal
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        secondary: {
+                            500: '#3b82f6', // Blue
+                            600: '#2563eb',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Gaya tambahan untuk animasi latar belakang hero */
+        .hero-blob {
+            animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-slate-50 flex flex-col min-h-screen">
+
+    <!-- Navigasi -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <div class="w-10 h-10 bg-gradient-to-br from-primary-400 to-secondary-500 rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary-500/30">
+                        <i class="fa-solid fa-graduation-cap text-xl"></i>
+                    </div>
+                    <span class="font-bold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-primary-700 to-secondary-600">
+                        RuangMateri
+                    </span>
+                </div>
+
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-primary-600 font-medium border-b-2 border-primary-500 px-1 py-2">Beranda</a>
+                    <a href="#materi" class="text-gray-500 hover:text-primary-500 transition-colors px-1 py-2 font-medium">Materi</a>
+                    <a href="#tentang" class="text-gray-500 hover:text-primary-500 transition-colors px-1 py-2 font-medium">Tentang</a>
+                </nav>
+
+                <!-- Tombol CTA Desktop -->
+                <div class="hidden md:flex">
+                    <a href="#materi" class="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        Mulai Belajar
+                    </a>
+                </div>
+
+                <!-- Tombol Menu Mobile -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-500 hover:text-primary-600 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile (Tersembunyi secara default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#" class="block px-3 py-3 text-primary-600 font-medium bg-primary-50 rounded-lg">Beranda</a>
+                <a href="#materi" class="block px-3 py-3 text-gray-600 hover:bg-gray-50 rounded-lg font-medium">Materi</a>
+                <a href="#tentang" class="block px-3 py-3 text-gray-600 hover:bg-gray-50 rounded-lg font-medium">Tentang</a>
+                <a href="#materi" class="block mt-4 text-center bg-primary-500 text-white px-6 py-3 rounded-xl font-medium shadow-md">
+                    Mulai Belajar
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Bagian Hero -->
+    <main class="flex-grow">
+        <section class="relative overflow-hidden pt-16 pb-24 lg:pt-32 lg:pb-32">
+            <!-- Background Ornamen -->
+            <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+                <div class="absolute top-0 right-1/4 w-72 h-72 bg-primary-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 hero-blob"></div>
+                <div class="absolute top-0 right-10 w-72 h-72 bg-secondary-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 hero-blob animation-delay-2000"></div>
+                <div class="absolute -bottom-8 right-1/3 w-72 h-72 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 hero-blob"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <!-- Konten Teks -->
+                    <div class="text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 text-primary-700 font-medium text-sm mb-6 border border-primary-100">
+                            <span class="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
+                            Tahun Ajaran Baru, Semangat Baru!
+                        </div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                            Pusat Pembelajaran <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-500">
+                                Interaktif & Efektif
+                            </span>
+                        </h1>
+                        <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Temukan semua materi pembelajaran yang kamu butuhkan. Mulai dari persiapan UTBK, catatan ringkas, hingga latihan soal yang dirancang khusus untuk meningkatkan pemahamanmu.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#materi" class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all shadow-lg shadow-primary-500/30 flex items-center justify-center gap-2 transform hover:-translate-y-1">
+                                Jelajahi Materi <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            <a href="#tentang" class="bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 px-8 py-4 rounded-xl font-semibold text-lg transition-all flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-circle-play text-primary-500"></i> Cara Belajar
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Ilustrasi / Visual -->
+                    <div class="relative hidden sm:block">
+                        <div class="relative w-full max-w-lg mx-auto bg-gradient-to-tr from-primary-100 to-secondary-50 rounded-[2.5rem] p-8 shadow-2xl shadow-primary-900/5 aspect-square flex items-center justify-center border border-white">
+                            <!-- Placeholder Gambar Abstrak yang cantik -->
+                            <div class="absolute inset-0 bg-white/40 backdrop-blur-sm rounded-[2.5rem] border border-white/60"></div>
+                            
+                            <!-- Elemen melayang -->
+                            <div class="absolute -top-6 -left-6 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-4 animate-[bounce_3s_infinite]">
+                                <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500">Materi UTBK</p>
+                                    <p class="font-bold text-gray-800">Tersedia</p>
+                                </div>
+                            </div>
+
+                            <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-4 animate-[bounce_4s_infinite]">
+                                <div class="w-12 h-12 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500">Progress</p>
+                                    <p class="font-bold text-gray-800">+85% Naik</p>
+                                </div>
+                            </div>
+
+                            <!-- Gambar Tengah (Menggunakan Icon besar sebagai placeholder) -->
+                            <i class="fa-solid fa-laptop-code text-9xl text-primary-500 drop-shadow-2xl relative z-10"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian Materi (Kartu) -->
+        <section id="materi" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Daftar Mata Pelajaran</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Pilih mata pelajaran di bawah ini untuk mengakses materi, rangkuman, dan latihan soal yang tersedia.</p>
+                </div>
+
+                <!-- Grid diperbarui menjadi 4 kolom di layar besar karena itemnya banyak -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    
+                    <!-- 1. Biologi -->
+                    <div class="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary-300 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden flex flex-col h-full">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-primary-600 rounded-xl flex items-center justify-center text-white text-xl mb-4 shadow-md">
+                            <i class="fa-solid fa-dna"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Biologi</h3>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">Pelajari tentang makhluk hidup, ekosistem, sel, dan proses kehidupan lainnya.</p>
+                        <a href="asts_biologi_kelas_12.html" class="inline-flex items-center text-sm text-primary-600 font-semibold group-hover:text-primary-700 mt-auto">
+                            Buka Materi <i class="fa-solid fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+
+                    <!-- 2. PJOK -->
+                    <div class="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary-300 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden flex flex-col h-full">
+                        <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-500 rounded-xl flex items-center justify-center text-white text-xl mb-4 shadow-md">
+                            <i class="fa-solid fa-person-running"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">PJOK</h3>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">Pendidikan Jasmani, Olahraga, dan Kesehatan untuk kebugaran tubuh.</p>
+                        <a href="#" class="inline-flex items-center text-sm text-primary-600 font-semibold group-hover:text-primary-700 mt-auto">
+                            Buka Materi <i class="fa-solid fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+
+                    <!-- 3. Matematika -->
+                    <div class="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary-300 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden flex flex-col h-full">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center text-white text-xl mb-4 shadow-md">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Matematika</h3>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">Pemahaman konsep aljabar, geometri, dan logika matematika dasar.</p>
+                        <a href="#" class="inline-flex items-center text-sm text-primary-600 font-semibold group-hover:text-primary-700 mt-auto">
+                            Buka Materi <i class="fa-solid fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+
+                    <!-- 4. Bahasa Jawa -->
+                    <div class="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary-300 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden flex flex-col h-full">
+                        <div class="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-xl flex items-center justify-center text-white text-xl mb-4 shadow-md">
+                            <i class="fa-solid fa-book"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Bahasa Jawa</h3>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">Kesusastraan, tata bahasa, dan kebudayaan dalam Bahasa Jawa.</p>
+                        <a href="#" class="inline-flex items-center text-sm text-primary-600 font-semibold group-hover:text-primary-700 mt-auto">
+                            Buka Materi <i class="fa-solid fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+
+                    <!-- 5. Kimia -->
+                    <div class="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary-300 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden flex flex-col h-full">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center text-white text-xl mb-4 shadow-md">
+                            <i class="fa-solid fa-flask"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Kimia</h3>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">Struktur zat, reaksi kimia, dan tabel periodik unsur.</p>
+                        <a href="#" class="inline-flex items-center text-sm text-primary-600 font-semibold group-hover:text-primary-700 mt-auto">
+                            Buka Materi <i class="fa-solid fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+
+                    <!-- 6. Sejarah -->
+                    <div class="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary-300 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden flex flex-col h-full">
+                        <div class="w-12 h-12 bg-gradient-to-br from-amber-600 to-amber-800 rounded-xl flex items-center justify-center text-white text-xl mb-4 shadow-md">
+                            <i class="fa-solid fa-landmark"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Sejarah</h3>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">Peristiwa penting masa lalu, sejarah peradaban, dan sejarah bangsa.</p>
+                        <a href="#" class="inline-flex items-center text-sm text-primary-600 font-semibold group-hover:text-primary-700 mt-auto">
+                            Buka Materi <i class="fa-solid fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+
+                    <!-- 7. Fisika -->
+                    <div class="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary-300 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden flex flex-col h-full">
+                        <div class="w-12 h-12 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-xl flex items-center justify-center text-white text-xl mb-4 shadow-md">
+                            <i class="fa-solid fa-atom"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Fisika</h3>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">Hukum alam, energi, gaya, dan fenomena fisika di kehidupan sehari-hari.</p>
+                        <a href="#" class="inline-flex items-center text-sm text-primary-600 font-semibold group-hover:text-primary-700 mt-auto">
+                            Buka Materi <i class="fa-solid fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+
+                    <!-- 8. Pendidikan Pancasila -->
+                    <div class="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary-300 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden flex flex-col h-full">
+                        <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-700 rounded-xl flex items-center justify-center text-white text-xl mb-4 shadow-md">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Pendidikan Pancasila</h3>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">Pendidikan kewarganegaraan, nilai-nilai luhur, dan konstitusi negara.</p>
+                        <a href="#" class="inline-flex items-center text-sm text-primary-600 font-semibold group-hover:text-primary-700 mt-auto">
+                            Buka Materi <i class="fa-solid fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+
+                    <!-- 9. Matematika Tk. Lanjut -->
+                    <div class="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary-300 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden flex flex-col h-full">
+                        <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-xl flex items-center justify-center text-white text-xl mb-4 shadow-md">
+                            <i class="fa-solid fa-square-root-variable"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Matematika Tk. Lanjut</h3>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">Materi pendalaman seperti kalkulus, trigonometri analitik, dan statistika lanjut.</p>
+                        <a href="#" class="inline-flex items-center text-sm text-primary-600 font-semibold group-hover:text-primary-700 mt-auto">
+                            Buka Materi <i class="fa-solid fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+
+                    <!-- 10. Informatika/Bahasa Jepang -->
+                    <div class="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary-300 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden flex flex-col h-full">
+                        <div class="w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl flex items-center justify-center text-white text-xl mb-4 shadow-md">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Informatika/B. Jepang</h3>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">Pilih materi dasar-dasar ilmu komputer atau bahasa dan budaya Jepang.</p>
+                        <a href="#" class="inline-flex items-center text-sm text-primary-600 font-semibold group-hover:text-primary-700 mt-auto">
+                            Buka Materi <i class="fa-solid fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+
+                    <!-- 11. Bahasa Indonesia -->
+                    <div class="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary-300 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden flex flex-col h-full">
+                        <div class="w-12 h-12 bg-gradient-to-br from-rose-400 to-rose-600 rounded-xl flex items-center justify-center text-white text-xl mb-4 shadow-md">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Bahasa Indonesia</h3>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">Struktur teks, tata bahasa baku, sastra, dan kemampuan literasi.</p>
+                        <a href="#" class="inline-flex items-center text-sm text-primary-600 font-semibold group-hover:text-primary-700 mt-auto">
+                            Buka Materi <i class="fa-solid fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+
+                    <!-- 12. Pend. Agama dan BP -->
+                    <div class="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary-300 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden flex flex-col h-full">
+                        <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-xl flex items-center justify-center text-white text-xl mb-4 shadow-md">
+                            <i class="fa-solid fa-hands-praying"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Pend. Agama & BP</h3>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">Pendidikan agama dan budi pekerti untuk membentuk karakter mulia.</p>
+                        <a href="#" class="inline-flex items-center text-sm text-primary-600 font-semibold group-hover:text-primary-700 mt-auto">
+                            Buka Materi <i class="fa-solid fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+
+                    <!-- 13. Bahasa Inggris -->
+                    <div class="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary-300 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden flex flex-col h-full">
+                        <div class="w-12 h-12 bg-gradient-to-br from-sky-400 to-blue-500 rounded-xl flex items-center justify-center text-white text-xl mb-4 shadow-md">
+                            <i class="fa-solid fa-earth-americas"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Bahasa Inggris</h3>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">Tingkatkan kemampuan grammar, reading, listening, dan speaking.</p>
+                        <a href="#" class="inline-flex items-center text-sm text-primary-600 font-semibold group-hover:text-primary-700 mt-auto">
+                            Buka Materi <i class="fa-solid fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+
+                    <!-- 14. Pendidikan Seni -->
+                    <div class="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary-300 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden flex flex-col h-full">
+                        <div class="w-12 h-12 bg-gradient-to-br from-pink-400 to-pink-600 rounded-xl flex items-center justify-center text-white text-xl mb-4 shadow-md">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Pendidikan Seni</h3>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">Eksplorasi kreativitas melalui seni rupa, musik, tari, atau teater.</p>
+                        <a href="#" class="inline-flex items-center text-sm text-primary-600 font-semibold group-hover:text-primary-700 mt-auto">
+                            Buka Materi <i class="fa-solid fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="tentang" class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 border-b border-gray-800 pb-12">
+                <!-- Info Kolom 1 -->
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-gradient-to-br from-primary-400 to-secondary-500 rounded-lg flex items-center justify-center text-white">
+                            <i class="fa-solid fa-graduation-cap text-sm"></i>
+                        </div>
+                        <span class="font-bold text-xl text-white">RuangMateri</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Platform dokumentasi dan materi pembelajaran pribadi yang didedikasikan untuk membantu memahami konsep dengan lebih baik dan mencapai target akademik.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-500 transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-500 transition-colors">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-500 transition-colors">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tautan Berguna -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Tautan Cepat</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors">Beranda</a></li>
+                        <li><a href="#materi" class="text-gray-400 hover:text-primary-400 transition-colors">Daftar Materi UTBK</a></li>
+                        <li><a href="#latihan" class="text-gray-400 hover:text-primary-400 transition-colors">Tryout Gratis</a></li>
+                        <li><a href="#tentang" class="text-gray-400 hover:text-primary-400 transition-colors">Tentang Website Ini</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kontak -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Hubungi Kami</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-gray-400">
+                            <i class="fa-solid fa-envelope mt-1 text-primary-500"></i>
+                            <span>halo@ruangmateri.com</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-400">
+                            <i class="fa-solid fa-location-dot mt-1 text-primary-500"></i>
+                            <span>Jakarta, Indonesia</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center text-gray-500 text-sm">
+                <p>&copy; 2026 RuangMateri. Dibuat dengan <i class="fa-solid fa-heart text-red-500 mx-1"></i> untuk pembelajaran.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script JavaScript untuk Interaktivitas Dasar -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = btn.querySelector('i');
+
+            // Toggle Mobile Menu
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                
+                // Ganti ikon burger ke ikon silang saat menu terbuka
+                if(menu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                }
+            });
+
+            // Tutup menu mobile saat tautan diklik
+            const mobileLinks = menu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
