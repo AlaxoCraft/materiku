@@ -3,241 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peluang & Pencacahan Interaktif</title>
+    <title>Materi Peluang & Kaidah Pencacahan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
-                        primary: '#0ea5e9',   /* Sky 500 - Biru */
-                        primaryDark: '#0369a1', /* Sky 700 */
+                        primary: '#0284c7', /* Sky 600 - Biru */
                         secondary: '#10b981', /* Emerald 500 - Hijau */
-                        secondaryDark: '#047857', /* Emerald 700 */
                         dark: '#0f172a',
                     }
                 }
             }
         }
     </script>
-
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
         
-        /* Format Matematika Kustom (TIDAK MENGGUNAKAN LATEX) */
-        .math-font { font-family: 'Cambria Math', 'Times New Roman', serif; font-size: 1.1em; letter-spacing: 0.02em; }
-        .math-frac {
+        /* CSS Khusus untuk Matematika Rapi tanpa LaTeX */
+        .math-block {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.02em;
+        }
+        
+        /* Format Pecahan Bersusun Atas Bawah */
+        .frac {
             display: inline-flex;
             flex-direction: column;
             align-items: center;
             vertical-align: middle;
-            margin: 0 0.2rem;
-            line-height: 1.1;
+            margin: 0 0.3rem;
+            line-height: 1.2;
         }
-        .math-num {
+        .frac .num {
             border-bottom: 1.5px solid currentColor;
-            padding: 0.1rem 0.3rem;
+            padding: 0.1rem 0.4rem;
             text-align: center;
-            font-size: 0.9em;
         }
-        .math-den {
-            padding: 0.1rem 0.3rem;
+        .frac .den {
+            padding: 0.1rem 0.4rem;
             text-align: center;
-            font-size: 0.9em;
         }
 
-        /* Accordion */
+        /* Animasi Accordion */
         .accordion-content {
-            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            transition: all 0.3s ease-in-out;
             max-height: 0;
             opacity: 0;
             overflow: hidden;
         }
         .accordion-content.open {
-            max-height: 1000px; /* Angka besar untuk menampung konten */
+            max-height: 800px;
             opacity: 1;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
         }
-
-        /* Simulasi 1: Pramuka */
-        .scout-icon {
-            transition: all 0.2s ease;
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
-        }
-        .scout-icon.selected {
-            transform: scale(1.1);
-            filter: drop-shadow(0 0 10px #10b981);
-            background-color: #d1fae5;
-            border-color: #10b981;
-        }
-        .scout-icon.disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            filter: grayscale(100%);
-        }
-
-        /* Simulasi 2: Kelereng */
-        .marble {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: inline-block;
-            margin: 5px;
-            box-shadow: inset -5px -5px 10px rgba(0,0,0,0.3), 0 4px 6px rgba(0,0,0,0.1);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .marble.red { background: radial-gradient(circle at 30% 30%, #fca5a5, #ef4444, #991b1b); }
-        .marble.blue { background: radial-gradient(circle at 30% 30%, #93c5fd, #3b82f6, #1e3a8a); }
-        .marble.taken {
-            transform: translateY(-100px) scale(0);
-            opacity: 0;
-        }
-
-        /* Responsivitas ekstra */
-        @media (max-width: 640px) {
-            .math-frac { margin: 0 0.1rem; }
-            .math-num, .math-den { font-size: 0.85em; padding: 0.05rem 0.2rem; }
+        
+        /* Card Hover Effect */
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(2, 132, 199, 0.1), 0 10px 10px -5px rgba(2, 132, 199, 0.04);
         }
     </style>
 </head>
 <body class="text-slate-800 antialiased">
 
-    <nav class="fixed w-full z-50 top-0 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200">
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-200" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <!-- Tombol Kembali -->
-                <a href="index.html" class="flex items-center gap-2 text-primary font-bold hover:text-primaryDark transition-colors px-3 py-2 rounded-lg bg-sky-50 hover:bg-sky-100">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
-                    <span>KEMBALI</span>
-                </a>
-                
-                <!-- Judul Navbar -->
-                <div class="hidden sm:flex items-center">
-                    <span class="font-bold text-xl tracking-tight text-primary">Math<span class="text-secondary">Learn</span></span>
+                <div class="flex-shrink-0 flex items-center cursor-pointer">
+                    <span class="font-bold text-2xl tracking-tight text-primary">Math<span class="text-secondary">Learn</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#materi" class="text-slate-600 hover:text-primary transition font-medium">Materi Dasar</a>
+                    <a href="#contoh" class="text-slate-600 hover:text-primary transition font-medium">Contoh Soal</a>
+                    <a href="#pembahasan" class="text-slate-600 hover:text-primary transition font-medium">Pembahasan Latihan</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <section class="pt-24 pb-12 sm:pt-32 sm:pb-20 bg-gradient-to-br from-primaryDark via-primary to-secondary text-white relative overflow-hidden">
+    <section class="pt-32 pb-20 bg-gradient-to-br from-sky-700 via-sky-600 to-emerald-500 text-white relative overflow-hidden">
+        <!-- Background Decoration -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-10 w-72 h-72 bg-emerald-300 rounded-full blur-3xl"></div>
+        </div>
+        
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 drop-shadow-md leading-tight">
-                Peluang & Kaidah Pencacahan
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 drop-shadow-md">
+                Kuasai Peluang &<br/> Kaidah Pencacahan
             </h1>
-            <p class="text-base sm:text-lg max-w-2xl mx-auto opacity-95 mb-8 font-light">
-                Materi, Simulasi Interaktif, dan Pembahasan 15 Latihan Soal.
+            <p class="text-lg md:text-xl max-w-2xl mx-auto opacity-95 mb-10 font-light">
+                Materi disajikan dengan format matematika yang rapi, lengkap dengan simulasi dan 15 pembahasan soal terstruktur.
             </p>
+            <a href="#materi" class="inline-flex items-center gap-2 bg-white text-sky-700 font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+                Mulai Belajar Dasar
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </a>
         </div>
     </section>
 
-    <section class="py-12 bg-slate-50">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl font-bold text-center text-slate-800 mb-8">Materi Dasar</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                    <h3 class="text-lg font-bold text-primary mb-2 flex items-center gap-2">
-                        <span class="bg-primary/10 p-2 rounded-lg">1</span> Permutasi (Urutan Penting)
-                    </h3>
-                    <p class="text-sm text-slate-600 mb-3">Susunan elemen yang memperhatikan urutan (seperti jabatan, kode sandi).</p>
-                    <div class="bg-slate-50 p-3 rounded-lg text-center math-font font-semibold text-primaryDark">
-                        <sub>n</sub>P<sub>r</sub> = 
-                        <span class="math-frac">
-                            <span class="math-num">n!</span>
-                            <span class="math-den">(n - r)!</span>
+    <section id="materi" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-800">Materi Dasar</h2>
+                <div class="h-1.5 w-24 bg-gradient-to-r from-sky-500 to-emerald-400 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 card-hover">
+                    <div class="w-12 h-12 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6">1</div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">Kaidah Perkalian</h3>
+                    <p class="text-slate-600 mb-4 leading-relaxed">Jika kejadian pertama memiliki <b>m</b> cara dan kejadian kedua memiliki <b>n</b> cara, maka kedua kejadian terjadi bersamaan dalam:</p>
+                    <div class="bg-slate-50 p-4 rounded-lg text-center border border-slate-100">
+                        <span class="math-block text-sky-700 font-semibold">m &times; n cara</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 card-hover">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6">2</div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">Permutasi (P)</h3>
+                    <p class="text-slate-600 mb-4 leading-relaxed">Susunan elemen yang <b>memperhatikan urutan</b> (seperti jabatan, kode sandi, posisi duduk).</p>
+                    <div class="bg-slate-50 p-4 rounded-lg text-center border border-slate-100">
+                        <span class="math-block text-emerald-700 font-semibold">
+                            <sub>n</sub>P<sub>r</sub> = 
+                            <span class="frac">
+                                <span class="num">n!</span>
+                                <span class="den">(n - r)!</span>
+                            </span>
                         </span>
                     </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                    <h3 class="text-lg font-bold text-secondary mb-2 flex items-center gap-2">
-                        <span class="bg-secondary/10 p-2 rounded-lg">2</span> Kombinasi (Urutan Acak)
-                    </h3>
-                    <p class="text-sm text-slate-600 mb-3">Pemilihan elemen yang tidak memperhatikan urutan (seperti memilih regu, kelompok).</p>
-                    <div class="bg-slate-50 p-3 rounded-lg text-center math-font font-semibold text-secondaryDark">
-                        <sub>n</sub>C<sub>r</sub> = 
-                        <span class="math-frac">
-                            <span class="math-num">n!</span>
-                            <span class="math-den">r! &times; (n - r)!</span>
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 card-hover">
+                    <div class="w-12 h-12 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6">3</div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">Kombinasi (C)</h3>
+                    <p class="text-slate-600 mb-4 leading-relaxed">Pemilihan elemen yang <b>tidak memperhatikan urutan</b> (seperti memilih tim, mengambil bola sekaligus).</p>
+                    <div class="bg-slate-50 p-4 rounded-lg text-center border border-slate-100">
+                        <span class="math-block text-sky-700 font-semibold">
+                            <sub>n</sub>C<sub>r</sub> = 
+                            <span class="frac">
+                                <span class="num">n!</span>
+                                <span class="den">r! &times; (n - r)!</span>
+                            </span>
                         </span>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 card-hover md:col-span-1 lg:col-span-1">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6">4</div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">Peluang Kejadian</h3>
+                    <p class="text-slate-600 mb-4 leading-relaxed">Perbandingan antara banyak kejadian A (n(A)) dan banyak semua kemungkinan dalam ruang sampel (n(S)).</p>
+                    <div class="bg-slate-50 p-4 rounded-lg text-center border border-slate-100">
+                        <span class="math-block text-emerald-700 font-semibold">
+                            P(A) = 
+                            <span class="frac">
+                                <span class="num">n(A)</span>
+                                <span class="den">n(S)</span>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 card-hover md:col-span-2 lg:col-span-2">
+                    <div class="w-12 h-12 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6">5</div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">Peluang Binomial</h3>
+                    <p class="text-slate-600 mb-4 leading-relaxed">Peluang kejadian berulang n kali dengan 2 kemungkinan hasil (sukses/gagal).</p>
+                    <div class="bg-slate-50 p-4 rounded-lg text-center border border-slate-100 flex items-center justify-center flex-wrap gap-2">
+                        <span class="math-block text-sky-700 font-semibold">
+                            P(X = x) = <sub>n</sub>C<sub>x</sub> &times; p<sup>x</sup> &times; q<sup>(n - x)</sup>
+                        </span>
+                        <span class="text-sm text-slate-500 italic mt-1 block w-full">(p = peluang sukses, q = peluang gagal)</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-12 bg-white border-y border-slate-200">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-2xl font-bold text-slate-800 mb-2">Simulasi 1: Memilih Regu</h2>
-            <p class="text-slate-500 mb-8 text-sm sm:text-base">Pilih tepat <b>3 anggota</b> dari 7 orang untuk membentuk regu pramuka (Kombinasi).</p>
-
-            <div class="bg-emerald-50 rounded-2xl p-6 sm:p-10 border border-emerald-100 shadow-sm relative">
-                <!-- Status Pilihan -->
-                <div class="mb-6 font-semibold text-emerald-800 bg-white inline-block px-4 py-2 rounded-full shadow-sm border border-emerald-200">
-                    Terpilih: <span id="sim1-count" class="text-xl font-bold text-emerald-600">0</span> / 3
-                </div>
-
-                <!-- Ikon Orang -->
-                <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8" id="sim1-container">
-                    <!-- Digenerate oleh JS -->
-                </div>
-
-                <!-- Hasil Simulasi -->
-                <div id="sim1-result" class="hidden opacity-0 transition-opacity duration-500 bg-white p-5 rounded-xl shadow-md border border-emerald-200 mt-4">
-                    <h4 class="text-lg font-bold text-slate-800 mb-3">Perhitungan Kombinasi (<sub>7</sub>C<sub>3</sub>)</h4>
-                    <p class="text-sm text-slate-600 mb-4">Karena urutan tidak penting (A, B, C sama dengan B, A, C), kita gunakan Kombinasi.</p>
-                    <div class="math-font text-lg text-emerald-700 font-semibold bg-emerald-50/50 p-4 rounded-lg">
-                        <sub>7</sub>C<sub>3</sub> = 
-                        <span class="math-frac"><span class="math-num">7!</span><span class="math-den">3! &times; 4!</span></span> = 
-                        <span class="math-frac"><span class="math-num">7 &times; 6 &times; 5</span><span class="math-den">3 &times; 2 &times; 1</span></span> = 
-                        <span class="text-2xl ml-2 text-emerald-600 drop-shadow-sm">35 cara</span>
-                    </div>
-                    <button onclick="resetSim1()" class="mt-5 px-6 py-2 bg-emerald-100 text-emerald-700 font-bold rounded-full hover:bg-emerald-200 transition">Ulangi Simulasi</button>
-                </div>
+    <section id="contoh" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-800">Simulasi Contoh Soal</h2>
+                <div class="h-1.5 w-24 bg-gradient-to-r from-sky-500 to-emerald-400 mx-auto mt-4 rounded-full"></div>
             </div>
-        </div>
-    </section>
 
-    <section class="py-12 bg-slate-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-2xl font-bold text-slate-800 mb-2">Simulasi 2: Ambil Kelereng</h2>
-            <p class="text-slate-500 mb-8 text-sm sm:text-base">Pengambilan 2 kelereng berurutan <b>tanpa pengembalian</b>. (Target: Merah, lalu Biru).</p>
-
-            <div class="bg-sky-50 rounded-2xl p-6 sm:p-10 border border-sky-100 shadow-sm">
-                
-                <!-- Kotak Kelereng -->
-                <div class="w-full max-w-xs mx-auto h-40 bg-white rounded-xl shadow-inner border-2 border-slate-300 flex flex-wrap content-center justify-center gap-2 p-4 relative overflow-hidden mb-6" id="sim2-box">
-                    <div class="marble red" id="m-r-1"></div>
-                    <div class="marble red" id="m-r-2"></div>
-                    <div class="marble red" id="m-r-3"></div>
-                    <div class="marble red" id="m-r-4"></div>
-                    <div class="marble blue" id="m-b-1"></div>
-                    <div class="marble blue" id="m-b-2"></div>
-                    <div class="marble blue" id="m-b-3"></div>
+            <div class="space-y-8">
+                <!-- Contoh 1 -->
+                <div class="bg-white rounded-2xl p-1 border border-sky-100 shadow-md">
+                    <div class="bg-sky-50/50 rounded-xl p-6 md:p-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-sky-500 text-white px-3 py-1 rounded-full text-sm font-bold">Contoh 1</span>
+                            <h3 class="text-lg font-bold text-slate-800">Penggunaan Kombinasi</h3>
+                        </div>
+                        <p class="text-slate-700 mb-6 font-medium leading-relaxed">Dari 7 orang siswa, akan dipilih 3 orang untuk mewakili sekolah dalam lomba cerdas cermat. Ada berapa cara pemilihan tersebut?</p>
+                        
+                        <div class="bg-white p-5 rounded-xl border border-sky-100 shadow-sm">
+                            <p class="text-slate-600 mb-3 text-sm font-semibold uppercase tracking-wider">Penyelesaian:</p>
+                            <p class="text-slate-600 mb-4">Karena pemilihan tidak memperhatikan urutan (A-B-C dianggap sama dengan B-A-C), kita gunakan aturan Kombinasi.</p>
+                            <div class="math-block text-slate-800 bg-slate-50 p-4 rounded-lg border border-slate-100 flex flex-col gap-3">
+                                <div>
+                                    <sub>7</sub>C<sub>3</sub> = 
+                                    <span class="frac">
+                                        <span class="num">7!</span>
+                                        <span class="den">3! &times; (7 - 3)!</span>
+                                    </span>
+                                </div>
+                                <div>
+                                    <sub>7</sub>C<sub>3</sub> = 
+                                    <span class="frac">
+                                        <span class="num">7 &times; 6 &times; 5 &times; 4!</span>
+                                        <span class="den">(3 &times; 2 &times; 1) &times; 4!</span>
+                                    </span>
+                                </div>
+                                <div class="font-bold text-sky-700 border-t border-slate-200 pt-2 mt-1">
+                                    Hasil = 35 cara
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Tombol Aksi & Status -->
-                <div class="min-h-[120px]">
-                    <div id="sim2-status" class="math-font text-lg font-semibold text-slate-700 mb-4 h-8 transition-all">
-                        Total: 7 Kelereng (4 Merah, 3 Biru)
-                    </div>
-                    <button id="sim2-btn" onclick="nextStepSim2()" class="px-8 py-3 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-primaryDark hover:scale-105 active:scale-95 transition-all">
-                        Ambil Kelereng Merah
-                    </button>
-
-                    <!-- Hasil Akhir -->
-                    <div id="sim2-result" class="hidden mt-4 bg-white p-4 rounded-xl shadow-sm border border-sky-200">
-                        <div class="math-font text-sky-700 font-semibold text-lg flex items-center justify-center flex-wrap">
-                            P(Total) = P(Merah) &times; P(Biru) = 
-                            <span class="math-frac ml-2"><span class="math-num">4</span><span class="math-den">7</span></span> 
-                            &times; 
-                            <span class="math-frac mx-2"><span class="math-num">3</span><span class="math-den">6</span></span> 
-                            = 
-                            <span class="math-frac ml-2"><span class="math-num">12</span><span class="math-den">42</span></span>
-                            =
-                            <span class="text-xl ml-2 font-bold bg-sky-100 px-3 py-1 rounded"><span class="math-frac"><span class="math-num">2</span><span class="math-den">7</span></span></span>
+                <!-- Contoh 2 -->
+                <div class="bg-white rounded-2xl p-1 border border-emerald-100 shadow-md">
+                    <div class="bg-emerald-50/50 rounded-xl p-6 md:p-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-bold">Contoh 2</span>
+                            <h3 class="text-lg font-bold text-slate-800">Peluang Tanpa Pengembalian</h3>
+                        </div>
+                        <p class="text-slate-700 mb-6 font-medium leading-relaxed">Sebuah kotak berisi 4 kelereng merah dan 3 kelereng biru. Diambil 2 kelereng secara berurutan tanpa pengembalian. Berapa peluang terambilnya kelereng merah pada pengambilan pertama dan biru pada pengambilan kedua?</p>
+                        
+                        <div class="bg-white p-5 rounded-xl border border-emerald-100 shadow-sm">
+                            <p class="text-slate-600 mb-3 text-sm font-semibold uppercase tracking-wider">Penyelesaian:</p>
+                            <ul class="list-disc list-inside text-slate-600 mb-4 space-y-2 math-block">
+                                <li>Peluang Merah (Ambil 1): P(M) = <span class="frac"><span class="num">4</span><span class="den">7</span></span></li>
+                                <li>Peluang Biru (Ambil 2, total bola sisa 6): P(B) = <span class="frac"><span class="num">3</span><span class="den">6</span></span> = <span class="frac"><span class="num">1</span><span class="den">2</span></span></li>
+                            </ul>
+                            <div class="math-block text-slate-800 bg-slate-50 p-4 rounded-lg border border-slate-100">
+                                <span>Peluang Total = P(M) &times; P(B) = </span>
+                                <span class="frac"><span class="num">4</span><span class="den">7</span></span> &times; 
+                                <span class="frac"><span class="num">1</span><span class="den">2</span></span> = 
+                                <span class="frac"><span class="num">4</span><span class="den">14</span></span> = 
+                                <span class="font-bold text-emerald-700">
+                                    <span class="frac"><span class="num">2</span><span class="den">7</span></span>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -245,350 +265,327 @@
         </div>
     </section>
 
-    <section class="py-12 sm:py-20 bg-white">
+    <section id="pembahasan" class="py-20 bg-slate-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10">
-                <h2 class="text-2xl sm:text-3xl font-bold text-slate-800">Pembahasan 15 Soal</h2>
-                <div class="h-1.5 w-24 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800">Pembahasan 15 Latihan Soal</h2>
+                <p class="text-slate-500 mt-3 font-medium">Klik pada judul soal untuk membuka langkah pengerjaan.</p>
+                <div class="h-1.5 w-24 bg-gradient-to-r from-sky-500 to-emerald-400 mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <!-- Kontainer Accordion -->
-            <div class="space-y-3" id="accordion-container">
-                <!-- HTML akan dirender oleh JavaScript untuk efisiensi baris kode -->
+            <!-- Accordion Container -->
+            <div class="space-y-4" id="accordion-container">
+                <!-- Konten akan di-inject lewat JavaScript agar bersih dan rapi -->
             </div>
         </div>
     </section>
 
-    <footer class="bg-dark text-slate-400 py-10 border-t border-slate-800 text-center px-4">
-        <div class="font-bold text-2xl tracking-tight text-white mb-2">Math<span class="text-secondary">Learn</span></div>
-        <p class="text-sm">&copy; 2026 Edukasi Interaktif Peluang & Pencacahan.</p>
+    <footer class="bg-dark text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="font-bold text-2xl tracking-tight text-white mb-4">Math<span class="text-emerald-500">Learn</span></div>
+            <p class="mb-4">© 2026 Platform Edukasi Matematika Interaktif.</p>
+            <p class="text-sm">Menyajikan solusi pembelajaran modern tanpa mengorbankan kualitas tipografi matematika.</p>
+        </div>
     </footer>
 
     <script>
-        // --- UTILITAS MATEMATIKA (Tanpa LaTeX) ---
-        const frac = (n, d) => `<span class="math-frac"><span class="math-num">${n}</span><span class="math-den">${d}</span></span>`;
-        const sub = (val) => `<sub>${val}</sub>`;
-        const sup = (val) => `<sup>${val}</sup>`;
-        
-        // --- SIMULASI 1: PRAMUKA ---
-        const totalPramuka = 7;
-        const maxSelect = 3;
-        let selectedPramuka = [];
-        const sim1Container = document.getElementById('sim1-container');
-        const sim1Count = document.getElementById('sim1-count');
-        const sim1Result = document.getElementById('sim1-result');
+        // Fungsi helper pembuat pecahan HTML agar data bersih
+        const frac = (num, den) => `<span class="frac"><span class="num">${num}</span><span class="den">${den}</span></span>`;
 
-        // Render ikon
-        function initSim1() {
-            sim1Container.innerHTML = '';
-            for(let i=0; i<totalPramuka; i++) {
-                const btn = document.createElement('div');
-                btn.className = 'scout-icon w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center bg-white border-2 border-slate-200 rounded-xl text-3xl shadow-sm';
-                btn.innerHTML = '🧑‍🌾';
-                btn.onclick = () => toggleScout(i, btn);
-                sim1Container.appendChild(btn);
-            }
-        }
-
-        function toggleScout(index, btnElement) {
-            if (selectedPramuka.includes(index)) {
-                // Hapus pilihan
-                selectedPramuka = selectedPramuka.filter(i => i !== index);
-                btnElement.classList.remove('selected');
-            } else {
-                // Tambah pilihan jika belum batas
-                if (selectedPramuka.length < maxSelect) {
-                    selectedPramuka.push(index);
-                    btnElement.classList.add('selected');
-                }
-            }
-            
-            updateSim1State();
-        }
-
-        function updateSim1State() {
-            sim1Count.innerText = selectedPramuka.length;
-            const icons = sim1Container.children;
-            
-            if (selectedPramuka.length === maxSelect) {
-                // Disable yang tidak dipilih
-                for(let i=0; i<icons.length; i++) {
-                    if (!selectedPramuka.includes(i)) icons[i].classList.add('disabled');
-                }
-                // Tampilkan hasil
-                sim1Result.classList.remove('hidden');
-                setTimeout(() => sim1Result.classList.remove('opacity-0'), 50);
-            } else {
-                // Enable semua
-                for(let i=0; i<icons.length; i++) icons[i].classList.remove('disabled');
-                sim1Result.classList.add('hidden', 'opacity-0');
-            }
-        }
-
-        function resetSim1() {
-            selectedPramuka = [];
-            initSim1();
-            updateSim1State();
-        }
-        initSim1();
-
-
-        // --- SIMULASI 2: KELERENG ---
-        let sim2Step = 0;
-        const sim2Btn = document.getElementById('sim2-btn');
-        const sim2Status = document.getElementById('sim2-status');
-        const sim2Result = document.getElementById('sim2-result');
-
-        function nextStepSim2() {
-            if (sim2Step === 0) {
-                // Ambil Merah
-                document.getElementById('m-r-1').classList.add('taken');
-                sim2Status.innerHTML = `P(Merah) = ${frac('4', '7')}<br><span class="text-sm font-normal text-slate-500">Sisa bola = 6</span>`;
-                
-                sim2Btn.innerText = "Ambil Kelereng Biru";
-                sim2Btn.classList.replace('bg-primary', 'bg-blue-600');
-                sim2Btn.classList.replace('hover:bg-primaryDark', 'hover:bg-blue-700');
-                sim2Step++;
-            } 
-            else if (sim2Step === 1) {
-                // Ambil Biru
-                document.getElementById('m-b-1').classList.add('taken');
-                sim2Status.innerHTML = `P(Biru) = ${frac('3', '6')}`;
-                
-                sim2Btn.innerText = "Ulangi Simulasi";
-                sim2Btn.classList.replace('bg-blue-600', 'bg-slate-600');
-                sim2Btn.classList.replace('hover:bg-blue-700', 'hover:bg-slate-700');
-                
-                sim2Result.classList.remove('hidden');
-                sim2Step++;
-            }
-            else {
-                // Reset
-                const marbles = document.querySelectorAll('.marble');
-                marbles.forEach(m => m.classList.remove('taken'));
-                
-                sim2Status.innerHTML = "Total: 7 Kelereng (4 Merah, 3 Biru)";
-                sim2Result.classList.add('hidden');
-                
-                sim2Btn.innerText = "Ambil Kelereng Merah";
-                sim2Btn.classList.replace('bg-slate-600', 'bg-primary');
-                sim2Btn.classList.replace('hover:bg-slate-700', 'hover:bg-primaryDark');
-                sim2Step = 0;
-            }
-        }
-
-
-        // --- DATA & RENDER ACCORDION SOAL ---
+        // Data 15 Soal dengan format HTML khusus
         const soalData = [
             {
-                no: 1, title: "Kode: 2 huruf dan 3 angka berbeda",
+                no: 1,
+                title: "Banyak kode dari 2 huruf dan 3 angka berbeda",
                 answer: `
-                    <p class="mb-2">Pemilihan elemen berbeda secara independen:</p>
-                    <ul class="list-disc pl-5 mb-2 text-sm sm:text-base space-y-1">
-                        <li>Pilih 2 huruf dari 4 (A,B,C,D): ${sub('4')}C${sub('2')} = ${frac('4!', '2! &times; 2!')} = 6</li>
-                        <li>Pilih 3 angka dari 5 (1..5): ${sub('5')}C${sub('3')} = ${frac('5!', '3! &times; 2!')} = 10</li>
+                    <div class="space-y-2">
+                        <p>Memilih 2 huruf dari 4 (A,B,C,D): <sub>4</sub>C<sub>2</sub> = ${frac('4!', '2! &times; 2!')} = 6 cara.</p>
+                        <p>Memilih 3 angka dari 5 (1,2,3,4,5): <sub>5</sub>C<sub>3</sub> = ${frac('5!', '3! &times; 2!')} = 10 cara.</p>
+                        <p>Kelimanya akan disusun menjadi sebuah kode (urutan penting), maka susunan posisi: 5! = 120.</p>
+                        <div class="p-3 bg-sky-50 rounded text-sky-800 font-semibold border border-sky-100 mt-2">
+                            Total susunan = 6 &times; 10 &times; 120 = <span class="text-xl">7.200</span> cara
+                        </div>
+                    </div>`
+            },
+            {
+                no: 2,
+                title: "Enam siswa duduk berjajar pada enam kursi",
+                answer: `
+                    <p>Karena 6 orang menempati 6 kursi secara penuh dan urutan diperhatikan (berjajar), ini adalah Permutasi dari semua elemen.</p>
+                    <div class="p-3 bg-emerald-50 rounded text-emerald-800 font-semibold border border-emerald-100 mt-3">
+                        P = 6! = 6 &times; 5 &times; 4 &times; 3 &times; 2 &times; 1 = <span class="text-xl">720</span> susunan
+                    </div>`
+            },
+            {
+                no: 3,
+                title: "Dua kartu hati dari set bridge (dengan pengembalian)",
+                answer: `
+                    <ul class="list-disc pl-5 space-y-2 mb-3">
+                        <li>Total kartu bridge = 52. Total kartu hati = 13.</li>
+                        <li>Pengambilan 1 (Hati): P(1) = ${frac('13', '52')} = ${frac('1', '4')}</li>
+                        <li>Karena dikembalikan, kartu di tumpukan kembali menjadi 52.</li>
+                        <li>Pengambilan 2 (Hati): P(2) = ${frac('13', '52')} = ${frac('1', '4')}</li>
                     </ul>
-                    <p class="mb-2">5 elemen tersebut diacak untuk membuat sandi (permutasi): 5! = 120.</p>
-                    <div class="bg-sky-50 text-sky-800 p-3 rounded font-bold border border-sky-100 math-font">
-                        Total = 6 &times; 10 &times; 120 = 7.200 cara
+                    <div class="p-3 bg-sky-50 rounded text-sky-800 font-semibold border border-sky-100">
+                        Peluang Total = ${frac('1', '4')} &times; ${frac('1', '4')} = <span class="text-xl">${frac('1', '16')}</span>
                     </div>`
             },
             {
-                no: 2, title: "Enam siswa duduk berjajar di enam kursi",
+                no: 4,
+                title: "Kata sandi 4 simbol khusus (Pos 1 Kelipatan 3, Pos 2 BANDUNG, Pos 3 Ganjil, Pos 4 'G')",
                 answer: `
-                    <p class="mb-2">Semua objek digunakan dan urutan posisi duduk berpengaruh, maka digunakan permutasi seluruh elemen.</p>
-                    <div class="bg-emerald-50 text-emerald-800 p-3 rounded font-bold border border-emerald-100 math-font">
-                        P = 6! = 6 &times; 5 &times; 4 &times; 3 &times; 2 &times; 1 = 720 susunan
+                    <div class="space-y-2">
+                        <p>Analisis Posisi (syarat: semua simbol <b>berbeda</b>):</p>
+                        <ul class="list-disc pl-5 mb-2">
+                            <li>Posisi 4: Huruf 'G' &rarr; <b>1 pilihan</b>.</li>
+                            <li>Posisi 2: Huruf dari "BANDUNG". Karena 'G' terpakai, sisa {B, A, N, D, U} &rarr; <b>5 pilihan</b>.</li>
+                        </ul>
+                        <p>Terdapat irisan angka kelipatan 3 {3, 6, 9} dan angka ganjil {1, 3, 5, 7, 9} pada angka 3 dan 9. Kita bagi 2 kasus:</p>
+                        <ol class="list-decimal pl-5 space-y-2 mb-3 bg-white p-3 border rounded">
+                            <li>Jika Posisi 1 diisi '3' atau '9' (2 pilihan): Maka Posisi 3 (ganjil) sisa 4 pilihan.<br>
+                            Banyak sandi = 2 &times; 5 &times; 4 &times; 1 = 40</li>
+                            <li>Jika Posisi 1 diisi '6' (1 pilihan): Maka Posisi 3 utuh 5 pilihan.<br>
+                            Banyak sandi = 1 &times; 5 &times; 5 &times; 1 = 25</li>
+                        </ol>
+                        <div class="p-3 bg-emerald-50 rounded text-emerald-800 font-semibold border border-emerald-100">
+                            Total sandi = 40 + 25 = <span class="text-xl">65</span> kata sandi
+                        </div>
                     </div>`
             },
             {
-                no: 3, title: "Peluang dua kartu hati dengan pengembalian",
+                no: 5,
+                title: "Pemilihan 5 pengurus dari 8 Putra dan 5 Putri (Syarat spesifik)",
                 answer: `
-                    <ul class="list-disc pl-5 mb-3 text-sm sm:text-base space-y-1">
-                        <li>Total kartu bridge = 52. Kartu hati = 13.</li>
-                        <li>Pengambilan pertama: P(Hati) = ${frac('13', '52')} = ${frac('1', '4')}</li>
-                        <li>Karena <b>dikembalikan</b>, pengambilan kedua tetap memiliki peluang yang sama: P(Hati) = ${frac('1', '4')}</li>
+                    <p class="mb-3">Jabatan membedakan urutan, maka gunakan Permutasi.</p>
+                    <ul class="list-disc pl-5 space-y-2 mb-4">
+                        <li>Ketua & Wakil harus Putri (Pilih 2 dari 5):<br>
+                        <sub>5</sub>P<sub>2</sub> = ${frac('5!', '3!')} = 5 &times; 4 = 20 cara.</li>
+                        <li>Sekretaris, Ben 1, Ben 2 harus Putra (Pilih 3 dari 8):<br>
+                        <sub>8</sub>P<sub>3</sub> = ${frac('8!', '5!')} = 8 &times; 7 &times; 6 = 336 cara.</li>
                     </ul>
-                    <div class="bg-sky-50 text-sky-800 p-3 rounded font-bold border border-sky-100 math-font">
-                        Peluang = ${frac('1', '4')} &times; ${frac('1', '4')} = ${frac('1', '16')}
+                    <div class="p-3 bg-sky-50 rounded text-sky-800 font-semibold border border-sky-100">
+                        Total susunan = 20 &times; 336 = <span class="text-xl">6.720</span> susunan
                     </div>`
             },
             {
-                no: 4, title: "Sandi 4 simbol spesifik (Kelipatan 3, BANDUNG, Ganjil, G)",
+                no: 6,
+                title: "Susunan foto keluarga (Ayah, Ibu, Nenek, 3 Anak selalu berdampingan)",
                 answer: `
-                    <p class="mb-2 text-sm sm:text-base">Semua simbol berbeda. Posisi 4 pasti 'G' (1 pilihan). Sisa kata BANDUNG di Posisi 2 adalah {B,A,N,D,U} (5 pilihan).</p>
-                    <p class="mb-2 text-sm sm:text-base">Ada irisan kelipatan 3 {3,6,9} dan ganjil {1,3,5,7,9}. Bagi jadi 2 kasus:</p>
-                    <ol class="list-decimal pl-5 mb-3 space-y-2 text-sm sm:text-base bg-slate-50 p-3 rounded border">
-                        <li>Posisi 1 diisi angka 3 atau 9 (2 pilihan). Sisa angka ganjil untuk Posisi 3 ada 4.<br>
-                        Hasil = 2 &times; 5 &times; 4 &times; 1 = 40</li>
-                        <li>Posisi 1 diisi angka 6 (1 pilihan). Sisa angka ganjil utuh ada 5.<br>
-                        Hasil = 1 &times; 5 &times; 5 &times; 1 = 25</li>
-                    </ol>
-                    <div class="bg-emerald-50 text-emerald-800 p-3 rounded font-bold border border-emerald-100 math-font">
-                        Total = 40 + 25 = 65 sandi
+                    <div class="space-y-2">
+                        <p>Anggap 3 Anak yang berdampingan sebagai <b>1 kesatuan blok</b>.</p>
+                        <ul class="list-disc pl-5">
+                            <li>Total elemen untuk disusun: Ayah, Ibu, Nenek, Blok Anak = 4 elemen.<br>
+                            Susunan elemen = 4! = 24.</li>
+                            <li>Susunan internal ke-3 Anak di dalam blok = 3! = 6.</li>
+                        </ul>
+                        <div class="p-3 bg-emerald-50 rounded text-emerald-800 font-semibold border border-emerald-100 mt-3">
+                            Total susunan = 24 &times; 6 = <span class="text-xl">144</span> susunan
+                        </div>
                     </div>`
             },
             {
-                no: 5, title: "Susunan pengurus organisasi (Syarat jender)",
+                no: 7,
+                title: "Menyelidiki 4 pernyataan (Benar/Salah)",
                 answer: `
-                    <p class="mb-2 text-sm sm:text-base">Jabatan memiliki urutan (Ketua beda dengan Wakil), gunakan Permutasi.</p>
-                    <ul class="list-disc pl-5 mb-3 space-y-2 text-sm sm:text-base">
-                        <li>Ketua & Wakil (2) harus Putri (5): ${sub('5')}P${sub('2')} = 5 &times; 4 = 20</li>
-                        <li>Sekt & Bendahara 1, 2 (3) harus Putra (8): ${sub('8')}P${sub('3')} = 8 &times; 7 &times; 6 = 336</li>
+                    <div class="space-y-4">
+                        <div>
+                            <b>a.</b> <sub>12</sub>C<sub>4</sub> = <sub>12</sub>C<sub>8</sub><br>
+                            ${frac('12!', '4!&times;8!')} dan ${frac('12!', '8!&times;4!')} adalah sama. &rarr; <span class="text-emerald-600 font-bold">BENAR</span>
+                        </div>
+                        <div>
+                            <b>b.</b> <sub>9</sub>P<sub>3</sub> = <sub>9</sub>C<sub>3</sub><br>
+                            504 tidak sama dengan 84. Permutasi selalu bernilai beda dari kombinasi jika r > 1. &rarr; <span class="text-red-500 font-bold">SALAH</span>
+                        </div>
+                        <div>
+                            <b>c.</b> Peluang 2 angka dari 4 koin = ${frac('3', '8')}<br>
+                            Binomial: <sub>4</sub>C<sub>2</sub> &times; (${frac('1', '2')})<sup>2</sup> &times; (${frac('1', '2')})<sup>2</sup> = 6 &times; ${frac('1', '16')} = ${frac('6', '16')} = ${frac('3', '8')}. &rarr; <span class="text-emerald-600 font-bold">BENAR</span>
+                        </div>
+                        <div>
+                            <b>d.</b> Harapan mata dadu prima = 60 (dari 120 lemparan)<br>
+                            P(Prima) = ${frac('3', '6')} = ${frac('1', '2')}. Harapan = 120 &times; ${frac('1', '2')} = 60. &rarr; <span class="text-emerald-600 font-bold">BENAR</span>
+                        </div>
+                    </div>`
+            },
+            {
+                no: 8,
+                title: "Menentukan nilai 3k + 2 dari persamaan kombinasi",
+                answer: `
+                    <div class="space-y-2">
+                        <p>Diketahui: <sub>(k+1)</sub>C<sub>2</sub> = 3 &times; <sub>(k-1)</sub>C<sub>1</sub></p>
+                        <div class="bg-white p-3 border rounded font-mono text-sm">
+                            ${frac('(k+1)!', '2! &times; (k-1)!')} = 3 &times; ${frac('(k-1)!', '1! &times; (k-2)!')}<br><br>
+                            ${frac('(k+1)(k)(k-1)!', '2(k-1)!')} = 3(k-1)<br><br>
+                            ${frac('k<sup>2</sup> + k', '2')} = 3k - 3<br><br>
+                            k<sup>2</sup> + k = 6k - 6<br>
+                            k<sup>2</sup> - 5k + 6 = 0<br>
+                            (k-2)(k-3) = 0
+                        </div>
+                        <p>Nilai k yang memenuhi adalah <b>k = 2</b> atau <b>k = 3</b>.</p>
+                        <div class="p-3 bg-sky-50 rounded text-sky-800 font-semibold border border-sky-100">
+                            Jika k = 2 &rarr; 3(2) + 2 = <span class="text-xl">8</span><br>
+                            Jika k = 3 &rarr; 3(3) + 2 = <span class="text-xl">11</span>
+                        </div>
+                    </div>`
+            },
+            {
+                no: 9,
+                title: "Peluang paling sedikit 1 biru dari 6 Merah & 4 Biru (Ambil 2 tanpa pengembalian)",
+                answer: `
+                    <p>Lebih efektif menghitung menggunakan peluang <b>komplemen</b>: (1 - Peluang Keduanya Merah)</p>
+                    <ul class="list-disc pl-5 mb-3 space-y-1">
+                        <li>P(Merah ke-1) = ${frac('6', '10')}</li>
+                        <li>P(Merah ke-2) = ${frac('5', '9')}</li>
+                        <li>P(2 Merah) = ${frac('6', '10')} &times; ${frac('5', '9')} = ${frac('30', '90')} = ${frac('1', '3')}</li>
                     </ul>
-                    <div class="bg-sky-50 text-sky-800 p-3 rounded font-bold border border-sky-100 math-font">
-                        Total susunan = 20 &times; 336 = 6.720
+                    <div class="p-3 bg-emerald-50 rounded text-emerald-800 font-semibold border border-emerald-100">
+                        P(Minimal 1 Biru) = 1 - ${frac('1', '3')} = <span class="text-xl">${frac('2', '3')}</span>
                     </div>`
             },
             {
-                no: 6, title: "Susunan foto keluarga dengan 3 anak berdampingan",
+                no: 10,
+                title: "Peluang keluarga 5 anak memiliki tepat 3 Laki-laki dan 2 Perempuan",
                 answer: `
-                    <p class="mb-2 text-sm sm:text-base">Jadikan ke-3 anak sebagai 1 kesatuan (blok).</p>
-                    <ul class="list-disc pl-5 mb-3 space-y-1 text-sm sm:text-base">
-                        <li>Elemen luar: Ayah, Ibu, Nenek, Blok Anak (4 elemen) &rarr; 4! = 24</li>
-                        <li>Elemen dalam blok: 3 anak bertukar posisi &rarr; 3! = 6</li>
-                    </ul>
-                    <div class="bg-emerald-50 text-emerald-800 p-3 rounded font-bold border border-emerald-100 math-font">
-                        Total susunan = 24 &times; 6 = 144
-                    </div>`
-            },
-            {
-                no: 7, title: "Menyelidiki 4 pernyataan kebenaran",
-                answer: `
-                    <div class="space-y-3 text-sm sm:text-base math-font">
-                        <div class="p-2 bg-slate-50 border rounded"><b>a.</b> ${sub('12')}C${sub('4')} = ${sub('12')}C${sub('8')} &rarr; <b class="text-emerald-600">BENAR</b> (sifat C(n,r) = C(n, n-r))</div>
-                        <div class="p-2 bg-slate-50 border rounded"><b>b.</b> ${sub('9')}P${sub('3')} = ${sub('9')}C${sub('3')} &rarr; <b class="text-red-500">SALAH</b> (Nilainya 504 dan 84)</div>
-                        <div class="p-2 bg-slate-50 border rounded"><b>c.</b> Peluang 2 angka dari 4 koin = ${frac('3','8')} &rarr; <b class="text-emerald-600">BENAR</b> (${sub('4')}C${sub('2')} &times; (${frac('1','2')})${sup('4')} = ${frac('6','16')})</div>
-                        <div class="p-2 bg-slate-50 border rounded"><b>d.</b> Fh prima (120 kali) = 60 &rarr; <b class="text-emerald-600">BENAR</b> (120 &times; ${frac('3','6')} = 60)</div>
-                    </div>`
-            },
-            {
-                no: 8, title: "Nilai 3k + 2 dari persamaan kombinasi",
-                answer: `
-                    <div class="math-font text-sm sm:text-base mb-3 bg-slate-50 p-3 border rounded overflow-x-auto">
-                        <p class="mb-1">${sub('(k+1)')}C${sub('2')} = 3 &times; ${sub('(k-1)')}C${sub('1')}</p>
-                        <p class="mb-1">${frac('(k+1)!', '2!(k-1)!')} = 3(k-1)</p>
-                        <p class="mb-1">${frac('(k+1)k(k-1)!', '2(k-1)!')} = 3(k-1)</p>
-                        <p class="mb-1">k${sup('2')} + k = 6k - 6</p>
-                        <p>k${sup('2')} - 5k + 6 = 0 &rarr; (k-2)(k-3) = 0</p>
+                    <p class="mb-2">Gunakan Peluang Binomial. Diketahui n = 5, p(L) = ${frac('1', '2')}, q(P) = ${frac('1', '2')}.</p>
+                    <div class="bg-white p-3 border rounded text-slate-700 mb-3">
+                        P(3L) = <sub>5</sub>C<sub>3</sub> &times; (${frac('1', '2')})<sup>3</sup> &times; (${frac('1', '2')})<sup>2</sup><br><br>
+                        P(3L) = 10 &times; ${frac('1', '8')} &times; ${frac('1', '4')}
                     </div>
-                    <p class="mb-2 text-sm sm:text-base">Maka k=2 atau k=3.</p>
-                    <div class="bg-sky-50 text-sky-800 p-3 rounded font-bold border border-sky-100 math-font">
-                        Jika k=2 &rarr; 3(2)+2 = 8. Jika k=3 &rarr; 3(3)+2 = 11.
+                    <div class="p-3 bg-sky-50 rounded text-sky-800 font-semibold border border-sky-100">
+                        Hasil = ${frac('10', '32')} = <span class="text-xl">${frac('5', '16')}</span>
                     </div>`
             },
             {
-                no: 9, title: "Peluang paling sedikit 1 biru (Tanpa Pengembalian)",
+                no: 11,
+                title: "Variabel Acak X (Banyak gambar dari 4 koin dilempar bersamaan)",
                 answer: `
-                    <p class="mb-2 text-sm sm:text-base">Gunakan komplemen: 1 - P(Keduanya Merah).</p>
-                    <p class="mb-2 text-sm sm:text-base math-font">P(2 Merah) = ${frac('6','10')} &times; ${frac('5','9')} = ${frac('30','90')} = ${frac('1','3')}</p>
-                    <div class="bg-emerald-50 text-emerald-800 p-3 rounded font-bold border border-emerald-100 math-font">
-                        P(&ge; 1 Biru) = 1 - ${frac('1','3')} = ${frac('2','3')}
-                    </div>`
-            },
-            {
-                no: 10, title: "Peluang tepat 3 laki-laki dan 2 perempuan (5 Anak)",
-                answer: `
-                    <p class="mb-2 text-sm sm:text-base">Peluang Binomial. n=5, sukses(L)=${frac('1','2')}, gagal(P)=${frac('1','2')}.</p>
-                    <div class="mb-3 p-3 bg-slate-50 border rounded math-font">
-                        P(3L) = ${sub('5')}C${sub('3')} &times; (${frac('1','2')})${sup('3')} &times; (${frac('1','2')})${sup('2')}<br>
-                        P(3L) = 10 &times; ${frac('1','8')} &times; ${frac('1','4')}
-                    </div>
-                    <div class="bg-sky-50 text-sky-800 p-3 rounded font-bold border border-sky-100 math-font">
-                        Peluang = ${frac('10','32')} = ${frac('5','16')}
-                    </div>`
-            },
-            {
-                no: 11, title: "Variabel Acak X (Gambar dari 4 koin)",
-                answer: `
-                    <p class="mb-2 text-sm sm:text-base">Distribusi probabilitas (Ruang sampel = 16):<br>P(0)=${frac('1','16')}, P(1)=${frac('4','16')}, P(2)=${frac('6','16')}, P(3)=${frac('4','16')}, P(4)=${frac('1','16')}</p>
-                    <ul class="space-y-2 text-sm sm:text-base math-font">
-                        <li class="p-2 border rounded">P(X &le; 1) = P(0)+P(1) = <b>${frac('5','16')}</b></li>
-                        <li class="p-2 border rounded">P(X &le; 2) = P(0)+P(1)+P(2) = <b>${frac('11','16')}</b></li>
-                        <li class="p-2 border rounded">P(X &le; 3) = 1 - P(4) = <b>${frac('15','16')}</b></li>
-                        <li class="p-2 border rounded">P(2 &le; X &le; 4) = P(2)+P(3)+P(4) = <b>${frac('11','16')}</b></li>
+                    <p class="mb-2">Distribusi probabilitas (Ruang sampel = 16):</p>
+                    <p class="mb-3 text-sm">P(0)=${frac('1', '16')}, P(1)=${frac('4', '16')}, P(2)=${frac('6', '16')}, P(3)=${frac('4', '16')}, P(4)=${frac('1', '16')}</p>
+                    <ul class="space-y-3">
+                        <li class="bg-white p-2 border rounded"><b>Nilai P(X &le; 1)</b> = P(0)+P(1) = ${frac('5', '16')}</li>
+                        <li class="bg-white p-2 border rounded"><b>Nilai P(X &le; 2)</b> = P(0)+P(1)+P(2) = ${frac('11', '16')}</li>
+                        <li class="bg-white p-2 border rounded"><b>Nilai P(X &le; 3)</b> = 1 - P(4) = ${frac('15', '16')}</li>
+                        <li class="bg-white p-2 border rounded"><b>Nilai P(2 &le; X &le; 4)</b> = P(2)+P(3)+P(4) = ${frac('11', '16')}</li>
                     </ul>`
             },
             {
-                no: 12, title: "Peluang jumlah nomor kartu X &le; 7",
+                no: 12,
+                title: "Peluang jumlah kartu X &le; 7 (Dua kotak: 3 Hijau, 5 Kuning)",
                 answer: `
-                    <p class="mb-2 text-sm sm:text-base">Dua kotak, masing-masing 8 kartu (1..3 Hijau, 4..8 Kuning). Total sampel = 64.</p>
-                    <p class="mb-2 text-sm sm:text-base">Cari pasangan (a,b) dimana a+b &le; 7:</p>
-                    <p class="mb-2 text-sm sm:text-base bg-slate-50 p-2 rounded border">Jika kotak 1='1' (6 pasang), '2' (5 pasang), '3' (4), '4' (3), '5' (2), '6' (1).</p>
-                    <p class="mb-2 text-sm sm:text-base">Total yang memenuhi = 6+5+4+3+2+1 = 21.</p>
-                    <div class="bg-emerald-50 text-emerald-800 p-3 rounded font-bold border border-emerald-100 math-font">
-                        P(X &le; 7) = ${frac('21','64')}
-                    </div>`
-            },
-            {
-                no: 13, title: "Pernyataan Benar (Ambil 3 bola dari 6H, 4P)",
-                answer: `
-                    <p class="mb-2 text-sm sm:text-base">Total kombinasi: ${sub('10')}C${sub('3')} = 120.</p>
-                    <ul class="space-y-2 text-sm sm:text-base math-font mb-3">
-                        <li class="p-2 border rounded">A. P(X=0) = ${frac('4','120')} = ${frac('1','30')} (<b>Benar</b>)</li>
-                        <li class="p-2 border rounded">B. P(X=1) = ${frac('6 &times; 6','120')} = ${frac('3','10')} (<b>Benar</b>)</li>
-                        <li class="p-2 border rounded">C. P(X=2) = ${frac('15 &times; 4','120')} = ${frac('1','2')} (<b>Benar</b>)</li>
-                        <li class="p-2 border rounded">D. P(X=3) = ${frac('20','120')} = ${frac('1','6')} (<b>Benar</b>)</li>
+                    <p class="mb-2">Tiap kotak berisi 8 kartu. Ruang sampel total = 8 &times; 8 = 64.</p>
+                    <p>Mencari pasangan (a,b) yang a+b &le; 7 :</p>
+                    <ul class="list-disc pl-5 mb-3 text-sm">
+                        <li>Kotak 1 ambil '1' &rarr; Kotak 2 bisa {1,2,3,4,5,6} (6 cara)</li>
+                        <li>Kotak 1 ambil '2' &rarr; Kotak 2 bisa {1,2,3,4,5} (5 cara)</li>
+                        <li>Kotak 1 ambil '3' &rarr; Kotak 2 bisa {1,2,3,4} (4 cara)</li>
+                        <li>Kotak 1 ambil '4' &rarr; Kotak 2 bisa {1,2,3} (3 cara)</li>
+                        <li>Kotak 1 ambil '5' &rarr; Kotak 2 bisa {1,2} (2 cara)</li>
+                        <li>Kotak 1 ambil '6' &rarr; Kotak 2 bisa {1} (1 cara)</li>
                     </ul>
-                    <div class="bg-sky-50 text-sky-800 p-2 rounded text-center font-bold border border-sky-100">
-                        Semua pernyataan benar.
+                    <p>Total cara memenuhi syarat = 6 + 5 + 4 + 3 + 2 + 1 = 21.</p>
+                    <div class="p-3 bg-emerald-50 rounded text-emerald-800 font-semibold border border-emerald-100 mt-2">
+                        P(X &le; 7) = <span class="text-xl">${frac('21', '64')}</span>
                     </div>`
             },
             {
-                no: 14, title: "Nilai P(X=1) dari 3 koin (X = Gambar)",
+                no: 13,
+                title: "Variabel Acak X (Banyak bola hijau terambil). Dari 6 Hijau, 4 Putih, diambil 3",
                 answer: `
-                    <p class="mb-2 text-sm sm:text-base">Ruang sampel = 8. Kejadian 1 Gambar (GAA, AGA, AAG) ada 3.</p>
-                    <div class="bg-emerald-50 text-emerald-800 p-3 rounded font-bold border border-emerald-100 math-font">
-                        P(X = 1) = ${frac('3','8')}
+                    <p class="mb-2">Total cara = <sub>10</sub>C<sub>3</sub> = 120.</p>
+                    <ul class="space-y-3">
+                        <li class="bg-white p-2 border rounded">A. P(X=0) (0H, 3P) = ${frac('<sub>6</sub>C<sub>0</sub> &times; <sub>4</sub>C<sub>3</sub>', '120')} = ${frac('4', '120')} = ${frac('1', '30')} <b>(Benar)</b></li>
+                        <li class="bg-white p-2 border rounded">B. P(X=1) (1H, 2P) = ${frac('<sub>6</sub>C<sub>1</sub> &times; <sub>4</sub>C<sub>2</sub>', '120')} = ${frac('36', '120')} = ${frac('3', '10')} <b>(Benar)</b></li>
+                        <li class="bg-white p-2 border rounded">C. P(X=2) (2H, 1P) = ${frac('<sub>6</sub>C<sub>2</sub> &times; <sub>4</sub>C<sub>1</sub>', '120')} = ${frac('60', '120')} = ${frac('1', '2')} <b>(Benar)</b></li>
+                        <li class="bg-white p-2 border rounded">D. P(X=3) (3H, 0P) = ${frac('<sub>6</sub>C<sub>3</sub> &times; <sub>4</sub>C<sub>0</sub>', '120')} = ${frac('20', '120')} = ${frac('1', '6')} <b>(Benar)</b></li>
+                    </ul>
+                    <div class="p-3 bg-sky-50 rounded text-sky-800 font-semibold border border-sky-100 mt-3 text-center">
+                        Kesimpulan: Semua opsi (A, B, C, D) <b>BENAR</b>.
                     </div>`
             },
             {
-                no: 15, title: "Ambil 2 bola berurutan tanpa pengembalian (7M, 5P)",
+                no: 14,
+                title: "Nilai P(X=1) pada lemparan 3 keping uang logam (X = gambar)",
                 answer: `
-                    <div class="space-y-3 text-sm sm:text-base math-font">
-                        <div class="p-3 border rounded"><b>a. Keduanya merah:</b><br>${frac('7','12')} &times; ${frac('6','11')} = <b class="text-sky-600">${frac('42','132')} = ${frac('7','22')}</b></div>
-                        <div class="p-3 border rounded"><b>b. Keduanya putih:</b><br>${frac('5','12')} &times; ${frac('4','11')} = <b class="text-emerald-600">${frac('20','132')} = ${frac('5','33')}</b></div>
-                        <div class="p-3 border rounded"><b>c. Paling sedikit 1 putih:</b><br>1 - P(2 Merah) = 1 - ${frac('7','22')} = <b class="text-sky-600">${frac('15','22')}</b></div>
+                    <p class="mb-2">Ruang sampel 3 koin = 2<sup>3</sup> = 8.</p>
+                    <p class="mb-2">Titik sampel kejadian X=1 (1 Gambar, 2 Angka) adalah: {GAA, AGA, AAG} &rarr; ada 3 titik.</p>
+                    <div class="p-3 bg-emerald-50 rounded text-emerald-800 font-semibold border border-emerald-100 mt-2">
+                        P(X = 1) = <span class="text-xl">${frac('3', '8')}</span>
+                    </div>`
+            },
+            {
+                no: 15,
+                title: "Kantong 7 Merah & 5 Putih. Diambil 2 berturut-turut tanpa pengembalian",
+                answer: `
+                    <div class="space-y-4">
+                        <div class="bg-white p-3 border rounded">
+                            <p class="font-bold text-slate-800 mb-1">a. Keduanya merah</p>
+                            P(M1) &times; P(M2) = ${frac('7', '12')} &times; ${frac('6', '11')} = ${frac('42', '132')} = <span class="font-bold text-sky-600">${frac('7', '22')}</span>
+                        </div>
+                        <div class="bg-white p-3 border rounded">
+                            <p class="font-bold text-slate-800 mb-1">b. Keduanya putih</p>
+                            P(P1) &times; P(P2) = ${frac('5', '12')} &times; ${frac('4', '11')} = ${frac('20', '132')} = <span class="font-bold text-emerald-600">${frac('5', '33')}</span>
+                        </div>
+                        <div class="bg-white p-3 border rounded">
+                            <p class="font-bold text-slate-800 mb-1">c. Paling sedikit 1 putih</p>
+                            Gunakan komplemen (1 - Peluang Keduanya Merah).<br>
+                            1 - ${frac('7', '22')} = <span class="font-bold text-sky-600">${frac('15', '22')}</span>
+                        </div>
                     </div>`
             }
         ];
 
-        const accContainer = document.getElementById('accordion-container');
-        
-        soalData.forEach((item, idx) => {
+        // Inject Data ke DOM dengan Animasi Accordion
+        const container = document.getElementById('accordion-container');
+
+        soalData.forEach((item, index) => {
             const html = `
-                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                    <button class="w-full text-left px-5 sm:px-6 py-4 flex justify-between items-center bg-white hover:bg-slate-50 transition-colors group" onclick="toggleAcc(${idx})">
-                        <div class="font-semibold text-slate-800 text-sm sm:text-base group-hover:text-primary pr-4">
-                            <span class="text-primary mr-2">${item.no}.</span>${item.title}
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden mb-3">
+                    <button class="w-full text-left px-6 py-5 focus:outline-none flex justify-between items-center bg-white hover:bg-slate-50 transition group" onclick="toggleAccordion(${index})">
+                        <div class="font-semibold text-slate-800 text-lg group-hover:text-primary transition-colors">
+                            <span class="inline-block w-8 text-sky-500">${item.no}.</span> ${item.title}
                         </div>
-                        <div class="flex-shrink-0 bg-slate-100 p-1.5 rounded-full group-hover:bg-sky-100">
-                            <svg id="icon-${idx}" class="w-4 h-4 sm:w-5 sm:h-5 text-slate-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <div class="ml-4 flex-shrink-0 bg-slate-100 p-2 rounded-full group-hover:bg-sky-100 transition-colors">
+                            <svg id="icon-${index}" class="w-5 h-5 text-slate-500 group-hover:text-sky-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </div>
                     </button>
-                    <div id="content-${idx}" class="accordion-content bg-slate-50/80 px-5 sm:px-14">
-                        <div class="py-4 text-slate-700">
+                    <div id="content-${index}" class="accordion-content bg-slate-50/80 px-6 sm:px-14">
+                        <div class="py-2 text-slate-700 math-block">
                             ${item.answer}
                         </div>
                     </div>
                 </div>
             `;
-            accContainer.insertAdjacentHTML('beforeend', html);
+            container.insertAdjacentHTML('beforeend', html);
         });
 
-        function toggleAcc(index) {
+        function toggleAccordion(index) {
             const content = document.getElementById(`content-${index}`);
             const icon = document.getElementById(`icon-${index}`);
             
+            // Tutup semua yang lain (Opsional, jika ingin satu-satu terbuka)
+            // document.querySelectorAll('.accordion-content').forEach((el, i) => {
+            //     if(i !== index) { el.classList.remove('open'); document.getElementById(`icon-${i}`).style.transform = 'rotate(0deg)'; }
+            // });
+
             if (content.classList.contains('open')) {
                 content.classList.remove('open');
                 icon.style.transform = 'rotate(0deg)';
             } else {
-                // Tutup yang lain opsional (bisa diaktifkan jika ingin akordeon tunggal)
                 content.classList.add('open');
                 icon.style.transform = 'rotate(180deg)';
             }
         }
+
+        // Navbar blur and shadow on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+                nav.classList.add('bg-white/95');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.remove('bg-white/95');
+            }
+        });
     </script>
 </body>
 </html>
