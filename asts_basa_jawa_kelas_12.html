@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Interaktif: Keraton Yogyakarta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8a151b; /* Merah Keraton */
+            --primary-dark: #5e0d11;
+            --primary-light: #fef2f2;
+            --accent: #d4af37; /* Emas */
+            --accent-light: #fdfaf0;
+            --accent-dark: #b5952f;
+            --bg-body: #f4f6f8;
+            --bg-card: #ffffff;
+            --text-title: #1e293b;
+            --text-body: #475569;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --success: #10b981;
+            --error: #ef4444;
+            --radius: 20px;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+            --shadow-md: 0 8px 24px rgba(138, 21, 27, 0.08);
+            --shadow-lg: 0 20px 40px rgba(138, 21, 27, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-body);
+            background-image: 
+                radial-gradient(var(--accent) 0.5px, transparent 0.5px),
+                radial-gradient(var(--accent) 0.5px, transparent 0.5px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            background-attachment: fixed;
+            color: var(--text-body);
+            line-height: 1.8;
+            padding-top: 80px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Floating Decorations Background */
+        .decor-circle-1, .decor-circle-2 {
+            position: fixed;
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: float 10s infinite ease-in-out alternate;
+        }
+        .decor-circle-1 {
+            width: 400px; height: 400px;
+            background: var(--accent);
+            top: -100px; left: -100px;
+        }
+        .decor-circle-2 {
+            width: 500px; height: 500px;
+            background: var(--primary);
+            bottom: -150px; right: -150px;
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(30px) scale(1.05); }
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 75px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1360px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            scrollbar-width: none;
+        }
+
+        .nav-container::-webkit-scrollbar { display: none; }
+
+        .nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(138, 21, 27, 0.3);
+        }
+
+        .nav-back:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(138, 21, 27, 0.4);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding: 5px 0;
+            scrollbar-width: none; /* Firefox */
+        }
+        .nav-menu::-webkit-scrollbar { display: none; } /* Chrome */
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-title);
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 10px 18px;
+            border-radius: 12px;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            background: transparent;
+            border: 1px solid transparent;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+            background-color: var(--primary-light);
+            border-color: rgba(138, 21, 27, 0.1);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 0 32px 80px 32px;
+        }
+
+        /* Hero Banner */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 70px 40px;
+            border-radius: var(--radius);
+            margin-top: 20px;
+            margin-bottom: 50px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            overflow: hidden;
+            border: 2px solid var(--accent);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l15 30-15 30L15 30z' fill='%23d4af37' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary-dark);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        /* Cards */
+        .card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            padding: 45px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255,255,255,0.5);
+            box-shadow: var(--shadow-md);
+            scroll-margin-top: 100px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px dashed var(--border-color);
+        }
+
+        .card-badge {
+            background: var(--primary-light);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            font-weight: 800;
+            font-size: 0.9rem;
+            padding: 6px 16px;
+            border-radius: 30px;
+        }
+
+        .card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.85rem;
+            line-height: 1.25;
+            color: var(--primary-dark);
+            font-weight: 700;
+            flex: 1 1 300px;
+            min-width: 0;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin: 30px 0 15px 0;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h3::before {
+            content: '❖';
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        /* Image Styling */
+        .img-container {
+            position: relative;
+            width: 100%;
+            background: linear-gradient(to right, var(--primary-light), var(--accent-light));
+            border-radius: 16px;
+            padding: 15px;
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .media-card {
+            display: flow-root;
+        }
+
+        .media-card .img-container {
+            float: left;
+            width: 42%;
+            margin: 5px 32px 24px 0;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+            border-radius: 10px;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.4s ease;
+        }
+
+        .img-container:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Lists Enhancements */
+        ul.custom-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.custom-list li {
+            position: relative;
+            padding-left: 36px;
+            margin-bottom: 16px;
+            background: #fff;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-right: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+        }
+
+        ul.custom-list li:hover {
+            border-color: var(--accent);
+            background: var(--accent-light);
+            transform: translateX(5px);
+        }
+
+        ul.custom-list li::before {
+            content: '✦';
+            color: var(--accent-dark);
+            font-size: 1.4rem;
+            position: absolute;
+            left: 12px;
+            top: 13px;
+        }
+
+        ul.custom-list li strong {
+            color: var(--primary-dark);
+            font-size: 1.05rem;
+        }
+
+        /* Quiz Styles */
+        .quiz-card {
+            background: linear-gradient(145deg, #ffffff, var(--accent-light));
+            border: 2px solid var(--accent);
+        }
+
+        .quiz-card .card-header h2 {
+            font-size: 1.7rem;
+        }
+
+        .quiz-progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .quiz-progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .quiz-status {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            font-size: 0.92rem;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 12px;
+            border: 1px solid var(--accent);
+        }
+
+        .quiz-question {
+            font-size: 1.12rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .quiz-option {
+            background: #ffffff;
+            border: 2px solid var(--border-color);
+            padding: 13px 18px;
+            border-radius: 14px;
+            font-size: 0.96rem;
+            font-weight: 600;
+            color: var(--text-body);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .quiz-option:hover:not(.disabled) {
+            border-color: var(--primary);
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(138, 21, 27, 0.1);
+        }
+
+        .quiz-option.correct {
+            background-color: #ecfdf5 !important;
+            border-color: var(--success) !important;
+            color: var(--success) !important;
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+        }
+
+        .quiz-option.incorrect {
+            background-color: #fef2f2 !important;
+            border-color: var(--error) !important;
+            color: var(--error) !important;
+        }
+
+        .quiz-option.disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .quiz-feedback {
+            margin-top: 25px;
+            padding: 16px 20px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.92rem;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .quiz-feedback.correct-bg { background: #ecfdf5; color: #065f46; border: 1px solid var(--success); }
+        .quiz-feedback.incorrect-bg { background: #fef2f2; color: #991b1b; border: 1px solid var(--error); }
+
+        .quiz-actions {
+            margin-top: 30px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 12px 26px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(138, 21, 27, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(138, 21, 27, 0.5);
+        }
+
+        .quiz-result {
+            text-align: center;
+            padding: 40px 20px;
+            display: none;
+        }
+
+        .quiz-result h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        .score-badge {
+            display: inline-block;
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--primary);
+            background: var(--accent-light);
+            border: 4px solid var(--accent);
+            width: 150px;
+            height: 150px;
+            line-height: 140px;
+            border-radius: 50%;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Bibliography */
+        .bibliography {
+            background: var(--text-title);
+            color: #f8fafc;
+            padding: 50px;
+            border-radius: var(--radius);
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bibliography::before {
+            content: ''; position: absolute; right: -50px; top: -50px;
+            width: 200px; height: 200px; border-radius: 50%;
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .bibliography h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 15px;
+        }
+
+        .bibliography ol { padding-left: 25px; }
+        .bibliography li { margin-bottom: 15px; word-break: break-word; color: #cbd5e1; }
+        .bibliography a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+        .bibliography a:hover { color: #fff; text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                justify-content: flex-start;
+                gap: 10px;
+                overflow-x: auto;
+            }
+            .nav-back {
+                flex-shrink: 0;
+                padding: 9px 14px;
+                font-size: 0.85rem;
+            }
+            .nav-menu {
+                display: flex;
+                flex: 0 0 auto;
+                gap: 4px;
+            }
+            .nav-menu a {
+                padding: 8px 10px;
+                font-size: 0.78rem;
+            }
+            .card { padding: 30px 20px; }
+            .card-header {
+                display: block;
+            }
+            .card-header h2 {
+                margin-top: 14px;
+                font-size: 1.6rem;
+            }
+            .hero { padding: 50px 20px; }
+            .hero h1 { font-size: 2.2rem; }
+            .img-container { padding: 10px; }
+            .media-card .img-container {
+                float: none;
+                width: 100%;
+                margin: 30px 0;
+            }
+            .quiz-card .card-header h2 {
+                font-size: 1.45rem;
+            }
+            .quiz-question {
+                font-size: 1rem;
+            }
+            .quiz-option {
+                font-size: 0.9rem;
+                padding: 12px 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Decorative Elements -->
+    <div class="decor-circle-1"></div>
+    <div class="decor-circle-2"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-back">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Beranda
+            </a>
+            <div class="nav-menu">
+                <a href="#materi">Materi</a>
+                <a href="#sengkalan">Sengkalan</a>
+                <a href="#prajurit">Bregada</a>
+                <a href="#plengkung">Plengkung</a>
+                <a href="#tata-ruang">Tata Ruang Inti</a>
+                <a href="#kuis" style="color: var(--primary); font-weight: 800;">Evaluasi Kuis</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="materi">
+
+        <!-- Hero Header -->
+        <header class="hero">
+            <div class="hero-content">
+                <span class="hero-badge">Budaya & Sejarah</span>
+                <h1>Keraton Ngayogyakarta Hadiningrat</h1>
+                <p>Materi Interaktif Kebudayaan: Sengkalan, Pasukan Bregada, Lima Plengkung, Tata Ruang Inti Keraton, beserta Uji Pemahaman Terpadu.</p>
+            </div>
+        </header>
+
+        <!-- Materi 1 -->
+        <section id="sengkalan" class="card">
+            <div class="card-inner-decor"></div>
+            <div class="card-header">
+                <span class="card-badge">Bagian 1</span>
+                <h2>Sengkalan Keraton Yogyakarta</h2>
+            </div>
+            <p><strong>Sengkalan</strong> inggih menika angka taun ingkang dipun damel saking rerangkening tembung utawi gambar. Miturut wujudipun sengkalan wonten 2, inggih menika sengkalan lamba (awujud tetembungan) lan sengkalan memet (awujud gambar). Miturut ubenging rembulan utawi surya sengkalan wonten 2, inggih menika candra sengkala (awujud taun jawa/hijriyah) lan surya sengkala (awujud taun masehi).</p>
+            
+            <h3>Watak-wataking tembung ing sengkalan:</h3>
+            <ul class="custom-list">
+                <li><strong>Watak 1:</strong> Bermakna di dunia hanya satu, contoh katanya: gusti, bumi, srengenge, rembulan, buntut, manungsa, nabi, wudel, suta, nata, praja, wiji, eka.</li>
+                <li><strong>Watak 2:</strong> Bermakna di dunia ada dua/sepasang, contoh katanya: tangan, kuping, mripat, swiwi, sajodho, sakembaran, penganten, gandheng, dwi.</li>
+                <li><strong>Watak 3:</strong> Bermakna barang membawa panas/pintar, contoh katanya: geni, mawa, obor, panas, sorot, pinter, karta, guna, tri.</li>
+                <li><strong>Watak 4:</strong> Bermakna barang mengandung air, contoh katanya: tuk, samodra, umbul, sendhang, kali, warih, sumber, suci, catur.</li>
+                <li><strong>Watak 5:</strong> Terdiri dari: buta, panah, angin, galak, pandhawa, wisaya (panggawe), landhep, gaman, driya, panca.</li>
+                <li><strong>Watak 6:</strong> Terdiri dari: obah, kayu, rasa, kewan asikil 6 (kombang, tawon), lona (pedhes), mla (kecut), sad.</li>
+                <li><strong>Watak 7:</strong> Terdiri dari: swara, gunung, pandhita, jaran, numpak, guru, mulang, wasita, sabda, muji, sapta.</li>
+                <li><strong>Watak 8:</strong> Bermakna hewan merangkak, contoh katanya: ula, baya, murti, rahayu, basuki, mangesthi, dwipangga (gajah), astha.</li>
+                <li><strong>Watak 9:</strong> Bermakna lubang/masuk, contoh katanya: bolong, kembang, ambu, gapura, mlebu, gatra, leng, trus, nawa.</li>
+                <li><strong>Watak 0:</strong> Sesuatu yang tinggi atau kosong (ilang, nir, wuk, musna, muksa, brastha, tanpa, swarga, das).</li>
+            </ul>
+            <p style="margin-top: 20px; padding: 15px; background: var(--accent-light); border-left: 4px solid var(--accent); border-radius: 8px;">
+                <strong>Cara membuat sengkalan:</strong> Memilih tembung-tembung yang bermakna untuk watak angka 0–9, mencari dasanama, menata kata secara runtut (gumathok), serta cara membacanya harus dari belakang (kanan ke kiri). Contoh: <em>"Dwi naga rasa tunggal" (1682)</em> untuk penanda berdirinya Keraton Ngayogyakarta Hadiningrat.
+            </p>
+        </section>
+
+        <!-- Materi 2 -->
+        <section id="prajurit" class="card media-card">
+            <div class="card-inner-decor"></div>
+            <div class="card-header">
+                <span class="card-badge">Bagian 2</span>
+                <h2>Prajurit Keraton Yogyakarta</h2>
+            </div>
+            
+            <div class="img-container">
+                <img src="https://www.kratonjogja.id/assets/content/5ad1e225-3453-4ba6-b12b-59d9ebcf0763.jpg" alt="Prajurit Keraton Yogyakarta">
+            </div>
+
+            <p>Saat ini, Keraton Yogyakarta memiliki sepuluh kelompok pasukan yang disebut sebagai <strong>bregada</strong>. Jumlah keseluruhan prajurit sekitar 600 orang. Prajurit Keraton Yogyakarta dibagi ke dalam tiga kepemilikan kelompok: <em>Bregada Bugis</em> (dimiliki oleh Kepatihan), <em>Bregada Surakarsa</em> (dimiliki oleh Kadipaten Anom), dan sisanya dimiliki secara langsung oleh keraton.</p>
+            <p style="margin-top: 15px;">Setiap prajurit dilandasi kredo <strong>Nyawiji</strong> (konsentrasi yang diarahkan ke cita-cita), <strong>Greget</strong> (semangat hidup yang diarahkan ke tujuan), <strong>Sengguh</strong> (percaya penuh pada kemampuan pribadi), dan <strong>Ora Mingkuh</strong> (tidak mundur setapak pun menghadapi halangan).</p>
+            
+            <h3>Rincian 10 Bregada Keraton:</h3>
+            <ul class="custom-list">
+                <li><strong>Bregada Wirabraja:</strong> Bermakna prajurit yang sangat berani (wira) dan tajam (braja). Klebet prajurit ini bernama Gula-klapa.</li>
+                <li><strong>Bregada Dhaeng:</strong> Awalnya berasal dari Makassar. Klebet pasukan ini adalah Bahningsari.</li>
+                <li><strong>Bregada Patangpuluh:</strong> Pasukan dengan kekuatan luar biasa. Bersenjata Kanjeng Kiai Trisula, diiringi Gendhing Bulu-Bulu (cepat) dan Mars Gendera (lambat).</li>
+                <li><strong>Bregada Jagakarya:</strong> Penjaga kelancaran pemerintahan. Memiliki Klebet Papasan bersenjata tombak Kanjeng Kiai Trisula.</li>
+                <li><strong>Bregada Prawiratama:</strong> Pasukan yang selalu mengalahkan musuh dengan mudah. Membawa Klebet Geniroga/Banteng Ketaton.</li>
+                <li><strong>Bregada Nyutra:</strong> Pengawal pribadi Sultan (hanya 64 orang). Filosofinya sehalus sutra dengan ketajaman unggul. Membawa klebet Podhang Ngingsep Sari & Padma-Sri-Kresna.</li>
+                <li><strong>Bregada Ketanggung:</strong> Pasukan dengan tanggung jawab yang sangat berat. Klebetnya adalah Cakra-Swandana bersenjata tombak Kanjeng Kiai Nenggala.</li>
+                <li><strong>Bregada Mantrijero:</strong> Prajurit berwewenang mengambil keputusan di lingkungan dalam. Klebetnya Purnamasidhi.</li>
+                <li><strong>Bregada Surakarsa:</strong> Pasukan di bawah Kadipaten Anom (putera mahkota).</li>
+                <li><strong>Bregada Bugis:</strong> Pasukan yang secara resmi dimiliki oleh jajaran Kepatihan.</li>
+            </ul>
+        </section>
+
+        <!-- Materi 3 -->
+        <section id="plengkung" class="card media-card">
+            <div class="card-inner-decor"></div>
+            <div class="card-header">
+                <span class="card-badge">Bagian 3</span>
+                <h2>Lima Plengkung Keraton</h2>
+            </div>
+            
+            <div class="img-container">
+                <img src="https://inibaru.id/_next/image?url=https%3A%2F%2Fredaksi.inibaru.id%2Fmedia%2F28334%2Flarge%2Fnormal%2F42469e24-ed68-4c19-b7e8-a1331c1207db__large.jpg&w=1920&q=75" alt="Plengkung Keraton Yogyakarta">
+            </div>
+
+            <p>Benteng keraton yang melindungi kompleks inti ini memiliki 5 pintu gerbang utama yang disebut plengkung:</p>
+            <ul class="custom-list">
+                <li><strong>Plengkung Nirbaya (Gading):</strong> Tidak boleh dilewati oleh Sultan yang sedang bertakhta, difungsikan sebagai jalan iring-iringan jenazah kerabat keraton ke makam Imogiri.</li>
+                <li><strong>Plengkung Tarunasura (Wijilan):</strong> Dulunya dijaga oleh prajurit muda keraton, saat ini masih dipertahankan menjadi rute keluar-masuk warga.</li>
+                <li><strong>Plengkung Jagasura:</strong> Terletak di barat Alun-alun Utara, dijaga oleh prajurit pemberani pada masanya.</li>
+                <li><strong>Plengkung Madyasura (Buntet):</strong> Pernah hancur karena serangan pasukan Inggris (Geger Sepehi 1812) lalu ditutup permanen (buntet). Kini kembali dibuka sebagai jalanan.</li>
+                <li><strong>Plengkung Jayabaya:</strong> Berada di barat Pasar Ngasem/Tamansari sehingga kerap disebut Plengkung Tamansari.</li>
+            </ul>
+        </section>
+
+        <!-- Materi 4 -->
+        <section id="tata-ruang" class="card media-card">
+            <div class="card-inner-decor"></div>
+            <div class="card-header">
+                <span class="card-badge">Bagian 4</span>
+                <h2>Materi Tata Ruang Keraton</h2>
+            </div>
+            
+            <div class="img-container">
+                <img src="https://www.kratonjogja.id/assets/content/952cc605-a1f6-46c4-a740-510f375c7e3c.jpg?width=1080&height=1200" alt="Tata Ruang Keraton Yogyakarta">
+            </div>
+
+            <h3>Cikal Bakal lan Hadeging Keraton Yogyakarta</h3>
+            <p>Sejarah Dinasti Mataram Islam lumampah saking Kotagede ing abad kaping 16, banjur pindhah menyang Plered, Kartasura, Surakarta, lan pungkasane Yogyakarta. Lumantar <strong>Perjanjian Giyanti</strong> utawa Palihan Nagari tanggal 13 Februari 1755, perang Pangeran Mangkubumi (Sunan Kabanaran) lawan VOC suwene 9 taun rampung. Karajan Mataram dipunparang dados kalih, yaiku Surakarta Hadiningrat lan Ngayogyakarta Hadiningrat, kanthi pimpinan Sunan Pakubuwana III lan Pangeran Mangkubumi.</p>
+            <ul class="custom-list">
+                <li><strong>Perjanjian Jatisari (15 Februari 1755):</strong> Ing Lebak Jatisari dipunatur ciri khas budaya. Sultan Hamengku Buwono I nglestantunaken adat lan budaya Mataram, kayata busana, basa, gamelan, lan beksan, dene Sunan Pakubuwana III nyipta budaya enggal.</li>
+                <li><strong>Hadeging Nagari (13 Maret 1755):</strong> Dipunproklamasikaken hadeging Nagari Ngayogyakarta Hadiningrat, pas tanggal Kamis Pon, 29 Jumadilawal 1680 Tahun Jawa.</li>
+                <li><strong>Pesanggrahan Ambar Ketawang:</strong> Nalika mbangun keraton wiwit 9 Oktober 1755, Sultan HB I lan kulawarga mesanggrah ing Ambar Ketawang, Gamping, Sleman.</li>
+                <li><strong>Pindhah ing Keraton (7 Oktober 1756):</strong> Sultan HB I mlebet keraton anyar ing Pesanggrahan Garjitawati, Umbul Pacethokan utawa Tamansari, ing alas Beringan. Tanggal punika yaiku Kamis Pahing, 13 Sura 1682 Tahun Jawa.</li>
+                <li><strong>Sengkalan madeg lan mlebet:</strong> <em>Dwi naga rasa tunggal</em> (1682 TJ) minangka sengkalan memet madegipun keraton, dene <em>Dwi naga rasa wani</em> (1682 TJ) minangka sengkalan memet mlebetipun Sultan ing keraton.</li>
+            </ul>
+
+            <h3>Arsitektur lan Sengkalan Bangunan</h3>
+            <ul class="custom-list">
+                <li><strong>Gedhong:</strong> Bangunan joglo sing nganggé tembok, kayata Gedhong Jene, dalemipun Sultan.</li>
+                <li><strong>Bangsal utawa joglo:</strong> Payonipun saking sirap, gentheng lemah, utawa seng, lan dipunsangga dening soko guru.</li>
+                <li><strong>Regol lan plataran:</strong> Regol minangka gerbang panghubung antarane plataran, dene plataran minangka ruang terbuka ing jeroning kompleks.</li>
+                <li><strong>Ornamen Putri Mirong:</strong> Wonten ing Bangsal Manguntur Tangkil, awujud stilasi kaligrafi Allah, Muhammad, lan Alif Lam Mim Ra ing tengah cagak utawa soko.</li>
+                <li><strong>Sengkalan bangunan:</strong> <em>Trus Manunggal Pandhitaning Rat</em> (1682 TJ) minangka tandha madegipun Bangsal Kencana nalika Sultan HB II; <em>Werdu Yaksa Naga Raja</em> (1853 TJ) kanggo Bangsal Manis nalika Sultan HB VIII; lan <em>Jagad Ing Asta Wiwara Dhatulaya / Narpati</em> (1921 M) kanggo Regol Danapratapa.</li>
+            </ul>
+
+            <h3>Tata Ruang lan Struktur Kompleks Keraton</h3>
+            <p>Tata ruang Keraton ngutamakaken pola konsentris. Sembilan gerbang ing kompleks dados lambang sanga bolongan ing raga manungsa. Saka arah lor menyang kidul, tataran lan papan wigatine yaiku:</p>
+            <ul class="custom-list">
+                <li><strong>Gladhag - Pangurakan:</strong> Gerbang utama mlebu keraton. Ing jaman rumiyin minangka papan pembuangan rakyat sing dipunukum.</li>
+                <li><strong>Alun-alun Lor:</strong> Wonten ringin kurung Kyai Dewadaru lan Kyai Janadaru utawa Danadaru, kanthi Kyai Wok utawa Brewok ing sisih kulon lan Kyai Jenggot ing sisih wetan. Papan punika kanggo tapa pepe lan nggambaraken Manunggaling Kawula Gusti.</li>
+                <li><strong>Masjid Gedhe Kasultanan:</strong> Didhirikaken tanggal 29 Mei 1773 dening Sultan HB I, Kiai Fakih Ibrahim Diponingrat, lan Kiai Wiryokusumo. Mustakanipun ngandhut simbol Daun Kluwih (linuwih) lan Kembang Gambir (arum angambar).</li>
+                <li><strong>Pagelaran lan Sitihinggil Lor:</strong> Bangsal Pagelaran kanggo upacara agung lan pariwisata. Sitihinggil Lor lan Bangsal Manguntur Tangkil minangka papan Sultan anangkil lan nampi tamu ing acara ageng.</li>
+                <li><strong>Kamandungan Lor (Plataran Keben):</strong> Wonten wit Keben lan Tanjung, uga Bangsal Pancaniti kanggo paring ukuman mati kanthi hakim Sultan, Bale Anti Wahana, lan Bangsal Pacaosan.</li>
+                <li><strong>Srimanganti lan Trajumas:</strong> Srimanganti ngemu teges manungsa gesang mung mampir ngombe. Trajumas minangka papan simpen gamelan pusaka Kyai Guntur Madu lan Kyai Nagawilaga, uga pucuk Tugu Pal Putih.</li>
+                <li><strong>Kedhaton lan Bangsal Kencana:</strong> Pusat keraton, papan singgasana Sultan, upacara penobatan, lan Gedhong Prabayeksa kanggo pusaka inti. Wonten Bangsal Mandalasana kanggo musik, uga arca Dwarapala Cingkarabala ing wetan lan Balaupata ing kulon.</li>
+                <li><strong>Kesatriyan:</strong> Papan panggenan lan latihan para putra-putri Sultan, kayata beksan, kanthi Bangsal Gangsa Lor lan Gangsa Kidul.</li>
+                <li><strong>Kemagangan:</strong> Wonten Bangsal Kemagangan, Panti Pareden kanggo nggawe gunungan Garebeg, lan Bangsal Pacaosan. Regol menyang plataran sabanjure yaiku Regol Gadhung Mlati.</li>
+                <li><strong>Kamandungan Kidul:</strong> Ditandani wit Jambu Dersana, Pelem Cempora, Soka, lan Ringin Sri Makutha HB IX. Bangsal Kamandungan kalebu bangsal tuwa sing diboyong Sultan HB I saka Sukowati utawa Sragen.</li>
+                <li><strong>Sitihinggil Kidul (Dwi Abad):</strong> Kanggo mriksa gladhen prajurit, acara rampogan, wayang kulit, lan pangrukti laya Sultan tumuju Imogiri. Ing taun 1956 dibangun Gedhong Sasana Hinggil Dwi Abad.</li>
+                <li><strong>Alun-alun Kidul:</strong> Ditandani wit Kweni (wani) lan Pakel (akil baligh), Ringin Sapit Urang utawa Kyai Wok, sarta limang jalur ing sakubenge minangka lambang panca indera.</li>
+                <li><strong>Plengkung Nirbaya (Gadhing):</strong> Rute metu nalika prosesi pemakaman Sultan tumuju Imogiri. Sultan HB I mboten nate liwat rene kajaba nalika pemakaman.</li>
+                <li><strong>Panggung Krapyak:</strong> Papan kanggo mriksa prajurit nalika mburu kidang. Ing sisih kulon wonten Dusun Mijen, sing gegayutan karo tembung wiji.</li>
+            </ul>
+        </section>
+
+        <!-- Kuis Interaktif -->
+        <section id="kuis" class="card quiz-card">
+            <div class="card-inner-decor"></div>
+            <div class="card-header">
+                <span class="card-badge" style="background: var(--primary); color: white; border: none;">Evaluasi Interaktif</span>
+                <h2>Kuis Uji Pemahaman</h2>
+            </div>
+
+            <div class="quiz-progress-bar">
+                <div class="quiz-progress-fill" id="progress-fill"></div>
+            </div>
+
+            <div class="quiz-status">
+                <span id="quiz-tracker">Soal 1 / 30</span>
+                <span id="quiz-score-realtime">Skor: 0</span>
+            </div>
+
+            <div id="quiz-body">
+                <div class="quiz-question" id="quiz-question-text">Memuat pertanyaan...</div>
+                
+                <div class="quiz-options" id="quiz-options">
+                    <!-- Dynamic Options -->
+                </div>
+
+                <div class="quiz-feedback" id="quiz-feedback"></div>
+
+                <div class="quiz-actions">
+                    <button class="btn-primary" id="btn-next-q" onclick="handleNextQuestion()" style="display: none;">
+                        Lanjut ke Soal Berikutnya
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="quiz-result" id="quiz-result">
+                <h3>Kuis Selesai!</h3>
+                <p>Terima kasih telah menyelesaikan evaluasi materi Keraton Yogyakarta.</p>
+                <div class="score-badge" id="final-score">0</div>
+                <p id="score-message" style="margin-bottom: 25px; font-weight: 600; font-size: 1.1rem; color: var(--text-title);"></p>
+                <button class="btn-primary" onclick="resetQuiz()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1 4 1 10 7 10"></polyline><polyline points="23 20 23 14 17 14"></polyline><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"></path></svg>
+                    Ulangi Kuis
+                </button>
+            </div>
+        </section>
+
+        <!-- Daftar Pustaka -->
+        <footer class="bibliography">
+            <h2>Daftar Pustaka Referensi</h2>
+            <ol>
+                <li><a href="https://www.kratonjogja.id/prajurit-kraton/2-bregada-prajurit-keraton-yogyakarta/" target="_blank">Portal Resmi Kraton Jogja - Prajurit Bregada</a></li>
+                <li><a href="https://inibaru.id/tradisinesia/mengenal-lima-plengkung-di-keraton-yogyakarta" target="_blank">IniBaru - Mengenal Lima Plengkung Keraton Yogyakarta</a></li>
+                <li><a href="https://www.kratonjogja.id/tata-rakiting/4-tata-ruang-dan-bangunan-kawasan-inti-keraton-yogyakarta/" target="_blank">Portal Resmi Kraton Jogja - Tata Ruang Inti</a></li>
+            </ol>
+        </footer>
+
+    </div>
+
+    <script>
+        const quizData = [
+            // Sengkalan
+            { q: "Sengkalan ingkang awujud gambar dipunsebut?", a: ["Sengkalan Lamba", "Sengkalan Memet", "Candra Sengkala", "Surya Sengkala"], correct: 1 },
+            { q: "Candra sengkala inggih menika sengkalan ingkang adhedhasar taun?", a: ["Masehi", "Saka", "Jawa / Hijriyah", "Kabisat"], correct: 2 },
+            { q: "Tembung 'bumi', 'srengenge', lan 'rembulan' kalebet ngemu watak wilangan?", a: ["0", "1", "2", "3"], correct: 1 },
+            { q: "Tembung 'geni', 'mawa', lan 'panas' ngemu watak wilangan angka?", a: ["2", "3", "4", "5"], correct: 1 },
+            { q: "Tembung kewan asikil 6 kayata 'kombang' lan 'tawon' ngemu watak wilangan?", a: ["4", "5", "6", "7"], correct: 2 },
+            { q: "Watak angka 0 tegesipun barang ingkang inggil utawi kosong, tuladhanipun inggih menika?", a: ["swara, gunung", "ula, baya", "bolong, kembang", "ilang, musna, muksa"], correct: 3 },
+            { q: "Sengkalan 'Dwi naga rasa tunggal' dipunwaos saking wingking dados taun berdirine Keraton, inggih menika?", a: ["1682", "1862", "1268", "2861"], correct: 0 },
+            
+            // Prajurit
+            { q: "Jumlah keseluruhan prajurit Keraton Yogyakarta saat ini adalah sekitar?", a: ["500 orang", "600 orang", "700 orang", "800 orang"], correct: 1 },
+            { q: "Kelompok pasukan Bregada Bugis secara resmi dimiliki oleh?", a: ["Keraton langsung", "Kadipaten Anom", "Kepatihan", "Sultan"], correct: 2 },
+            { q: "Kredo 'Nyawiji' dalam watak kesatria prajurit keraton bermakna?", a: ["Semangat hidup yang diarahkan ke tujuan", "Percaya penuh pada kemampuan pribadi", "Konsentrasi yang harus diarahkan ke cita-cita", "Tidak mundur setapak pun menghadapi halangan"], correct: 2 },
+            { q: "Bendera/Klebet milik Bregada Wirabraja bernama?", a: ["Bahningsari", "Gula-klapa", "Papasan", "Cakragora"], correct: 1 },
+            { q: "Pasukan pengawal pribadi Sultan yang jumlahnya hanya terdiri dari 64 orang adalah?", a: ["Bregada Nyutra", "Bregada Prawiratama", "Bregada Ketanggung", "Bregada Mantrijero"], correct: 0 },
+            { q: "Makna filosofis Klebet Purnamasidhi milik Bregada Mantrijero adalah?", a: ["Pasukan pemberani yang bisa menghancurkan musuh", "Pasukan yang diharapkan menjadi cahaya di kegelapan", "Pasukan sehalus sutra", "Pasukan dengan kekuatan sangat luar biasa"], correct: 1 },
+            { q: "Senjata tombak pusaka andalan milik Bregada Ketanggung bernama?", a: ["Kanjeng Kiai Trisula", "Kanjeng Kiai Nenggala", "Kanjeng Kiai Cakra", "Kanjeng Kiai Slamet"], correct: 1 },
+            
+            // Plengkung
+            { q: "Plengkung yang tidak boleh dilewati oleh Sultan bertakhta dan dipakai rute jenazah menuju Imogiri adalah?", a: ["Plengkung Tarunasura", "Plengkung Jagasura", "Plengkung Madyasura", "Plengkung Nirbaya (Gading)"], correct: 3 },
+            { q: "Plengkung Madyasura dinamakan Plengkung Buntet karena?", a: ["Terletak di barat Pasar Ngasem", "Ditutup permanen akibat hancur dalam Geger Sepehi 1812", "Dijaga oleh prajurit muda", "Menjadi rute khusus Sultan"], correct: 1 },
+            { q: "Plengkung yang berada di barat Pasar Ngasem/Tamansari sehingga kerap disebut Plengkung Tamansari adalah?", a: ["Plengkung Jayabaya", "Plengkung Tarunasura", "Plengkung Jagasura", "Plengkung Madyasura"], correct: 0 },
+            
+            // Tata Ruang
+            { q: "Kawasan inti Keraton Yogyakarta terdiri dari berapa tataran ruang hierarkis pelataran?", a: ["5", "6", "7", "8"], correct: 2 },
+            { q: "Bangsal yang digunakan khusus sebagai tempat para Abdi Dalem menghadap Sultan adalah?", a: ["Bangsal Kencana", "Bangsal Sitihinggil", "Bangsal Pagelaran", "Gedhong Prabayeksa"], correct: 2 },
+            { q: "Bangunan paling sakral di pelataran Kedhaton yang difungsikan untuk upacara penting dan penobatan adalah?", a: ["Bangsal Kencana", "Bangsal Trajumas", "Bangsal Pancaniti", "Gedhong Prabayeksa"], correct: 0 },
+            
+            // Materi Baru Tata Ruang
+            { q: "Bangsal yang digunakan sebagai tempat pembuatan gunungan untuk upacara Garebeg di plataran Kemagangan adalah?", a: ["Bangsal Pacaosan", "Panti Pareden", "Bangsal Trajumas", "Bangsal Kencana"], correct: 1 },
+            { q: "Regol yang menghubungkan Plataran Kemagangan dengan Kamandungan Kidul bernama?", a: ["Regol Kamandungan", "Regol Gadhung Mlati", "Regol Srimanganti", "Regol Danapratapa"], correct: 1 },
+            { q: "Bangsal Kamandungan merupakan salah satu bangsal tertua yang diboyong oleh Sultan HB I dari daerah?", a: ["Surakarta", "Imogiri", "Sukowati (Sragen)", "Banyumas"], correct: 2 },
+            { q: "Bangunan yang didirikan pada tahun 1956 di Sitihinggil Kidul sebagai monumen peringatan 200 tahun Keraton Yogyakarta adalah?", a: ["Gedhong Sasana Hinggil Dwi Abad", "Gedhong Prabayeksa", "Bangsal Pancaniti", "Bale Anti Wahana"], correct: 0 }
+        ];
+
+        let currentIdx = 0;
+        let score = 0;
+        let isAnswered = false;
+
+        const qQuestion = document.getElementById('quiz-question-text');
+        const qOptions = document.getElementById('quiz-options');
+        const qFeedback = document.getElementById('quiz-feedback');
+        const btnNext = document.getElementById('btn-next-q');
+        const qTracker = document.getElementById('quiz-tracker');
+        const qScoreRealtime = document.getElementById('quiz-score-realtime');
+        const progressFill = document.getElementById('progress-fill');
+        const quizBody = document.getElementById('quiz-body');
+        const quizResult = document.getElementById('quiz-result');
+        const finalScore = document.getElementById('final-score');
+        const scoreMessage = document.getElementById('score-message');
+
+        function renderQuestion() {
+            isAnswered = false;
+            btnNext.style.display = 'none';
+            qFeedback.style.display = 'none';
+            qFeedback.className = 'quiz-feedback';
+
+            const item = quizData[currentIdx];
+            qTracker.innerText = `Soal ${currentIdx + 1} / ${quizData.length}`;
+            qScoreRealtime.innerText = `Skor: ${score}`;
+            
+            const progressPercent = ((currentIdx) / quizData.length) * 100;
+            progressFill.style.width = `${progressPercent}%`;
+
+            qQuestion.innerText = `${currentIdx + 1}. ${item.q}`;
+            qOptions.innerHTML = '';
+
+            item.a.forEach((optText, i) => {
+                const optElement = document.createElement('div');
+                optElement.className = 'quiz-option';
+                optElement.innerHTML = `<span>${optText}</span>`;
+                optElement.onclick = () => checkAnswer(optElement, i);
+                qOptions.appendChild(optElement);
+            });
+        }
+
+        function checkAnswer(selectedEl, selectedIndex) {
+            if (isAnswered) return;
+            isAnswered = true;
+
+            const current = quizData[currentIdx];
+            const allOptions = qOptions.querySelectorAll('.quiz-option');
+
+            allOptions.forEach((opt, idx) => {
+                opt.classList.add('disabled');
+                if (idx === current.correct) {
+                    opt.classList.add('correct');
+                    opt.innerHTML += ' <span style="font-weight:900; font-size:1.2rem;">✓</span>';
+                }
+            });
+
+            if (selectedIndex === current.correct) {
+                score++;
+                selectedEl.classList.add('correct');
+                qFeedback.className = 'quiz-feedback correct-bg';
+                qFeedback.innerHTML = '✨ Jawaban Anda Benar! Tepat sekali.';
+            } else {
+                selectedEl.classList.add('incorrect');
+                selectedEl.innerHTML += ' <span style="font-weight:900; font-size:1.2rem;">✗</span>';
+                qFeedback.className = 'quiz-feedback incorrect-bg';
+                qFeedback.innerHTML = `⚠️ Jawaban Anda Salah. Jawaban yang benar adalah: <strong>${current.a[current.correct]}</strong>`;
+            }
+
+            qFeedback.style.display = 'block';
+            qScoreRealtime.innerText = `Skor: ${score}`;
+            btnNext.style.display = 'inline-flex';
+            
+            // Auto scroll to feedback slightly
+            const quizCard = document.getElementById('kuis');
+            const bounding = quizCard.getBoundingClientRect();
+            if (bounding.bottom > (window.innerHeight || document.documentElement.clientHeight)) {
+                 window.scrollBy({ top: 150, behavior: 'smooth' });
+            }
+        }
+
+        function handleNextQuestion() {
+            currentIdx++;
+            if (currentIdx < quizData.length) {
+                renderQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            progressFill.style.width = '100%';
+            quizBody.style.display = 'none';
+            quizResult.style.display = 'block';
+            finalScore.innerText = score;
+
+            const percentage = (score / quizData.length) * 100;
+            if (percentage >= 80) {
+                scoreMessage.innerText = "🏆 Luar biasa! Pemahaman Anda mengenai Keraton Yogyakarta sangat sempurna!";
+            } else if (percentage >= 60) {
+                scoreMessage.innerText = "⭐ Bagus! Anda memahami sebagian besar materi dengan baik.";
+            } else {
+                scoreMessage.innerText = "📚 Tetap semangat! Silakan baca kembali materi di atas dan coba lagi.";
+            }
+        }
+
+        function resetQuiz() {
+            currentIdx = 0;
+            score = 0;
+            quizResult.style.display = 'none';
+            quizBody.style.display = 'block';
+            
+            // Scroll back to top of quiz
+            document.getElementById('kuis').scrollIntoView({ behavior: 'smooth' });
+            
+            renderQuestion();
+        }
+
+        // Initialize Quiz
+        renderQuestion();
+    </script>
+</body>
+</html>
