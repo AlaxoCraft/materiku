@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Materi IBM SkillsBuild tentang interaksi dan eksplorasi kecerdasan buatan.">
-	<title>IBM SkillsBuild | Jelajah Kecerdasan Buatan</title>
+	<meta name="description" content="Materi interaktif IBM SkillsBuild tentang kecerdasan buatan dan dasar pemrograman Python.">
+	<title>AI & Python SkillsBuild | Modul Pembelajaran Interaktif</title>
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +21,26 @@
 		.pill { border: 1px solid rgba(15,118,110,.18); background: #effbf8; }
 		.range-accent { accent-color: #0f766e; }
 		.source-link { color: #0f766e; text-decoration: underline; text-underline-offset: 3px; }
+		.mobile-menu { display: none; }
+		.mobile-menu.is-open { display: grid; }
+		.python-code { background: #102a2b; color: #d8f3dc; }
+		.python-code .py-comment { color: #829c99; }
+		.python-code .py-string { color: #86efac; }
+		.python-code .py-number { color: #f9a8d4; }
+		.python-code .py-keyword { color: #a5b4fc; font-weight: 700; }
+		.python-code .py-builtin { color: #67e8f9; }
+		.python-code .py-function { color: #fde68a; }
+		.python-code .py-operator { color: #f0abfc; }
+		.python-editor { caret-color: #ffd166; }
+		.terminal-output { min-height: 120px; white-space: pre-wrap; }
+		@media (max-width: 767px) {
+			.site-nav { display: none; }
+			.menu-toggle { display: inline-grid; }
+		}
+		@media (min-width: 768px) {
+			.menu-toggle { display: none; }
+			.mobile-menu { display: none !important; }
+		}
 	</style>
 </head>
 <body>
@@ -28,40 +48,50 @@
 		<div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
 			<a href="#atas" class="flex items-center gap-3" aria-label="Kembali ke awal halaman">
 				<span class="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-emerald-500 to-sky-600 text-xl text-white shadow-lg">✦</span>
-				<span><strong class="display block text-base text-[#073b4c]">AI / SkillsBuild</strong><small class="text-xs text-slate-500">Modul pembelajaran interaktif</small></span>
+				<span><strong class="display block text-base text-[#073b4c]">AI + Python</strong><small class="text-xs text-slate-500">Modul pembelajaran interaktif</small></span>
 			</a>
-			<nav aria-label="Navigasi bab" class="flex max-w-full flex-wrap justify-end gap-1.5 text-sm font-semibold">
+			<button id="menu-toggle" class="menu-toggle hidden h-11 w-11 place-items-center rounded-xl bg-emerald-50 text-xl text-teal-700" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Buka navigasi">☰</button>
+			<nav aria-label="Navigasi bab" class="site-nav hidden max-w-full flex-wrap justify-end gap-1.5 text-sm font-semibold md:flex">
 				<a class="nav-link rounded-full px-3 py-2 transition hover:bg-emerald-50" href="#bagian-1">Berinteraksi</a>
 				<a class="nav-link rounded-full px-3 py-2 transition hover:bg-emerald-50" href="#bagian-2">Menjelajahi</a>
+				<a class="nav-link rounded-full px-3 py-2 transition hover:bg-emerald-50" href="#python">Python</a>
 				<a class="nav-link rounded-full px-3 py-2 transition hover:bg-emerald-50" href="#simulasi">Simulasi</a>
 				<a class="rounded-full bg-[#ffd166] px-4 py-2 text-[#073b4c] transition hover:bg-[#f5bd3f]" href="index.html">Kembali</a>
 			</nav>
 		</div>
+		<nav id="mobile-menu" class="mobile-menu mx-auto max-w-7xl gap-1 border-t border-emerald-100 px-4 py-3 text-sm font-semibold md:hidden" aria-label="Navigasi mobile">
+			<a class="nav-link rounded-xl px-4 py-3 hover:bg-emerald-50" href="#bagian-1">01 · Berinteraksi dengan AI</a>
+			<a class="nav-link rounded-xl px-4 py-3 hover:bg-emerald-50" href="#bagian-2">02 · Menjelajahi AI</a>
+			<a class="nav-link rounded-xl px-4 py-3 hover:bg-emerald-50" href="#python">03 · Dasar Python</a>
+			<a class="nav-link rounded-xl px-4 py-3 hover:bg-emerald-50" href="#simulasi">Simulasi AI</a>
+			<a class="rounded-xl bg-[#ffd166] px-4 py-3 text-[#073b4c]" href="index.html">Kembali ke halaman utama</a>
+		</nav>
 	</header>
 
 	<main id="atas">
 		<section class="hero-grid overflow-hidden text-white">
 			<div class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:px-8 lg:py-24">
 				<div>
-					<p class="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-300/10 px-4 py-2 text-sm text-emerald-100"><span class="h-2 w-2 animate-pulse rounded-full bg-[#ffd166]"></span> IBM SkillsBuild • Artificial Intelligence</p>
-					<h1 class="max-w-3xl text-4xl font-bold leading-tight sm:text-6xl">Membaca dunia melalui <span class="text-emerald-300">pola, data,</span> dan keputusan.</h1>
-					<p class="mt-6 max-w-2xl text-lg leading-8 text-slate-200">Rangkuman lengkap dua bagian pembelajaran AI: memahami cara kerja, manfaat, batasan, etika, hingga peluang karier di dalamnya.</p>
-					<div class="mt-8 flex flex-wrap gap-3"><a href="#bagian-1" class="rounded-xl bg-emerald-400 px-5 py-3 font-bold text-[#063b35] transition hover:bg-emerald-300">Mulai belajar →</a><a href="#simulasi" class="rounded-xl border border-white/30 px-5 py-3 font-semibold text-white transition hover:bg-white/10">Coba simulasi</a></div>
+					<p class="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-300/10 px-4 py-2 text-sm text-emerald-100"><span class="h-2 w-2 animate-pulse rounded-full bg-[#ffd166]"></span> IBM SkillsBuild • AI + Python</p>
+					<h1 class="max-w-3xl text-4xl font-bold leading-tight sm:text-6xl">Jelajahi <span class="text-emerald-300">AI, Python,</span> dan cara berpikir komputasional.</h1>
+					<p class="mt-6 max-w-2xl text-lg leading-8 text-slate-200">Modul interaktif untuk memahami kecerdasan buatan, mengenali manfaat dan batasannya, lalu membangun fondasi pemrograman Python melalui contoh dan terminal langsung.</p>
+					<div class="mt-8 flex flex-wrap gap-3"><a href="#bagian-1" class="rounded-xl bg-emerald-400 px-5 py-3 font-bold text-[#063b35] transition hover:bg-emerald-300">Mulai belajar →</a><a href="#python" class="rounded-xl border border-white/30 px-5 py-3 font-semibold text-white transition hover:bg-white/10">Belajar Python</a></div>
 				</div>
 				<div class="relative mx-auto w-full max-w-md">
 					<div class="glow rounded-[2rem] border border-white/20 bg-white/10 p-6 backdrop-blur-md">
-						<div class="mb-8 flex items-center justify-between"><span class="text-sm text-emerald-100">Peta konsep AI</span><span class="rounded-full bg-[#ffd166] px-3 py-1 text-xs font-bold text-[#073b4c]">01—02</span></div>
-						<div class="grid grid-cols-2 gap-3 text-sm"><div class="rounded-2xl bg-emerald-300/20 p-4"><b class="block text-2xl text-emerald-200">Data</b><span class="text-slate-200">bahan belajar</span></div><div class="rounded-2xl bg-sky-300/20 p-4"><b class="block text-2xl text-sky-200">Pola</b><span class="text-slate-200">yang ditemukan</span></div><div class="col-span-2 rounded-2xl bg-white/10 p-4"><b class="block text-2xl text-[#ffd166]">Insight → aksi</b><span class="text-slate-200">rekomendasi, prediksi, dan automasi</span></div></div>
+						<div class="mb-8 flex items-center justify-between"><span class="text-sm text-emerald-100">Peta belajar</span><span class="rounded-full bg-[#ffd166] px-3 py-1 text-xs font-bold text-[#073b4c]">01—03</span></div>
+						<div class="grid grid-cols-2 gap-3 text-sm"><div class="rounded-2xl bg-emerald-300/20 p-4"><b class="block text-2xl text-emerald-200">AI</b><span class="text-slate-200">pola & keputusan</span></div><div class="rounded-2xl bg-sky-300/20 p-4"><b class="block text-2xl text-sky-200">Python</b><span class="text-slate-200">kode & logika</span></div><div class="col-span-2 rounded-2xl bg-white/10 p-4"><b class="block text-2xl text-[#ffd166]">Ide → program</b><span class="text-slate-200">pahami konsep, lalu praktikkan</span></div></div>
 					</div>
 					<div class="absolute -bottom-6 -left-5 rounded-2xl bg-[#ffd166] px-4 py-3 text-sm font-bold text-[#073b4c] shadow-xl">Belajar dengan kritis.</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="mx-auto grid max-w-7xl gap-4 px-4 py-10 sm:grid-cols-3 sm:px-6 lg:px-8">
+		<section class="mx-auto grid max-w-7xl gap-4 px-4 py-10 sm:grid-cols-2 lg:grid-cols-4 sm:px-6 lg:px-8">
 			<div class="section-card rounded-2xl bg-white p-5"><span class="text-2xl">◈</span><p class="mt-3 text-xs font-bold uppercase tracking-widest text-teal-700">Bagian 1</p><h2 class="mt-1 text-lg font-bold">Berinteraksi dengan AI</h2><p class="mt-2 text-sm text-slate-500">4 pelajaran tentang AI di sekitar kita.</p></div>
 			<div class="section-card rounded-2xl bg-white p-5"><span class="text-2xl">✺</span><p class="mt-3 text-xs font-bold uppercase tracking-widest text-sky-700">Bagian 2</p><h2 class="mt-1 text-lg font-bold">Menjelajahi AI</h2><p class="mt-2 text-sm text-slate-500">5 pelajaran tentang teknologi dan karier.</p></div>
-			<div class="section-card rounded-2xl bg-[#e7f7f1] p-5"><span class="text-2xl">↗</span><p class="mt-3 text-xs font-bold uppercase tracking-widest text-emerald-700">Eksperimen</p><h2 class="mt-1 text-lg font-bold">Simulasi keputusan</h2><p class="mt-2 text-sm text-slate-500">Lihat pengaruh kualitas data dan bias.</p></div>
+			<a href="#python" class="section-card rounded-2xl bg-[#e7f7f1] p-5 transition hover:-translate-y-1 hover:border-emerald-400"><span class="text-2xl">⌘</span><p class="mt-3 text-xs font-bold uppercase tracking-widest text-emerald-700">Bagian 3</p><h2 class="mt-1 text-lg font-bold">Belajar Python</h2><p class="mt-2 text-sm text-slate-500">8 topik dasar dan terminal untuk praktik.</p></a>
+			<a href="#simulasi" class="section-card rounded-2xl bg-[#fff8df] p-5 transition hover:-translate-y-1 hover:border-amber-400"><span class="text-2xl">↗</span><p class="mt-3 text-xs font-bold uppercase tracking-widest text-amber-700">Eksperimen</p><h2 class="mt-1 text-lg font-bold">Simulasi keputusan</h2><p class="mt-2 text-sm text-slate-500">Lihat pengaruh kualitas data dan bias.</p></a>
 		</section>
 
 		<div class="mx-auto max-w-7xl space-y-8 px-4 pb-16 sm:px-6 lg:px-8">
@@ -100,12 +130,109 @@
 				</div>
 			</section>
 
-			<section id="sumber" class="lesson section-card rounded-3xl bg-white p-6 sm:p-8"><div class="flex flex-wrap items-end justify-between gap-4"><div><span class="pill rounded-full px-3 py-1 text-xs font-bold text-teal-700">REFERENSI</span><h2 class="mt-3 text-3xl font-bold">Sumber dan dokumentasi</h2></div><span class="text-sm text-slate-500">Diakses untuk pendalaman</span></div><div class="mt-6 grid gap-3 sm:grid-cols-2"><a class="source-link rounded-xl bg-emerald-50 p-4 font-semibold transition hover:bg-emerald-100" href="https://skillsbuild.org/" target="_blank" rel="noopener noreferrer">IBM SkillsBuild ↗</a><a class="source-link rounded-xl bg-sky-50 p-4 font-semibold transition hover:bg-sky-100" href="https://www.ibm.com/think/topics/artificial-intelligence" target="_blank" rel="noopener noreferrer">IBM: What is Artificial Intelligence? ↗</a><a class="source-link rounded-xl bg-emerald-50 p-4 font-semibold transition hover:bg-emerald-100" href="https://www.ibm.com/think/topics/ai-ethics" target="_blank" rel="noopener noreferrer">IBM: AI Ethics ↗</a><a class="source-link rounded-xl bg-sky-50 p-4 font-semibold transition hover:bg-sky-100" href="https://www.ibm.com/think/topics/machine-learning" target="_blank" rel="noopener noreferrer">IBM: Machine Learning ↗</a></div></section>
-		</div>
+			<section id="penutup" class="lesson section-card rounded-3xl bg-white p-6 sm:p-8"><span class="pill rounded-full px-3 py-1 text-xs font-bold text-teal-700">PENUTUP BAGIAN 1</span><h2 class="mt-3 text-3xl font-bold">Lanjutkan eksplorasi AI</h2><p class="mt-3 max-w-3xl leading-7 text-slate-600">Gunakan sumber berikut untuk memperdalam sejarah, metode pembelajaran, keterbatasan, etika, dan dampak AI terhadap seni serta hiburan.</p><div class="mt-6 grid gap-4 md:grid-cols-3"><a class="source-link rounded-2xl bg-emerald-50 p-5 transition hover:bg-emerald-100" href="https://www.ibm.com/think/topics/artificial-intelligence" target="_blank" rel="noopener noreferrer"><b class="block text-lg no-underline">What is artificial intelligence (AI)? ↗</b><span class="mt-2 block text-sm leading-6 text-slate-600">Panduan IBM tentang machine learning, deep learning, AI generatif, manfaat, tantangan, dan sejarah AI.</span></a><a class="source-link rounded-2xl bg-sky-50 p-5 transition hover:bg-sky-100" href="https://www.youtube.com/results?search_query=IBM+Can+AI+Think+Debunking+AI+Limitations" target="_blank" rel="noopener noreferrer"><b class="block text-lg no-underline">Can AI Think? ↗</b><span class="mt-2 block text-sm leading-6 text-slate-600">Video IBM tentang probabilistic pattern matching, halusinasi, keterbatasan, dan kesalahan AI.</span></a><a class="source-link rounded-2xl bg-emerald-50 p-5 transition hover:bg-emerald-100" href="https://www.ibm.com/think/topics/ai-in-entertainment" target="_blank" rel="noopener noreferrer"><b class="block text-lg no-underline">AI Realism with Ne-Yo and Ed Ulbrich ↗</b><span class="mt-2 block text-sm leading-6 text-slate-600">Podcast dan pembahasan dampak AI pada seniman, IP, CGI, seni, dan hiburan.</span></a></div></section>
+
+			<section id="sumber" class="lesson section-card rounded-3xl bg-white p-6 sm:p-8"><div class="flex flex-wrap items-end justify-between gap-4"><div><span class="pill rounded-full px-3 py-1 text-xs font-bold text-teal-700">REFERENSI</span><h2 class="mt-3 text-3xl font-bold">Sumber dan dokumentasi</h2></div><span class="text-sm text-slate-500">Diakses untuk pendalaman</span></div><div class="mt-6 grid gap-3 sm:grid-cols-2"><a class="source-link rounded-xl bg-emerald-50 p-4 font-semibold transition hover:bg-emerald-100" href="https://skillsbuild.org/" target="_blank" rel="noopener noreferrer">IBM SkillsBuild ↗</a><a class="source-link rounded-xl bg-sky-50 p-4 font-semibold transition hover:bg-sky-100" href="https://www.ibm.com/think/topics/artificial-intelligence" target="_blank" rel="noopener noreferrer">IBM: What is Artificial Intelligence? ↗</a><a class="source-link rounded-xl bg-emerald-50 p-4 font-semibold transition hover:bg-emerald-100" href="https://www.ibm.com/think/topics/ai-ethics" target="_blank" rel="noopener noreferrer">IBM: AI Ethics ↗</a><a class="source-link rounded-xl bg-sky-50 p-4 font-semibold transition hover:bg-sky-100" href="https://www.ibm.com/think/topics/machine-learning" target="_blank" rel="noopener noreferrer">IBM: Machine Learning ↗</a><a class="source-link rounded-xl bg-emerald-50 p-4 font-semibold transition hover:bg-emerald-100" href="https://skillsbuild.org/students/course-catalog/artificial-intelligence-fundamentals" target="_blank" rel="noopener noreferrer">Artificial Intelligence Fundamentals ↗</a></div><div class="mt-6 rounded-2xl bg-sky-50 p-5 text-sm leading-7 text-slate-700"><b class="text-sky-800">Tantangan belajar:</b> cari kursus <i>Artificial Intelligence Fundamentals</i> di IBM SkillsBuild dan dapatkan kredensial digital setelah menyelesaikannya.</div></section>
+			<section id="python" class="lesson section-card overflow-hidden rounded-3xl bg-white">
+				<div class="border-b border-emerald-100 bg-gradient-to-r from-[#063b35] to-[#1677a8] p-6 text-white sm:p-8"><span class="rounded-full border border-emerald-200/30 bg-white/10 px-3 py-1 text-xs font-bold text-emerald-100">BAGIAN 3 • DASAR PEMROGRAMAN</span><h2 class="mt-3 text-3xl font-bold">Python dari nol</h2><p class="mt-2 max-w-3xl text-emerald-50/85">Pelajari fondasi Python melalui contoh singkat: output, variabel, tipe data, operator, percabangan, perulangan, koleksi, dan fungsi.</p></div>
+				<div class="space-y-6 p-6 sm:p-8">
+					<article class="rounded-2xl border border-slate-100 bg-slate-50 p-5"><span class="text-sm font-bold text-emerald-700">01 • OUTPUT</span><h3 class="mt-2 text-xl font-bold">Mencetak data dengan print()</h3><p class="mt-2 leading-7 text-slate-600">Fungsi <code>print()</code> menampilkan teks, angka, atau hasil eksekusi. String dapat memakai kutip tunggal atau ganda, sedangkan f-string menyisipkan variabel atau rumus melalui kurung kurawal.</p><pre class="python-code mt-4 overflow-x-auto rounded-2xl p-5 text-sm leading-7"><code>print("========================")
+print("DISKON BELANJA PELANGGAN")
+print("========================")
+nama = "Alfaiz"
+belanja = 750000
+print(f"Nama Pembeli : {nama}")
+print(f"Total Bayar  : Rp.{belanja - belanja * 0.2}")</code></pre></article>
+					<article class="rounded-2xl border border-slate-100 bg-slate-50 p-5"><span class="text-sm font-bold text-sky-700">02 • VARIABEL DAN INPUT</span><h3 class="mt-2 text-xl font-bold">Menerima data dari pengguna</h3><p class="mt-2 leading-7 text-slate-600">Variabel adalah wadah nilai. Python membuatnya ketika nilai ditetapkan. Fungsi <code>input()</code> menerima masukan sebagai teks, sehingga perlu dikonversi jika akan digunakan untuk matematika.</p><pre class="python-code mt-4 overflow-x-auto rounded-2xl p-5 text-sm leading-7"><code>total_harga = 0
+i = 2
+nama = str(input("Nama Pembeli: "))
+jumlah = int(input("Jumlah Barang yang dibeli: "))
+belanja = float(input("Total Belanja = Rp."))</code></pre></article>
+					<article class="rounded-2xl border border-slate-100 bg-slate-50 p-5"><span class="text-sm font-bold text-teal-700">03 • TIPE DATA</span><h3 class="mt-2 text-xl font-bold">String, integer, float, dan casting</h3><p class="mt-2 leading-7 text-slate-600"><code>str</code> menyimpan teks seperti nama, <code>int</code> menyimpan bilangan bulat seperti jumlah barang, dan <code>float</code> menyimpan angka desimal seperti nilai belanja. Casting mengubah data ke tipe yang diperlukan.</p><div class="mt-4 grid gap-3 sm:grid-cols-3"><div class="rounded-xl bg-white p-4"><b class="text-teal-700">str</b><p class="mt-1 text-sm text-slate-600">teks atau karakter</p></div><div class="rounded-xl bg-white p-4"><b class="text-teal-700">int</b><p class="mt-1 text-sm text-slate-600">bilangan bulat</p></div><div class="rounded-xl bg-white p-4"><b class="text-teal-700">float</b><p class="mt-1 text-sm text-slate-600">bilangan desimal</p></div></div></article>
+					<article class="rounded-2xl border border-slate-100 bg-slate-50 p-5"><span class="text-sm font-bold text-cyan-700">04 • OPERATOR</span><h3 class="mt-2 text-xl font-bold">Aritmatika dan penugasan</h3><p class="mt-2 leading-7 text-slate-600">Operator aritmatika seperti <code>*</code>, <code>-</code>, dan <code>/</code> dipakai untuk rumus. Operator gabungan seperti <code>+=</code> memperbarui nilai lama secara ringkas.</p><pre class="python-code mt-4 overflow-x-auto rounded-2xl p-5 text-sm leading-7"><code>diskon = belanja * 0.20
+
+rata_rata = total_harga / jumlah
+total_harga += harga
+i += 1</code></pre></article>
+					<article class="rounded-2xl border border-slate-100 bg-slate-50 p-5"><span class="text-sm font-bold text-amber-700">05 • PERCABANGAN</span><h3 class="mt-2 text-xl font-bold">Mengambil keputusan dengan if</h3><p class="mt-2 leading-7 text-slate-600">Blok <code>if</code>, <code>elif</code>, dan <code>else</code> menjalankan kode berdasarkan kondisi benar atau salah. Contoh berikut menentukan diskon belanja.</p><pre class="python-code mt-4 overflow-x-auto rounded-2xl p-5 text-sm leading-7"><code>if belanja &gt;= 1000000:
+    diskon = belanja * 0.20
+elif belanja &gt;= 500000:
+    diskon = belanja * 0.10
+else:
+    diskon = 0
+print(f"Diskon = Rp.{diskon}")
+print(f"Total Bayar = Rp.{belanja - diskon}")</code></pre></article>
+					<article class="rounded-2xl border border-slate-100 bg-slate-50 p-5"><span class="text-sm font-bold text-emerald-700">06 • PERULANGAN</span><h3 class="mt-2 text-xl font-bold">For dan while loop</h3><p class="mt-2 leading-7 text-slate-600"><code>for</code> digunakan saat batas pengulangan diketahui, termasuk membuat pola nested loop. <code>while</code> mengulang selama kondisi benar dan dapat dihentikan dengan <code>break</code>.</p><pre class="python-code mt-4 overflow-x-auto rounded-2xl p-5 text-sm leading-7"><code>for i in range(3):
+    print("Belajar Python")
+
+for baris in range(3):
+    for kolom in range(3):
+        print("*", end=" ")
+    print()
+
+i = 2
+while i &gt;= 1:
+    print("Belajar terus")
+    break</code></pre></article>
+					<article class="rounded-2xl border border-slate-100 bg-slate-50 p-5"><span class="text-sm font-bold text-sky-700">07 • STRUKTUR DATA</span><h3 class="mt-2 text-xl font-bold">List dan dictionary</h3><p class="mt-2 leading-7 text-slate-600"><b>List</b> menyimpan data berurutan yang dapat ditambah, diurutkan, atau dihapus. <b>Dictionary</b> menyimpan pasangan <i>key</i> dan <i>value</i>, cocok untuk profil atau identitas.</p><pre class="python-code mt-4 overflow-x-auto rounded-2xl p-5 text-sm leading-7"><code>buah = ["Jeruk", "Apel", "Mangga"]
+buah.append("Pisang")
+buah.sort()
+buah.remove("Jeruk")
+print(buah)
+
+mahasiswa = {
+    "nim": 23080901,
+    "nama": "Alfaiz Muafy Rizqi Ramadhan",
+    "semester": 6,
+}
+print(mahasiswa)</code></pre></article>
+					<article class="rounded-2xl border border-slate-100 bg-slate-50 p-5"><span class="text-sm font-bold text-violet-700">08 • FUNGSI</span><h3 class="mt-2 text-xl font-bold">Membungkus logika dengan def</h3><p class="mt-2 leading-7 text-slate-600">Fungsi membungkus logika agar dapat dipanggil berulang kali. Perintah <code>return</code> mengembalikan hasil perhitungan ke kode utama.</p><pre class="python-code mt-4 overflow-x-auto rounded-2xl p-5 text-sm leading-7"><code>def hitung_diskon(total):
+    if total &gt;= 500000:
+        return total * 0.10
+    return 0
+
+belanja = 750000
+diskon = hitung_diskon(belanja)
+print("Diskon:", diskon)
+print("Total Bayar:", belanja - diskon)</code></pre></article>
+				</div>
+			</section>
+
+			<section id="python-terminal" class="lesson section-card rounded-3xl bg-[#063b35] p-6 text-white sm:p-8">
+				<div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
+					<div><span class="rounded-full bg-emerald-300/20 px-3 py-1 text-xs font-bold text-emerald-200">LAB PYTHON</span><h2 class="mt-4 text-3xl font-bold">Coba kode secara langsung</h2><p class="mt-3 leading-7 text-emerald-50/80">Tulis kode Python di editor, lalu tekan jalankan. Terminal ini menggunakan Pyodide untuk menjalankan Python di browser tanpa server.</p><p id="python-status" class="mt-5 text-sm text-emerald-200">Menyiapkan runtime Python...</p></div>
+					<div class="overflow-hidden rounded-3xl bg-[#102a2b] shadow-2xl"><div class="flex items-center justify-between border-b border-white/10 px-5 py-3"><span class="font-mono text-sm text-emerald-200">python-lab.py</span><span class="flex gap-1.5"><i class="h-3 w-3 rounded-full bg-rose-400"></i><i class="h-3 w-3 rounded-full bg-amber-300"></i><i class="h-3 w-3 rounded-full bg-emerald-400"></i></span></div><textarea id="python-editor" class="block min-h-64 w-full resize-y border-0 bg-[#102a2b] p-5 font-mono text-sm leading-7 text-emerald-100 outline-none" spellcheck="false">nama = "Pelajar"
+belanja = 750000
+
+def hitung_diskon(total):
+    if total &gt;= 500000:
+        return total * 0.10
+    return 0
+
+diskon = hitung_diskon(belanja)
+print(f"Halo, {nama}!")
+print(f"Diskon: Rp.{diskon:,.0f}")
+print(f"Total bayar: Rp.{belanja - diskon:,.0f}")</textarea><div class="flex flex-wrap items-center gap-3 border-t border-white/10 p-4"><button id="run-python" class="rounded-xl bg-emerald-400 px-4 py-2 font-bold text-[#063b35] transition hover:bg-emerald-300" type="button">▶ Jalankan</button><button id="clear-python" class="rounded-xl border border-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10" type="button">Bersihkan output</button></div><pre id="python-output" class="terminal-output border-t border-white/10 bg-[#071d1f] p-5 font-mono text-sm leading-7 text-emerald-200">Output akan muncul di sini...</pre></div>
+				</div>
+			</section>
 	</main>
 
-	<footer class="border-t border-emerald-100 bg-white"><div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-7 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8"><span>IBM SkillsBuild • Materi pembelajaran AI</span><a class="font-semibold text-teal-700 hover:text-sky-700" href="index.html">← Kembali ke index.html</a></div></footer>
+	<footer class="border-t border-emerald-100 bg-white"><div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-7 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8"><span>Informatika • Materi pembelajaran AI & Python</span><a class="font-semibold text-teal-700 hover:text-sky-700">Copyright © 2026 Alfaiz Muafy Rizqi Ramadhan</a></div></footer>
+	<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
 	<script>
+		const menuToggle = document.querySelector('#menu-toggle');
+		const mobileMenu = document.querySelector('#mobile-menu');
+		menuToggle.addEventListener('click', () => {
+			const isOpen = mobileMenu.classList.toggle('is-open');
+			menuToggle.setAttribute('aria-expanded', String(isOpen));
+			menuToggle.textContent = isOpen ? '×' : '☰';
+		});
+		mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+			mobileMenu.classList.remove('is-open');
+			menuToggle.setAttribute('aria-expanded', 'false');
+			menuToggle.textContent = '☰';
+		}));
+
 		const ranges = { data: document.querySelector('#data-range'), feedback: document.querySelector('#feedback-range'), bias: document.querySelector('#bias-range') };
 		const values = { data: document.querySelector('#data-value'), feedback: document.querySelector('#feedback-value'), bias: document.querySelector('#bias-value') };
 		const score = document.querySelector('#trust-score');
@@ -123,6 +250,70 @@
 		const sections = document.querySelectorAll('.lesson');
 		const observer = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) links.forEach((link) => link.classList.toggle('active', link.hash === `#${entry.target.id}`)); }), { rootMargin: '-35% 0px -55% 0px' });
 		sections.forEach((section) => observer.observe(section));
+
+		const pythonKeywords = new Set(['and', 'as', 'break', 'class', 'continue', 'def', 'elif', 'else', 'for', 'from', 'if', 'import', 'in', 'is', 'not', 'or', 'return', 'True', 'False', 'None', 'while']);
+		const pythonBuiltins = new Set(['print', 'input', 'int', 'float', 'str', 'range', 'len', 'list', 'dict', 'sum', 'max', 'min']);
+		function escapeCode(value) {
+			return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+		}
+		function highlightPython(source) {
+			const tokenPattern = /(#[^\n]*|(?:[rubfRUBF]{0,2})(?:"""[\s\S]*?"""|'''[\s\S]*?'''|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*')|\b\d+(?:\.\d+)?\b|\b[A-Za-z_]\w*\b|[+\-*\/%=<>!&|]+)/g;
+			let html = '';
+			let cursor = 0;
+			for (const match of source.matchAll(tokenPattern)) {
+				html += escapeCode(source.slice(cursor, match.index));
+				const token = match[0];
+				const escaped = escapeCode(token);
+				let type = '';
+				if (token.startsWith('#')) type = 'py-comment';
+				else if (/^[rubfRUBF]{0,2}("|')/.test(token)) type = 'py-string';
+				else if (/^\d/.test(token)) type = 'py-number';
+				else if (pythonKeywords.has(token)) type = 'py-keyword';
+				else if (pythonBuiltins.has(token)) type = 'py-builtin';
+				else if (/^[A-Za-z_]\w*(?=\s*\()/.test(source.slice(match.index))) type = 'py-function';
+				else if (/^[+\-*\/%=<>!&|]/.test(token)) type = 'py-operator';
+				html += type ? `<span class="${type}">${escaped}</span>` : escaped;
+				cursor = match.index + token.length;
+			}
+			return html + escapeCode(source.slice(cursor));
+		}
+		document.querySelectorAll('.python-code code').forEach((block) => {
+			block.innerHTML = highlightPython(block.textContent);
+		});
+
+		let pyodide = null;
+		const pythonStatus = document.querySelector('#python-status');
+		const pythonEditor = document.querySelector('#python-editor');
+		const pythonOutput = document.querySelector('#python-output');
+		const runPython = document.querySelector('#run-python');
+		const clearPython = document.querySelector('#clear-python');
+		async function loadPython() {
+			if (!pyodide) {
+				pythonStatus.textContent = 'Mengunduh runtime Python pertama kali...';
+				pyodide = await loadPyodide();
+			}
+			return pyodide;
+		}
+		runPython.addEventListener('click', async () => {
+			runPython.disabled = true;
+			runPython.textContent = 'Menjalankan...';
+			try {
+				const runtime = await loadPython();
+				const output = [];
+				runtime.setStdout({ batched: (text) => output.push(text) });
+				runtime.setStderr({ batched: (text) => output.push(text) });
+				await runtime.runPythonAsync(pythonEditor.value);
+				pythonOutput.textContent = output.join('') || 'Kode selesai tanpa output.';
+				pythonStatus.textContent = 'Runtime Python siap digunakan.';
+			} catch (error) {
+				pythonOutput.textContent = `Error Python:\n${error.message}`;
+				pythonStatus.textContent = 'Terjadi kesalahan pada kode. Periksa indentasi dan sintaks.';
+			} finally {
+				runPython.disabled = false;
+				runPython.textContent = '▶ Jalankan';
+			}
+		});
+		clearPython.addEventListener('click', () => { pythonOutput.textContent = 'Output akan muncul di sini...'; });
 	</script>
 </body>
 </html>
