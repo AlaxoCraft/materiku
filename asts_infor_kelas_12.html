@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Materi IBM SkillsBuild tentang interaksi dan eksplorasi kecerdasan buatan.">
+	<title>IBM SkillsBuild | Jelajah Kecerdasan Buatan</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+	<style>
+		:root { --ink: #073b4c; --deep: #063b35; --mint: #d8f3dc; --teal: #0f766e; --blue: #1677a8; --yellow: #ffd166; }
+		body { font-family: 'DM Sans', sans-serif; color: var(--ink); background: #f5fbfa; }
+		h1, h2, h3, .display { font-family: 'Space Grotesk', sans-serif; }
+		.hero-grid { background-color: #073b4c; background-image: linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px); background-size: 32px 32px; }
+		.glow { box-shadow: 0 0 0 1px rgba(255,255,255,.16), 0 24px 60px rgba(2, 44, 46, .22); }
+		.section-card { border: 1px solid #dcefed; box-shadow: 0 12px 34px rgba(7,59,76,.06); }
+		.lesson { scroll-margin-top: 100px; }
+		.nav-link.active { color: #0f766e; background: #d8f3dc; }
+		.pill { border: 1px solid rgba(15,118,110,.18); background: #effbf8; }
+		.range-accent { accent-color: #0f766e; }
+		.source-link { color: #0f766e; text-decoration: underline; text-underline-offset: 3px; }
+	</style>
+</head>
+<body>
+	<header class="sticky top-0 z-50 border-b border-white/20 bg-white/90 backdrop-blur-xl">
+		<div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
+			<a href="#atas" class="flex items-center gap-3" aria-label="Kembali ke awal halaman">
+				<span class="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-emerald-500 to-sky-600 text-xl text-white shadow-lg">✦</span>
+				<span><strong class="display block text-base text-[#073b4c]">AI / SkillsBuild</strong><small class="text-xs text-slate-500">Modul pembelajaran interaktif</small></span>
+			</a>
+			<nav aria-label="Navigasi bab" class="flex max-w-full flex-wrap justify-end gap-1.5 text-sm font-semibold">
+				<a class="nav-link rounded-full px-3 py-2 transition hover:bg-emerald-50" href="#bagian-1">Berinteraksi</a>
+				<a class="nav-link rounded-full px-3 py-2 transition hover:bg-emerald-50" href="#bagian-2">Menjelajahi</a>
+				<a class="nav-link rounded-full px-3 py-2 transition hover:bg-emerald-50" href="#simulasi">Simulasi</a>
+				<a class="rounded-full bg-[#ffd166] px-4 py-2 text-[#073b4c] transition hover:bg-[#f5bd3f]" href="index.html">Kembali</a>
+			</nav>
+		</div>
+	</header>
+
+	<main id="atas">
+		<section class="hero-grid overflow-hidden text-white">
+			<div class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:px-8 lg:py-24">
+				<div>
+					<p class="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-300/10 px-4 py-2 text-sm text-emerald-100"><span class="h-2 w-2 animate-pulse rounded-full bg-[#ffd166]"></span> IBM SkillsBuild • Artificial Intelligence</p>
+					<h1 class="max-w-3xl text-4xl font-bold leading-tight sm:text-6xl">Membaca dunia melalui <span class="text-emerald-300">pola, data,</span> dan keputusan.</h1>
+					<p class="mt-6 max-w-2xl text-lg leading-8 text-slate-200">Rangkuman lengkap dua bagian pembelajaran AI: memahami cara kerja, manfaat, batasan, etika, hingga peluang karier di dalamnya.</p>
+					<div class="mt-8 flex flex-wrap gap-3"><a href="#bagian-1" class="rounded-xl bg-emerald-400 px-5 py-3 font-bold text-[#063b35] transition hover:bg-emerald-300">Mulai belajar →</a><a href="#simulasi" class="rounded-xl border border-white/30 px-5 py-3 font-semibold text-white transition hover:bg-white/10">Coba simulasi</a></div>
+				</div>
+				<div class="relative mx-auto w-full max-w-md">
+					<div class="glow rounded-[2rem] border border-white/20 bg-white/10 p-6 backdrop-blur-md">
+						<div class="mb-8 flex items-center justify-between"><span class="text-sm text-emerald-100">Peta konsep AI</span><span class="rounded-full bg-[#ffd166] px-3 py-1 text-xs font-bold text-[#073b4c]">01—02</span></div>
+						<div class="grid grid-cols-2 gap-3 text-sm"><div class="rounded-2xl bg-emerald-300/20 p-4"><b class="block text-2xl text-emerald-200">Data</b><span class="text-slate-200">bahan belajar</span></div><div class="rounded-2xl bg-sky-300/20 p-4"><b class="block text-2xl text-sky-200">Pola</b><span class="text-slate-200">yang ditemukan</span></div><div class="col-span-2 rounded-2xl bg-white/10 p-4"><b class="block text-2xl text-[#ffd166]">Insight → aksi</b><span class="text-slate-200">rekomendasi, prediksi, dan automasi</span></div></div>
+					</div>
+					<div class="absolute -bottom-6 -left-5 rounded-2xl bg-[#ffd166] px-4 py-3 text-sm font-bold text-[#073b4c] shadow-xl">Belajar dengan kritis.</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="mx-auto grid max-w-7xl gap-4 px-4 py-10 sm:grid-cols-3 sm:px-6 lg:px-8">
+			<div class="section-card rounded-2xl bg-white p-5"><span class="text-2xl">◈</span><p class="mt-3 text-xs font-bold uppercase tracking-widest text-teal-700">Bagian 1</p><h2 class="mt-1 text-lg font-bold">Berinteraksi dengan AI</h2><p class="mt-2 text-sm text-slate-500">4 pelajaran tentang AI di sekitar kita.</p></div>
+			<div class="section-card rounded-2xl bg-white p-5"><span class="text-2xl">✺</span><p class="mt-3 text-xs font-bold uppercase tracking-widest text-sky-700">Bagian 2</p><h2 class="mt-1 text-lg font-bold">Menjelajahi AI</h2><p class="mt-2 text-sm text-slate-500">5 pelajaran tentang teknologi dan karier.</p></div>
+			<div class="section-card rounded-2xl bg-[#e7f7f1] p-5"><span class="text-2xl">↗</span><p class="mt-3 text-xs font-bold uppercase tracking-widest text-emerald-700">Eksperimen</p><h2 class="mt-1 text-lg font-bold">Simulasi keputusan</h2><p class="mt-2 text-sm text-slate-500">Lihat pengaruh kualitas data dan bias.</p></div>
+		</section>
+
+		<div class="mx-auto max-w-7xl space-y-8 px-4 pb-16 sm:px-6 lg:px-8">
+			<section id="bagian-1" class="lesson section-card overflow-hidden rounded-3xl bg-white">
+				<div class="border-b border-emerald-100 bg-gradient-to-r from-emerald-50 to-sky-50 p-6 sm:p-8"><span class="pill rounded-full px-3 py-1 text-xs font-bold text-teal-700">BAGIAN 1 • 4 PELAJARAN</span><h2 class="mt-3 text-3xl font-bold">Berinteraksi dengan AI</h2><p class="mt-2 max-w-3xl text-slate-600">AI hadir untuk membantu manusia mengelola informasi yang makin besar, tetapi pengguna tetap perlu memahami cara kerja dan batasannya.</p></div>
+				<div class="grid gap-8 p-6 sm:p-8 lg:grid-cols-2">
+					<article><div class="mb-3 flex items-center gap-3"><span class="grid h-9 w-9 place-items-center rounded-xl bg-emerald-100 font-bold text-teal-700">01</span><h3 class="text-xl font-bold">Bangkitnya AI sebagai solusi data</h3></div><p class="leading-7 text-slate-600">Kamu menghadapi kelebihan data karena menerima lebih banyak informasi daripada yang mudah diproses. Keterbatasan kognitif manusia meliputi kelebihan informasi, kelelahan dalam mengambil keputusan, dan penilaian yang tidak konsisten.</p><p class="mt-3 leading-7 text-slate-600">Seperti sempoa dan kalkulator yang memperluas kemampuan berpikir manusia, AI membantu mengelola dataset modern yang besar dan berpola kompleks. AI dapat <b>mengenali pola, memberikan insight atau rekomendasi,</b> serta mengotomatiskan tugas berulang.</p><p class="mt-3 leading-7 text-slate-600">Contoh penerapannya adalah diagnosis kesehatan, rekomendasi yang dipersonalisasi, dan kendaraan otomatis. Dengan begitu, waktu manusia untuk analisis data dapat dikurangi.</p></article>
+					<article><div class="mb-3 flex items-center gap-3"><span class="grid h-9 w-9 place-items-center rounded-xl bg-sky-100 font-bold text-sky-700">02</span><h3 class="text-xl font-bold">Apa yang bisa dan tidak bisa dilakukan AI</h3></div><p class="leading-7 text-slate-600">AI tidak memiliki kesadaran, perasaan, atau kesadaran diri. AI bekerja dengan menemukan dan menggunakan pola dari data dalam jumlah besar.</p><ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-600"><li><b>Bahasa:</b> memahami, menghasilkan, dan menerjemahkan teks maupun ucapan.</li><li><b>Persepsi:</b> mengenali wajah, mendeteksi objek, dan mengolah gambar atau video.</li><li><b>Keputusan:</b> membuat prakiraan, automasi, dan rekomendasi.</li></ul><div class="mt-4 grid gap-2 text-sm sm:grid-cols-2"><span class="rounded-xl bg-rose-50 p-3 text-rose-800"><b>Risiko:</b> bias dan halusinasi.</span><span class="rounded-xl bg-amber-50 p-3 text-amber-800"><b>Waspada:</b> kesenjangan data dan salah tafsir output.</span></div></article>
+					<article><div class="mb-3 flex items-center gap-3"><span class="grid h-9 w-9 place-items-center rounded-xl bg-teal-100 font-bold text-teal-700">03</span><h3 class="text-xl font-bold">Menyadari AI dalam kehidupan sehari-hari</h3></div><p class="leading-7 text-slate-600">AI tertanam dalam aplikasi hiburan, lalu lintas, navigasi, dan platform komunikasi. Sistem ini belajar dari klik dan swipe untuk mempersonalisasi pengalaman.</p><ol class="mt-3 list-decimal space-y-1 pl-5 text-sm leading-6 text-slate-600"><li>Mengumpulkan data</li><li>Mengidentifikasi pola</li><li>Menghasilkan output</li><li>Menerima feedback</li><li>Meng-update model</li></ol><p class="mt-3 leading-7 text-slate-600">Penggunaan yang bertanggung jawab membutuhkan perlindungan privasi, persetujuan eksplisit, dan pertimbangan terhadap dampak etis. Dengan memahami alurnya, kamu dapat menentukan kapan AI tepat digunakan.</p></article>
+					<article><div class="mb-3 flex items-center gap-3"><span class="grid h-9 w-9 place-items-center rounded-xl bg-cyan-100 font-bold text-cyan-700">04</span><h3 class="text-xl font-bold">Berinteraksi dengan AI</h3></div><p class="leading-7 text-slate-600">Antarmuka AI hadir sebagai asisten suara, antarmuka teks, chatbot, sistem rekomendasi, AI ambient yang bekerja di latar belakang, dan AI tersemat pada perangkat.</p><ul class="mt-3 list-disc space-y-1 pl-5 text-sm leading-6 text-slate-600"><li>Asisten suara memberi perintah tanpa sentuhan.</li><li>Antarmuka teks mendukung riset, penulisan, dan pemrograman.</li><li>Chatbot memberi panduan dan dukungan pelanggan.</li><li>Sistem rekomendasi menyarankan konten, produk, atau tindakan.</li></ul><p class="mt-3 leading-7 text-slate-600"><b>AI konsumen</b> membantu tugas pribadi seperti menerjemahkan teks dan meringkas email, sedangkan <b>AI enterprise</b> menganalisis data besar untuk keputusan bisnis.</p></article>
+				</div>
+				<div class="mx-6 mb-6 space-y-3 rounded-2xl bg-[#073b4c] p-5 text-sm text-white sm:mx-8 sm:mb-8"><p><b class="text-[#ffd166]">Etika AI:</b> bidang multidisipliner untuk memaksimalkan dampak positif AI sekaligus meminimalkan risiko dan hasil yang merugikan.</p><p><b class="text-[#ffd166]">Lima pilar kepercayaan IBM:</b> keterjelasan, keadilan, ketahanan, transparansi, dan privasi.</p></div>
+			</section>
+
+			<section id="bagian-2" class="lesson section-card overflow-hidden rounded-3xl bg-white">
+				<div class="border-b border-sky-100 bg-gradient-to-r from-sky-50 to-emerald-50 p-6 sm:p-8"><span class="pill rounded-full px-3 py-1 text-xs font-bold text-sky-700">BAGIAN 2 • 5 PELAJARAN</span><h2 class="mt-3 text-3xl font-bold">Menjelajahi Kecerdasan Buatan</h2><p class="mt-2 max-w-3xl text-slate-600">Kenali bentuk, teknologi inti, manfaat, dan kemampuan yang dibutuhkan untuk berkarier bersama AI.</p></div>
+				<div class="grid gap-5 p-6 sm:p-8 md:grid-cols-2 lg:grid-cols-3">
+					<article class="rounded-2xl border border-slate-100 bg-slate-50 p-5 md:col-span-2 lg:col-span-1"><span class="text-sm font-bold text-sky-700">01 • PENGANTAR AI</span><h3 class="mt-2 text-xl font-bold">Teknologi yang belajar</h3><p class="mt-3 text-sm leading-7 text-slate-600">AI memungkinkan komputer dan mesin meniru kemampuan manusia untuk belajar, memahami, memecahkan masalah, mengambil keputusan, berkreasi, dan bertindak mandiri.</p><p class="mt-3 text-sm leading-7 text-slate-600">AI mengumpulkan data, menemukan pola, membuat prediksi, lalu berkembang lewat feedback. Automasi, analitik, sistem berbasis aturan, dan perangkat cerdas belum tentu AI karena tidak selalu belajar atau beradaptasi.</p></article>
+					<article class="rounded-2xl border border-slate-100 bg-slate-50 p-5"><span class="text-sm font-bold text-emerald-700">02 • BENTUK AI</span><h3 class="mt-2 text-xl font-bold">Empat wajah AI</h3><ul class="mt-3 space-y-2 text-sm leading-6 text-slate-600"><li><b>Generatif:</b> membuat teks, gambar, dan musik.</li><li><b>Prediktif:</b> memproyeksikan permintaan dan fraud.</li><li><b>Keputusan:</b> mengevaluasi faktor untuk sistem otonom atau pinjaman.</li><li><b>Visi komputer:</b> membaca wajah dan pencitraan medis.</li></ul></article>
+					<article class="rounded-2xl border border-slate-100 bg-slate-50 p-5"><span class="text-sm font-bold text-teal-700">03 • TEKNOLOGI</span><h3 class="mt-2 text-xl font-bold">Mesin di balik AI</h3><p class="mt-3 text-sm leading-7 text-slate-600"><b>Machine learning</b> menemukan pola dan membuat prediksi dari data terstruktur. <b>Deep learning</b> memakai jaringan neural untuk pola rumit dalam gambar, video, dan ucapan. <b>NLP</b> memahami konteks dan makna bahasa untuk chatbot, asisten suara, dan penerjemah.</p><p class="mt-3 text-sm leading-7 text-slate-600">Sistem diagnosis medis dan pendeteksi penipuan sering menggabungkan ketiganya.</p></article>
+					<article class="rounded-2xl border border-slate-100 bg-slate-50 p-5"><span class="text-sm font-bold text-cyan-700">04 • MANFAAT</span><h3 class="mt-2 text-xl font-bold">Bekerja lebih cerdas</h3><p class="mt-3 text-sm leading-7 text-slate-600">AI mengotomatisasi tugas berulang, menyempurnakan keputusan, mengurangi error, tersedia 24/7, dan meningkatkan keselamatan di lingkungan berisiko tinggi.</p><p class="mt-3 text-sm leading-7 text-slate-600">AI juga mempersonalisasi pengalaman, menyederhanakan operasional, membantu diagnosis medis, mencegah penipuan, mempersonalisasi pembelajaran, dan mengoptimalkan rantai pasokan.</p></article>
+					<article class="rounded-2xl border border-slate-100 bg-slate-50 p-5 md:col-span-2"><span class="text-sm font-bold text-amber-700">05 • AI DAN KAMU</span><h3 class="mt-2 text-xl font-bold">Peluang karier yang luas</h3><p class="mt-3 text-sm leading-7 text-slate-600">Permintaan profesional AI terus meningkat. Keterampilan yang dibutuhkan mencakup keterampilan teknis, keterampilan profesional, dan pengetahuan domain.</p><p class="mt-3 text-sm leading-7 text-slate-600"><b>Peran yang dapat dipertimbangkan:</b> Analis Riset AI, Engineer Machine Learning, Ilmuwan Data, Manajer Produk AI, Engineer Robotik, dan Engineer Prompt.</p><p class="mt-3 text-sm leading-7 text-slate-600"><b>Strategi:</b> kembangkan keterampilan teknis, bangun proyek langsung, ikuti tren industri, bangun jaringan, dan terus belajar seiring perkembangan AI.</p></article>
+				</div>
+				<div class="mx-6 mb-6 rounded-2xl bg-sky-50 p-5 text-sm leading-7 text-slate-700 sm:mx-8 sm:mb-8"><b class="text-sky-800">Kesimpulan Bagian 2:</b> AI merevolusi industri dengan automasi, keputusan yang lebih baik, dan inovasi produk maupun layanan. Perkembangan ini membuka peluang baru serta mengubah cara manusia bekerja dan hidup.</div>
+			</section>
+
+			<section id="simulasi" class="lesson section-card rounded-3xl bg-[#063b35] p-6 text-white sm:p-8">
+				<div class="grid gap-10 lg:grid-cols-[.85fr_1.15fr] lg:items-center">
+					<div><span class="rounded-full bg-emerald-300/20 px-3 py-1 text-xs font-bold text-emerald-200">SIMULASI • MODEL PREDIKTIF</span><h2 class="mt-4 text-3xl font-bold">Bisakah kita mempercayai prediksi AI?</h2><p class="mt-3 leading-7 text-emerald-50/80">Atur tiga faktor berikut. Simulasi ini menyederhanakan bagaimana kualitas data, feedback, dan bias memengaruhi tingkat kepercayaan pada sebuah output.</p><p class="mt-5 text-sm text-emerald-200">Catatan: skor bukan kebenaran mutlak. Verifikasi manusia tetap diperlukan.</p></div>
+					<div class="rounded-3xl bg-white p-6 text-[#073b4c] shadow-2xl">
+						<label class="mb-5 block">Kualitas data <span id="data-value" class="float-right font-bold text-teal-700">70%</span><input id="data-range" class="range-accent mt-3 w-full" type="range" min="0" max="100" value="70"></label>
+						<label class="mb-5 block">Feedback yang relevan <span id="feedback-value" class="float-right font-bold text-teal-700">60%</span><input id="feedback-range" class="range-accent mt-3 w-full" type="range" min="0" max="100" value="60"></label>
+						<label class="mb-5 block">Risiko bias <span id="bias-value" class="float-right font-bold text-rose-600">25%</span><input id="bias-range" class="range-accent mt-3 w-full" type="range" min="0" max="100" value="25"></label>
+						<div class="mt-7 rounded-2xl bg-emerald-50 p-5"><div class="flex items-end justify-between"><span class="text-sm font-semibold text-slate-500">Indeks kepercayaan</span><strong id="trust-score" class="text-4xl text-teal-700">66</strong></div><div class="mt-3 h-3 overflow-hidden rounded-full bg-emerald-100"><div id="trust-bar" class="h-full rounded-full bg-gradient-to-r from-emerald-500 to-sky-500 transition-all" style="width:66%"></div></div><p id="trust-message" class="mt-3 text-sm text-slate-600">Cukup baik, tetapi perlu peninjauan manusia.</p></div>
+					</div>
+				</div>
+			</section>
+
+			<section id="sumber" class="lesson section-card rounded-3xl bg-white p-6 sm:p-8"><div class="flex flex-wrap items-end justify-between gap-4"><div><span class="pill rounded-full px-3 py-1 text-xs font-bold text-teal-700">REFERENSI</span><h2 class="mt-3 text-3xl font-bold">Sumber dan dokumentasi</h2></div><span class="text-sm text-slate-500">Diakses untuk pendalaman</span></div><div class="mt-6 grid gap-3 sm:grid-cols-2"><a class="source-link rounded-xl bg-emerald-50 p-4 font-semibold transition hover:bg-emerald-100" href="https://skillsbuild.org/" target="_blank" rel="noopener noreferrer">IBM SkillsBuild ↗</a><a class="source-link rounded-xl bg-sky-50 p-4 font-semibold transition hover:bg-sky-100" href="https://www.ibm.com/think/topics/artificial-intelligence" target="_blank" rel="noopener noreferrer">IBM: What is Artificial Intelligence? ↗</a><a class="source-link rounded-xl bg-emerald-50 p-4 font-semibold transition hover:bg-emerald-100" href="https://www.ibm.com/think/topics/ai-ethics" target="_blank" rel="noopener noreferrer">IBM: AI Ethics ↗</a><a class="source-link rounded-xl bg-sky-50 p-4 font-semibold transition hover:bg-sky-100" href="https://www.ibm.com/think/topics/machine-learning" target="_blank" rel="noopener noreferrer">IBM: Machine Learning ↗</a></div></section>
+		</div>
+	</main>
+
+	<footer class="border-t border-emerald-100 bg-white"><div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-7 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8"><span>IBM SkillsBuild • Materi pembelajaran AI</span><a class="font-semibold text-teal-700 hover:text-sky-700" href="index.html">← Kembali ke index.html</a></div></footer>
+	<script>
+		const ranges = { data: document.querySelector('#data-range'), feedback: document.querySelector('#feedback-range'), bias: document.querySelector('#bias-range') };
+		const values = { data: document.querySelector('#data-value'), feedback: document.querySelector('#feedback-value'), bias: document.querySelector('#bias-value') };
+		const score = document.querySelector('#trust-score');
+		const bar = document.querySelector('#trust-bar');
+		const message = document.querySelector('#trust-message');
+		function updateSimulation() {
+			const data = Number(ranges.data.value), feedback = Number(ranges.feedback.value), bias = Number(ranges.bias.value);
+			const trust = Math.round(data * 0.45 + feedback * 0.35 + (100 - bias) * 0.2);
+			values.data.textContent = `${data}%`; values.feedback.textContent = `${feedback}%`; values.bias.textContent = `${bias}%`;
+			score.textContent = trust; bar.style.width = `${trust}%`;
+			message.textContent = trust >= 75 ? 'Tinggi, namun tetap cek konteks dan sumber data.' : trust >= 50 ? 'Cukup baik, tetapi perlu peninjauan manusia.' : 'Rendah. Periksa data, bias, dan minta verifikasi tambahan.';
+		}
+		Object.values(ranges).forEach((range) => range.addEventListener('input', updateSimulation));
+		const links = document.querySelectorAll('.nav-link');
+		const sections = document.querySelectorAll('.lesson');
+		const observer = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) links.forEach((link) => link.classList.toggle('active', link.hash === `#${entry.target.id}`)); }), { rootMargin: '-35% 0px -55% 0px' });
+		sections.forEach((section) => observer.observe(section));
+	</script>
+</body>
+</html>
