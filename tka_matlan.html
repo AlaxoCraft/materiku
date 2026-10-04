@@ -160,13 +160,31 @@
 						</article>
 
 						<article id="rumus-trig" class="scroll-mt-24 border-t border-slate-100 pt-7">
-							<h3 class="text-xl font-bold text-slate-900">C. 21 Rumus Inti Trigonometri</h3><p class="mt-2 leading-7 text-slate-600">Kelompok rumus berikut mencakup jumlah/selisih sudut, sudut rangkap dan tiga, serta konversi perkalian dan penjumlahan. Tiga bentuk kosinus sudut rangkap ditampilkan sebagai bentuk-bentuk ekuivalen dalam satu nomor.</p>
-							<div class="mt-5 space-y-5">
-								<div class="rounded-xl border border-primary-100 bg-primary-50/60 p-4 sm:p-5"><h4 class="font-bold text-primary-900">Jumlah dan selisih dua sudut</h4><div class="mt-3 grid gap-x-6 gap-y-3 sm:grid-cols-2"><p>1. \(\begin{aligned}\sin(\alpha+\beta)\\&=\sin\alpha\cos\beta\\&\quad+\cos\alpha\sin\beta\end{aligned}\)</p><p>2. \(\begin{aligned}\sin(\alpha-\beta)\\&=\sin\alpha\cos\beta\\&\quad-\cos\alpha\sin\beta\end{aligned}\)</p><p>3. \(\begin{aligned}\cos(\alpha+\beta)\\&=\cos\alpha\cos\beta\\&\quad-\sin\alpha\sin\beta\end{aligned}\)</p><p>4. \(\begin{aligned}\cos(\alpha-\beta)\\&=\cos\alpha\cos\beta\\&\quad+\sin\alpha\sin\beta\end{aligned}\)</p><p>5. \(\tan(\alpha+\beta)=\frac{\tan\alpha+\tan\beta}{1-\tan\alpha\tan\beta}\)</p><p>6. \(\tan(\alpha-\beta)=\frac{\tan\alpha-\tan\beta}{1+\tan\alpha\tan\beta}\)</p></div></div>
-								<div class="rounded-xl border border-sky-100 bg-sky-50/60 p-4 sm:p-5"><h4 class="font-bold text-sky-900">Sudut rangkap dan reduksi pangkat</h4><div class="mt-3 grid gap-x-6 gap-y-3 sm:grid-cols-2"><p>7. \(\sin 2\alpha=2\sin\alpha\cos\alpha\)</p><p>8. \(\begin{aligned}\cos 2\alpha&=\cos^2\alpha-\sin^2\alpha\\&=2\cos^2\alpha-1\\&=1-2\sin^2\alpha\end{aligned}\)</p><p>9. \(\tan 2\alpha=\frac{2\tan\alpha}{1-\tan^2\alpha}\)</p><p>10. \(\sin^2\alpha=\frac{1}{2}-\frac{1}{2}\cos2\alpha\)</p><p>11. \(\cos^2\alpha=\frac{1}{2}+\frac{1}{2}\cos2\alpha\)</p></div><p class="mt-3 text-sm leading-6 text-slate-600">Khususnya, \(1-\cos2\alpha=2\sin^2\alpha\), bentuk yang sering dipakai pada limit.</p></div>
-								<div class="rounded-xl border border-emerald-100 bg-emerald-50/60 p-4 sm:p-5"><h4 class="font-bold text-emerald-900">Sudut tiga</h4><div class="mt-3 grid gap-3 sm:grid-cols-2"><p>12. \(\sin3\alpha=3\sin\alpha-4\sin^3\alpha\)</p><p>13. \(\cos3\alpha=4\cos^3\alpha-3\cos\alpha\)</p></div></div>
-								<div class="rounded-xl border border-cyan-100 bg-cyan-50/60 p-4 sm:p-5"><h4 class="font-bold text-cyan-900">Perkalian menjadi penjumlahan atau selisih</h4><div class="mt-3 grid gap-x-6 gap-y-3 sm:grid-cols-2"><p>14. \(\begin{aligned}2\sin\alpha\cos\beta&\\&=\sin(\alpha+\beta)\\&+\sin(\alpha-\beta)\end{aligned}\)</p><p>15. \(\begin{aligned}2\cos\alpha\sin\beta&\\&=\sin(\alpha+\beta)\\&-\sin(\alpha-\beta)\end{aligned}\)</p><p>16. \(\begin{aligned}2\cos\alpha\cos\beta&=\\&\cos(\alpha+\beta)\\&+\cos(\alpha-\beta)\end{aligned}\)</p><p>17. \(\begin{aligned}-2\sin\alpha\sin\beta&=\\&\cos(\alpha+\beta)\\&-\cos(\alpha-\beta)\end{aligned}\)</p></div></div>
-								<div class="rounded-xl border border-blue-100 bg-blue-50/60 p-4 sm:p-5"><h4 class="font-bold text-blue-900">Penjumlahan atau selisih menjadi perkalian</h4><div class="mt-3 grid gap-x-6 gap-y-3 sm:grid-cols-2"><p>18. \(\begin{aligned}\sin\alpha+\sin\beta&=2\sin\frac{\alpha+\beta}{2}\\&\quad\cdot\cos\frac{\alpha-\beta}{2}\end{aligned}\)</p><p>19. \(\begin{aligned}\sin\alpha-\sin\beta&=2\cos\frac{\alpha+\beta}{2}\\&\quad\cdot\sin\frac{\alpha-\beta}{2}\end{aligned}\)</p><p>20. \(\begin{aligned}\cos\alpha+\cos\beta&=2\cos\frac{\alpha+\beta}{2}\\&\quad\cdot\cos\frac{\alpha-\beta}{2}\end{aligned}\)</p><p>21. \(\begin{aligned}\cos\alpha-\cos\beta&=-2\sin\frac{\alpha+\beta}{2}\\&\quad\cdot\\&\sin\frac{\alpha-\beta}{2}\end{aligned}\)</p></div></div>
+							<h3 class="text-xl font-bold text-slate-900">C. 21 Rumus Inti Trigonometri</h3>
+							<p class="mt-2 leading-7 text-slate-600">Kelompok rumus berikut mencakup jumlah dan selisih dua sudut, sudut rangkap, serta transformasi perkalian dan penjumlahan.</p>
+
+							<div class="mt-5 rounded-2xl border border-slate-200 bg-slate-100 p-4 shadow-sm sm:p-5">
+								<h4 class="text-2xl font-bold text-sky-800">Jumlah dan selisih dua sudut</h4>
+								<div class="mt-4 grid gap-x-6 gap-y-3 sm:grid-cols-2">
+									<p>1. \(\sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta\)</p>
+									<p>2. \(\sin(\alpha-\beta)=\sin\alpha\cos\beta-\cos\alpha\sin\beta\)</p>
+									<p>3. \(\cos(\alpha+\beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta\)</p>
+									<p>4. \(\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta\)</p>
+									<p>5. \(\tan(\alpha+\beta)=\dfrac{\tan\alpha+\tan\beta}{1-\tan\alpha\tan\beta}\)</p>
+									<p>6. \(\tan(\alpha-\beta)=\dfrac{\tan\alpha-\tan\beta}{1+\tan\alpha\tan\beta}\)</p>
+								</div>
+							</div>
+
+							<div class="mt-5 rounded-2xl border border-slate-200 bg-slate-100 p-4 shadow-sm sm:p-5">
+								<h4 class="text-2xl font-bold text-sky-800">Sudut rangkap dan reduksi pangkat</h4>
+								<div class="mt-4 grid gap-x-6 gap-y-3 sm:grid-cols-2">
+									<p>7. \(\sin 2\alpha = 2\sin\alpha\cos\alpha\)</p>
+									<p>8. \(\cos 2\alpha = \cos^2\alpha - \sin^2\alpha = 2\cos^2\alpha - 1 = 1 - 2\sin^2\alpha\)</p>
+									<p>9. \(\tan 2\alpha = \dfrac{2\tan\alpha}{1-\tan^2\alpha}\)</p>
+									<p>10. \(\sin^2\alpha = \dfrac{1}{2} - \dfrac{1}{2}\cos 2\alpha\)</p>
+									<p>11. \(\cos^2\alpha = \dfrac{1}{2} + \dfrac{1}{2}\cos 2\alpha\)</p>
+								</div>
+								<p class="mt-3 text-sm leading-6 text-slate-600">Khususnya, \(1-\cos 2\alpha = 2\sin^2\alpha\), bentuk yang sering dipakai pada limit.</p>
 							</div>
 						</article>
 
