@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#0f766e">
+	<title>TKA Bahasa Indonesia | StudyDrive</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					fontFamily: { sans: ['Inter', 'sans-serif'] },
+					colors: {
+						primary: {
+							50: '#f0fdfa', 100: '#ccfbf1', 200: '#99f6e4', 300: '#5eead4',
+							400: '#2dd4bf', 500: '#14b8a6', 600: '#0d9488', 700: '#0f766e',
+							800: '#115e59', 900: '#134e4a'
+						},
+						secondary: { 500: '#3b82f6', 600: '#2563eb' }
+					}
+				}
+			}
+		};
+	</script>
+	<style>
+		:target { scroll-margin-top: 6rem; }
+		@media (prefers-reduced-motion: no-preference) {
+			.reveal { animation: rise-in 550ms both; }
+			@keyframes rise-in {
+				from { opacity: 0; transform: translateY(12px); }
+				to { opacity: 1; transform: translateY(0); }
+			}
+		}
+	</style>
+</head>
+<body class="min-h-screen bg-slate-50 font-sans text-slate-800 antialiased">
+	<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+		<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+			<a href="index.html" class="flex items-center gap-3 font-bold text-slate-900" aria-label="StudyDrive, kembali ke beranda">
+				<span class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 text-white shadow-md"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
+				<span class="text-lg">StudyDrive</span>
+			</a>
+			<a href="index.html#materi" class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-primary-800 transition hover:bg-primary-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500">
+				<i class="fa-solid fa-arrow-left" aria-hidden="true"></i><span class="hidden sm:inline">Daftar Materi</span><span class="sm:hidden">Kembali</span>
+			</a>
+		</div>
+	</header>
+
+	<main>
+		<section class="relative overflow-hidden border-b border-primary-100 bg-gradient-to-br from-primary-50 via-white to-sky-100">
+			<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+				<div class="reveal max-w-4xl">
+					<p class="inline-flex items-center gap-2 rounded-full border border-primary-200 bg-white/80 px-3 py-1.5 text-xs font-bold uppercase text-primary-800">
+						<span class="h-2 w-2 rounded-full bg-primary-500"></span>TKA · Bahasa Indonesia
+					</p>
+					<h1 class="mt-5 max-w-3xl text-4xl font-extrabold leading-tight text-slate-950 sm:text-5xl">Materi TKA Bahasa Indonesia</h1>
+					<p class="mt-5 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg">Memahami teks, membaca makna, menilai gagasan.Pelajari strategi memahami informasi tersurat dan tersirat, menghubungkan gagasan, serta mengapresiasi cara bahasa membangun makna dan emosi.</p>
+				</div>
+				<div class="mt-9 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-3">
+					<a href="#tekstual" class="flex items-center gap-3 rounded-xl border border-primary-100 bg-white/90 p-4 transition hover:border-primary-300 hover:shadow-sm">
+						<span class="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-100 font-bold text-primary-800">01</span><span class="font-semibold text-slate-800">Pemahaman Tekstual</span>
+					</a>
+					<a href="#inferensial" class="flex items-center gap-3 rounded-xl border border-sky-100 bg-white/90 p-4 transition hover:border-sky-300 hover:shadow-sm">
+						<span class="flex h-9 w-9 items-center justify-center rounded-lg bg-sky-100 font-bold text-sky-800">02</span><span class="font-semibold text-slate-800">Pemahaman Inferensial</span>
+					</a>
+					<a href="#evaluasi" class="flex items-center gap-3 rounded-xl border border-emerald-100 bg-white/90 p-4 transition hover:border-emerald-300 hover:shadow-sm">
+						<span class="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-100 font-bold text-emerald-800">03</span><span class="font-semibold text-slate-800">Evaluasi & Apresiasi</span>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:px-8 lg:py-14">
+			<aside class="self-start lg:sticky lg:top-24">
+				<nav aria-label="Daftar isi materi" class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+					<h2 class="mb-3 text-xs font-bold uppercase text-slate-500">Daftar Isi</h2>
+					<ul class="space-y-1 text-sm">
+						<li><a class="block rounded-md px-3 py-2 font-semibold text-primary-800 hover:bg-primary-50" href="#tekstual">1. Pemahaman Tekstual</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-primary-50 hover:text-primary-800" href="#serapan">Kata Serapan</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-primary-50 hover:text-primary-800" href="#kosakata">Petunjuk Kosakata</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-primary-50 hover:text-primary-800" href="#kerangka">Kerangka Teks</a></li>
+						<li><a class="block rounded-md px-3 py-2 font-semibold text-sky-800 hover:bg-sky-50" href="#inferensial">2. Pemahaman Inferensial</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-sky-50 hover:text-sky-800" href="#simpulan">Menyimpulkan Isi</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-sky-50 hover:text-sky-800" href="#hubungan">Hubungan Makna</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-sky-50 hover:text-sky-800" href="#prediksi">Memprediksi Cerita</a></li>
+						<li><a class="block rounded-md px-3 py-2 font-semibold text-emerald-800 hover:bg-emerald-50" href="#evaluasi">3. Evaluasi & Apresiasi</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-emerald-50 hover:text-emerald-800" href="#relevansi">Relevansi Peristiwa</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-emerald-50 hover:text-emerald-800" href="#akurasi">Menilai Informasi</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-emerald-50 hover:text-emerald-800" href="#bahasa">Menilai Bahasa</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-emerald-50 hover:text-emerald-800" href="#fiksi">Unsur Fiksi</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-emerald-50 hover:text-emerald-800" href="#emosi">Respons Emosional</a></li>
+					</ul>
+				</nav>
+			</aside>
+
+			<div class="min-w-0 space-y-10">
+				<section id="tekstual" class="scroll-mt-24 overflow-hidden rounded-2xl border border-primary-100 bg-white shadow-sm">
+					<div class="border-b border-primary-100 bg-gradient-to-r from-primary-800 to-primary-600 px-4 py-5 text-white sm:px-8 sm:py-6">
+						<p class="text-xs font-bold uppercase text-primary-100">Bagian 01</p>
+						<h2 class="mt-1 text-2xl font-bold sm:text-3xl">Pemahaman Tekstual</h2>
+						<p class="mt-2 max-w-3xl text-sm leading-6 text-primary-50">Menemukan informasi yang dinyatakan langsung dalam teks, mengenali petunjuk bahasa, dan menyusun kembali isi secara teratur.</p>
+					</div>
+					<div class="space-y-8 p-4 sm:p-8">
+						<article id="serapan" class="scroll-mt-24">
+							<div class="flex items-start gap-3">
+								<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary-100 text-primary-800"><i class="fa-solid fa-language" aria-hidden="true"></i></span>
+								<div><h3 class="text-xl font-bold text-slate-900">A. Kata Serapan dalam Berbagai Bidang</h3><p class="mt-2 leading-7 text-slate-600">Kata serapan berasal dari bahasa asing atau bahasa daerah dan digunakan dalam bahasa Indonesia. Bentuknya disesuaikan dengan kaidah bahasa Indonesia baku.</p></div>
+							</div>
+							<div class="mt-5 grid gap-3 sm:grid-cols-2">
+								<div class="rounded-xl border border-primary-100 bg-primary-50/70 p-4"><h4 class="font-bold text-primary-900">Adopsi</h4><p class="mt-1 text-sm leading-6 text-slate-600">Mengambil kata secara utuh tanpa mengubah ejaan atau pelafalan.</p><p class="mt-2 text-sm text-slate-700">Contoh: <i>supermarket</i>, <i>plaza</i>.</p></div>
+								<div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Adaptasi</h4><p class="mt-1 text-sm leading-6 text-slate-600">Menyesuaikan penulisan dan ejaan dengan kaidah bahasa Indonesia.</p><p class="mt-2 text-sm text-slate-700"><i>system</i> → sistem; <i>activity</i> → aktivitas.</p></div>
+								<div class="rounded-xl border border-emerald-100 bg-emerald-50/70 p-4"><h4 class="font-bold text-emerald-900">Penerjemahan atau Padanan</h4><p class="mt-1 text-sm leading-6 text-slate-600">Mengambil konsep kata asing lalu mencari padanannya dalam bahasa Indonesia.</p><p class="mt-2 text-sm text-slate-700"><i>download</i> → unduh; <i>online</i> → daring.</p></div>
+								<div class="rounded-xl border border-cyan-100 bg-cyan-50/70 p-4"><h4 class="font-bold text-cyan-900">Kreasi</h4><p class="mt-1 text-sm leading-6 text-slate-600">Membentuk istilah baru berdasarkan konsep asing tanpa menerjemahkannya secara harfiah.</p><p class="mt-2 text-sm text-slate-700"><i>bound paper</i> → kertas bersambung.</p></div>
+							</div>
+							<h4 class="mt-6 font-bold text-slate-900">Contoh istilah menurut bidang</h4>
+							<div class="mt-3 overflow-x-auto rounded-xl border border-slate-200">
+								<table class="w-full min-w-[520px] text-left text-sm">
+									<thead class="bg-slate-100 text-slate-700"><tr><th class="px-4 py-3 font-bold">Bidang</th><th class="px-4 py-3 font-bold">Contoh kosakata</th></tr></thead>
+									<tbody class="divide-y divide-slate-100 text-slate-600">
+										<tr><th class="px-4 py-3 font-semibold text-slate-800">Teknologi & Informasi</th><td class="px-4 py-3">server, data, daring, unduh, algoritma, basis data</td></tr>
+										<tr><th class="px-4 py-3 font-semibold text-slate-800">Ekonomi & Bisnis</th><td class="px-4 py-3">inflasi, investasi, omzet, aset, likuiditas, ekuitas</td></tr>
+										<tr><th class="px-4 py-3 font-semibold text-slate-800">Sains & Kesehatan</th><td class="px-4 py-3">terapi, vaksin, diagnosis, virus, sterilisasi</td></tr>
+										<tr><th class="px-4 py-3 font-semibold text-slate-800">Hukum & Politik</th><td class="px-4 py-3">yurisdiksi, birokrasi, asas, legalisasi, sanksi</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</article>
+
+						<article id="kosakata" class="scroll-mt-24 border-t border-slate-100 pt-7">
+							<div class="flex items-start gap-3">
+								<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-800"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span>
+								<div><h3 class="text-xl font-bold text-slate-900">B. Latar, Karakter, dan Fenomena dari Kosakata</h3><p class="mt-2 leading-7 text-slate-600">Kosakata khusus dapat menjadi petunjuk untuk mengenali latar cerita, sifat tokoh, atau topik yang sedang dibahas.</p></div>
+							</div>
+							<ul class="mt-5 space-y-3">
+								<li class="rounded-lg bg-slate-50 p-4"><strong class="text-slate-900">Latar:</strong> kosakata bidang atau ruang tertentu menandai tempat, waktu, dan suasana. <span class="text-slate-600">Gelombang, sampan, mercusuar mengarah pada latar pantai atau laut.</span></li>
+								<li class="rounded-lg bg-slate-50 p-4"><strong class="text-slate-900">Karakter:</strong> adjektiva dan kata kerja tindakan membantu menggambarkan perwatakan. <span class="text-slate-600">Kikir, dermawan, acuh, dan tegar merupakan petunjuk sifat tokoh.</span></li>
+								<li class="rounded-lg bg-slate-50 p-4"><strong class="text-slate-900">Fenomena:</strong> kosakata ilmiah atau jargon menunjukkan fenomena alam, sosial, atau budaya. <span class="text-slate-600">Urbanisasi, erosi, hiperbola, dan inflasi menandai topik yang berbeda.</span></li>
+							</ul>
+						</article>
+
+						<article id="kerangka" class="scroll-mt-24 border-t border-slate-100 pt-7">
+							<div class="flex items-start gap-3">
+								<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-100 text-emerald-800"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></span>
+								<div><h3 class="text-xl font-bold text-slate-900">C. Menyusun Kerangka atau Bagan Teks</h3><p class="mt-2 leading-7 text-slate-600">Kerangka merangkum bagian penting teks secara terstruktur agar hubungan antaride mudah dilihat.</p></div>
+							</div>
+							<ol class="mt-5 space-y-3">
+								<li class="flex gap-3 rounded-lg border border-slate-100 p-4"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary-100 text-sm font-bold text-primary-800">1</span><span class="leading-6 text-slate-700">Temukan ide pokok dan informasi kunci dari setiap paragraf.</span></li>
+								<li class="flex gap-3 rounded-lg border border-slate-100 p-4"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary-100 text-sm font-bold text-primary-800">2</span><span class="leading-6 text-slate-700">Kelompokkan informasi menurut struktur teks: pendahuluan atau tesis, isi atau argumen, lalu penutup atau simpulan.</span></li>
+								<li class="flex gap-3 rounded-lg border border-slate-100 p-4"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary-100 text-sm font-bold text-primary-800">3</span><span class="leading-6 text-slate-700">Susun informasi secara hierarkis menggunakan outline, peta konsep, atau diagram alir.</span></li>
+							</ol>
+						</article>
+					</div>
+				</section>
+
+				<section id="inferensial" class="scroll-mt-24 overflow-hidden rounded-2xl border border-sky-100 bg-white shadow-sm">
+					<div class="border-b border-sky-100 bg-gradient-to-r from-sky-800 to-blue-600 px-4 py-5 text-white sm:px-8 sm:py-6">
+						<p class="text-xs font-bold uppercase text-sky-100">Bagian 02</p>
+						<h2 class="mt-1 text-2xl font-bold sm:text-3xl">Pemahaman Inferensial</h2>
+						<p class="mt-2 max-w-3xl text-sm leading-6 text-sky-50">Menafsirkan informasi tersirat dengan menghubungkan petunjuk, konteks, dan pengetahuan yang relevan.</p>
+					</div>
+					<div class="space-y-8 p-4 sm:p-8">
+						<article id="simpulan" class="scroll-mt-24">
+							<div class="flex items-start gap-3">
+								<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-800"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></span>
+								<div><h3 class="text-xl font-bold text-slate-900">A. Menyimpulkan Isi dan Unsur Teks</h3><p class="mt-2 leading-7 text-slate-600">Simpulan inferensial dibangun dari petunjuk teks, bukan tebakan lepas dari bukti.</p></div>
+							</div>
+							<div class="mt-5 grid gap-3 sm:grid-cols-2">
+								<div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Ide pokok</h4><p class="mt-1 text-sm leading-6 text-slate-600">Inti pikiran utama paragraf; kalimat utamanya dapat berada di awal, akhir, atau tersusun campuran.</p></div>
+								<div class="rounded-xl border border-primary-100 bg-primary-50/70 p-4"><h4 class="font-bold text-primary-900">Gagasan pendukung</h4><p class="mt-1 text-sm leading-6 text-slate-600">Kalimat penjelas yang memperkuat, merinci, atau memberi contoh bagi ide pokok.</p></div>
+							</div>
+							<h4 class="mt-6 font-bold text-slate-900">Unsur yang dapat disimpulkan dalam fiksi</h4>
+							<div class="mt-3 grid gap-3 sm:grid-cols-3">
+								<div class="rounded-xl bg-slate-50 p-4"><h5 class="font-bold text-slate-900">Tokoh & Penokohan</h5><p class="mt-2 text-sm leading-6 text-slate-600">Kenali peran protagonis atau antagonis dan wataknya dari tindakan maupun dialog.</p></div>
+								<div class="rounded-xl bg-slate-50 p-4"><h5 class="font-bold text-slate-900">Konflik</h5><p class="mt-2 text-sm leading-6 text-slate-600">Tentukan masalah utama, baik konflik internal dalam batin maupun konflik eksternal dengan pihak lain atau keadaan.</p></div>
+								<div class="rounded-xl bg-slate-50 p-4"><h5 class="font-bold text-slate-900">Nilai-nilai</h5><p class="mt-2 text-sm leading-6 text-slate-600">Temukan nilai moral, sosial, budaya, agama, atau edukatif dalam cerita.</p></div>
+							</div>
+						</article>
+
+						<article id="hubungan" class="scroll-mt-24 border-t border-slate-100 pt-7">
+							<div class="flex items-start gap-3">
+								<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-cyan-100 text-cyan-800"><i class="fa-solid fa-link" aria-hidden="true"></i></span>
+								<div><h3 class="text-xl font-bold text-slate-900">B. Hubungan Makna Antarkalimat dan Antarparagraf</h3><p class="mt-2 leading-7 text-slate-600">Konjungsi dan susunan paragraf membantu pembaca melihat hubungan logis antaride.</p></div>
+							</div>
+							<div class="mt-5 overflow-x-auto rounded-xl border border-slate-200">
+								<table class="w-full min-w-[580px] text-left text-sm">
+									<thead class="bg-sky-50 text-sky-950"><tr><th class="px-4 py-3 font-bold">Hubungan makna</th><th class="px-4 py-3 font-bold">Petunjuk</th><th class="px-4 py-3 font-bold">Fungsi</th></tr></thead>
+									<tbody class="divide-y divide-slate-100 text-slate-600">
+										<tr><th class="px-4 py-3 font-semibold text-slate-800">Sebab-akibat</th><td class="px-4 py-3">oleh karena itu, akibatnya, sehingga</td><td class="px-4 py-3">Menghubungkan alasan dengan dampak.</td></tr>
+										<tr><th class="px-4 py-3 font-semibold text-slate-800">Pertentangan / kontras</th><td class="px-4 py-3">namun, sebaliknya, walaupun demikian</td><td class="px-4 py-3">Menghubungkan dua hal yang berlawanan.</td></tr>
+										<tr><th class="px-4 py-3 font-semibold text-slate-800">Penambahan</th><td class="px-4 py-3">selain itu, di samping itu</td><td class="px-4 py-3">Menambahkan informasi yang relevan.</td></tr>
+										<tr><th class="px-4 py-3 font-semibold text-slate-800">Umum-khusus</th><td class="px-4 py-3">Pernyataan umum diikuti rincian</td><td class="px-4 py-3">Memperinci topik dari gagasan luas ke detail.</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</article>
+
+						<article id="prediksi" class="scroll-mt-24 border-t border-slate-100 pt-7">
+							<div class="flex items-start gap-3">
+								<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-100 text-indigo-800"><i class="fa-solid fa-forward-step" aria-hidden="true"></i></span>
+								<div><h3 class="text-xl font-bold text-slate-900">C. Memprediksi Lanjutan atau Akhir Cerita</h3><p class="mt-2 leading-7 text-slate-600">Prediksi yang kuat mengikuti petunjuk awal atau foreshadowing dan tetap masuk akal dengan rangkaian peristiwa.</p></div>
+							</div>
+							<ol class="mt-5 space-y-3">
+								<li class="flex gap-3 rounded-lg bg-slate-50 p-4"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky-100 text-sm font-bold text-sky-800">1</span><span class="leading-6 text-slate-700">Identifikasi konflik atau masalah yang belum terselesaikan.</span></li>
+								<li class="flex gap-3 rounded-lg bg-slate-50 p-4"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky-100 text-sm font-bold text-sky-800">2</span><span class="leading-6 text-slate-700">Analisis karakter tokoh dan keputusan yang mungkin diambil.</span></li>
+								<li class="flex gap-3 rounded-lg bg-slate-50 p-4"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky-100 text-sm font-bold text-sky-800">3</span><span class="leading-6 text-slate-700">Pertimbangkan sebab-akibat peristiwa sebelumnya untuk memilih penyelesaian paling logis.</span></li>
+							</ol>
+						</article>
+					</div>
+				</section>
+
+				<section id="evaluasi" class="scroll-mt-24 overflow-hidden rounded-2xl border border-emerald-100 bg-white shadow-sm">
+					<div class="border-b border-emerald-100 bg-gradient-to-r from-emerald-800 to-primary-700 px-4 py-5 text-white sm:px-8 sm:py-6">
+						<p class="text-xs font-bold uppercase text-emerald-100">Bagian 03</p>
+						<h2 class="mt-1 text-2xl font-bold sm:text-3xl">Evaluasi dan Apresiasi</h2>
+						<p class="mt-2 max-w-3xl text-sm leading-6 text-emerald-50">Menilai kualitas informasi dan cara penulis menyampaikan gagasan, sekaligus memahami pengalaman emosional dalam karya sastra.</p>
+					</div>
+					<div class="space-y-8 p-4 sm:p-8">
+						<article id="relevansi" class="scroll-mt-24">
+							<div class="flex items-start gap-3">
+								<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-100 text-emerald-800"><i class="fa-solid fa-people-arrows-left-right" aria-hidden="true"></i></span>
+								<div><h3 class="text-xl font-bold text-slate-900">A. Relevansi Peristiwa dengan Kehidupan Sehari-hari</h3><p class="mt-2 leading-7 text-slate-600">Hubungkan isu atau masalah dalam teks dengan kondisi nyata di sekitar kita.</p></div>
+							</div>
+							<ul class="mt-4 space-y-2 text-slate-700">
+								<li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-primary-600" aria-hidden="true"></i><span>Bandingkan permasalahan tokoh atau topik dengan kondisi sosial masyarakat saat ini.</span></li>
+								<li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-primary-600" aria-hidden="true"></i><span>Nilai apakah solusi yang ditawarkan kontekstual dan dapat diterapkan di dunia nyata.</span></li>
+							</ul>
+						</article>
+
+						<article id="akurasi" class="scroll-mt-24 border-t border-slate-100 pt-7">
+							<div class="flex items-start gap-3">
+								<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-teal-100 text-teal-800"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i></span>
+								<div><h3 class="text-xl font-bold text-slate-900">B. Keakuratan, Kesesuaian, Kecukupan, dan Ketepatan Informasi</h3><p class="mt-2 leading-7 text-slate-600">Periksa klaim dan data secara kritis sebelum menerima simpulan penulis.</p></div>
+							</div>
+							<div class="mt-5 grid gap-3 sm:grid-cols-2">
+								<div class="rounded-xl border border-emerald-100 bg-emerald-50/70 p-4"><h4 class="font-bold text-emerald-900">Keakuratan</h4><p class="mt-1 text-sm leading-6 text-slate-600">Cocokkan data dan fakta dengan sumber tepercaya atau kenyataan ilmiah.</p></div>
+								<div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Kesesuaian</h4><p class="mt-1 text-sm leading-6 text-slate-600">Pastikan judul, gagasan utama, dan data pendukung selaras.</p></div>
+								<div class="rounded-xl border border-cyan-100 bg-cyan-50/70 p-4"><h4 class="font-bold text-cyan-900">Kecukupan</h4><p class="mt-1 text-sm leading-6 text-slate-600">Tinjau apakah bukti cukup kuat untuk menopang simpulan dan bebas dari bias atau sesat pikir.</p></div>
+								<div class="rounded-xl border border-primary-100 bg-primary-50/70 p-4"><h4 class="font-bold text-primary-900">Ketepatan</h4><p class="mt-1 text-sm leading-6 text-slate-600">Periksa presisi angka, statistik, dan penggunaan fakta.</p></div>
+							</div>
+						</article>
+
+						<article id="bahasa" class="scroll-mt-24 border-t border-slate-100 pt-7">
+							<div class="flex items-start gap-3">
+								<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-800"><i class="fa-solid fa-pen-nib" aria-hidden="true"></i></span>
+								<div><h3 class="text-xl font-bold text-slate-900">C. Ketepatan dan Kesesuaian Penggunaan Bahasa</h3><p class="mt-2 leading-7 text-slate-600">Nilai bahasa berdasarkan kaidah, tujuan penulisan, dan pembacanya.</p></div>
+							</div>
+							<div class="mt-5 space-y-3">
+								<div class="rounded-xl bg-slate-50 p-4"><h4 class="font-bold text-slate-900">Kaidah baku (EYD/PUEBI)</h4><p class="mt-1 text-sm leading-6 text-slate-600">Periksa ejaan, tanda baca, dan efektivitas kalimat.</p></div>
+								<div class="grid gap-3 sm:grid-cols-2">
+									<div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Ragam formal atau akademis</h4><p class="mt-1 text-sm leading-6 text-slate-600">Teks nonfiksi seperti artikel ilmiah dan eksposisi menggunakan kata baku, lugas, dan bernalar logis.</p></div>
+									<div class="rounded-xl border border-primary-100 bg-primary-50/70 p-4"><h4 class="font-bold text-primary-900">Ragam sastra atau kreatif</h4><p class="mt-1 text-sm leading-6 text-slate-600">Teks fiksi dapat memakai majas, ungkapan konotatif, dan bahasa figuratif untuk membangun estetika.</p></div>
+								</div>
+								<div class="rounded-xl bg-slate-50 p-4"><h4 class="font-bold text-slate-900">Efektivitas kalimat</h4><p class="mt-1 text-sm leading-6 text-slate-600">Nilai kehematan kata dan kecermatan susunan; hindari pemborosan kata atau pleonasme.</p></div>
+							</div>
+						</article>
+
+						<article id="fiksi" class="scroll-mt-24 border-t border-slate-100 pt-7">
+							<div class="flex items-start gap-3">
+								<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-100 text-indigo-800"><i class="fa-solid fa-masks-theater" aria-hidden="true"></i></span>
+								<div><h3 class="text-xl font-bold text-slate-900">D. Ketepatan Penggambaran Unsur Fiksi</h3><p class="mt-2 leading-7 text-slate-600">Tinjau apakah pilihan teknik dan diksi pengarang efektif membangun tokoh, peristiwa, dan latar.</p></div>
+							</div>
+							<div class="mt-5 grid gap-3 sm:grid-cols-2">
+								<div class="rounded-xl border border-indigo-100 bg-indigo-50/70 p-4"><h4 class="font-bold text-indigo-900">Penggambaran karakter</h4><p class="mt-1 text-sm leading-6 text-slate-600">Teknik dramatis menunjukkan watak melalui dialog, tingkah laku, dan pikiran; teknik analitis menyatakan watak secara langsung.</p></div>
+								<div class="rounded-xl border border-cyan-100 bg-cyan-50/70 p-4"><h4 class="font-bold text-cyan-900">Penggambaran latar dan peristiwa</h4><p class="mt-1 text-sm leading-6 text-slate-600">Diksi dan citraan pancaindra membantu menghadirkan suasana serta pengalaman yang terasa bagi pembaca.</p></div>
+							</div>
+						</article>
+
+						<article id="emosi" class="scroll-mt-24 border-t border-slate-100 pt-7">
+							<div class="flex items-start gap-3">
+								<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-rose-100 text-rose-800"><i class="fa-solid fa-heart" aria-hidden="true"></i></span>
+								<div><h3 class="text-xl font-bold text-slate-900">E. Respons Emosional terhadap Karya Sastra</h3><p class="mt-2 leading-7 text-slate-600">Jelaskan bagaimana unsur karya membangkitkan respons, bukan hanya menyebutkan perasaan yang muncul.</p></div>
+							</div>
+							<div class="mt-5 space-y-3">
+								<div class="rounded-xl bg-slate-50 p-4"><h4 class="font-bold text-slate-900">Puisi</h4><p class="mt-1 text-sm leading-6 text-slate-600">Tanggapi perpaduan diksi, majas, rima, dan imaji yang membangun suasana sedih, haru, semangat, atau gugat.</p></div>
+								<div class="rounded-xl bg-slate-50 p-4"><h4 class="font-bold text-slate-900">Prosa</h4><p class="mt-1 text-sm leading-6 text-slate-600">Uraikan empati terhadap konflik tokoh, ketegangan alur atau suspense, dan efek penyelesaian cerita.</p></div>
+								<div class="rounded-xl bg-slate-50 p-4"><h4 class="font-bold text-slate-900">Drama</h4><p class="mt-1 text-sm leading-6 text-slate-600">Hayati suasana melalui dialog antartokoh, konflik peran, dan petunjuk lakuan atau kramagung.</p></div>
+							</div>
+						</article>
+					</div>
+				</section>
+
+				<div class="flex flex-col gap-4 rounded-xl border border-primary-100 bg-gradient-to-r from-primary-50 to-sky-50 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+					<div><h2 class="font-bold text-slate-900">Selesai meninjau materi?</h2><p class="mt-1 text-sm text-slate-600">Kembali ke daftar untuk memilih mata pelajaran atau subtes lain.</p></div>
+					<a href="index.html#materi" class="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-primary-700 px-4 py-3 text-sm font-semibold text-white transition hover:bg-primary-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2">Kembali ke Daftar Materi <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer class="border-t border-slate-200 bg-white">
+		<div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+			<span>StudyDrive · TKA Bahasa Indonesia</span>
+			<a href="#top" class="hover:text-primary-700" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">Kembali ke atas ↑</a>
+		</div>
+	</footer>
+</body>
+</html>

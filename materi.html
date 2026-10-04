@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi | StudyDrive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        primary: {
+                            50: '#f0fdfa', 100: '#ccfbf1', 200: '#99f6e4', 300: '#5eead4',
+                            400: '#2dd4bf', 500: '#14b8a6', 600: '#0d9488', 700: '#0f766e',
+                            800: '#115e59', 900: '#134e4a'
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="min-h-screen bg-slate-50 font-sans text-gray-800 antialiased">
+    <header class="border-b border-gray-200 bg-white">
+        <div class="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6">
+            <a href="index.html" class="flex items-center gap-3 font-bold text-gray-900">
+                <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-600 text-white"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
+                StudyDrive
+            </a>
+            <a href="index.html#materi" class="inline-flex items-center gap-2 rounded-lg border border-gray-200 px-3 py-2 text-sm font-semibold text-gray-700 transition hover:border-primary-300 hover:text-primary-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500">
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                Kembali ke materi
+            </a>
+        </div>
+    </header>
+
+    <main class="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-16">
+        <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
+            <a href="index.html" class="hover:text-primary-700">Beranda</a>
+            <span class="mx-2" aria-hidden="true">/</span>
+            <span id="breadcrumb-subject">Materi</span>
+        </nav>
+
+        <section class="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+            <div class="border-b border-gray-100 bg-gradient-to-r from-primary-50 to-sky-50 px-6 py-8 sm:px-10 sm:py-10">
+                <p id="subject-track" class="text-sm font-bold uppercase tracking-widest text-primary-700">Ruang belajar</p>
+                <h1 id="subject-title" class="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl">Memuat materi...</h1>
+                <p id="subject-description" class="mt-3 max-w-2xl leading-7 text-gray-600"></p>
+            </div>
+            <div class="px-6 py-8 sm:px-10 sm:py-10">
+                <div class="flex items-start gap-4 rounded-xl border border-amber-200 bg-amber-50 p-5">
+                    <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700"><i class="fa-solid fa-hourglass-half" aria-hidden="true"></i></span>
+                    <div>
+                        <h2 class="font-bold text-gray-900">Materi sedang disiapkan</h2>
+                        <p class="mt-1 text-sm leading-6 text-gray-600">Halaman khusus ini sudah tersedia. Materi, rangkuman, dan latihan untuk subjek ini akan ditambahkan di sini.</p>
+                    </div>
+                </div>
+                <a href="index.html#materi" class="mt-8 inline-flex items-center gap-2 rounded-lg bg-primary-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-primary-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2">
+                    Lihat mata pelajaran lain <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const subjects = {
+            'bahasa-indonesia': { name: 'Bahasa Indonesia', track: 'TKA · Mata Pelajaran Wajib' },
+            'bahasa-inggris': { name: 'Bahasa Inggris', track: 'TKA · Mata Pelajaran Wajib' },
+            'matematika-wajib': { name: 'Matematika Wajib', track: 'TKA · Mata Pelajaran Wajib' },
+            'matematika-lanjut': { name: 'Matematika Lanjut', track: 'TKA · Mata Pelajaran Pilihan' },
+            'fisika': { name: 'Fisika', track: 'TKA · Mata Pelajaran Pilihan' },
+            'penalaran-umum': { name: 'Penalaran Umum', track: 'SNBT · Subtes' },
+            'penalaran-matematika': { name: 'Penalaran Matematika', track: 'SNBT · Subtes' },
+            'pengetahuan-kuantitatif': { name: 'Pengetahuan Kuantitatif', track: 'SNBT · Subtes' },
+            'literasi-bahasa-indonesia': { name: 'Literasi Bahasa Indonesia', track: 'SNBT · Subtes' },
+            'literasi-bahasa-inggris': { name: 'Literasi Bahasa Inggris', track: 'SNBT · Subtes' },
+            'pengetahuan-pemahaman-umum': { name: 'Pengetahuan dan Pemahaman Umum', track: 'SNBT · Subtes' },
+            'pemahaman-bacaan-menulis': { name: 'Pemahaman Bacaan dan Menulis', track: 'SNBT · Subtes' }
+        };
+
+        const subject = subjects[new URLSearchParams(window.location.search).get('subjek')];
+        const title = document.getElementById('subject-title');
+        const track = document.getElementById('subject-track');
+        const description = document.getElementById('subject-description');
+        const breadcrumb = document.getElementById('breadcrumb-subject');
+
+        if (subject) {
+            document.title = `${subject.name} | StudyDrive`;
+            title.textContent = subject.name;
+            track.textContent = subject.track;
+            description.textContent = `Ruang belajar khusus untuk ${subject.name}.`;
+            breadcrumb.textContent = subject.name;
+        } else {
+            document.title = 'Materi tidak ditemukan | StudyDrive';
+            title.textContent = 'Materi tidak ditemukan';
+            track.textContent = 'Ruang belajar';
+            description.textContent = 'Subjek yang diminta tidak tersedia. Silakan pilih materi dari daftar.';
+            breadcrumb.textContent = 'Tidak ditemukan';
+        }
+    </script>
+</body>
+</html>

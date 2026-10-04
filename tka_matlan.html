@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#0f766e">
+	<title>TKA Matematika Lanjut | StudyDrive</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<script>
+		window.MathJax = {
+			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+			options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+		};
+	</script>
+	<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					fontFamily: { sans: ['Inter', 'sans-serif'] },
+					colors: {
+						primary: {
+							50: '#f0fdfa', 100: '#ccfbf1', 200: '#99f6e4', 300: '#5eead4',
+							400: '#2dd4bf', 500: '#14b8a6', 600: '#0d9488', 700: '#0f766e',
+							800: '#115e59', 900: '#134e4a'
+						},
+						secondary: { 500: '#3b82f6', 600: '#2563eb' }
+					}
+				}
+			}
+		};
+	</script>
+	<style>
+		:target { scroll-margin-top: 6rem; }
+		mjx-container { max-width: 100%; }
+		mjx-container[display="true"] { margin: 0.75rem 0 !important; }
+		@media (prefers-reduced-motion: no-preference) {
+			.reveal { animation: rise-in 550ms both; }
+			@keyframes rise-in {
+				from { opacity: 0; transform: translateY(12px); }
+				to { opacity: 1; transform: translateY(0); }
+			}
+		}
+	</style>
+</head>
+<body id="top" class="min-h-screen bg-slate-50 font-sans text-slate-800 antialiased">
+	<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+		<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+			<a href="index.html" class="flex items-center gap-3 font-bold text-slate-900" aria-label="StudyDrive, kembali ke beranda">
+				<span class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 text-white shadow-md"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
+				<span class="text-lg">StudyDrive</span>
+			</a>
+			<a href="index.html#materi" class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-primary-800 transition hover:bg-primary-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i><span class="hidden sm:inline">Daftar Materi</span><span class="sm:hidden">Kembali</span></a>
+		</div>
+	</header>
+
+	<main>
+		<section class="relative overflow-hidden border-b border-primary-100 bg-gradient-to-br from-primary-50 via-white to-sky-100">
+			<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+				<div class="reveal max-w-4xl">
+					<p class="inline-flex items-center gap-2 rounded-full border border-primary-200 bg-white/80 px-3 py-1.5 text-xs font-bold uppercase text-primary-800"><span class="h-2 w-2 rounded-full bg-primary-500"></span>TKA 2026 · Matematika Peminatan</p>
+					<h1 class="mt-5 max-w-3xl text-4xl font-extrabold leading-tight text-slate-950 sm:text-5xl">Materi TKA Matematika Lanjut</h1>
+					<p class="mt-5 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg">Pelajari matriks, polinomial, fungsi, vektor, lingkaran, transformasi, dan limit trigonometri melalui konsep, rumus, dan contoh analitis.</p>
+				</div>
+				<div class="mt-9 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-3">
+					<a href="#aljabar" class="flex items-center gap-3 rounded-xl border border-primary-100 bg-white/90 p-4 transition hover:border-primary-300 hover:shadow-sm"><span class="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-100 font-bold text-primary-800">01</span><span class="font-semibold text-slate-800">Aljabar</span></a>
+					<a href="#geometri" class="flex items-center gap-3 rounded-xl border border-sky-100 bg-white/90 p-4 transition hover:border-sky-300 hover:shadow-sm"><span class="flex h-9 w-9 items-center justify-center rounded-lg bg-sky-100 font-bold text-sky-800">02</span><span class="font-semibold text-slate-800">Geometri &amp; Pengukuran</span></a>
+					<a href="#trigonometri" class="flex items-center gap-3 rounded-xl border border-emerald-100 bg-white/90 p-4 transition hover:border-emerald-300 hover:shadow-sm"><span class="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-100 font-bold text-emerald-800">03</span><span class="font-semibold text-slate-800">Trigonometri</span></a>
+				</div>
+			</div>
+		</section>
+
+		<div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:px-8 lg:py-14">
+			<aside class="self-start lg:sticky lg:top-24">
+				<nav aria-label="Daftar isi materi" class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:overscroll-contain">
+					<h2 class="mb-3 text-xs font-bold uppercase text-slate-500">Daftar Isi</h2>
+					<ul class="space-y-1 text-sm">
+						<li><a class="block rounded-md px-3 py-2 font-semibold text-primary-800 hover:bg-primary-50" href="#aljabar">1. Aljabar</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-primary-50" href="#matriks">Matriks</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-primary-50" href="#polinomial">Polinomial</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-primary-50" href="#fungsi">Fungsi &amp; domain</a></li>
+						<li><a class="block rounded-md px-3 py-2 font-semibold text-sky-800 hover:bg-sky-50" href="#geometri">2. Geometri &amp; Pengukuran</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-sky-50" href="#vektor">Vektor</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-sky-50" href="#lingkaran">Lingkaran</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-sky-50" href="#transformasi">Transformasi geometri</a></li>
+						<li><a class="block rounded-md px-3 py-2 font-semibold text-emerald-800 hover:bg-emerald-50" href="#trigonometri">3. Trigonometri &amp; Limit</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-emerald-50" href="#limit">Konsep &amp; Metode</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-emerald-50" href="#identitas">Identitas Dasar</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-emerald-50" href="#rumus-trig">21 Rumus Trigonometri</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-emerald-50" href="#contoh-limit">Contoh Soal Limit</a></li>
+					</ul>
+				</nav>
+			</aside>
+
+			<div class="min-w-0 space-y-10">
+				<section id="aljabar" class="scroll-mt-24 overflow-hidden rounded-2xl border border-primary-100 bg-white shadow-sm">
+					<div class="border-b border-primary-100 bg-gradient-to-r from-primary-800 to-primary-600 px-4 py-5 text-white sm:px-8 sm:py-6"><p class="text-xs font-bold uppercase text-primary-100">Elemen 01</p><h2 class="mt-1 text-2xl font-bold sm:text-3xl">Aljabar</h2><p class="mt-2 max-w-3xl text-sm leading-6 text-primary-50">Matriks, suku banyak, dan fungsi beserta syarat serta operasinya.</p></div>
+					<div class="space-y-8 p-4 sm:p-8">
+						<article id="matriks" class="scroll-mt-24">
+							<h3 class="text-xl font-bold text-slate-900">A. Matriks</h3><p class="mt-2 leading-7 text-slate-600">Matriks adalah susunan bilangan real dalam baris dan kolom. Determinan dan invers pada materi ini dibatasi pada matriks ordo \(2\times2\) atau \(3\times3\). Penjumlahan/pengurangan dilakukan pada elemen seletak untuk matriks berordo sama; perkalian \(AB\) terdefinisi jika banyak kolom \(A\) sama dengan banyak baris \(B\).</p>
+							<div class="mt-4 grid gap-3 sm:grid-cols-2"><div class="rounded-xl border border-primary-100 bg-primary-50/70 p-4"><h4 class="font-bold text-primary-900">Determinan dan invers ordo \(2\times2\)</h4><p class="mt-2 text-sm leading-6 text-slate-700">Jika \(A=\begin{pmatrix}a&b\\c&d\end{pmatrix}\), maka:</p><div class="mt-3 space-y-2 text-sm text-slate-700"><p>\(\det(A)=|A|=ad-bc\)</p><p>\(A^{-1}=\frac{1}{ad-bc}\begin{pmatrix}d&-b\\-c&a\end{pmatrix}\), jika \(ad-bc\ne0\).</p></div></div><div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Determinan dan invers ordo \(3\times3\)</h4><p class="mt-2 text-sm leading-6 text-slate-700">Aturan Sarrus: untuk \(A=\begin{pmatrix}a&b&c\\d&e&f\\g&h&i\end{pmatrix}\),</p><div class="mt-2 text-sm text-slate-700">\[\begin{aligned}\det(A)&=aei+bfg+cdh\\&\quad-ceg-bdi-afh.\end{aligned}\]</div><p class="mt-2 text-sm leading-6 text-slate-600">Invers dihitung dengan \(A^{-1}=\frac{1}{\det(A)}\operatorname{adj}(A)\), jika \(\det(A)\ne0\). \(\operatorname{adj}(A)\) adalah transpose matriks kofaktor; kofaktor posisi \((i,j)\) ialah \((-1)^{i+j}\) kali determinan minor setelah baris \(i\) dan kolom \(j\) dihapus.</p></div></div>
+							<div class="mt-3 rounded-xl border border-slate-200 bg-slate-50 p-4"><h4 class="font-bold text-slate-900">Operasi perkalian matriks</h4><p class="mt-2 text-sm leading-6 text-slate-700">Jika \(A=(a_{ij})\) dan \(B=(b_{ij})\), elemen baris ke-\(i\), kolom ke-\(j\) dari hasil kali adalah \((AB)_{ij}=\sum_k a_{ik}b_{kj}\). Urutan umumnya penting, sehingga \(AB\ne BA\).</p></div>
+							<div class="mt-4 rounded-xl border-l-4 border-primary-500 bg-primary-50/70 p-4 sm:p-5"><h4 class="font-bold text-primary-950">Contoh determinan dan invers</h4><p class="mt-2 text-sm leading-6 text-slate-700">Diketahui \(A=\begin{pmatrix}4&1\\3&2\end{pmatrix}\). Determinan \(|A|=(4)(2)-(1)(3)=5\). Maka</p><div class="mt-2 text-sm text-slate-700">\[\begin{aligned}A^{-1}&=\frac{1}{5}\begin{pmatrix}2&-1\\-3&4\end{pmatrix}\\&=\begin{pmatrix}\frac25&-\frac15\\-\frac35&\frac45\end{pmatrix}.\end{aligned}\]</div></div>
+							<div class="mt-3 rounded-xl border border-slate-200 bg-slate-50 p-4"><h4 class="font-bold text-slate-900">Catatan program linear</h4><p class="mt-2 text-sm leading-6 text-slate-600">Program linear merupakan optimasi fungsi objektif dengan kendala pertidaksamaan linear. Penyelesaian standar dilakukan dengan menentukan daerah layak dan menguji titik pojok; metode matriks dapat membantu menyelesaikan sistem persamaan garis batas.</p></div>
+						</article>
+
+						<article id="polinomial" class="scroll-mt-24 border-t border-slate-100 pt-7">
+							<h3 class="text-xl font-bold text-slate-900">B. Polinomial</h3><p class="mt-2 leading-7 text-slate-600">Polinomial atau suku banyak adalah ekspresi aljabar dengan pangkat variabel bilangan bulat tak negatif dan koefisien real. Operasi mencakup penjumlahan, pengurangan, perkalian, pembagian, serta pemfaktoran. Derajat yang dibahas paling tinggi 4.</p>
+							<div class="mt-4 rounded-xl border border-primary-100 bg-primary-50/70 p-4"><h4 class="font-bold text-primary-900">Bentuk dan teorema penting</h4><ul class="mt-2 space-y-2 text-sm leading-6 text-slate-700"><li>Bentuk umum derajat empat:<div class="mt-1">\[\begin{aligned}P(x)&=ax^4+bx^3\\&\quad+cx^2+dx+e,\end{aligned}\]</div>dengan \(a\ne0\).</li><li>Teorema sisa: sisa pembagian \(P(x)\) oleh \((x-k)\) adalah \(P(k)\).</li><li>Teorema faktor: \((x-k)\) adalah faktor \(P(x)\) jika dan hanya jika \(P(k)=0\).</li></ul></div>
+							<div class="mt-4 rounded-xl border-l-4 border-sky-500 bg-sky-50/70 p-4 sm:p-5"><h4 class="font-bold text-sky-950">Contoh teorema sisa</h4><p class="mt-2 text-sm leading-6 text-slate-700">Tentukan sisa pembagian \(P(x)=x^3-2x^2+4x-5\) oleh \((x-2)\). Menurut teorema sisa,</p><div class="mt-2 text-sm text-slate-700">\[\begin{aligned}P(2)&=2^3-2(2^2)\\&=8-8+4(2)-5\\&=8-8+8-5=3.\end{aligned}\]</div><p class="mt-2 text-sm text-slate-700">Jadi, sisanya adalah <strong>3</strong>.</p></div>
+						</article>
+
+						<article id="fungsi" class="scroll-mt-24 border-t border-slate-100 pt-7">
+							<h3 class="text-xl font-bold text-slate-900">C. Fungsi dan Domain</h3><p class="mt-2 leading-7 text-slate-600">Fungsi memetakan setiap anggota domain tepat ke satu anggota kodomain. Domain adalah himpunan masukan yang diperbolehkan, kodomain himpunan tujuan, dan range himpunan keluaran yang benar-benar dihasilkan.</p><p class="mt-2 leading-7 text-slate-600">Materi mencakup fungsi polinom (maksimum derajat 4), rasional, akar, eksponensial dengan basis bilangan asli, logaritma, nilai mutlak, dan trigonometri. Grafik membantu membaca domain, range, titik potong, dan perilaku fungsi.</p>
+							<div class="mt-4 overflow-x-auto rounded-xl border border-slate-200"><table class="w-full min-w-[620px] text-left text-sm"><thead class="bg-primary-50 text-primary-950"><tr><th class="px-4 py-3 font-bold">Jenis fungsi</th><th class="px-4 py-3 font-bold">Syarat domain umum</th><th class="px-4 py-3 font-bold">Contoh bentuk</th></tr></thead><tbody class="divide-y divide-slate-100 text-slate-600"><tr><th class="px-4 py-3 font-semibold text-slate-800">Polinom</th><td class="px-4 py-3">Semua \(x\in\mathbb{R}\).</td><td class="px-4 py-3">\(f(x)=x^4-2x+1\)</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Rasional</th><td class="px-4 py-3">Penyebut tidak nol: \(h(x)\ne0\).</td><td class="px-4 py-3">\(f(x)=\frac{g(x)}{h(x)}\)</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Akar berderajat genap</th><td class="px-4 py-3">Radikan tidak negatif: \(g(x)\ge0\).</td><td class="px-4 py-3">\(f(x)=\sqrt{g(x)}\)</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Logaritma</th><td class="px-4 py-3">Numerus positif: \(g(x)>0\); basis \(a>0, a\ne1\).</td><td class="px-4 py-3">\(f(x)=\log_a(g(x))\)</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Eksponensial</th><td class="px-4 py-3">Umumnya semua \(x\in\mathbb{R}\) untuk \(a^x\), \(a>0\).</td><td class="px-4 py-3">\(f(x)=a^x\)</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Nilai mutlak / trigonometri</th><td class="px-4 py-3">Mutlak: semua real. Trigonometri: kecuali titik fungsi tidak terdefinisi.</td><td class="px-4 py-3">\(|g(x)|\), \(\sin x\), \(\tan x\)</td></tr></tbody></table></div>
+							<div class="mt-4 rounded-xl border-l-4 border-primary-500 bg-primary-50/70 p-4 sm:p-5"><h4 class="font-bold text-primary-950">Contoh domain fungsi akar</h4><p class="mt-2 text-sm leading-6 text-slate-700">Tentukan domain \(f(x)=\sqrt{2x-8}\). Syaratnya \(2x-8\ge0\), sehingga \(2x\ge8\) dan \(x\ge4\). Jadi domainnya <strong>\(\{x\in\mathbb{R}\mid x\ge4\}\)</strong>.</p></div>
+						</article>
+					</div>
+				</section>
+
+				<section id="geometri" class="scroll-mt-24 overflow-hidden rounded-2xl border border-sky-100 bg-white shadow-sm">
+					<div class="border-b border-sky-100 bg-gradient-to-r from-sky-800 to-blue-600 px-4 py-5 text-white sm:px-8 sm:py-6"><p class="text-xs font-bold uppercase text-sky-100">Elemen 02</p><h2 class="mt-1 text-2xl font-bold sm:text-3xl">Geometri dan Pengukuran</h2><p class="mt-2 max-w-3xl text-sm leading-6 text-sky-50">Vektor, persamaan lingkaran, garis singgung, dan transformasi koordinat.</p></div>
+					<div class="space-y-8 p-4 sm:p-8">
+						<article id="vektor" class="scroll-mt-24">
+							<h3 class="text-xl font-bold text-slate-900">A. Vektor</h3><p class="mt-2 leading-7 text-slate-600">Vektor adalah besaran yang memiliki panjang dan arah. Komponen yang dibahas paling banyak tiga, sehingga vektor dapat berada pada bidang atau ruang.</p>
+							<div class="mt-4 grid gap-3 sm:grid-cols-3"><div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Panjang vektor</h4><p class="mt-2 text-sm leading-6 text-slate-700">Untuk \(\vec{u}=(x,y,z)\):</p><p class="mt-2">\(\|\vec{u}\|=\sqrt{x^2+y^2+z^2}\)</p></div><div class="rounded-xl border border-primary-100 bg-primary-50/70 p-4"><h4 class="font-bold text-primary-900">Hasil kali titik</h4><p class="mt-2 text-sm leading-6 text-slate-700">Jika \(\vec{u}=(x_1,y_1,z_1)\) dan \(\vec{v}=(x_2,y_2,z_2)\):</p><p class="mt-2">\(\vec{u}\cdot\vec{v}=x_1x_2+y_1y_2+z_1z_2\)</p></div><div class="rounded-xl border border-emerald-100 bg-emerald-50/70 p-4"><h4 class="font-bold text-emerald-900">Sudut ant vektor</h4><p class="mt-2 text-sm leading-6 text-slate-700">\(\cos\theta=\frac{\vec{u}\cdot\vec{v}}{\|\vec{u}\|\|\vec{v}\|}\)</p></div></div>
+							<div class="mt-4 rounded-xl border-l-4 border-sky-500 bg-sky-50/70 p-4 sm:p-5"><h4 class="font-bold text-sky-950">Contoh panjang vektor</h4><p class="mt-2 text-sm leading-6 text-slate-700">Diberikan \(\vec{a}=(1,2,-2)\). Panjang vektor:</p><div class="mt-2 text-sm text-slate-700">\[\begin{aligned}\|\vec{a}\|&=\sqrt{1^2+2^2+(-2)^2}\\&=\sqrt{9}=3.\end{aligned}\]</div></div>
+						</article>
+
+						<article id="lingkaran" class="scroll-mt-24 border-t border-slate-100 pt-7">
+							<h3 class="text-xl font-bold text-slate-900">B. Lingkaran</h3><p class="mt-2 leading-7 text-slate-600">Lingkaran adalah himpunan titik yang berjarak sama, yaitu jari-jari \(r\), dari sebuah titik pusat. Persamaan dapat digunakan untuk mengenali pusat, jari-jari, dan garis singgung.</p>
+							<div class="mt-4 grid gap-3 sm:grid-cols-2"><div class="rounded-xl border border-primary-100 bg-primary-50/70 p-4"><h4 class="font-bold text-primary-900">Persamaan lingkaran</h4><p class="mt-2 text-sm leading-6 text-slate-700">Pusat \((a,b)\), jari-jari \(r\):</p><p class="mt-2">\((x-a)^2+(y-b)^2=r^2\)</p></div><div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Garis singgung di titik lingkaran</h4><p class="mt-2 text-sm leading-6 text-slate-700">Untuk titik singgung \((x_1,y_1)\) pada lingkaran berpusat \((a,b)\):</p><p class="mt-2 text-xs sm:text-sm">\((x_1-a)(x-a)+(y_1-b)(y-b)=r^2\)</p></div></div>
+							<div class="mt-3 rounded-xl border border-emerald-100 bg-emerald-50/70 p-4"><h4 class="font-bold text-emerald-900">Luas juring</h4><p class="mt-2 text-sm leading-6 text-slate-700">Jika sudut pusat \(\alpha\) dinyatakan dalam derajat: \(L=\frac{\alpha}{360^\circ}\pi r^2\).</p></div>
+							<div class="mt-4 rounded-xl border-l-4 border-primary-500 bg-primary-50/70 p-4 sm:p-5"><h4 class="font-bold text-primary-950">Contoh persamaan lingkaran</h4><p class="mt-2 text-sm leading-6 text-slate-700">Pusat \((3,-2)\) dan jari-jari 4 menghasilkan \((x-3)^2+(y-(-2))^2=4^2\), atau <strong>\((x-3)^2+(y+2)^2=16\)</strong>.</p></div>
+						</article>
+
+						<article id="transformasi" class="scroll-mt-24 border-t border-slate-100 pt-7">
+							<h3 class="text-xl font-bold text-slate-900">C. Transformasi Geometri</h3><p class="mt-2 leading-7 text-slate-600">Transformasi memetakan titik atau bangun ke posisi baru. Koordinat titik ditulis sebagai vektor kolom; pada komposisi, matriks yang paling kanan diterapkan terlebih dahulu.</p>
+							<div class="mt-4 overflow-x-auto rounded-xl border border-slate-200"><table class="w-full min-w-[620px] text-left text-sm"><thead class="bg-sky-50 text-sky-950"><tr><th class="px-4 py-3 font-bold">Transformasi</th><th class="px-4 py-3 font-bold">Aturan atau matriks</th><th class="px-4 py-3 font-bold">Keterangan</th></tr></thead><tbody class="divide-y divide-slate-100 text-slate-600"><tr><th class="px-4 py-3 font-semibold text-slate-800">Translasi \(T(a,b)\)</th><td class="px-4 py-3">\((x',y')=(x+a,y+b)\)</td><td class="px-4 py-3">Geser sejauh \((a,b)\).</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Refleksi sumbu \(X\)</th><td class="px-4 py-3">\(\begin{pmatrix}1&0\\0&-1\end{pmatrix}\)</td><td class="px-4 py-3">\((x,y)\mapsto(x,-y)\).</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Rotasi \(90^\circ\) berlawanan jarum jam</th><td class="px-4 py-3">\(\begin{pmatrix}0&-1\\1&0\end{pmatrix}\)</td><td class="px-4 py-3">Pusat \((0,0)\).</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Dilatasi faktor \(k\)</th><td class="px-4 py-3">\(\begin{pmatrix}k&0\\0&k\end{pmatrix}\)</td><td class="px-4 py-3">Pusat \((0,0)\).</td></tr></tbody></table></div>
+							<div class="mt-4 rounded-xl border-l-4 border-sky-500 bg-sky-50/70 p-4 sm:p-5"><h4 class="font-bold text-sky-950">Contoh refleksi</h4><p class="mt-2 text-sm leading-6 text-slate-700">Titik \(P(3,1)\) direfleksikan pada sumbu \(X\): \(\begin{pmatrix}1&0\\0&-1\end{pmatrix}\begin{pmatrix}3\\1\end{pmatrix}=\begin{pmatrix}3\\-1\end{pmatrix}\). Bayangannya adalah <strong>\(P'(3,-1)\)</strong>.</p></div>
+						</article>
+					</div>
+				</section>
+
+				<section id="trigonometri" class="scroll-mt-24 overflow-hidden rounded-2xl border border-emerald-100 bg-white shadow-sm">
+					<div class="border-b border-emerald-100 bg-gradient-to-r from-emerald-800 to-primary-700 px-4 py-5 text-white sm:px-8 sm:py-6"><p class="text-xs font-bold uppercase text-emerald-100">Elemen 03</p><h2 class="mt-1 text-2xl font-bold sm:text-3xl">Trigonometri: Limit dan Identitas</h2><p class="mt-2 max-w-3xl text-sm leading-6 text-emerald-50">Limit diselesaikan secara analitis dengan identitas dan manipulasi aljabar; Teorema L’Hôpital tidak digunakan.</p></div>
+					<div class="space-y-8 p-4 sm:p-8">
+						<article id="limit" class="scroll-mt-24">
+							<h3 class="text-xl font-bold text-slate-900">A. Konsep dan Metode Limit</h3><p class="mt-2 leading-7 text-slate-600">Limit menyatakan nilai yang dihampiri fungsi ketika variabel mendekati suatu nilai. Untuk limit trigonometri, sudut harus dalam radian saat menggunakan limit dasar.</p>
+							<div class="mt-4 grid gap-3 sm:grid-cols-2"><div class="rounded-xl border border-emerald-100 bg-emerald-50/70 p-4"><h4 class="font-bold text-emerald-900">Metode analitis</h4><ol class="mt-2 list-inside list-decimal space-y-2 text-sm leading-6 text-slate-700"><li>Substitusi langsung jika fungsi kontinu dan hasilnya terdefinisi.</li><li>Faktorkan polinomial lalu sederhanakan faktor yang sama pada limit.</li><li>Kalikan dengan bentuk sekawan untuk bentuk akar.</li><li>Gunakan identitas trigonometri untuk mengubah selisih/jumlah menjadi faktor.</li><li>Gunakan limit dasar setelah membentuk faktor \(\frac{\sin u}{u}\).</li></ol></div><div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Limit dasar</h4><div class="mt-2 space-y-2 text-sm text-slate-700"><p>\(\displaystyle\lim_{x\to0}\frac{\sin x}{x}=1\)</p><p>\(\displaystyle\lim_{x\to0}\frac{\sin(ax)}{bx}=\frac{a}{b}\)</p><p>\(\displaystyle\lim_{x\to0}\frac{1-\cos x}{x^2}=\frac12\)</p></div><p class="mt-3 text-xs leading-5 text-slate-600">Rumus ini berlaku untuk sudut dalam radian dan konstanta \(a,b\) dengan \(b\ne0\).</p></div></div>
+						</article>
+
+						<article id="identitas" class="scroll-mt-24 border-t border-slate-100 pt-7">
+							<h3 class="text-xl font-bold text-slate-900">B. Identitas Trigonometri Dasar</h3><p class="mt-2 leading-7 text-slate-600">Identitas ini membantu menyederhanakan pangkat, rasio, dan bentuk yang memuat selisih dari satu.</p>
+							<div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3"><div class="rounded-xl border border-primary-100 bg-primary-50/70 p-4"><p>\(\sin^2x+\cos^2x=1\)</p><p class="mt-2">\(\sin^2x=1-\cos^2x\)</p><p class="mt-2">\(\cos^2x=1-\sin^2x\)</p></div><div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><p>\(\tan x=\frac{\sin x}{\cos x}\)</p><p class="mt-2">\(\cot x=\frac{\cos x}{\sin x}\)</p><p class="mt-2">\(\sec x=\frac{1}{\cos x}\)</p></div><div class="rounded-xl border border-emerald-100 bg-emerald-50/70 p-4"><p>\(\csc x=\frac{1}{\sin x}\)</p><p class="mt-2">\(\sec^2x=\tan^2x+1\)</p><p class="mt-2">\(\csc^2x=\cot^2x+1\)</p></div></div>
+						</article>
+
+						<article id="rumus-trig" class="scroll-mt-24 border-t border-slate-100 pt-7">
+							<h3 class="text-xl font-bold text-slate-900">C. 21 Rumus Inti Trigonometri</h3><p class="mt-2 leading-7 text-slate-600">Kelompok rumus berikut mencakup jumlah/selisih sudut, sudut rangkap dan tiga, serta konversi perkalian dan penjumlahan. Tiga bentuk kosinus sudut rangkap ditampilkan sebagai bentuk-bentuk ekuivalen dalam satu nomor.</p>
+							<div class="mt-5 space-y-5">
+								<div class="rounded-xl border border-primary-100 bg-primary-50/60 p-4 sm:p-5"><h4 class="font-bold text-primary-900">Jumlah dan selisih dua sudut</h4><div class="mt-3 grid gap-x-6 gap-y-3 sm:grid-cols-2"><p>1. \(\begin{aligned}\sin(\alpha+\beta)\\&=\sin\alpha\cos\beta\\&\quad+\cos\alpha\sin\beta\end{aligned}\)</p><p>2. \(\begin{aligned}\sin(\alpha-\beta)\\&=\sin\alpha\cos\beta\\&\quad-\cos\alpha\sin\beta\end{aligned}\)</p><p>3. \(\begin{aligned}\cos(\alpha+\beta)\\&=\cos\alpha\cos\beta\\&\quad-\sin\alpha\sin\beta\end{aligned}\)</p><p>4. \(\begin{aligned}\cos(\alpha-\beta)\\&=\cos\alpha\cos\beta\\&\quad+\sin\alpha\sin\beta\end{aligned}\)</p><p>5. \(\tan(\alpha+\beta)=\frac{\tan\alpha+\tan\beta}{1-\tan\alpha\tan\beta}\)</p><p>6. \(\tan(\alpha-\beta)=\frac{\tan\alpha-\tan\beta}{1+\tan\alpha\tan\beta}\)</p></div></div>
+								<div class="rounded-xl border border-sky-100 bg-sky-50/60 p-4 sm:p-5"><h4 class="font-bold text-sky-900">Sudut rangkap dan reduksi pangkat</h4><div class="mt-3 grid gap-x-6 gap-y-3 sm:grid-cols-2"><p>7. \(\sin 2\alpha=2\sin\alpha\cos\alpha\)</p><p>8. \(\begin{aligned}\cos 2\alpha&=\cos^2\alpha-\sin^2\alpha\\&=2\cos^2\alpha-1\\&=1-2\sin^2\alpha\end{aligned}\)</p><p>9. \(\tan 2\alpha=\frac{2\tan\alpha}{1-\tan^2\alpha}\)</p><p>10. \(\sin^2\alpha=\frac{1}{2}-\frac{1}{2}\cos2\alpha\)</p><p>11. \(\cos^2\alpha=\frac{1}{2}+\frac{1}{2}\cos2\alpha\)</p></div><p class="mt-3 text-sm leading-6 text-slate-600">Khususnya, \(1-\cos2\alpha=2\sin^2\alpha\), bentuk yang sering dipakai pada limit.</p></div>
+								<div class="rounded-xl border border-emerald-100 bg-emerald-50/60 p-4 sm:p-5"><h4 class="font-bold text-emerald-900">Sudut tiga</h4><div class="mt-3 grid gap-3 sm:grid-cols-2"><p>12. \(\sin3\alpha=3\sin\alpha-4\sin^3\alpha\)</p><p>13. \(\cos3\alpha=4\cos^3\alpha-3\cos\alpha\)</p></div></div>
+								<div class="rounded-xl border border-cyan-100 bg-cyan-50/60 p-4 sm:p-5"><h4 class="font-bold text-cyan-900">Perkalian menjadi penjumlahan atau selisih</h4><div class="mt-3 grid gap-x-6 gap-y-3 sm:grid-cols-2"><p>14. \(\begin{aligned}2\sin\alpha\cos\beta&\\&=\sin(\alpha+\beta)\\&+\sin(\alpha-\beta)\end{aligned}\)</p><p>15. \(\begin{aligned}2\cos\alpha\sin\beta&\\&=\sin(\alpha+\beta)\\&-\sin(\alpha-\beta)\end{aligned}\)</p><p>16. \(\begin{aligned}2\cos\alpha\cos\beta&=\\&\cos(\alpha+\beta)\\&+\cos(\alpha-\beta)\end{aligned}\)</p><p>17. \(\begin{aligned}-2\sin\alpha\sin\beta&=\\&\cos(\alpha+\beta)\\&-\cos(\alpha-\beta)\end{aligned}\)</p></div></div>
+								<div class="rounded-xl border border-blue-100 bg-blue-50/60 p-4 sm:p-5"><h4 class="font-bold text-blue-900">Penjumlahan atau selisih menjadi perkalian</h4><div class="mt-3 grid gap-x-6 gap-y-3 sm:grid-cols-2"><p>18. \(\begin{aligned}\sin\alpha+\sin\beta&=2\sin\frac{\alpha+\beta}{2}\\&\quad\cdot\cos\frac{\alpha-\beta}{2}\end{aligned}\)</p><p>19. \(\begin{aligned}\sin\alpha-\sin\beta&=2\cos\frac{\alpha+\beta}{2}\\&\quad\cdot\sin\frac{\alpha-\beta}{2}\end{aligned}\)</p><p>20. \(\begin{aligned}\cos\alpha+\cos\beta&=2\cos\frac{\alpha+\beta}{2}\\&\quad\cdot\cos\frac{\alpha-\beta}{2}\end{aligned}\)</p><p>21. \(\begin{aligned}\cos\alpha-\cos\beta&=-2\sin\frac{\alpha+\beta}{2}\\&\quad\cdot\\&\sin\frac{\alpha-\beta}{2}\end{aligned}\)</p></div></div>
+							</div>
+						</article>
+
+						<article id="contoh-limit" class="scroll-mt-24 border-t border-slate-100 pt-7">
+							<h3 class="text-xl font-bold text-slate-900">D. Contoh Limit Tanpa L’Hôpital</h3>
+							<div class="mt-4 rounded-xl border-l-4 border-emerald-500 bg-emerald-50/70 p-4 sm:p-5"><h4 class="font-bold text-emerald-950">Limit trigonometri dengan sudut rangkap</h4><p class="mt-2 text-sm leading-6 text-slate-700">Tentukan \(\displaystyle\lim_{x\to0}\frac{1-\cos4x}{x\sin2x}\).</p><ol class="mt-3 list-inside list-decimal space-y-2 text-sm leading-6 text-slate-700"><li>Gunakan \(\cos2\alpha=1-2\sin^2\alpha\) dengan \(\alpha=2x\), sehingga \(1-\cos4x=2\sin^22x\).</li><li>Maka \(\displaystyle\lim_{x\to0}\frac{2\sin^22x}{x\sin2x}=\lim_{x\to0}\frac{2\sin2x}{x}\).</li><li>Gunakan limit dasar: \(2\cdot\lim_{x\to0}\frac{\sin2x}{x}=2\cdot2=\) <strong>4</strong>.</li></ol></div>
+							<div class="mt-3 rounded-xl border-l-4 border-sky-500 bg-sky-50/70 p-4 sm:p-5"><h4 class="font-bold text-sky-950">Limit aljabar dengan pemfaktoran</h4><p class="mt-2 text-sm leading-6 text-slate-700">Tentukan \(\displaystyle\lim_{x\to3}\frac{x^2-9}{x-3}\). Substitusi langsung memberi bentuk \(\frac00\), jadi faktorkan: \(x^2-9=(x-3)(x+3)\). Untuk \(x\ne3\), sederhanakan menjadi \(x+3\); maka limitnya \(3+3=\) <strong>6</strong>.</p></div>
+						</article>
+					</div>
+				</section>
+
+				<div class="flex flex-col gap-4 rounded-xl border border-primary-100 bg-gradient-to-r from-primary-50 to-sky-50 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6"><div><h2 class="font-bold text-slate-900">Selesai meninjau materi?</h2><p class="mt-1 text-sm text-slate-600">Kembali ke daftar untuk memilih mata pelajaran atau subtes lain.</p></div><a href="index.html#materi" class="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-primary-700 px-4 py-3 text-sm font-semibold text-white transition hover:bg-primary-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2">Kembali ke Daftar Materi <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
+			</div>
+		</div>
+	</main>
+
+	<footer class="border-t border-slate-200 bg-white"><div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8"><span>StudyDrive · TKA Matematika Lanjut</span><a href="#top" class="hover:text-primary-700" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">Kembali ke atas ↑</a></div></footer>
+</body>
+</html>

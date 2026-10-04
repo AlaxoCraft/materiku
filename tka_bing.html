@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#0f766e">
+	<title>TKA Bahasa Inggris | StudyDrive</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					fontFamily: { sans: ['Inter', 'sans-serif'] },
+					colors: {
+						primary: {
+							50: '#f0fdfa', 100: '#ccfbf1', 200: '#99f6e4', 300: '#5eead4',
+							400: '#2dd4bf', 500: '#14b8a6', 600: '#0d9488', 700: '#0f766e',
+							800: '#115e59', 900: '#134e4a'
+						},
+						secondary: { 500: '#3b82f6', 600: '#2563eb' }
+					}
+				}
+			}
+		};
+	</script>
+	<style>
+		:target { scroll-margin-top: 6rem; }
+		@media (prefers-reduced-motion: no-preference) {
+			.reveal { animation: rise-in 550ms both; }
+			@keyframes rise-in {
+				from { opacity: 0; transform: translateY(12px); }
+				to { opacity: 1; transform: translateY(0); }
+			}
+		}
+	</style>
+</head>
+<body id="top" class="min-h-screen bg-slate-50 font-sans text-slate-800 antialiased">
+	<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+		<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+			<a href="index.html" class="flex items-center gap-3 font-bold text-slate-900" aria-label="StudyDrive, kembali ke beranda">
+				<span class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 text-white shadow-md"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
+				<span class="text-lg">StudyDrive</span>
+			</a>
+			<a href="index.html#materi" class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-primary-800 transition hover:bg-primary-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500">
+				<i class="fa-solid fa-arrow-left" aria-hidden="true"></i><span class="hidden sm:inline">Daftar Materi</span><span class="sm:hidden">Kembali</span>
+			</a>
+		</div>
+	</header>
+
+	<main>
+		<section class="relative overflow-hidden border-b border-primary-100 bg-gradient-to-br from-primary-50 via-white to-sky-100">
+			<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+				<div class="reveal max-w-4xl">
+					<p class="inline-flex items-center gap-2 rounded-full border border-primary-200 bg-white/80 px-3 py-1.5 text-xs font-bold uppercase text-primary-800"><span class="h-2 w-2 rounded-full bg-primary-500"></span>TKA 2026 · English Reading</p>
+					<h1 class="mt-5 max-w-3xl text-4xl font-extrabold leading-tight text-slate-950 sm:text-5xl">Materi TKA Bahasa Inggris</h1>
+					<p class="mt-5 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg">Latih pemahaman informasi eksplisit, penarikan kesimpulan, serta evaluasi dan apresiasi teks melalui kompetensi, contoh pertanyaan, dan strategi membaca.</p>
+				</div>
+				<div class="mt-9 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-3">
+					<a href="#tekstual" class="flex items-center gap-3 rounded-xl border border-primary-100 bg-white/90 p-4 transition hover:border-primary-300 hover:shadow-sm"><span class="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-100 font-bold text-primary-800">01</span><span class="font-semibold text-slate-800">Pemahaman Tekstual</span></a>
+					<a href="#inferensial" class="flex items-center gap-3 rounded-xl border border-sky-100 bg-white/90 p-4 transition hover:border-sky-300 hover:shadow-sm"><span class="flex h-9 w-9 items-center justify-center rounded-lg bg-sky-100 font-bold text-sky-800">02</span><span class="font-semibold text-slate-800">Pemahaman Inferensial</span></a>
+					<a href="#evaluasi" class="flex items-center gap-3 rounded-xl border border-emerald-100 bg-white/90 p-4 transition hover:border-emerald-300 hover:shadow-sm"><span class="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-100 font-bold text-emerald-800">03</span><span class="font-semibold text-slate-800">Evaluasi &amp; Apresiasi</span></a>
+				</div>
+			</div>
+		</section>
+
+		<div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:px-8 lg:py-14">
+			<aside class="self-start lg:sticky lg:top-24">
+				<nav aria-label="Daftar isi materi" class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:overscroll-contain">
+					<h2 class="mb-3 text-xs font-bold uppercase text-slate-500">Daftar Isi</h2>
+					<ul class="space-y-1 text-sm">
+						<li><a class="block rounded-md px-3 py-2 font-semibold text-primary-800 hover:bg-primary-50" href="#tekstual">1. Pemahaman Tekstual</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-primary-50 hover:text-primary-800" href="#identifikasi">Menemukan informasi</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-primary-50 hover:text-primary-800" href="#klasifikasi">Mengklasifikasi</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-primary-50 hover:text-primary-800" href="#kerangka">Membuat kerangka</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-primary-50 hover:text-primary-800" href="#ringkasan">Meringkas</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-primary-50 hover:text-primary-800" href="#sintesis">Mensintesis informasi</a></li>
+						<li><a class="block rounded-md px-3 py-2 font-semibold text-sky-800 hover:bg-sky-50" href="#inferensial">2. Pemahaman Inferensial</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-sky-50 hover:text-sky-800" href="#dukungan">Detail pendukung</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-sky-50 hover:text-sky-800" href="#gagasan">Topik, gagasan &amp; tujuan</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-sky-50 hover:text-sky-800" href="#urutan">Urutan kejadian</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-sky-50 hover:text-sky-800" href="#perbandingan">Perbandingan</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-sky-50 hover:text-sky-800" href="#sebab-akibat">Sebab-akibat</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-sky-50 hover:text-sky-800" href="#karakter">Karakter tokoh</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-sky-50 hover:text-sky-800" href="#prediksi">Memprediksi hasil cerita</a></li>
+						<li><a class="block rounded-md px-3 py-2 font-semibold text-emerald-800 hover:bg-emerald-50" href="#evaluasi">3. Evaluasi &amp; Apresiasi</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-emerald-50 hover:text-emerald-800" href="#realitas">Realitas atau fantasi</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-emerald-50 hover:text-emerald-800" href="#fakta-opini">Fakta atau opini</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-emerald-50 hover:text-emerald-800" href="#validitas">Validitas informasi</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-emerald-50 hover:text-emerald-800" href="#kesesuaian">Menilai kesesuaian</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-emerald-50 hover:text-emerald-800" href="#respons">Respons &amp; nada penulis</a></li>
+					</ul>
+				</nav>
+			</aside>
+
+			<div class="min-w-0 space-y-10">
+				<section id="tekstual" class="scroll-mt-24 overflow-hidden rounded-2xl border border-primary-100 bg-white shadow-sm">
+					<div class="border-b border-primary-100 bg-gradient-to-r from-primary-800 to-primary-600 px-4 py-5 text-white sm:px-8 sm:py-6"><p class="text-xs font-bold uppercase text-primary-100">Bagian 01</p><h2 class="mt-1 text-2xl font-bold sm:text-3xl">Pemahaman Tekstual</h2><p class="mt-2 max-w-3xl text-sm leading-6 text-primary-50">Memahami informasi eksplisit, mengelompokkannya, menyusun ulang, dan menyampaikan kembali isi teks secara akurat.</p></div>
+					<div class="space-y-7 p-4 sm:p-8">
+						<article id="identifikasi" class="scroll-mt-24"><h3 class="text-xl font-bold text-slate-900">A. Menemukan atau Mengidentifikasi Informasi</h3><p class="mt-2 leading-7 text-slate-600">Informasi eksplisit dinyatakan langsung dalam teks, misalnya tahun, nama tempat, tokoh, alasan, atau hasil suatu peristiwa. Pertanyaan biasanya menggunakan kata <i>according to the passage</i>, <i>when</i>, <i>where</i>, atau <i>why</i>.</p><div class="mt-4 grid gap-3 sm:grid-cols-2"><div class="rounded-xl border border-primary-100 bg-primary-50/70 p-4"><h4 class="font-bold text-primary-900">Contoh soal</h4><p class="mt-2 text-sm leading-6 text-slate-700">“According to the passage, what year did the Industrial Revolution begin?”</p><p class="mt-2 text-sm leading-6 text-slate-600">Teks: “The Industrial Revolution began in Britain around 1760.” Jawaban: <strong>around 1760</strong>.</p></div><div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Strategi scanning</h4><p class="mt-2 text-sm leading-6 text-slate-700">Tandai kata kunci soal seperti <i>Industrial Revolution</i> dan <i>begin</i>. Pindai teks untuk menemukan kata atau sinonim yang berkaitan, lalu cocokkan jawaban dengan kalimat sumber.</p></div></div></article>
+						<article id="klasifikasi" class="scroll-mt-24 border-t border-slate-100 pt-7"><h3 class="text-xl font-bold text-slate-900">B. Mengklasifikasi Informasi</h3><p class="mt-2 leading-7 text-slate-600">Mengklasifikasi berarti menempatkan orang, benda, tempat, atau peristiwa ke dalam kategori berdasarkan ciri yang disebutkan teks.</p><div class="mt-4 rounded-xl border border-primary-100 bg-primary-50/70 p-4"><h4 class="font-bold text-primary-900">Contoh soal dan strategi</h4><p class="mt-2 text-sm leading-6 text-slate-700">“Which of the following animals belongs to the baleen whales category according to the text?” Tentukan dulu ciri atau definisi kategori <i>baleen whales</i>, kemudian cocokkan pilihan dengan daftar atau deskripsi di teks. Jangan memilih hanya karena hewan tersebut sama-sama paus.</p></div></article>
+						<article id="kerangka" class="scroll-mt-24 border-t border-slate-100 pt-7"><h3 class="text-xl font-bold text-slate-900">C. Membuat Kerangka Teks</h3><p class="mt-2 leading-7 text-slate-600">Kerangka merangkum susunan gagasan utama dan detail pendukung setiap paragraf. Pada <i>analytical exposition</i>, alur umum biasanya berupa tesis, argumen, lalu penegasan ulang.</p><div class="mt-4 rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Contoh soal dan strategi</h4><p class="mt-2 text-sm leading-6 text-slate-700">“The logical outline of the passage is best represented by…” Tandai <i>topic sentence</i> tiap paragraf, ringkas menjadi frasa, lalu urutkan sesuai fungsi paragraf dalam keseluruhan teks.</p></div></article>
+						<article id="ringkasan" class="scroll-mt-24 border-t border-slate-100 pt-7"><h3 class="text-xl font-bold text-slate-900">D. Meringkas Teks</h3><p class="mt-2 leading-7 text-slate-600">Ringkasan yang baik mencakup gagasan utama keseluruhan teks secara singkat, akurat, dan tidak menambahkan pendapat atau informasi baru.</p><div class="mt-4 rounded-xl border border-primary-100 bg-primary-50/70 p-4"><h4 class="font-bold text-primary-900">Contoh soal dan strategi</h4><p class="mt-2 text-sm leading-6 text-slate-700">“Which of the following provides the best summary of the passage?” Singkirkan opsi yang hanya membahas satu detail, terlalu sempit, atau menyisipkan klaim yang tidak ada di teks. Pilih opsi yang mencakup gagasan utama lintas paragraf.</p></div></article>
+						<article id="sintesis" class="scroll-mt-24 border-t border-slate-100 pt-7"><h3 class="text-xl font-bold text-slate-900">E. Mensintesis Informasi</h3><p class="mt-2 leading-7 text-slate-600">Sintesis menggabungkan informasi dari dua bagian atau lebih—misalnya dua bacaan yang membahas isu sama—untuk membangun pemahaman yang lebih lengkap.</p><div class="mt-4 rounded-xl border border-emerald-100 bg-emerald-50/70 p-4"><h4 class="font-bold text-emerald-900">Contoh soal dan strategi</h4><p class="mt-2 text-sm leading-6 text-slate-700">“Based on Passage 1 and Passage 2, what can be concluded about the effect of global warming?” Catat klaim dan bukti dari masing-masing teks, lalu cari titik temu. Kesimpulan harus didukung kedua bacaan, bukan hanya salah satunya.</p></div></article>
+					</div>
+				</section>
+
+				<section id="inferensial" class="scroll-mt-24 overflow-hidden rounded-2xl border border-sky-100 bg-white shadow-sm">
+					<div class="border-b border-sky-100 bg-gradient-to-r from-sky-800 to-blue-600 px-4 py-5 text-white sm:px-8 sm:py-6"><p class="text-xs font-bold uppercase text-sky-100">Bagian 02</p><h2 class="mt-1 text-2xl font-bold sm:text-3xl">Pemahaman Inferensial</h2><p class="mt-2 max-w-3xl text-sm leading-6 text-sky-50">Menarik kesimpulan yang tidak dinyatakan langsung dengan menghubungkan petunjuk teks dan konteks.</p></div>
+					<div class="space-y-7 p-4 sm:p-8">
+						<article id="dukungan" class="scroll-mt-24"><h3 class="text-xl font-bold text-slate-900">A. Menyimpulkan Detail Pendukung</h3><p class="mt-2 leading-7 text-slate-600">Pilih detail tambahan yang paling relevan dan logis untuk memperkuat klaim atau argumen penulis, bukan detail yang sekadar menarik.</p><div class="mt-4 rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Contoh soal dan strategi</h4><p class="mt-2 text-sm leading-6 text-slate-700">“Which statement would best support the author's argument in paragraph 2?” Rumuskan klaim paragraf tersebut dengan kata sendiri. Cari data, contoh, atau fakta yang secara langsung menjadi bukti bagi klaim itu.</p></div></article>
+						<article id="gagasan" class="scroll-mt-24 border-t border-slate-100 pt-7"><h3 class="text-xl font-bold text-slate-900">B. Menyimpulkan Topik, Gagasan, Makna, Pembaca, Tujuan, dan Pesan</h3><p class="mt-2 leading-7 text-slate-600">Inferensi dapat mencakup topik dan gagasan utama, makna kata atau ungkapan dalam konteks, target pembaca, tujuan penulisan, serta pesan moral.</p><div class="mt-4 grid gap-3 sm:grid-cols-2"><div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Contoh pertanyaan</h4><ul class="mt-2 space-y-2 text-sm leading-6 text-slate-700"><li>“What is the main idea of the passage?”</li><li>“Who is the most likely intended audience?”</li><li>“What is the author's purpose?”</li><li>“What can be inferred from the phrase…?”</li></ul></div><div class="rounded-xl border border-primary-100 bg-primary-50/70 p-4"><h4 class="font-bold text-primary-900">Cara menalar</h4><p class="mt-2 text-sm leading-6 text-slate-700">Untuk gagasan utama, rangkum hal yang mengikat semua paragraf. Untuk pembaca sasaran, perhatikan pengetahuan dan kebutuhan yang diasumsikan penulis. Tujuan dapat berupa <i>to inform</i>, <i>to persuade</i>, atau <i>to entertain</i>. Tafsirkan makna kata berdasarkan kalimat sekitarnya.</p></div></div></article>
+						<article id="urutan" class="scroll-mt-24 border-t border-slate-100 pt-7"><h3 class="text-xl font-bold text-slate-900">C. Menyimpulkan Urutan atau Kelanjutan Teks</h3><p class="mt-2 leading-7 text-slate-600">Perhatikan hubungan kronologis dan transisi antargagasan untuk menentukan peristiwa atau topik yang mungkin muncul berikutnya.</p><div class="mt-4 rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Contoh soal dan strategi</h4><p class="mt-2 text-sm leading-6 text-slate-700">“What topic will most likely be discussed in the following paragraph?” Periksa kalimat terakhir sebagai petunjuk transisi, lalu cocokkan dengan fokus seluruh bacaan. Hindari topik baru yang tidak memiliki pengantar.</p></div></article>
+						<article id="perbandingan" class="scroll-mt-24 border-t border-slate-100 pt-7"><h3 class="text-xl font-bold text-slate-900">D. Menyimpulkan Perbandingan</h3><p class="mt-2 leading-7 text-slate-600">Bandingkan tokoh, waktu, tempat, benda, atau gagasan berdasarkan aspek yang sama, seperti tujuan, hasil, cara, atau karakteristik.</p><div class="mt-4 rounded-xl border border-primary-100 bg-primary-50/70 p-4"><h4 class="font-bold text-primary-900">Contoh soal dan strategi</h4><p class="mt-2 text-sm leading-6 text-slate-700">“How does the traditional method of farming differ from the modern one?” Buat pasangan aspek yang dibandingkan. Cari penanda seperti <i>however</i>, <i>unlike</i>, <i>on the other hand</i>, <i>similarly</i>, dan <i>in contrast</i>.</p></div></article>
+						<article id="sebab-akibat" class="scroll-mt-24 border-t border-slate-100 pt-7"><h3 class="text-xl font-bold text-slate-900">E. Menyimpulkan Hubungan Sebab-Akibat</h3><p class="mt-2 leading-7 text-slate-600">Tentukan apakah sebuah tindakan atau gagasan merupakan penyebab, akibat, bukti, atau ilustrasi dari gagasan lain.</p><div class="mt-4 rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Contoh soal dan strategi</h4><p class="mt-2 text-sm leading-6 text-slate-700">“The author mentioned plastic waste in paragraph 3 in order to…” Periksa klaim sebelum dan sesudah contoh tersebut. Contoh mungkin menunjukkan dampak masalah, memberi bukti, atau memperjelas alasan penulis.</p></div></article>
+						<article id="karakter" class="scroll-mt-24 border-t border-slate-100 pt-7"><h3 class="text-xl font-bold text-slate-900">F. Menyimpulkan Karakter Tokoh</h3><p class="mt-2 leading-7 text-slate-600">Sifat tokoh dapat disimpulkan dari dialog, tindakan, keputusan, pikiran, dan reaksi tokoh lain. Kesimpulan harus merujuk pada petunjuk, bukan kesan tanpa bukti.</p><div class="mt-4 rounded-xl border border-emerald-100 bg-emerald-50/70 p-4"><h4 class="font-bold text-emerald-900">Contoh soal dan strategi</h4><p class="mt-2 text-sm leading-6 text-slate-700">“From the dialogue, we can infer that the protagonist is a … person.” Jika tokoh tetap membantu tetangga meski sedang kesulitan, sifat <i>compassionate</i> atau peduli lebih didukung daripada <i>selfish</i>. Cocokkan pilihan dengan bukti perilaku.</p></div></article>
+						<article id="prediksi" class="scroll-mt-24 border-t border-slate-100 pt-7"><h3 class="text-xl font-bold text-slate-900">G. Memprediksi Hasil Cerita</h3><p class="mt-2 leading-7 text-slate-600">Prediksi yang masuk akal berangkat dari konflik, pilihan tokoh, petunjuk awal (<i>foreshadowing</i>), dan rangkaian sebab-akibat yang telah dibangun teks.</p><div class="mt-4 rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Contoh soal dan strategi</h4><p class="mt-2 text-sm leading-6 text-slate-700">“Based on the character's early decision, how will the story most likely end?” Tinjau akibat dari keputusan awal dan masalah yang belum selesai. Pilih akhir cerita yang paling konsisten, bukan akhir yang paling mengejutkan.</p></div></article>
+					</div>
+				</section>
+
+				<section id="evaluasi" class="scroll-mt-24 overflow-hidden rounded-2xl border border-emerald-100 bg-white shadow-sm">
+					<div class="border-b border-emerald-100 bg-gradient-to-r from-emerald-800 to-primary-700 px-4 py-5 text-white sm:px-8 sm:py-6"><p class="text-xs font-bold uppercase text-emerald-100">Bagian 03</p><h2 class="mt-1 text-2xl font-bold sm:text-3xl">Evaluasi dan Apresiasi</h2><p class="mt-2 max-w-3xl text-sm leading-6 text-emerald-50">Menilai kekuatan isi dan bukti, mengenali pilihan bahasa, serta menanggapi dampak teks terhadap pembaca.</p></div>
+					<div class="space-y-7 p-4 sm:p-8">
+						<article id="realitas" class="scroll-mt-24"><h3 class="text-xl font-bold text-slate-900">A. Menilai Realitas atau Fantasi</h3><p class="mt-2 leading-7 text-slate-600">Bedakan kejadian yang mungkin terjadi di dunia nyata dengan unsur khayal yang melampaui hukum alam atau pengalaman realistis.</p><div class="mt-4 rounded-xl border border-emerald-100 bg-emerald-50/70 p-4"><h4 class="font-bold text-emerald-900">Contoh soal dan strategi</h4><p class="mt-2 text-sm leading-6 text-slate-700">“Which event in the narrative is completely fictional and cannot happen in the real world?” Dalam narasi tentang perjalanan, tersesat di hutan mungkin realistis; pohon yang berbicara dengan manusia adalah unsur fantasi. Gunakan pengetahuan tentang dunia nyata untuk membedakannya.</p></div></article>
+						<article id="fakta-opini" class="scroll-mt-24 border-t border-slate-100 pt-7"><h3 class="text-xl font-bold text-slate-900">B. Menilai Fakta atau Opini</h3><p class="mt-2 leading-7 text-slate-600">Fakta dapat diverifikasi melalui bukti. Opini menyatakan penilaian, keyakinan, atau saran dan dapat ditandai kata seperti <i>beautiful</i>, <i>should</i>, <i>must</i>, atau <i>probably</i>.</p><div class="mt-4 grid gap-3 sm:grid-cols-2"><div class="rounded-xl border border-primary-100 bg-primary-50/70 p-4"><h4 class="font-bold text-primary-900">Contoh soal</h4><p class="mt-2 text-sm leading-6 text-slate-700">“Which sentence represents the author's opinion rather than a fact?”</p><p class="mt-2 text-sm leading-6 text-slate-600">“The Earth revolves around the Sun” dapat diverifikasi sebagai fakta. “This is the most beautiful painting” merupakan penilaian subjektif.</p></div><div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Cara mengevaluasi</h4><p class="mt-2 text-sm leading-6 text-slate-700">Tanyakan: apakah pernyataan dapat dibuktikan benar atau salah dengan data? Perhatikan kata evaluatif dan modal. Angka atau tanggal pun perlu diperiksa sumbernya sebelum dianggap akurat.</p></div></div></article>
+						<article id="validitas" class="scroll-mt-24 border-t border-slate-100 pt-7"><h3 class="text-xl font-bold text-slate-900">C. Menilai Kecukupan dan Validitas Informasi</h3><p class="mt-2 leading-7 text-slate-600">Nilai apakah bukti relevan, cukup, akurat, dan berasal dari sumber yang dapat dipercaya. Bedakan klaim dari bukti yang benar-benar mendukung klaim.</p><div class="mt-4 rounded-xl border border-emerald-100 bg-emerald-50/70 p-4"><h4 class="font-bold text-emerald-900">Contoh soal dan strategi</h4><p class="mt-2 text-sm leading-6 text-slate-700">“Is the author's argument regarding the economic crisis supported by sufficient evidence?” Periksa apakah ada data, metode, sumber, atau kutipan ahli yang relevan dan mutakhir. Satu anekdot belum tentu cukup untuk membuktikan klaim luas.</p></div></article>
+						<article id="kesesuaian" class="scroll-mt-24 border-t border-slate-100 pt-7"><h3 class="text-xl font-bold text-slate-900">D. Menilai Kesesuaian Bagian Teks</h3><p class="mt-2 leading-7 text-slate-600">Tentukan bagian yang paling kuat menggambarkan karakter, situasi, suasana, atau gagasan tertentu. Jawaban sebaiknya didukung diksi dan detail dalam bagian itu.</p><div class="mt-4 rounded-xl border border-primary-100 bg-primary-50/70 p-4"><h4 class="font-bold text-primary-900">Contoh soal dan strategi</h4><p class="mt-2 text-sm leading-6 text-slate-700">“Which paragraph best illustrates the hopeless situation faced by the characters?” Bandingkan paragraf berdasarkan detail masalah, pilihan kata emosional, dan gambaran keadaan. Pilih paragraf dengan bukti paling kuat, bukan yang hanya menyebut tokohnya.</p></div></article>
+						<article id="respons" class="scroll-mt-24 border-t border-slate-100 pt-7"><h3 class="text-xl font-bold text-slate-900">E. Menanggapi Isi dan Nada Teks</h3><p class="mt-2 leading-7 text-slate-600">Apresiasi mencakup kesan pembaca dan penilaian terhadap nada atau sikap penulis. Nada dapat bersifat optimistis, pesimistis, sarkastis, objektif, kritis, kecewa, atau antusias.</p><div class="mt-4 grid gap-3 sm:grid-cols-2"><div class="rounded-xl border border-emerald-100 bg-emerald-50/70 p-4"><h4 class="font-bold text-emerald-900">Contoh soal</h4><ul class="mt-2 space-y-2 text-sm leading-6 text-slate-700"><li>“What is the author's tone regarding deforestation?”</li><li>“The author's attitude can best be described as…”</li><li>“How does the passage make the reader feel?”</li></ul></div><div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Cara menentukan nada</h4><p class="mt-2 text-sm leading-6 text-slate-700">Perhatikan diksi yang berulang, kata sifat, kata kerja, tanda ironi, dan cara penulis menggambarkan isu. Pastikan nada yang dipilih mewakili keseluruhan teks, bukan satu kalimat saja.</p></div></div></article>
+					</div>
+				</section>
+
+				<div class="flex flex-col gap-4 rounded-xl border border-primary-100 bg-gradient-to-r from-primary-50 to-sky-50 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6"><div><h2 class="font-bold text-slate-900">Selesai meninjau materi?</h2><p class="mt-1 text-sm text-slate-600">Kembali ke daftar untuk memilih mata pelajaran atau subtes lain.</p></div><a href="index.html#materi" class="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-primary-700 px-4 py-3 text-sm font-semibold text-white transition hover:bg-primary-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2">Kembali ke Daftar Materi <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
+			</div>
+		</div>
+	</main>
+
+	<footer class="border-t border-slate-200 bg-white">
+		<div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8"><span>StudyDrive · TKA Bahasa Inggris</span><a href="#top" class="hover:text-primary-700" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">Kembali ke atas ↑</a></div>
+	</footer>
+</body>
+</html>

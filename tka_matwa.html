@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#0f766e">
+	<title>TKA Matematika Wajib | StudyDrive</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<script>
+		window.MathJax = {
+			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+			options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+		};
+	</script>
+	<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					fontFamily: { sans: ['Inter', 'sans-serif'] },
+					colors: {
+						primary: {
+							50: '#f0fdfa', 100: '#ccfbf1', 200: '#99f6e4', 300: '#5eead4',
+							400: '#2dd4bf', 500: '#14b8a6', 600: '#0d9488', 700: '#0f766e',
+							800: '#115e59', 900: '#134e4a'
+						},
+						secondary: { 500: '#3b82f6', 600: '#2563eb' }
+					}
+				}
+			}
+		};
+	</script>
+	<style>
+		:target { scroll-margin-top: 6rem; }
+		mjx-container { max-width: 100%; }
+		mjx-container[display="true"] { margin: 0.75rem 0 !important; }
+		@media (prefers-reduced-motion: no-preference) {
+			.reveal { animation: rise-in 550ms both; }
+			@keyframes rise-in {
+				from { opacity: 0; transform: translateY(12px); }
+				to { opacity: 1; transform: translateY(0); }
+			}
+		}
+	</style>
+</head>
+<body id="top" class="min-h-screen bg-slate-50 font-sans text-slate-800 antialiased">
+	<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+		<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+			<a href="index.html" class="flex items-center gap-3 font-bold text-slate-900" aria-label="StudyDrive, kembali ke beranda">
+				<span class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 text-white shadow-md"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
+				<span class="text-lg">StudyDrive</span>
+			</a>
+			<a href="index.html#materi" class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-primary-800 transition hover:bg-primary-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500">
+				<i class="fa-solid fa-arrow-left" aria-hidden="true"></i><span class="hidden sm:inline">Daftar Materi</span><span class="sm:hidden">Kembali</span>
+			</a>
+		</div>
+	</header>
+
+	<main>
+		<section class="relative overflow-hidden border-b border-primary-100 bg-gradient-to-br from-primary-50 via-white to-sky-100">
+			<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+				<div class="reveal max-w-4xl">
+					<p class="inline-flex items-center gap-2 rounded-full border border-primary-200 bg-white/80 px-3 py-1.5 text-xs font-bold uppercase text-primary-800"><span class="h-2 w-2 rounded-full bg-primary-500"></span>TKA 2026 · Matematika Wajib</p>
+					<h1 class="mt-5 max-w-3xl text-4xl font-extrabold leading-tight text-slate-950 sm:text-5xl">Materi TKA Matematika Wajib</h1>
+					<p class="mt-5 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg">Panduan konsep, rumus inti, dan contoh penyelesaian dari bilangan hingga peluang. Gunakan daftar bab untuk langsung menuju materi yang sedang dipelajari.</p>
+				</div>
+				<div class="mt-9 grid max-w-5xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
+					<a href="#bilangan" class="flex items-center gap-3 rounded-xl border border-primary-100 bg-white/90 p-4 transition hover:border-primary-300 hover:shadow-sm"><span class="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-100 font-bold text-primary-800">01</span><span class="font-semibold text-slate-800">Bilangan</span></a>
+					<a href="#aljabar" class="flex items-center gap-3 rounded-xl border border-sky-100 bg-white/90 p-4 transition hover:border-sky-300 hover:shadow-sm"><span class="flex h-9 w-9 items-center justify-center rounded-lg bg-sky-100 font-bold text-sky-800">02</span><span class="font-semibold text-slate-800">Aljabar</span></a>
+					<a href="#geometri" class="flex items-center gap-3 rounded-xl border border-emerald-100 bg-white/90 p-4 transition hover:border-emerald-300 hover:shadow-sm"><span class="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-100 font-bold text-emerald-800">03</span><span class="font-semibold text-slate-800">Geometri</span></a>
+					<a href="#trigonometri" class="flex items-center gap-3 rounded-xl border border-cyan-100 bg-white/90 p-4 transition hover:border-cyan-300 hover:shadow-sm"><span class="flex h-9 w-9 items-center justify-center rounded-lg bg-cyan-100 font-bold text-cyan-800">04</span><span class="font-semibold text-slate-800">Trigonometri</span></a>
+					<a href="#data-peluang" class="flex items-center gap-3 rounded-xl border border-blue-100 bg-white/90 p-4 transition hover:border-blue-300 hover:shadow-sm"><span class="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100 font-bold text-blue-800">05</span><span class="font-semibold text-slate-800">Data &amp; Peluang</span></a>
+				</div>
+			</div>
+		</section>
+
+		<div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:px-8 lg:py-14">
+			<aside class="self-start lg:sticky lg:top-24">
+				<nav aria-label="Daftar isi materi" class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:overscroll-contain">
+					<h2 class="mb-3 text-xs font-bold uppercase text-slate-500">Daftar Isi</h2>
+					<ul class="space-y-1 text-sm">
+						<li><a class="block rounded-md px-3 py-2 font-semibold text-primary-800 hover:bg-primary-50" href="#bilangan">1. Bilangan</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-primary-50" href="#eksponen">Eksponen &amp; bentuk akar</a></li>
+						<li><a class="block rounded-md px-3 py-2 font-semibold text-sky-800 hover:bg-sky-50" href="#aljabar">2. Aljabar</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-sky-50" href="#linear">Persamaan &amp; program linear</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-sky-50" href="#fungsi">Fungsi</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-sky-50" href="#barisan">Barisan &amp; deret</a></li>
+						<li><a class="block rounded-md px-3 py-2 font-semibold text-emerald-800 hover:bg-emerald-50" href="#geometri">3. Geometri &amp; Pengukuran</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-emerald-50" href="#objek">Objek geometri</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-emerald-50" href="#transformasi">Transformasi</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-emerald-50" href="#pengukuran">Keliling, luas, volume</a></li>
+						<li><a class="block rounded-md px-3 py-2 font-semibold text-cyan-800 hover:bg-cyan-50" href="#trigonometri">4. Trigonometri</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-cyan-50" href="#rasio-trig">Perbandingan trigonometri</a></li>
+						<li><a class="block rounded-md px-3 py-2 font-semibold text-blue-800 hover:bg-blue-50" href="#data-peluang">5. Data &amp; Peluang</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-blue-50" href="#statistika">Statistika</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-blue-50" href="#pencacahan">Aturan pencacahan</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-blue-50" href="#peluang">Peluang</a></li>
+					</ul>
+				</nav>
+			</aside>
+
+			<div class="min-w-0 space-y-10">
+				<section id="bilangan" class="scroll-mt-24 overflow-hidden rounded-2xl border border-primary-100 bg-white shadow-sm">
+					<div class="border-b border-primary-100 bg-gradient-to-r from-primary-800 to-primary-600 px-4 py-5 text-white sm:px-8 sm:py-6"><p class="text-xs font-bold uppercase text-primary-100">Elemen 01</p><h2 class="mt-1 text-2xl font-bold sm:text-3xl">Bilangan</h2><p class="mt-2 max-w-3xl text-sm leading-6 text-primary-50">Bilangan real, eksponen, dan bentuk akar serta sifat operasi aljabarnya.</p></div>
+					<div class="space-y-8 p-4 sm:p-8">
+						<article id="eksponen" class="scroll-mt-24">
+							<h3 class="text-xl font-bold text-slate-900">Bilangan Real, Eksponen, dan Bentuk Akar</h3>
+							<p class="mt-2 leading-7 text-slate-600">Bilangan real mencakup bilangan rasional, yang dapat ditulis sebagai \(\frac{a}{b}\) dengan \(b \ne 0\), dan bilangan irasional seperti \(\sqrt{2}\) atau \(\pi\). Eksponen menyatakan perkalian berulang; pangkat pecahan berkaitan dengan akar.</p>
+							<div class="mt-5 grid gap-3 sm:grid-cols-2">
+								<div class="rounded-xl border border-primary-100 bg-primary-50/70 p-4"><h4 class="font-bold text-primary-900">Aturan pangkat</h4><ul class="mt-2 space-y-2 text-sm leading-6 text-slate-700"><li>\(a^m \times a^n = a^{m+n}\)</li><li>\(\frac{a^m}{a^n} = a^{m-n}\), untuk \(a \ne 0\)</li><li>\((a^m)^n = a^{mn}\)</li><li>\((ab)^n = a^n b^n\)</li><li>\(a^0 = 1\) dan \(a^{-n} = \frac{1}{a^n}\), untuk \(a \ne 0\)</li></ul></div>
+								<div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Pangkat pecahan &amp; akar</h4><ul class="mt-2 space-y-2 text-sm leading-6 text-slate-700"><li>\(a^{m/n} = \sqrt[n]{a^m}\)</li><li>\(\sqrt{ab} = \sqrt{a}\sqrt{b}\), untuk \(a,b \ge 0\)</li><li>\(\sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}}\), untuk \(a \ge 0, b > 0\)</li><li>\(\sqrt{a^2} = |a|\)</li></ul><p class="mt-3 text-sm leading-6 text-slate-600">Untuk akar berderajat genap pada bilangan real, nilai di dalam akar harus tidak negatif.</p></div>
+							</div>
+							<div class="mt-3 rounded-xl border border-slate-200 bg-slate-50 p-4"><h4 class="font-bold text-slate-900">Sifat operasi</h4><p class="mt-2 text-sm leading-6 text-slate-700">Komutatif: \(a+b=b+a\), \(ab=ba\). Asosiatif: \((a+b)+c=a+(b+c)\). Distributif: \(a(b+c)=ab+ac\).</p><p class="mt-2 text-sm text-slate-600">Catatan: perpangkatan tidak distributif terhadap penjumlahan; umumnya \((a+b)^n \ne a^n+b^n\).</p></div>
+							<div class="mt-5 rounded-xl border-l-4 border-primary-500 bg-primary-50/70 p-4 sm:p-5"><h4 class="font-bold text-primary-950">Contoh soal</h4><p class="mt-2 text-sm leading-6 text-slate-700">Sederhanakan \(\frac{(x^2y^3)^{-1}}{x^{-3}y^2}\), dengan \(x,y \ne 0\).</p><p class="mt-2 text-sm leading-6 text-slate-700">Penyelesaian: pembilang \(=x^{-2}y^{-3}\). Maka hasilnya \(=x^{-2-(-3)}y^{-3-2}=xy^{-5}=\) <strong>\(\frac{x}{y^5}\)</strong>.</p></div>
+						</article>
+					</div>
+				</section>
+
+				<section id="aljabar" class="scroll-mt-24 overflow-hidden rounded-2xl border border-sky-100 bg-white shadow-sm">
+					<div class="border-b border-sky-100 bg-gradient-to-r from-sky-800 to-blue-600 px-4 py-5 text-white sm:px-8 sm:py-6"><p class="text-xs font-bold uppercase text-sky-100">Elemen 02</p><h2 class="mt-1 text-2xl font-bold sm:text-3xl">Aljabar</h2><p class="mt-2 max-w-3xl text-sm leading-6 text-sky-50">Model persamaan, fungsi, barisan, dan optimasi untuk menyelesaikan masalah kuantitatif.</p></div>
+					<div class="space-y-8 p-4 sm:p-8">
+						<article id="linear" class="scroll-mt-24">
+							<h3 class="text-xl font-bold text-slate-900">A. Persamaan, Pertidaksamaan Linear, dan Program Linear</h3>
+							<p class="mt-2 leading-7 text-slate-600">Persamaan linear memiliki variabel berpangkat satu. SPLTV adalah tiga persamaan linear yang melibatkan tiga variabel, misalnya \(x,y,z\). Solusinya dapat dicari dengan eliminasi, substitusi, atau gabungan keduanya.</p>
+							<div class="mt-4 rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Bentuk &amp; strategi</h4><p class="mt-2 text-sm leading-6 text-slate-700">Bentuk umum satu persamaan tiga variabel: \(ax+by+cz=d\). Untuk SPLTV, eliminasi satu variabel dari dua pasang persamaan sehingga diperoleh SPLDV, lalu tentukan seluruh variabel dan periksa ke persamaan awal.</p><p class="mt-2 text-sm leading-6 text-slate-700">Pada pertidaksamaan, mengalikan atau membagi kedua ruas dengan bilangan negatif membalik tanda pertidaksamaan.</p></div>
+							<div class="mt-4 rounded-xl border-l-4 border-primary-500 bg-primary-50/70 p-4 sm:p-5"><h4 class="font-bold text-primary-950">Contoh SPLTV</h4><p class="mt-2 text-sm leading-6 text-slate-700">Selesaikan \(x+y+z=6\), \(2x-y+z=3\), dan \(x+2y-z=2\). Kurangi persamaan pertama dari persamaan kedua: \(x-2y=-3\). Jumlahkan persamaan pertama dan ketiga: \(2x+3y=8\). Dari \(x=2y-3\), diperoleh \(y=2\) dan \(x=1\); substitusi ke persamaan pertama memberi \(z=3\). Jadi <strong>\((x,y,z)=(1,2,3)\)</strong>.</p></div>
+							<h4 class="mt-5 font-bold text-slate-900">Program linear</h4><p class="mt-2 text-sm leading-6 text-slate-600">Program linear mencari nilai maksimum atau minimum fungsi objektif dengan kendala berupa pertidaksamaan linear. Gambar daerah layak, tentukan titik pojoknya, lalu evaluasi fungsi objektif pada setiap titik pojok.</p>
+							<div class="mt-4 rounded-xl border-l-4 border-sky-500 bg-sky-50/70 p-4 sm:p-5"><h4 class="font-bold text-sky-950">Contoh soal</h4><p class="mt-2 text-sm leading-6 text-slate-700">Maksimumkan fungsi objektif berikut dengan kendala:</p><div class="mt-2 text-sm text-slate-700">\[\begin{aligned}f(x,y)&=40.000x\\&\quad+50.000y\end{aligned}\]</div><div class="mt-2 text-sm text-slate-700">\[\begin{aligned}x+2y&\le 10, & 3x+y&\le 15,\\x&\ge 0, & y&\ge 0.\end{aligned}\]</div><p class="mt-2 text-sm leading-6 text-slate-700">Titik pojok daerah: \((0,0)\), \((5,0)\), \((4,3)\), dan \((0,5)\). Nilai \(f\) berturut-turut \(0\), \(200.000\), \(310.000\), dan \(250.000\). Jadi nilai maksimum adalah <strong>\(310.000\)</strong>, dicapai di \((4,3)\).</p></div>
+						</article>
+
+						<article id="fungsi" class="scroll-mt-24 border-t border-slate-100 pt-7">
+							<h3 class="text-xl font-bold text-slate-900">B. Fungsi: Linear, Kuadrat, Rasional, Komposisi, dan Invers</h3>
+							<p class="mt-2 leading-7 text-slate-600">Fungsi memetakan setiap anggota domain ke tepat satu anggota kodomain. Range adalah himpunan nilai keluaran yang benar-benar dihasilkan.</p>
+							<div class="mt-4 overflow-x-auto rounded-xl border border-slate-200"><table class="w-full min-w-[560px] text-left text-sm"><thead class="bg-sky-50 text-sky-950"><tr><th class="px-4 py-3 font-bold">Jenis / konsep</th><th class="px-4 py-3 font-bold">Bentuk atau rumus</th><th class="px-4 py-3 font-bold">Catatan</th></tr></thead><tbody class="divide-y divide-slate-100 text-slate-600"><tr><th class="px-4 py-3 font-semibold text-slate-800">Linear</th><td class="px-4 py-3">\(f(x)=mx+c\)</td><td class="px-4 py-3">Grafik berupa garis lurus.</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Kuadrat</th><td class="px-4 py-3">\(f(x)=ax^2+bx+c\)</td><td class="px-4 py-3">Titik puncak \(\left(-\frac{b}{2a},-\frac{D}{4a}\right)\), \(D=b^2-4ac\).</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Rasional</th><td class="px-4 py-3">\(f(x)=\frac{ax+b}{cx+d}\)</td><td class="px-4 py-3">Domain mensyaratkan \(cx+d\ne 0\).</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Komposisi</th><td class="px-4 py-3">\((f\circ g)(x)=f(g(x))\)</td><td class="px-4 py-3">Kerjakan fungsi yang di dalam terlebih dahulu.</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Invers rasional</th><td class="px-4 py-3">\(f^{-1}(x)=\frac{b-dx}{cx-a}\)</td><td class="px-4 py-3">Untuk \(f(x)=\frac{ax+b}{cx+d}\), perlu \(ad-bc\ne 0\).</td></tr></tbody></table></div>
+							<p class="mt-3 text-sm leading-6 text-slate-600">Untuk parabola, \(a>0\) membuka ke atas dan \(a<0\) membuka ke bawah. Diskriminan \(D\) menentukan akar real: \(D>0\) dua akar berbeda, \(D=0\) satu akar kembar, \(D<0\) tidak ada akar real.</p>
+							<div class="mt-4 rounded-xl border-l-4 border-primary-500 bg-primary-50/70 p-4 sm:p-5"><h4 class="font-bold text-primary-950">Contoh komposisi</h4><p class="mt-2 text-sm leading-6 text-slate-700">Jika \(f(x)=2x-3\) dan \(g(x)=x^2+1\), tentukan \((f\circ g)(x)\).</p><div class="mt-2 text-sm text-slate-700">\[\begin{aligned}(f\circ g)(x)&=f(x^2+1)\\&=2(x^2+1)-3\\&=2x^2-1.\end{aligned}\]</div></div>
+							<div class="mt-3 rounded-xl border-l-4 border-sky-500 bg-sky-50/70 p-4 sm:p-5"><h4 class="font-bold text-sky-950">Contoh fungsi kuadrat</h4><p class="mt-2 text-sm leading-6 text-slate-700">Untuk \(f(x)=2x^2-8x+3\), koordinat puncaknya memiliki \(x_p=-\frac{-8}{2\times2}=2\) dan \(y_p=f(2)=-5\). Jadi puncak parabola adalah <strong>\((2,-5)\)</strong>.</p></div>
+							<div class="mt-3 rounded-xl border-l-4 border-emerald-500 bg-emerald-50/70 p-4 sm:p-5"><h4 class="font-bold text-emerald-950">Contoh fungsi rasional</h4><p class="mt-2 text-sm leading-6 text-slate-700">Untuk \(h(x)=\frac{2x+1}{x-3}\), penyebut tidak boleh nol, sehingga domainnya \(x\ne 3\). Dengan rumus invers atau menukar \(x\) dan \(y\) lalu menyelesaikan, \(h^{-1}(x)=\) <strong>\(\frac{3x+1}{x-2}\)</strong>, dengan \(x\ne 2\).</p></div>
+							<div class="mt-3 rounded-xl border-l-4 border-sky-500 bg-sky-50/70 p-4 sm:p-5"><h4 class="font-bold text-sky-950">Contoh invers</h4><p class="mt-2 text-sm leading-6 text-slate-700">Jika \(f(x)=2x-3\), tulis \(y=2x-3\), tukar \(x\) dan \(y\), lalu selesaikan \(x=2y-3\). Maka <strong>\(f^{-1}(x)=\frac{x+3}{2}\)</strong>.</p></div>
+						</article>
+
+						<article id="barisan" class="scroll-mt-24 border-t border-slate-100 pt-7">
+							<h3 class="text-xl font-bold text-slate-900">C. Barisan dan Deret</h3>
+							<p class="mt-2 leading-7 text-slate-600">Barisan adalah urutan bilangan; deret adalah penjumlahan suku-suku barisan. Aritmetika memiliki beda tetap, sedangkan geometri memiliki rasio tetap.</p>
+							<div class="mt-4 grid gap-3 sm:grid-cols-2">
+								<div class="rounded-xl border border-primary-100 bg-primary-50/70 p-4"><h4 class="font-bold text-primary-900">Aritmetika</h4><ul class="mt-2 space-y-2 text-sm leading-6 text-slate-700"><li>Beda: \(b=U_n-U_{n-1}\)</li><li>Suku ke-\(n\): \(U_n=a+(n-1)b\)</li><li>Jumlah \(n\) suku:<div class="mt-1">\[\begin{aligned}S_n&=\frac{n}{2}[2a+(n-1)b]\\&=\frac{n}{2}(a+U_n).\end{aligned}\]</div></li></ul></div>
+								<div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Geometri</h4><ul class="mt-2 space-y-2 text-sm leading-6 text-slate-700"><li>Rasio: \(r=\frac{U_n}{U_{n-1}}\)</li><li>Suku ke-\(n\): \(U_n=ar^{n-1}\)</li><li>\(S_n=a\frac{r^n-1}{r-1}\), untuk \(r\ne 1\)</li><li>\(S_{\infty}=\frac{a}{1-r}\), hanya jika \(|r|<1\)</li></ul></div>
+							</div>
+							<div class="mt-3 rounded-xl border border-emerald-100 bg-emerald-50/70 p-4"><h4 class="font-bold text-emerald-900">Bunga majemuk dan pertumbuhan</h4><p class="mt-2 text-sm leading-6 text-slate-700">Nilai setelah \(n\) periode: \(M_n=M_0(1+i)^n\), dengan \(M_0\) nilai awal dan \(i\) tingkat bunga/pertumbuhan per periode dalam bentuk desimal.</p></div>
+							<div class="mt-4 rounded-xl border-l-4 border-emerald-500 bg-emerald-50/70 p-4 sm:p-5"><h4 class="font-bold text-emerald-950">Contoh bunga majemuk</h4><p class="mt-2 text-sm leading-6 text-slate-700">Tabungan Rp1.000.000 mendapat bunga 10% per tahun. Setelah 2 tahun: \(M_2=1.000.000(1,10)^2=\) <strong>Rp1.210.000</strong>.</p></div>
+						</article>
+					</div>
+				</section>
+
+				<section id="geometri" class="scroll-mt-24 overflow-hidden rounded-2xl border border-emerald-100 bg-white shadow-sm">
+					<div class="border-b border-emerald-100 bg-gradient-to-r from-emerald-800 to-primary-700 px-4 py-5 text-white sm:px-8 sm:py-6"><p class="text-xs font-bold uppercase text-emerald-100">Elemen 03</p><h2 class="mt-1 text-2xl font-bold sm:text-3xl">Geometri dan Pengukuran</h2><p class="mt-2 max-w-3xl text-sm leading-6 text-emerald-50">Hubungan titik, garis, bidang, transformasi koordinat, serta ukuran bangun datar dan ruang.</p></div>
+					<div class="space-y-8 p-4 sm:p-8">
+						<article id="objek" class="scroll-mt-24">
+							<h3 class="text-xl font-bold text-slate-900">A. Objek Geometri dan Teorema Pythagoras</h3><p class="mt-2 leading-7 text-slate-600">Geometri mempelajari sifat dan hubungan objek berdimensi dua maupun tiga. Untuk segitiga siku-siku dengan sisi siku-siku \(a\) dan \(b\), serta sisi miring \(c\), berlaku \(c^2=a^2+b^2\).</p>
+							<div class="mt-4 grid gap-3 sm:grid-cols-2"><div class="rounded-xl border border-emerald-100 bg-emerald-50/70 p-4"><h4 class="font-bold text-emerald-900">Diagonal kubus rusuk \(s\)</h4><p class="mt-2 text-sm leading-6 text-slate-700">Diagonal sisi \(=s\sqrt{2}\). Diagonal ruang \(=s\sqrt{3}\). Jarak dua titik dicari dengan membentuk segitiga siku-siku dan menerapkan Pythagoras.</p></div><div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Jarak titik dan luas segitiga</h4><p class="mt-2 text-sm leading-6 text-slate-700">Luas segitiga \(=\frac{1}{2}\times\text{alas}\times\text{tinggi}\). Jika luas yang sama ditulis dengan alas berbeda, samakan \(\frac{1}{2}a_1t_1=\frac{1}{2}a_2t_2\) untuk mencari tinggi atau jarak.</p></div></div>
+							<div class="mt-4 rounded-xl border-l-4 border-emerald-500 bg-emerald-50/70 p-4 sm:p-5"><h4 class="font-bold text-emerald-950">Contoh jarak pada kubus</h4><p class="mt-2 text-sm leading-6 text-slate-700">Kubus ABCD.EFGH memiliki rusuk 4 cm. Diagonal sisi AC \(=\sqrt{4^2+4^2}=\sqrt{32}=\) <strong>\(4\sqrt{2}\) cm</strong>.</p></div>
+						</article>
+
+						<article id="transformasi" class="scroll-mt-24 border-t border-slate-100 pt-7">
+							<h3 class="text-xl font-bold text-slate-900">B. Transformasi Geometri</h3><p class="mt-2 leading-7 text-slate-600">Transformasi mengubah posisi atau ukuran titik pada bidang koordinat. Untuk komposisi transformasi, terapkan setiap langkah sesuai urutan yang diberikan.</p>
+							<div class="mt-4 overflow-x-auto rounded-xl border border-slate-200"><table class="w-full min-w-[540px] text-left text-sm"><thead class="bg-emerald-50 text-emerald-950"><tr><th class="px-4 py-3 font-bold">Transformasi</th><th class="px-4 py-3 font-bold">Bayangan titik \((x,y)\)</th></tr></thead><tbody class="divide-y divide-slate-100 text-slate-600"><tr><th class="px-4 py-3 font-semibold text-slate-800">Translasi \(T=(a,b)\)</th><td class="px-4 py-3">\((x+a,y+b)\)</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Refleksi sumbu \(x\) / sumbu \(y\)</th><td class="px-4 py-3">\((x,-y)\) / \((-x,y)\)</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Refleksi \(y=x\) / \(y=-x\)</th><td class="px-4 py-3">\((y,x)\) / \((-y,-x)\)</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Rotasi pusat \(O\), \(90^\circ\) / \(180^\circ\)</th><td class="px-4 py-3">\((-y,x)\) / \((-x,-y)\), positif berlawanan arah jarum jam</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Dilatasi pusat \(O\), faktor \(k\)</th><td class="px-4 py-3">\((kx,ky)\)</td></tr></tbody></table></div>
+							<div class="mt-4 rounded-xl border-l-4 border-primary-500 bg-primary-50/70 p-4 sm:p-5"><h4 class="font-bold text-primary-950">Contoh komposisi transformasi</h4><p class="mt-2 text-sm leading-6 text-slate-700">Titik \(P(2,-3)\) direfleksikan terhadap sumbu \(y\), lalu ditranslasi \(T=(-1,4)\). Refleksi menghasilkan \((-2,-3)\), kemudian translasi menghasilkan <strong>\((-3,1)\)</strong>.</p></div>
+						</article>
+
+						<article id="pengukuran" class="scroll-mt-24 border-t border-slate-100 pt-7">
+							<h3 class="text-xl font-bold text-slate-900">C. Pengukuran: Keliling, Luas, dan Volume</h3><p class="mt-2 leading-7 text-slate-600">Pastikan satuan panjang, luas, dan volume konsisten. Gunakan \(\pi=\frac{22}{7}\) jika jari-jari kelipatan 7 atau \(3,14\) sesuai kebutuhan soal.</p>
+							<div class="mt-4 grid gap-3 sm:grid-cols-2"><div class="rounded-xl border border-primary-100 bg-primary-50/70 p-4"><h4 class="font-bold text-primary-900">Bangun datar</h4><ul class="mt-2 space-y-2 text-sm leading-6 text-slate-700"><li>Lingkaran: \(K=2\pi r\); \(L=\pi r^2\)</li><li>Segitiga: \(L=\frac{1}{2}\times\text{alas}\times\text{tinggi}\)</li><li>Persegi panjang: \(K=2(p+l)\); \(L=pl\)</li></ul></div><div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Bangun ruang</h4><ul class="mt-2 space-y-2 text-sm leading-6 text-slate-700"><li>Balok: \(V=plt\); kubus: \(V=s^3\)</li><li>Tabung: \(V=\pi r^2t\)</li><li>Kerucut: \(V=\frac{1}{3}\pi r^2t\)</li><li>Bola: \(V=\frac{4}{3}\pi r^3\)</li></ul></div></div>
+							<div class="mt-4 rounded-xl border-l-4 border-sky-500 bg-sky-50/70 p-4 sm:p-5"><h4 class="font-bold text-sky-950">Contoh volume tabung</h4><p class="mt-2 text-sm leading-6 text-slate-700">Tabung berjari-jari 7 cm dan tinggi 10 cm. \(V=\pi r^2t=\frac{22}{7}(7^2)(10)=\) <strong>\(1.540\text{ cm}^3\)</strong>.</p></div>
+						</article>
+					</div>
+				</section>
+
+				<section id="trigonometri" class="scroll-mt-24 overflow-hidden rounded-2xl border border-cyan-100 bg-white shadow-sm">
+					<div class="border-b border-cyan-100 bg-gradient-to-r from-cyan-800 to-sky-700 px-4 py-5 text-white sm:px-8 sm:py-6"><p class="text-xs font-bold uppercase text-cyan-100">Elemen 04</p><h2 class="mt-1 text-2xl font-bold sm:text-3xl">Trigonometri</h2><p class="mt-2 max-w-3xl text-sm leading-6 text-cyan-50">Rasio sisi segitiga siku-siku yang menghubungkan besar sudut dengan panjang sisi.</p></div>
+					<div class="space-y-8 p-4 sm:p-8"><article id="rasio-trig" class="scroll-mt-24"><h3 class="text-xl font-bold text-slate-900">Perbandingan Trigonometri</h3><p class="mt-2 leading-7 text-slate-600">Terhadap sudut lancip \(\alpha\), sisi depan berada di seberang sudut, sisi samping menempel pada sudut (bukan hipotenusa), dan sisi miring adalah hipotenusa.</p>
+							<div class="mt-4 grid gap-3 sm:grid-cols-3"><div class="rounded-xl border border-cyan-100 bg-cyan-50/70 p-4"><h4 class="font-bold text-cyan-900">Rasio utama</h4><ul class="mt-2 space-y-2 text-sm leading-6 text-slate-700"><li>\(\sin\alpha=\frac{\text{depan}}{\text{miring}}\)</li><li>\(\cos\alpha=\frac{\text{samping}}{\text{miring}}\)</li><li>\(\tan\alpha=\frac{\text{depan}}{\text{samping}}\)</li></ul></div><div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Rasio kebalikan</h4><ul class="mt-2 space-y-2 text-sm leading-6 text-slate-700"><li>\(\csc\alpha=\frac{1}{\sin\alpha}=\frac{\text{miring}}{\text{depan}}\)</li><li>\(\sec\alpha=\frac{1}{\cos\alpha}=\frac{\text{miring}}{\text{samping}}\)</li><li>\(\cot\alpha=\frac{1}{\tan\alpha}=\frac{\text{samping}}{\text{depan}}\)</li></ul></div><div class="rounded-xl border border-primary-100 bg-primary-50/70 p-4"><h4 class="font-bold text-primary-900">Identitas dasar</h4><p class="mt-2 text-sm leading-6 text-slate-700">\(\sin^2\alpha+\cos^2\alpha=1\)</p><p class="mt-2 text-sm leading-6 text-slate-700">\(\tan\alpha=\frac{\sin\alpha}{\cos\alpha}\)</p></div></div>
+							<div class="mt-4 rounded-xl border-l-4 border-cyan-500 bg-cyan-50/70 p-4 sm:p-5"><h4 class="font-bold text-cyan-950">Contoh soal</h4><p class="mt-2 text-sm leading-6 text-slate-700">Segitiga ABC siku-siku di B. Jika \(AB=3\) cm (samping sudut A) dan \(BC=4\) cm (depan sudut A), tentukan \(\sin A\) dan \(\sec A\).</p><p class="mt-2 text-sm leading-6 text-slate-700">\(AC=\sqrt{3^2+4^2}=5\) cm. Jadi \(\sin A=\frac{4}{5}\) dan \(\cos A=\frac{3}{5}\), sehingga <strong>\(\sec A=\frac{5}{3}\)</strong>.</p></div>
+						</article></div>
+				</section>
+
+				<section id="data-peluang" class="scroll-mt-24 overflow-hidden rounded-2xl border border-blue-100 bg-white shadow-sm">
+					<div class="border-b border-blue-100 bg-gradient-to-r from-blue-900 to-primary-700 px-4 py-5 text-white sm:px-8 sm:py-6"><p class="text-xs font-bold uppercase text-blue-100">Elemen 05</p><h2 class="mt-1 text-2xl font-bold sm:text-3xl">Data dan Peluang</h2><p class="mt-2 max-w-3xl text-sm leading-6 text-blue-50">Meringkas dan menafsirkan data, menghitung banyak kemungkinan, serta mengukur peluang kejadian.</p></div>
+					<div class="space-y-8 p-4 sm:p-8">
+						<article id="statistika" class="scroll-mt-24">
+							<h3 class="text-xl font-bold text-slate-900">A. Statistika: Pemusatan dan Penyebaran Data</h3><p class="mt-2 leading-7 text-slate-600">Statistika mencakup pengumpulan, penyajian, dan analisis data. Mean, median, dan modus mengukur pemusatan; variansi dan simpangan baku menggambarkan penyebaran.</p>
+							<div class="mt-4 grid gap-3 sm:grid-cols-2"><div class="rounded-xl border border-blue-100 bg-blue-50/70 p-4"><h4 class="font-bold text-blue-900">Ukuran pemusatan</h4><ul class="mt-2 space-y-2 text-sm leading-6 text-slate-700"><li>Mean data tunggal: \(\bar{x}=\frac{\sum x_i}{n}\)</li><li>Mean data berfrekuensi: \(\bar{x}=\frac{\sum f_ix_i}{\sum f_i}\)</li><li>Data kelompok: \(x_i\) adalah titik tengah kelas.</li><li>Median data kelompok: \(Me=T_b+\left(\frac{\frac{n}{2}-F_k}{f_m}\right)p\)</li><li>Modus data kelompok: \(Mo=T_b+\left(\frac{d_1}{d_1+d_2}\right)p\)</li></ul></div><div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Ukuran penyebaran</h4><ul class="mt-2 space-y-2 text-sm leading-6 text-slate-700"><li>Variansi populasi: \(\sigma^2=\frac{\sum(x_i-\bar{x})^2}{n}\)</li><li>Simpangan baku: \(\sigma=\sqrt{\frac{\sum(x_i-\bar{x})^2}{n}}\)</li><li>Untuk data berfrekuensi, kalikan setiap suku jumlah dengan \(f_i\).</li></ul><p class="mt-3 text-xs leading-5 text-slate-600">\(T_b\): tepi bawah kelas median/modus; \(F_k\): frekuensi kumulatif sebelum kelas median; \(f_m\): frekuensi kelas median; \(p\): panjang kelas; \(d_1\) dan \(d_2\): selisih frekuensi kelas modus dengan kelas sebelum dan sesudahnya.</p></div></div>
+							<div class="mt-4 rounded-xl border-l-4 border-blue-500 bg-blue-50/70 p-4 sm:p-5"><h4 class="font-bold text-blue-950">Contoh mean dan modus</h4><p class="mt-2 text-sm leading-6 text-slate-700">Data nilai: \(6,7,7,8,8,8,9,10\). Mean \(=\frac{63}{8}=\) <strong>7,875</strong>. Modus adalah <strong>8</strong>, karena paling sering muncul.</p></div>
+							<div class="mt-3 rounded-xl border-l-4 border-sky-500 bg-sky-50/70 p-4 sm:p-5"><h4 class="font-bold text-sky-950">Contoh median dan modus data kelompok</h4><p class="mt-2 text-sm leading-6 text-slate-700">Frekuensi kelas \(10\text{–}19,20\text{–}29,30\text{–}39,40\text{–}49\) berturut-turut \(3,5,8,4\) (\(n=20\), panjang kelas 10). Kelas median dan modus adalah \(30\text{–}39\) dengan tepi bawah \(29,5\). Median \(=29,5+\left(\frac{10-8}{8}\right)10=\) <strong>32</strong>. Modus \(=29,5+\frac{3}{3+4}\times10\approx\) <strong>33,79</strong>.</p></div>
+						</article>
+
+						<article id="pencacahan" class="scroll-mt-24 border-t border-slate-100 pt-7">
+							<h3 class="text-xl font-bold text-slate-900">B. Aturan Pencacahan</h3><p class="mt-2 leading-7 text-slate-600">Aturan pencacahan menghitung banyak kemungkinan tanpa mendaftar satu per satu. Pilih aturan berdasarkan apakah pilihan bersifat alternatif, berurutan, memperhatikan urutan, atau tidak.</p>
+							<div class="mt-4 grid gap-3 sm:grid-cols-2"><div class="rounded-xl border border-primary-100 bg-primary-50/70 p-4"><h4 class="font-bold text-primary-900">Aturan dasar</h4><ul class="mt-2 space-y-2 text-sm leading-6 text-slate-700"><li>Penjumlahan: untuk pilihan saling lepas, \(A\) atau \(B\), banyaknya \(n(A)+n(B)\).</li><li>Perkalian: untuk tahapan \(A\) dan \(B\), banyak cara \(n(A)\times n(B)\); lanjutkan mengalikan banyak pilihan tiap tahap.</li><li>Faktorial: \(n!=n(n-1)\cdots2\times1\); \(0!=1\).</li></ul></div><div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Permutasi &amp; kombinasi</h4><ul class="mt-2 space-y-2 text-sm leading-6 text-slate-700"><li>Permutasi (urutan penting): \(P(n,r)=\frac{n!}{(n-r)!}\)</li><li>Permutasi melingkar: \((n-1)!\)</li><li>Kombinasi (urutan tidak penting): \(C(n,r)=\frac{n!}{r!(n-r)!}\)</li></ul></div></div>
+							<div class="mt-4 rounded-xl border-l-4 border-primary-500 bg-primary-50/70 p-4 sm:p-5"><h4 class="font-bold text-primary-950">Contoh kombinasi</h4><p class="mt-2 text-sm leading-6 text-slate-700">Dari 10 siswa dipilih 3 orang untuk satu tim. Karena urutan anggota tidak membedakan tim, gunakan kombinasi: \(C(10,3)=\frac{10!}{3!7!}=\) <strong>120 cara</strong>.</p></div>
+							<div class="mt-3 rounded-xl border-l-4 border-sky-500 bg-sky-50/70 p-4 sm:p-5"><h4 class="font-bold text-sky-950">Contoh permutasi dan aturan perkalian</h4><p class="mt-2 text-sm leading-6 text-slate-700">Dari 5 finalis dipilih ketua dan wakil. Jabatan berbeda, jadi urutan penting: \(P(5,2)=5\times4=\) <strong>20 cara</strong>. Jika tersedia 3 pilihan baju dan 2 celana, banyak pasangan pakaian \(=3\times2=\) <strong>6 cara</strong>.</p></div>
+						</article>
+
+						<article id="peluang" class="scroll-mt-24 border-t border-slate-100 pt-7">
+							<h3 class="text-xl font-bold text-slate-900">C. Peluang Kejadian Tunggal dan Majemuk</h3><p class="mt-2 leading-7 text-slate-600">Ruang sampel S memuat semua hasil yang mungkin. Kejadian tunggal berisi satu kondisi; kejadian majemuk melibatkan gabungan, irisan, atau peluang bersyarat dari beberapa kejadian.</p>
+							<div class="mt-4 overflow-x-auto rounded-xl border border-slate-200"><table class="w-full min-w-[560px] text-left text-sm"><thead class="bg-blue-50 text-blue-950"><tr><th class="px-4 py-3 font-bold">Konsep</th><th class="px-4 py-3 font-bold">Rumus</th><th class="px-4 py-3 font-bold">Makna</th></tr></thead><tbody class="divide-y divide-slate-100 text-slate-600"><tr><th class="px-4 py-3 font-semibold text-slate-800">Peluang \(A\)</th><td class="px-4 py-3">\(P(A)=\frac{n(A)}{n(S)}\)</td><td class="px-4 py-3">\(0\le P(A)\le 1\).</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Komplemen</th><td class="px-4 py-3">\(P(A^c)=1-P(A)\)</td><td class="px-4 py-3">\(A\) tidak terjadi.</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Frekuensi harapan</th><td class="px-4 py-3">\(F_h(A)=N\times P(A)\)</td><td class="px-4 py-3">Harapan banyak kemunculan dalam \(N\) percobaan.</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Gabungan</th><td class="px-4 py-3">\(P(A\cup B)=P(A)+P(B)-P(A\cap B)\)</td><td class="px-4 py-3">Untuk dua kejadian apa pun; jika saling lepas, irisan 0.</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Saling bebas</th><td class="px-4 py-3">\(P(A\cap B)=P(A)P(B)\)</td><td class="px-4 py-3">Terjadi jika \(A\) dan \(B\) independen, bukan sekadar karena kata “dan”.</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Bersyarat</th><td class="px-4 py-3">\(P(B\mid A)=\frac{P(A\cap B)}{P(A)}\)</td><td class="px-4 py-3">Dengan \(P(A)>0\); tanpa pengembalian, peluang berikutnya dapat berubah.</td></tr></tbody></table></div>
+							<div class="mt-4 rounded-xl border-l-4 border-blue-500 bg-blue-50/70 p-4 sm:p-5"><h4 class="font-bold text-blue-950">Contoh kejadian tunggal dan komplemen</h4><p class="mt-2 text-sm leading-6 text-slate-700">Sebuah dadu setimbang dilempar sekali. Kelipatan 3 adalah \(\{3,6\}\), sehingga peluangnya \(\frac{2}{6}=\frac{1}{3}\). Peluang muncul bukan kelipatan 3 \(=1-\frac{1}{3}=\) <strong>\(\frac{2}{3}\)</strong>.</p></div>
+							<div class="mt-3 rounded-xl border-l-4 border-primary-500 bg-primary-50/70 p-4 sm:p-5"><h4 class="font-bold text-primary-950">Contoh kejadian majemuk</h4><p class="mt-2 text-sm leading-6 text-slate-700">Sebuah koin dilempar dua kali. Peluang muncul gambar pada kedua lemparan adalah \(\frac{1}{2}\times\frac{1}{2}=\) <strong>\(\frac{1}{4}\)</strong>, karena kedua lemparan saling bebas. Jika mengambil dua bola tanpa pengembalian, hitung peluang pengambilan kedua dengan memperbarui jumlah bola setelah pengambilan pertama.</p></div>
+						</article>
+					</div>
+				</section>
+			</div>
+		</div>
+	</main>
+
+	<footer class="border-t border-slate-200 bg-white">
+		<div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+			<span>StudyDrive · TKA Matematika Wajib</span>
+			<a href="#top" class="hover:text-primary-700" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">Kembali ke atas ↑</a>
+		</div>
+	</footer>
+</body>
+</html>
