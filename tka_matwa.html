@@ -93,6 +93,7 @@
 						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-emerald-50" href="#objek">Objek geometri</a></li>
 						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-emerald-50" href="#transformasi">Transformasi</a></li>
 						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-emerald-50" href="#pengukuran">Keliling, luas, volume</a></li>
+						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-emerald-50" href="#jarak-geometri">Lima jenis jarak geometri</a></li>
 						<li><a class="block rounded-md px-3 py-2 font-semibold text-cyan-800 hover:bg-cyan-50" href="#trigonometri">4. Trigonometri</a></li>
 						<li><a class="block rounded-md px-3 py-2 text-slate-600 hover:bg-cyan-50" href="#rasio-trig">Perbandingan trigonometri</a></li>
 						<li><a class="block rounded-md px-3 py-2 font-semibold text-blue-800 hover:bg-blue-50" href="#data-peluang">5. Data &amp; Peluang</a></li>
@@ -160,21 +161,100 @@
 					<div class="border-b border-emerald-100 bg-gradient-to-r from-emerald-800 to-primary-700 px-4 py-5 text-white sm:px-8 sm:py-6"><p class="text-xs font-bold uppercase text-emerald-100">Elemen 03</p><h2 class="mt-1 text-2xl font-bold sm:text-3xl">Geometri dan Pengukuran</h2><p class="mt-2 max-w-3xl text-sm leading-6 text-emerald-50">Hubungan titik, garis, bidang, transformasi koordinat, serta ukuran bangun datar dan ruang.</p></div>
 					<div class="space-y-8 p-4 sm:p-8">
 						<article id="objek" class="scroll-mt-24">
-							<h3 class="text-xl font-bold text-slate-900">A. Objek Geometri dan Teorema Pythagoras</h3><p class="mt-2 leading-7 text-slate-600">Geometri mempelajari sifat dan hubungan objek berdimensi dua maupun tiga. Untuk segitiga siku-siku dengan sisi siku-siku \(a\) dan \(b\), serta sisi miring \(c\), berlaku \(c^2=a^2+b^2\).</p>
-							<div class="mt-4 grid gap-3 sm:grid-cols-2"><div class="rounded-xl border border-emerald-100 bg-emerald-50/70 p-4"><h4 class="font-bold text-emerald-900">Diagonal kubus rusuk \(s\)</h4><p class="mt-2 text-sm leading-6 text-slate-700">Diagonal sisi \(=s\sqrt{2}\). Diagonal ruang \(=s\sqrt{3}\). Jarak dua titik dicari dengan membentuk segitiga siku-siku dan menerapkan Pythagoras.</p></div><div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Jarak titik dan luas segitiga</h4><p class="mt-2 text-sm leading-6 text-slate-700">Luas segitiga \(=\frac{1}{2}\times\text{alas}\times\text{tinggi}\). Jika luas yang sama ditulis dengan alas berbeda, samakan \(\frac{1}{2}a_1t_1=\frac{1}{2}a_2t_2\) untuk mencari tinggi atau jarak.</p></div></div>
-							<div class="mt-4 rounded-xl border-l-4 border-emerald-500 bg-emerald-50/70 p-4 sm:p-5"><h4 class="font-bold text-emerald-950">Contoh jarak pada kubus</h4><p class="mt-2 text-sm leading-6 text-slate-700">Kubus ABCD.EFGH memiliki rusuk 4 cm. Diagonal sisi AC \(=\sqrt{4^2+4^2}=\sqrt{32}=\) <strong>\(4\sqrt{2}\) cm</strong>.</p></div>
+							<h3 class="text-xl font-bold text-slate-900">A. Objek Geometri: Sudut, Kesebangunan, dan Pythagoras</h3>
+							<p class="mt-2 leading-7 text-slate-600">Bagian ini mencakup hubungan sudut dan garis, kesebangunan serta kekongruenan, dan Teorema Pythagoras pada segitiga siku-siku. Perhatikan sisi atau sudut yang bersesuaian saat menyelesaikan soal.</p>
+							<div class="mt-4 grid gap-3 sm:grid-cols-2">
+								<div class="rounded-xl border border-emerald-100 bg-emerald-50/70 p-4">
+									<h4 class="font-bold text-emerald-900">Hubungan sudut dan garis</h4>
+									<ul class="mt-2 space-y-2 text-sm leading-6 text-slate-700">
+										<li><strong>Berpelurus (suplemen):</strong> dua sudut pada garis lurus berjumlah \(180^\circ\).</li>
+										<li><strong>Berpenyiku (komplemen):</strong> dua sudut yang membentuk sudut siku-siku berjumlah \(90^\circ\).</li>
+										<li><strong>Sehadap:</strong> pada dua garis sejajar yang dipotong garis transversal, sudut sehadap sama besar.</li>
+										<li><strong>Bertolak belakang:</strong> sudut yang berhadapan pada dua garis berpotongan sama besar.</li>
+										<li><strong>Berseberangan dalam/luar:</strong> pada dua garis sejajar, sudut di sisi berlawanan garis transversal sama besar.</li>
+										<li><strong>Sepihak dalam/luar:</strong> sudut di sisi yang sama garis transversal berjumlah \(180^\circ\).</li>
+									</ul>
+								</div>
+								<div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4">
+									<h4 class="font-bold text-sky-900">Kongruen dan sebangun</h4>
+									<ul class="mt-2 space-y-2 text-sm leading-6 text-slate-700">
+										<li><strong>Kongruen (\(\cong\)):</strong> bentuk dan ukuran sama; semua sisi bersesuaian sama panjang dan sudut bersesuaian sama besar.</li>
+										<li><strong>Sebangun (\(\sim\)):</strong> bentuk sama, ukuran boleh berbeda; sudut bersesuaian sama besar dan perbandingan sisi bersesuaian konstan.</li>
+										<li>Jika faktor skala \(k\), maka \(\frac{\text{sisi bangun 2}}{\text{sisi bangun 1}}=k\). Keliling berubah dengan faktor \(k\), sedangkan luas dengan faktor \(k^2\).</li>
+									</ul>
+								</div>
+							</div>
+							<div class="mt-4 rounded-xl border border-primary-100 bg-primary-50/70 p-4">
+								<h4 class="font-bold text-primary-900">Teorema Pythagoras — hanya untuk segitiga siku-siku</h4>
+								<p class="mt-2 text-sm leading-6 text-slate-700">Jika \(a\) dan \(b\) adalah sisi-sisi siku-siku dan \(c\) sisi miring (hipotenusa yang berhadapan dengan sudut \(90^\circ\)), maka \(c^2=a^2+b^2\). Untuk mencari salah satu sisi siku-siku, gunakan \(a=\sqrt{c^2-b^2}\) atau \(b=\sqrt{c^2-a^2}\).</p>
+								<p class="mt-2 text-sm leading-6 text-slate-700">Contoh: segitiga dengan sisi siku-siku 3 cm dan 4 cm memiliki sisi miring \(c=\sqrt{3^2+4^2}=5\) cm.</p>
+							</div>
 						</article>
 
 						<article id="transformasi" class="scroll-mt-24 border-t border-slate-100 pt-7">
-							<h3 class="text-xl font-bold text-slate-900">B. Transformasi Geometri</h3><p class="mt-2 leading-7 text-slate-600">Transformasi mengubah posisi atau ukuran titik pada bidang koordinat. Untuk komposisi transformasi, terapkan setiap langkah sesuai urutan yang diberikan.</p>
-							<div class="mt-4 overflow-x-auto rounded-xl border border-slate-200"><table class="w-full min-w-[540px] text-left text-sm"><thead class="bg-emerald-50 text-emerald-950"><tr><th class="px-4 py-3 font-bold">Transformasi</th><th class="px-4 py-3 font-bold">Bayangan titik \((x,y)\)</th></tr></thead><tbody class="divide-y divide-slate-100 text-slate-600"><tr><th class="px-4 py-3 font-semibold text-slate-800">Translasi \(T=(a,b)\)</th><td class="px-4 py-3">\((x+a,y+b)\)</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Refleksi sumbu \(x\) / sumbu \(y\)</th><td class="px-4 py-3">\((x,-y)\) / \((-x,y)\)</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Refleksi \(y=x\) / \(y=-x\)</th><td class="px-4 py-3">\((y,x)\) / \((-y,-x)\)</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Rotasi pusat \(O\), \(90^\circ\) / \(180^\circ\)</th><td class="px-4 py-3">\((-y,x)\) / \((-x,-y)\), positif berlawanan arah jarum jam</td></tr><tr><th class="px-4 py-3 font-semibold text-slate-800">Dilatasi pusat \(O\), faktor \(k\)</th><td class="px-4 py-3">\((kx,ky)\)</td></tr></tbody></table></div>
+							<h3 class="text-xl font-bold text-slate-900">B. Transformasi Geometri dari Titik</h3><p class="mt-2 leading-7 text-slate-600">Transformasi memetakan titik awal \(P(x,y)\) menjadi bayangannya \(P'(x',y')\). Pada komposisi transformasi, kerjakan sesuai urutan yang dinyatakan.</p>
+							<div class="mt-4 overflow-x-auto rounded-xl border border-slate-200"><table class="w-full min-w-[600px] text-left text-sm"><thead class="bg-emerald-50 text-emerald-950"><tr><th class="px-4 py-3 font-bold">Transformasi</th><th class="px-4 py-3 font-bold">Bayangan titik \(P(x,y)\)</th></tr></thead><tbody class="divide-y divide-slate-100 text-slate-600">
+								<tr><th class="px-4 py-3 font-semibold text-slate-800">Translasi vektor \(\binom{a}{b}\)</th><td class="px-4 py-3">\((x',y')=(x+a,y+b)\)</td></tr>
+								<tr><th class="px-4 py-3 font-semibold text-slate-800">Refleksi sumbu \(X\) / sumbu \(Y\)</th><td class="px-4 py-3">\((x,-y)\) / \((-x,y)\)</td></tr>
+								<tr><th class="px-4 py-3 font-semibold text-slate-800">Refleksi garis \(y=x\) / \(y=-x\)</th><td class="px-4 py-3">\((y,x)\) / \((-y,-x)\)</td></tr>
+								<tr><th class="px-4 py-3 font-semibold text-slate-800">Refleksi garis \(x=h\) / \(y=k\)</th><td class="px-4 py-3">\((2h-x,y)\) / \((x,2k-y)\)</td></tr>
+								<tr><th class="px-4 py-3 font-semibold text-slate-800">Rotasi pusat \(O(0,0)\), sudut \(\theta\)</th><td class="px-4 py-3">\(x'=x\cos\theta-y\sin\theta,\quad y'=x\sin\theta+y\cos\theta\)</td></tr>
+								<tr><th class="px-4 py-3 font-semibold text-slate-800">Rotasi khusus berlawanan arah jarum jam</th><td class="px-4 py-3">\(90^\circ:(-y,x)\); \(180^\circ:(-x,-y)\); \(270^\circ:(y,-x)\). Sudut positif berlawanan, sudut negatif searah jarum jam.</td></tr>
+								<tr><th class="px-4 py-3 font-semibold text-slate-800">Dilatasi pusat \(O\), faktor skala \(k\)</th><td class="px-4 py-3">\((x',y')=(kx,ky)\)</td></tr>
+							</tbody></table></div>
 							<div class="mt-4 rounded-xl border-l-4 border-primary-500 bg-primary-50/70 p-4 sm:p-5"><h4 class="font-bold text-primary-950">Contoh komposisi transformasi</h4><p class="mt-2 text-sm leading-6 text-slate-700">Titik \(P(2,-3)\) direfleksikan terhadap sumbu \(y\), lalu ditranslasi \(T=(-1,4)\). Refleksi menghasilkan \((-2,-3)\), kemudian translasi menghasilkan <strong>\((-3,1)\)</strong>.</p></div>
 						</article>
 
 						<article id="pengukuran" class="scroll-mt-24 border-t border-slate-100 pt-7">
-							<h3 class="text-xl font-bold text-slate-900">C. Pengukuran: Keliling, Luas, dan Volume</h3><p class="mt-2 leading-7 text-slate-600">Pastikan satuan panjang, luas, dan volume konsisten. Gunakan \(\pi=\frac{22}{7}\) jika jari-jari kelipatan 7 atau \(3,14\) sesuai kebutuhan soal.</p>
-							<div class="mt-4 grid gap-3 sm:grid-cols-2"><div class="rounded-xl border border-primary-100 bg-primary-50/70 p-4"><h4 class="font-bold text-primary-900">Bangun datar</h4><ul class="mt-2 space-y-2 text-sm leading-6 text-slate-700"><li>Lingkaran: \(K=2\pi r\); \(L=\pi r^2\)</li><li>Segitiga: \(L=\frac{1}{2}\times\text{alas}\times\text{tinggi}\)</li><li>Persegi panjang: \(K=2(p+l)\); \(L=pl\)</li></ul></div><div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">Bangun ruang</h4><ul class="mt-2 space-y-2 text-sm leading-6 text-slate-700"><li>Balok: \(V=plt\); kubus: \(V=s^3\)</li><li>Tabung: \(V=\pi r^2t\)</li><li>Kerucut: \(V=\frac{1}{3}\pi r^2t\)</li><li>Bola: \(V=\frac{4}{3}\pi r^3\)</li></ul></div></div>
+							<h3 class="text-xl font-bold text-slate-900">C. Pengukuran Bangun Datar dan Bangun Ruang</h3><p class="mt-2 leading-7 text-slate-600">Pastikan satuan panjang, luas, dan volume konsisten. Gunakan \(\pi=\frac{22}{7}\) atau \(3,14\) sesuai kebutuhan soal. Untuk bangun gabungan, pecah gambar menjadi bangun sederhana dan tandai sisi yang berada di bagian dalam.</p>
+							<div class="mt-4 rounded-xl border border-primary-100 bg-primary-50/70 p-4">
+								<h4 class="font-bold text-primary-900">Rumus bangun datar</h4>
+								<div class="mt-2 grid gap-3 sm:grid-cols-2">
+									<ul class="space-y-2 text-sm leading-6 text-slate-700">
+										<li><strong>Segitiga:</strong> \(L=\frac{1}{2}at\); \(K=a+b+c\).</li>
+										<li><strong>Persegi:</strong> \(L=s^2\); \(K=4s\).</li>
+										<li><strong>Persegi panjang:</strong> \(L=pl\); \(K=2(p+l)\).</li>
+									</ul>
+									<ul class="space-y-2 text-sm leading-6 text-slate-700">
+										<li><strong>Jajar genjang:</strong> \(L=at\); \(K=2(a+b)\).</li>
+										<li><strong>Trapesium:</strong> \(L=\frac{1}{2}(a+b)t\), dengan \(a,b\) sisi sejajar.</li>
+										<li><strong>Lingkaran:</strong> \(L=\pi r^2\); \(K=2\pi r=\pi d\).</li>
+									</ul>
+								</div>
+							</div>
+							<div class="mt-3 rounded-xl border border-emerald-100 bg-emerald-50/70 p-4">
+								<h4 class="font-bold text-emerald-900">Bangun gabungan: luas dan keliling</h4>
+								<p class="mt-2 text-sm leading-6 text-slate-700"><strong>Luas gabungan</strong> diperoleh dengan menjumlahkan luas bagian-bagian yang tidak bertumpuk (atau mengurangkan bagian yang dipotong). <strong>Keliling gabungan hanya mengikuti garis sisi terluar</strong>; garis batas/potong yang berada di dalam tidak dihitung.</p>
+								<p class="mt-2 text-sm leading-6 text-slate-700">Contoh jendela berbentuk persegi panjang dengan setengah lingkaran di atasnya. Jika lebar jendela \(w\), tinggi persegi panjang \(h\), dan jari-jari setengah lingkaran \(r=\frac{w}{2}\), maka \(L=wh+\frac{1}{2}\pi r^2\), sedangkan \(K=w+2h+\pi r\). Diameter \(w\) yang menjadi garis sambungan di dalam tidak termasuk keliling.</p>
+							</div>
+							<div class="mt-3 rounded-xl border border-sky-100 bg-sky-50/70 p-4">
+								<h4 class="font-bold text-sky-900">Rumus bangun ruang</h4>
+								<div class="mt-2 grid gap-3 sm:grid-cols-2">
+									<ul class="space-y-2 text-sm leading-6 text-slate-700">
+										<li><strong>Prisma tegak (termasuk balok/kubus):</strong> \(V=L_{alas}t\); \(LP=2L_{alas}+K_{alas}t\).</li>
+										<li><strong>Limas:</strong> \(V=\frac{1}{3}L_{alas}t\).</li>
+										<li><strong>Tabung:</strong> \(V=\pi r^2t\); \(LP=2\pi r(r+t)\).</li>
+									</ul>
+									<ul class="space-y-2 text-sm leading-6 text-slate-700">
+										<li><strong>Kerucut:</strong> \(V=\frac{1}{3}\pi r^2t\); \(LP=\pi r(r+s)\), \(s=\sqrt{r^2+t^2}\).</li>
+										<li><strong>Bola:</strong> \(V=\frac{4}{3}\pi r^3\); \(LP=4\pi r^2\).</li>
+										<li>\(LP\): luas permukaan; \(t\): tinggi tegak; \(s\): garis pelukis kerucut.</li>
+									</ul>
+								</div>
+							</div>
 							<div class="mt-4 rounded-xl border-l-4 border-sky-500 bg-sky-50/70 p-4 sm:p-5"><h4 class="font-bold text-sky-950">Contoh volume tabung</h4><p class="mt-2 text-sm leading-6 text-slate-700">Tabung berjari-jari 7 cm dan tinggi 10 cm. \(V=\pi r^2t=\frac{22}{7}(7^2)(10)=\) <strong>\(1.540\text{ cm}^3\)</strong>.</p></div>
+						</article>
+
+						<article id="jarak-geometri" class="scroll-mt-24 border-t border-slate-100 pt-7">
+							<h3 class="text-xl font-bold text-slate-900">D. Lima Konsep Jarak dalam Geometri Ruang</h3>
+							<p class="mt-2 leading-7 text-slate-600">Jarak dua objek adalah panjang lintasan terpendek di antara keduanya. Untuk titik ke garis, titik ke bidang, dua garis sejajar, dan dua bidang sejajar, lintasan jarak berupa ruas garis yang tegak lurus. Untuk dua garis bersilangan, ruas jarak terpendek tegak lurus terhadap kedua garis.</p>
+							<div class="mt-4 grid gap-3 sm:grid-cols-2">
+								<div class="rounded-xl border border-emerald-100 bg-emerald-50/70 p-4"><h4 class="font-bold text-emerald-900">1. Jarak dua titik</h4><p class="mt-2 text-sm leading-6 text-slate-700">Hubungkan kedua titik dengan ruas garis lurus. Di ruang koordinat, \(A(x_1,y_1,z_1)\) dan \(B(x_2,y_2,z_2)\) berjarak \(AB=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}\). Pada bangun, susun Pythagoras bertahap.</p></div>
+								<div class="rounded-xl border border-sky-100 bg-sky-50/70 p-4"><h4 class="font-bold text-sky-900">2. Jarak titik ke garis</h4><p class="mt-2 text-sm leading-6 text-slate-700">Dari titik \(P\), tarik garis tegak lurus ke garis \(g\); kaki tegak lurusnya \(H\), maka jaraknya \(PH\). Dalam segitiga, jika luas dapat dihitung dengan dua pasangan alas-tinggi, samakan \(\frac12 a_1t_1=\frac12 a_2t_2\) untuk memperoleh jarak yang belum diketahui.</p></div>
+								<div class="rounded-xl border border-cyan-100 bg-cyan-50/70 p-4"><h4 class="font-bold text-cyan-900">3. Jarak titik ke bidang</h4><p class="mt-2 text-sm leading-6 text-slate-700">Jatuhkan garis tegak lurus dari titik \(P\) ke bidang \(\alpha\). Jika kaki proyeksinya \(H\), jaraknya adalah \(PH\), bukan panjang garis miring menuju titik lain di bidang.</p></div>
+								<div class="rounded-xl border border-indigo-100 bg-indigo-50/70 p-4"><h4 class="font-bold text-indigo-900">4. Jarak dua garis</h4><p class="mt-2 text-sm leading-6 text-slate-700">Untuk garis sejajar, jaraknya adalah ruas tegak lurus yang menghubungkan kedua garis. Untuk garis bersilangan, cari ruas persekutuan yang tegak lurus pada keduanya. Pada garis sejajar, jarak dari sembarang titik di garis pertama ke garis kedua sama.</p></div>
+								<div class="rounded-xl border border-violet-100 bg-violet-50/70 p-4 sm:col-span-2"><h4 class="font-bold text-violet-900">5. Jarak dua bidang sejajar</h4><p class="mt-2 text-sm leading-6 text-slate-700">Jaraknya adalah ruas tegak lurus yang menghubungkan kedua bidang. Pilih titik pada bidang pertama dan proyeksikan tegak lurus ke bidang kedua. Pada kubus/balok, jarak dua sisi bidang berhadapan adalah panjang rusuk tegak lurus yang menghubungkannya.</p></div>
+							</div>
 						</article>
 					</div>
 				</section>
